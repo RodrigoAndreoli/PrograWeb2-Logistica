@@ -26,7 +26,7 @@
         </ul>
         
         <li>
-            <a href='vehiculo.php' data-toggle='collapse' data-target='#vehiculos' class='collapsed active'>Vehiculos<span class='icon-truck'></span></a>
+            <a href='vehiculos.php' data-toggle='collapse' data-target='#vehiculos' class='collapsed active'>Vehiculos<span class='icon-truck'></span></a>
         </li>
         <?php } ?>
         <?php if($_SESSION['rol']=='admin' || $_SESSION['rol']=='mecanico' || $_SESSION['rol']=='supervisor' || $_SESSION['rol']=='chofer'){ ?>

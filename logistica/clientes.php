@@ -94,7 +94,7 @@
                                 </div>
                         </div>
                         <div class="row">
-                            <a href="/logistica/exportarVehiculo.php">
+                            <a href="/logistica/exportarCliente.php">
                                 <button class="btn btn-link">Exportar a PDF</button>
                             </a>
                         </div>

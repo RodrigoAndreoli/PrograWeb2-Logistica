@@ -26,7 +26,7 @@
                 <div class="row">
                     <div class="col-lg-12 text-center">
                         <!-- El contenido -->
-                        <h3 class="">Bienvenido a la zona de administración</h3>
+                        <h3 class="">Bienvenido al sitio.</h3>
                     </div>
                 </div>
             </div>
