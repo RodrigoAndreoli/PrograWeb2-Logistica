@@ -6,7 +6,8 @@
 			$this -> Image(''.$_SERVER['DOCUMENT_ROOT'].'/resources/images/title-logo.png', 180, 5, 20 );
 			$this -> SetFont('Arial','B',15);
 			$this -> Cell(30);
-			$this -> Cell(120,10, 'Reporte De Estados',0,0,'C');
+			$this -> Cell(120,5, 'Logistica',0,0,'C');
+            $this -> Line(0,20,220,20);
 			$this -> Ln(20);
 		}
 		
