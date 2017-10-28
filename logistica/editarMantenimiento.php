@@ -10,9 +10,9 @@
     
         $cod = $_GET['id'];
         $obj = new controlDB();
-        $user = $obj -> consultar("SELECT * 
-            FROM usuario 
-            WHERE idUsuario = '$cod'");
+        $mantenimientos = $obj -> consultar("SELECT * 
+            FROM mantenimiento 
+            WHERE idMantenimiento = '$cod'");
     ?>
 </head>
 
@@ -33,71 +33,86 @@
                     <div class="col-lg-12 text-center">
                         <div class="row">
                             <div class="col">
-                                <h3>Editar usuario</h3>
+                                <h3>Editar mantenimiento</h3>
                                 <hr>
                             </div>
                         </div>
                         <div class="container">
                             <div class="row">
                                 <div class="col">
-                                    <form action="bdUser.php" method="post" class="form-horizontal">
+                                    <form action="bdMantenimiento.php" method="post" class="form-horizontal">
                                         <table class="table table-striped  table-condensed table-hover">
-                                            <?php foreach($user as $users){ ?>
+                                            <?php foreach($mantenimientos as $mant){ ?>
 
-                                           
-                                            <input type="hidden" class="form-control"  value="<?php echo $users['nombre']; ?>" name="nombre">
-                                              
+                                            
+                                            <input type="hidden" value="<?php echo $mant['idVehiculo']; ?>" name="idVehiculo"/>
+                                            <input type="hidden" value="<?php echo $mant['idMecanico']; ?>" name="idMecanico"/>
+                                            
+                                            
                                             <div class="form-group">
                                                 <div class="col-xs-12 col-lg-6 col-lg-offset-3">
-                                                    <label class="control-label col-xs-4 col-sm-3">Password:</label>
+                                                    <label class="control-label col-xs-4 col-sm-3">Tipo vehiculo:</label>
                                                     <div class="col-xs-8 col-sm-9">
-                                                        <input type="password" class="form-control"  placeholder="****" name="pass" required>
+                                                        <input type="text" class="form-control"  placeholder="Tipo..." name="tipo_vehiculo"
+                                                        value="<?php echo $mant['tipo_vehiculo']; ?>" >
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <div class="col-xs-12 col-lg-6 col-lg-offset-3">
-                                                    <label class="control-label col-xs-4 col-sm-3">Documento:</label>
+                                                    <label class="control-label col-xs-4 col-sm-3">Fecha entrada:</label>
                                                     <div class="col-xs-8 col-sm-9">
-                                                        <input type="text" class="form-control"  value="<?php echo $users['tipo_doc']; ?>" name="tipo_doc">
+                                                        <input type="text" class="form-control"  value="<?php echo $mant['fecha_entrada']; ?>" name="fecha_entrada">
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <div class="col-xs-12 col-lg-6 col-lg-offset-3">
-                                                    <label class="control-label col-xs-4 col-sm-3">Nro documento:</label>
+                                                    <label class="control-label col-xs-4 col-sm-3">Fecha salida:</label>
                                                     <div class="col-xs-8 col-sm-9">
-                                                        <input type="text" class="form-control"  value="<?php echo $users['num_doc']; ?>" name="num_doc">
+                                                        <input type="text" class="form-control"  value="<?php echo $mant['fecha_salida']; ?>" name="fecha_salida">
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <div class="col-xs-12 col-lg-6 col-lg-offset-3">
-                                                    <label class="control-label col-xs-4 col-sm-3">Nacimiento:</label>
+                                                    <label class="control-label col-xs-4 col-sm-3">Km:</label>
                                                     <div class="col-xs-8 col-sm-9">
-                                                        <input type="text" class="form-control"  value="<?php echo $users['fecha_nacimiento']; ?>" name="fecha_nacimiento">
+                                                        <input type="text" class="form-control"  value="<?php echo $mant['km_unidad']; ?>" name="km_unidad">
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <div class="col-xs-12 col-lg-6 col-lg-offset-3">
-                                                    <div class="control-label col-xs-4 col-sm-3">
-                                                        <label for="sel1 ">Rol</label>
-                                                    </div>
+                                                    <label class="control-label col-xs-4 col-sm-3">Costo:</label>
                                                     <div class="col-xs-8 col-sm-9">
-                                                        <select class="form-control" id="sel1" name="rol">
-                                                            <option value="<?php echo $users['rol']; ?>" selected><?php echo $users['rol']; ?></option>
-                                                            <option value="chofer">chofer</option>
-                                                            <option value="admin'">admin</option>
-                                                            <option value="supervisor">supervisor</option>
-                                                            <option value="mecanico">mecanico</option>
+                                                        <input type="text" class="form-control"  value="<?php echo $mant['costo']; ?>" name="costo">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-xs-12 col-lg-6 col-lg-offset-3">
+                                                    <label class="control-label col-xs-4 col-sm-3">Externo:</label>
+                                                    <div class="col-xs-8 col-sm-9">
+                                                        <select class="form-control" id="externo" name="externo">
+                                                            <option value="si">si</option>
+                                                            <option value="no">no</option>
                                                         </select>
                                                     </div>
                                                 </div>
-                                            </div>    
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-xs-12 col-lg-6 col-lg-offset-3">
+                                                    <label class="control-label col-xs-4 col-sm-3">Repuestos:</label>
+                                                    <div class="col-xs-8 col-sm-9">
+                                                        <input type="text" class="form-control"  value="<?php echo $mant['repuestos']; ?>" name="repuestos">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                             
                                             <tr>
                                                 <td colspan="3" class="text-center">
-                                                    <a href="vista_usuarios.php" class="btn btn-danger">Volver</a>
+                                                    <a href="vista_mantenimientos.php" class="btn btn-danger">Volver</a>
                                                     <input type="submit" value="Modificar" class="btn btn-primary">
                                                 </td>
                                             </tr>

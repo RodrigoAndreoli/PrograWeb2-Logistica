@@ -43,14 +43,9 @@
                                     <form action="bdCliente.php" method="post" class="form-horizontal">
                                         <table class="table table-striped  table-condensed table-hover">
                                             <?php foreach($cliente as $clientes){ ?>
-                                            <div class="form-group">
-                                                <div class="col-xs-12 col-lg-6 col-lg-offset-3">
-                                                    <label class="control-label col-xs-4 col-sm-3">IdCliente:</label>
-                                                    <div class="col-xs-8 col-sm-9">
-                                                        <input type="text" class="form-control"  placeholder="<?php echo $clientes['idCliente']; ?>" name="idCliente" readonly="readonly">
-                                                    </div>
-                                                </div>
-                                            </div>
+                                          
+                                                        <input type="hidden" class="form-control"  placeholder="<?php echo $clientes['idCliente']; ?>" name="idCliente" readonly="readonly">
+                                             
                                             <div class="form-group">
                                                 <div class="col-xs-12 col-lg-6 col-lg-offset-3">
                                                     <label class="control-label col-xs-4 col-sm-3">Cuit:</label>
@@ -110,7 +105,7 @@
    
                                             <tr>
                                                 <td colspan="3" class="text-center">
-                                                    <a href="clientes.php" class="btn btn-danger">Volver</a>
+                                                    <a href="vista_clientes.php" class="btn btn-danger">Volver</a>
                                                     <input type="submit" value="Modificar" class="btn btn-primary">
                                                 </td>
                                             </tr>

@@ -41,5 +41,5 @@
             break;
     }
     $obj -> insertar($sql);
-    header("Location: vehiculos.php"); 
+    header("Location: vista_vehiculos.php"); 
 ?>

@@ -2,16 +2,15 @@
 <html lang="es">
 
 <head>
-    <title>Presupuestos</title>
+    <title>Viajes</title>
     <?php 
         require_once($_SERVER['DOCUMENT_ROOT'].'/resources/config.php');
         $miSession = new Sesion();
         $miSession -> iniciarSesion();
-        $miSession -> permisos();
-        
+        //$miSession -> permisos();
+    
         $obj = new controlDB();
-        include $LIBRARY_PATH.'/presupuestos_pag.php';
-        
+        include $LIBRARY_PATH.'/viajes_pag.php';
     ?>
 </head>
 
@@ -33,7 +32,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col">
-                                    <h1>Zona de Presupuestos</h1>
+                                    <h1>Zona de Viajes</h1>
                                     <hr/>
                                 </div>
                             </div>
@@ -44,29 +43,36 @@
                                     <div class="table-responsive">
                                         <table class="table table-striped table-bordered table-condensed table-hover">
                                             <thead>
-                                                <th  class="text-center">Supervisor</th>
-                                                <th  class="text-center">Cliente</th>
                                                 <th  class="text-center">Origen</th>
                                                 <th  class="text-center">Destino</th>
-                                                <th  class="text-center">Estado</th>
-                                                <th  class="text-center">Aceptado</th>
-                                                <th>Costo</th>
-                                                <th>Operacion</th>
+                                                <th  class="text-center">Vehiculo</th>
+                                                <th  class="text-center">Fehca</th>
+                                                <th  class="text-center">Cliente</th>
+                                                <th  class="text-center">Chofer</th>
+                                                <th  class="text-center">Tiempo estimado</th>
+                                                <th  class="text-center">km estimado</th>
+                                                <th  class="text-center">Combustible previsto</th>
+                                                <th  class="text-center">Tipo carga</th>
+                                                <th  class="text-center">Km reales</th>
+                                                <th  class="text-center">Combustible real</th>
                                             </thead>
                                             <?php foreach($datos as $td){ ?>
                                             <tr>
-                                                <td><?php echo $td['nombre']; ?></td>
-                                                <td><?php echo $td['razon']; ?></td>
                                                 <td><?php echo $td['origen']; ?></td>
                                                 <td><?php echo $td['destino']; ?></td>
-                                                <td><?php echo $td['estado']; ?></td>
-                                                <td><?php echo $td['aceptado']; ?></td>
-                                                <td><?php echo $td['costo_real']; ?></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
                                                 <td class="text-center">
-                                                    <a href="editarPresupuesto.php?id=<?php echo $td["idPresupuesto"]?>" class="btn btn-info">Editar</button>
+                                                    <a href="#" class="btn btn-info">Editar</button>
                                                     </a>
-                                                     <a href="bdPresupuestos.php?id=<?php echo $td["idPresupuesto"]?>&funcion=eliminar"> 
-                                                        <button class="btn btn-danger">Eliminar</button>
+                                                    <a href="#" class="btn btn-danger">Eliminar</button>
                                                     </a>
                                                 </td>
                                             </tr>
@@ -78,22 +84,17 @@
                         </div>
                         <div class="row">
                             <div class="col">
-                                <?php
-                                    for($i = 1; $i <= $total_paginas; $i++){
-                                    echo "<ul class='pagination'>
-                                        <li><a href='?pagina=".$i."'>".$i."</a></li>
-                                    </ul>";}
-                                ?>   
+                               <p>ACA PAGINACION</p>   
                             </div>
                         </div>
                         <div class="row">
                                 <div class="col">
-                                    <a href="resgistrarPresupuesto.php" class="btn btn-primary">Nuevo Presupuesto</a>
+                                    <a href="#" class="btn btn-primary">Nuevo viaje</a>
                                 </div>
                         </div>
                         <div class="row">
                             <a href="#">
-                                <button class="btn btn-link">Exportar a PDF</button>
+                                <button class="btn btn-link" target="_blank">Exportar a PDF</button>
                             </a>
                         </div>
                     </div>

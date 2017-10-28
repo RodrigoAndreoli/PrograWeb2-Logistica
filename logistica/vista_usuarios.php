@@ -2,16 +2,15 @@
 <html lang="es">
 
 <head>
-    <title>Presupuestos</title>
+    <title>Usuarios</title>
     <?php 
         require_once($_SERVER['DOCUMENT_ROOT'].'/resources/config.php');
         $miSession = new Sesion();
         $miSession -> iniciarSesion();
         $miSession -> permisos();
-        
+    
         $obj = new controlDB();
-        include $LIBRARY_PATH.'/presupuestos_pag.php';
-        
+        include $LIBRARY_PATH.'/usuarios_pag.php';
     ?>
 </head>
 
@@ -33,7 +32,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col">
-                                    <h1>Zona de Presupuestos</h1>
+                                    <h1>Zona de Usuarios</h1>
                                     <hr/>
                                 </div>
                             </div>
@@ -44,28 +43,25 @@
                                     <div class="table-responsive">
                                         <table class="table table-striped table-bordered table-condensed table-hover">
                                             <thead>
-                                                <th  class="text-center">Supervisor</th>
-                                                <th  class="text-center">Cliente</th>
-                                                <th  class="text-center">Origen</th>
-                                                <th  class="text-center">Destino</th>
-                                                <th  class="text-center">Estado</th>
-                                                <th  class="text-center">Aceptado</th>
-                                                <th>Costo</th>
-                                                <th>Operacion</th>
+                                                <th  class="text-center">Nombre</th>
+                                                <th  class="text-center">Documento</th>
+                                                <th  class="text-center">Nro documento</th>
+                                                <th  class="text-center">Nacimiento</th>
+                                                <th  class="text-center">Rol</th>
+                                                <th  class="text-center">Operacion</th>
                                             </thead>
                                             <?php foreach($datos as $td){ ?>
                                             <tr>
                                                 <td><?php echo $td['nombre']; ?></td>
-                                                <td><?php echo $td['razon']; ?></td>
-                                                <td><?php echo $td['origen']; ?></td>
-                                                <td><?php echo $td['destino']; ?></td>
-                                                <td><?php echo $td['estado']; ?></td>
-                                                <td><?php echo $td['aceptado']; ?></td>
-                                                <td><?php echo $td['costo_real']; ?></td>
+                                                <td><?php echo $td['tipo_doc']; ?></td>
+                                                <td><?php echo $td['num_doc']; ?></td>
+                                                <td><?php echo $td['fecha_nacimiento']; ?></td>
+                                                <td><?php echo $td['rol']; ?></td>
                                                 <td class="text-center">
-                                                    <a href="editarPresupuesto.php?id=<?php echo $td["idPresupuesto"]?>" class="btn btn-info">Editar</button>
+                                                    <a href="editarUser.php?id=<?php echo $td["idUsuario"]?>">
+                                                        <button class="btn btn-info">Editar</button>
                                                     </a>
-                                                     <a href="bdPresupuestos.php?id=<?php echo $td["idPresupuesto"]?>&funcion=eliminar"> 
+                                                    <a href="bdUser.php?id=<?php echo $td["idUsuario"]?>&funcion=eliminar"> 
                                                         <button class="btn btn-danger">Eliminar</button>
                                                     </a>
                                                 </td>
@@ -83,17 +79,17 @@
                                     echo "<ul class='pagination'>
                                         <li><a href='?pagina=".$i."'>".$i."</a></li>
                                     </ul>";}
-                                ?>   
+                                ?>    
                             </div>
                         </div>
                         <div class="row">
                                 <div class="col">
-                                    <a href="resgistrarPresupuesto.php" class="btn btn-primary">Nuevo Presupuesto</a>
+                                    <a href="registrarUser.php" class="btn btn-primary">Nuevo usuario</a>
                                 </div>
                         </div>
                         <div class="row">
-                            <a href="#">
-                                <button class="btn btn-link">Exportar a PDF</button>
+                            <a href="/logistica/exportarUser.php" target="_blank">
+                                <button class="btn btn-link" target="_blank">Exportar a PDF</button>
                             </a>
                         </div>
                     </div>

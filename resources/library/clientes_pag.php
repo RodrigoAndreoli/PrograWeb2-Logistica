@@ -1,6 +1,6 @@
 <?php
         /*-------------Paginacion-------------------*/
-        $tamagno_paginas = 7; //Cuantos registros x pag
+        $tamagno_paginas = 6; //Cuantos registros x pag
         if(isset($_GET['pagina'])) {
             $pag = $_GET['pagina'];
         } else {

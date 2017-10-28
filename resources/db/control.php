@@ -34,13 +34,18 @@
         $result = $stmt->get_result();
         //array vacio
         $data=null;
-        //capturar la info,fecth captura datos fila por fila y almacena con el indice de la tabla el nombre, fethc row no trae el nombre del campo
+        //capturar la info,fecth captura datos fila por fila y almacena con el indice de la tabla, el nombre, fethc row no trae el nombre del campo
         while($fila=$result->fetch_assoc()){
             $data[]=$fila;
         }
         return $data;
         }
-        
+        /*
+            ejemplo:
+            $obj = new controlDB();
+            $obj->consultar("select * from cliente"); obj conexion, y
+            la consulta 
+        */
         
         /*---------------------INSERTAR-----------------------------*/
         //Esta funcion se encarga de los insert, delete, update, etc.
@@ -53,7 +58,7 @@
             if(mysqli_affected_rows($this->con)<=0){
                 echo "No se pudo realizar la operacion";
             }else{
-                echo "Se realizaron los cambios";
+                echo "Se realizaron los cambios";  
             }
         }
         

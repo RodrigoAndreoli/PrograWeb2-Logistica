@@ -77,7 +77,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <a href="vehiculos.php" class="btn btn-danger btn-lg">Volver</a>
+                                        <a href="vista_vehiculos.php" class="btn btn-danger btn-lg">Volver</a>
                                         <button type="submit" class="btn btn-primary btn-lg">Crear</button>
                                     </div>
                                 </table>

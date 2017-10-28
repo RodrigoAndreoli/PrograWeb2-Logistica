@@ -25,18 +25,22 @@
             }*/
             switch ($rol) {
                 case 'chofer':
-                    header('Location: viajes.php');
+                    header('Location: vista_viajes.php');
                    break;
                 case 'admin':
-                    header('Location: viajes.php');
-                    header('Location: vehiculos.php');
-                    header('Location: clientes.php');
-                    header('Location: mantenimientoReparacion.php');
+                    header('Location: vista_viajes.php');
+                    header('Location: vista_vehiculos.php');
+                    header('Location: vista_clientes.php');
+                    header('Location: vista_mantenimientos.php');
+                    header('Location: graficos.php');
+                    header('Location: service.php');
                     break;
                 case 'mecanico':
-                    header('Location: viajes.php');
-                    header('Location: vehiculos.php');
-                    header('Location: mantenimientoReparacion.php');
+                    header('Location: vista_viajes.php');
+                    header('Location: vista_vehiculos.php');
+                    header('Location: vista_mantenimientos.php');
+                    header('Location: graficos.php');
+                    header('Location: service.php');
                     break;
             }
         }
