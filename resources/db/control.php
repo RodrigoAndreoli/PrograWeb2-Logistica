@@ -55,8 +55,8 @@
             mysqli_stmt_execute($stmt); 
             //validar cuando se inserta,columnas afectadas
             //if si no hay cambios en la tabla
-            if(mysqli_affected_rows($this->con)<=0){
-                echo "No se pudo realizar la operacion";
+           if(mysqli_affected_rows($this->con)<=0){
+               echo "No se pudo realizar la operacion";
             }else{
                 echo "Se realizaron los cambios";  
             }

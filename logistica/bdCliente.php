@@ -39,5 +39,6 @@
             break;
     }
     $obj -> insertar($sql);
-    header("Location: clientes.php"); 
+    header("Location: vista_clientes.php");
+
 ?>

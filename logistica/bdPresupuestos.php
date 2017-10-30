@@ -46,5 +46,4 @@
     }  
     $obj -> insertar($sql);
     header("Location: presupuestos.php");
-
 ?>

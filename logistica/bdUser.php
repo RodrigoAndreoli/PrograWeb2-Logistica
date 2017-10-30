@@ -42,7 +42,9 @@
        $sql = "INSERT INTO usuario(nombre,password,num_doc,tipo_doc,rol,fecha_nacimiento)
        VALUES('$nomb','$clave_md5','$doc','$tipo','$rol','$fecha')";
     }  
-    $obj -> insertar($sql);
-    header("Location: usuarios.php");
 
+    $obj -> insertar($sql);
+    header("Location: vista_usuarios.php");  
+
+    
 ?>

@@ -1,12 +1,9 @@
-drop database if exists logistica;
-create database logistica;
-use logistica;
 -- phpMyAdmin SQL Dump
 -- version 4.6.4
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-10-2017 a las 21:02:20
+-- Tiempo de generación: 27-10-2017 a las 19:00:25
 -- Versión del servidor: 5.7.14
 -- Versión de PHP: 5.6.25
 
@@ -78,7 +75,7 @@ INSERT INTO `mantenimiento` (`idMantenimiento`, `idVehiculo`, `idMecanico`, `tip
 (2, 1, 9, 'camion', '2017-08-11', '2017-08-15', 3080, '1000.00', 'no', 'Cubiertas, Electroinyector'),
 (3, 4, 11, 'camion', '2017-07-10', '2017-07-15', 18000, '8000.00', 'no', 'Juego Espejos, burro de arranque.'),
 (4, 6, 11, 'camion', '2016-04-15', '2016-07-15', 20050, '16000.00', 'si', 'Embrague Ventilador'),
-(5, 2, 9, 'acoplado', '2016-04-15', '2016-07-16', 24000, '80000.00', 'si', 'Eje Acople, corona');
+(5, 2, 9, 'acoplado-B', '2016-04-15', '2016-07-16', 24000, '80000.00', 'si', 'Eje Acople, corona');
 
 -- --------------------------------------------------------
 
@@ -103,10 +100,9 @@ CREATE TABLE `presupuesto` (
 -- Volcado de datos para la tabla `presupuesto`
 --
 
-INSERT INTO `presupuesto` (`idPresupuesto`, `idCliente`, `idUsuario`, `idViaje`, `tiempo_estimado`, `km_previstos`, `combustible_previsto`, `costo_real`, `aceptado`, `estado`) VALUES
-(1, 1, 3, 1, '02:00:00', 435, 40, '5000.00', 'si', 'en curso'),
-(2, 1, 13, 2, '07:00:00', 300, 30, '4000.00', 'si', 'finalizado'),
-(4, 4, 1, 3, '01:00:00', 0, 0, '1.00', 'si', 'finalizado');
+INSERT INTO `presupuesto` (`idPresupuesto`, `idCliente`, `idUsuario`,`idViaje`, `tiempo_estimado`, `km_previstos`, `combustible_previsto`, `costo_real`, `aceptado`, `estado`) VALUES
+(1, 1, 3,1, '02:00:00', 435, 40, '5000.00', 'si', 'en curso'),
+(2, 1, 13,2, '07:00:00', 300, 30, '4000.00', 'si', 'finalizado');
 
 -- --------------------------------------------------------
 
@@ -137,7 +133,7 @@ CREATE TABLE `reporte_viaje` (
   `idChofer` int(11) DEFAULT NULL,
   `desvios` varchar(45) COLLATE utf8_spanish2_ci DEFAULT NULL,
   `km` int(11) DEFAULT NULL,
-  `tiempo` time DEFAULT NULL,
+  `tiempo` varchar(45) COLLATE utf8_spanish2_ci DEFAULT NULL,
   `combustible` int(11) DEFAULT NULL,
   `paradas` varchar(45) COLLATE utf8_spanish2_ci DEFAULT NULL,
   `latitud` varchar(45) COLLATE utf8_spanish2_ci DEFAULT NULL,
@@ -221,13 +217,6 @@ CREATE TABLE `vehiculo_chofer_viaje` (
   `idVehiculo` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
---
--- Volcado de datos para la tabla `vehiculo_chofer_viaje`
---
-
-INSERT INTO `vehiculo_chofer_viaje` (`idChofer`, `idViaje`, `idVehiculo`) VALUES
-(4, 1, 1);
-
 -- --------------------------------------------------------
 
 --
@@ -236,6 +225,7 @@ INSERT INTO `vehiculo_chofer_viaje` (`idChofer`, `idViaje`, `idVehiculo`) VALUES
 
 CREATE TABLE `viaje` (
   `idViaje` int(11) NOT NULL,
+  `idPresupuesto` int(11) DEFAULT NULL,
   `idCliente` int(11) DEFAULT NULL,
   `fecha` datetime DEFAULT NULL,
   `origen` varchar(45) COLLATE utf8_spanish2_ci DEFAULT NULL,
@@ -252,10 +242,10 @@ CREATE TABLE `viaje` (
 -- Volcado de datos para la tabla `viaje`
 --
 
-INSERT INTO `viaje` (`idViaje`, `idCliente`, `fecha`, `origen`, `destino`, `tipo_carga`, `tiempo`, `combustible`, `km_totales`, `latitud`, `longitud`) VALUES
-(1, 1, '2017-11-22 10:00:00', 'Logistica S.A.', 'Lujan Bs As', 'Sustancias y objetos peligrosos varios', 2, 2, 120, NULL, NULL),
-(2, 1, '2017-10-24 09:00:00', 'Logistica S.A.', 'Cordoba', 'Material radiactivo', 7, 52, 740, NULL, NULL),
-(3, 2, '2017-10-27 10:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `viaje` (`idViaje`, `idPresupuesto`, `idCliente`, `fecha`, `origen`, `destino`, `tipo_carga`, `tiempo`, `combustible`, `km_totales`, `latitud`, `longitud`) VALUES
+(1, 1, 1, '2017-11-22 10:00:00', 'Logistica S.A.', 'Lujan Bs As', 'Sustancias y objetos peligrosos varios', 2, 2, 120, NULL, NULL),
+(2, 2, 1, '2017-10-24 09:00:00', 'Logistica S.A.', 'Cordoba', 'Material radiactivo', 7, 52, 740, NULL, NULL),
+(3, 5, 2, '2017-10-27 10:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 --
 -- Índices para tablas volcadas
@@ -326,6 +316,7 @@ ALTER TABLE `vehiculo_chofer_viaje`
 --
 ALTER TABLE `viaje`
   ADD PRIMARY KEY (`idViaje`),
+  ADD KEY `fk_viaje_idPresupuesto` (`idPresupuesto`),
   ADD KEY `fk_viaje_cliente` (`idCliente`);
 
 --
@@ -341,12 +332,12 @@ ALTER TABLE `cliente`
 -- AUTO_INCREMENT de la tabla `mantenimiento`
 --
 ALTER TABLE `mantenimiento`
-  MODIFY `idMantenimiento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idMantenimiento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT de la tabla `presupuesto`
 --
 ALTER TABLE `presupuesto`
-  MODIFY `idPresupuesto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `idPresupuesto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT de la tabla `reporte_mantenimiento`
 --
