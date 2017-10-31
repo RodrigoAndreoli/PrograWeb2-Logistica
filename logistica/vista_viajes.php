@@ -43,36 +43,40 @@
                                     <div class="table-responsive">
                                         <table class="table table-striped table-bordered table-condensed table-hover">
                                             <thead>
+                                                <th  class="text-center">idViaje</th>
+                                                <th  class="text-center">Fecha</th>
                                                 <th  class="text-center">Origen</th>
                                                 <th  class="text-center">Destino</th>
-                                                <th  class="text-center">Vehiculo</th>
-                                                <th  class="text-center">Fehca</th>
-                                                <th  class="text-center">Cliente</th>
-                                                <th  class="text-center">Chofer</th>
+                                                <th  class="text-center">Tipo de Carga</th>
                                                 <th  class="text-center">Tiempo estimado</th>
+                                                <th  class="text-center">Combustible</th>
                                                 <th  class="text-center">km estimado</th>
                                                 <th  class="text-center">Combustible previsto</th>
                                                 <th  class="text-center">Tipo carga</th>
                                                 <th  class="text-center">Km reales</th>
                                                 <th  class="text-center">Combustible real</th>
+												<th  class="text-center">Edicion</th>
                                             </thead>
                                             <?php foreach($datos as $td){ ?>
                                             <tr>
+                                                <td><?php echo $td['idViaje']; ?></td>
+                                                <td><?php echo $td['fecha']; ?></td>
                                                 <td><?php echo $td['origen']; ?></td>
                                                 <td><?php echo $td['destino']; ?></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td><?php echo $td['tipo_carga']; ?></td>
+                                                <td><?php echo $td['tiempo']; ?></td>
+                                                <td><?php echo $td['combustible']; ?></td>
+                                                <td><?php echo $td['km_totales']; ?></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
                                                 <td class="text-center">
-                                                    <a href="#" class="btn btn-info">Editar</button>
+                                                    <a href="asignarViaje.php?id=<?php echo $td["idViaje"]?>">
+                                                        <button class="btn btn-info">Asignar</button>
                                                     </a>
-                                                    <a href="#" class="btn btn-danger">Eliminar</button>
+                                                    <a href="bdViajes.php?id=<?php echo $td["idViaje"]?>&funcion=eliminar"> 
+                                                        <button class="btn btn-danger">Eliminar</button>
                                                     </a>
                                                 </td>
                                             </tr>
@@ -84,12 +88,17 @@
                         </div>
                         <div class="row">
                             <div class="col">
-                               <p>ACA PAGINACION</p>   
+                               <?php
+                                    for($i = 1; $i <= $total_paginas; $i++){
+                                    echo "<ul class='pagination'>
+                                        <li><a href='?pagina=".$i."'>".$i."</a></li>
+                                    </ul>";}
+                                ?>   
                             </div>
                         </div>
                         <div class="row">
                                 <div class="col">
-                                    <a href="#" class="btn btn-primary">Nuevo viaje</a>
+                                    <a href="registrarViaje.php" class="btn btn-primary">Nuevo viaje</a>
                                 </div>
                         </div>
                         <div class="row">
