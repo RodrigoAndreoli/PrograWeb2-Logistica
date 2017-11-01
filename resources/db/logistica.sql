@@ -63,6 +63,9 @@ CREATE TABLE `mantenimiento` (
   `km_unidad` int(11) DEFAULT NULL,
   `costo` decimal(12,2) DEFAULT NULL,
   `externo` enum('si','no') CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL DEFAULT 'no',
+  `cambio_aceite` enum('si','no') CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL DEFAULT 'no',
+  `filtro_aire` enum('si','no') CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL DEFAULT 'no',
+  `direccion` enum('si','no') CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL DEFAULT 'no',
   `repuestos` varchar(80) COLLATE utf8_spanish2_ci DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
