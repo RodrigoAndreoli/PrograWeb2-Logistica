@@ -38,7 +38,7 @@
                 <a href='vista_viajes.php'><i>Reportes</i></a>
             </li>
             <li>
-                <a href='#'><i>Alarmas</i></a>
+                <a href='alarmas.php'><i>Alarmas</i></a>
             </li>
         </ul>
         <?php } ?>

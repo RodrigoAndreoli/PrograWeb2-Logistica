@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-10-2017 a las 19:00:25
+-- Tiempo de generación: 04-11-2017 a las 00:33:36
 -- Versión del servidor: 5.7.14
 -- Versión de PHP: 5.6.25
 
@@ -73,12 +73,12 @@ CREATE TABLE `mantenimiento` (
 -- Volcado de datos para la tabla `mantenimiento`
 --
 
-INSERT INTO `mantenimiento` (`idMantenimiento`, `idVehiculo`, `idMecanico`, `tipo_vehiculo`, `fecha_entrada`, `fecha_salida`, `km_unidad`, `costo`, `externo`, `repuestos`) VALUES
-(1, 1, 9, 'camion', '2017-01-15', '2017-07-15', 2900, '8000.00', 'no', 'Faro Giro, paragolpes'),
-(2, 1, 9, 'camion', '2017-08-11', '2017-08-15', 3080, '1000.00', 'no', 'Cubiertas, Electroinyector'),
-(3, 4, 11, 'camion', '2017-07-10', '2017-07-15', 18000, '8000.00', 'no', 'Juego Espejos, burro de arranque.'),
-(4, 6, 11, 'camion', '2016-04-15', '2016-07-15', 20050, '16000.00', 'si', 'Embrague Ventilador'),
-(5, 2, 9, 'acoplado-B', '2016-04-15', '2016-07-16', 24000, '80000.00', 'si', 'Eje Acople, corona');
+INSERT INTO `mantenimiento` (`idMantenimiento`, `idVehiculo`, `idMecanico`, `tipo_vehiculo`, `fecha_entrada`, `fecha_salida`, `km_unidad`, `costo`, `externo`, `cambio_aceite`, `filtro_aire`, `direccion`, `repuestos`) VALUES
+(1, 1, 9, 'camion', '2017-01-15', '2017-07-15', 3080, '8000.00', 'no', 'si', 'si', 'no', 'Faro Giro, paragolpes'),
+(2, 1, 9, 'camion', '2017-08-11', '2017-08-15', 3080, '1000.00', 'no', 'si', 'si', 'no', 'Cubiertas, Electroinyector'),
+(3, 4, 11, 'camion', '2017-07-10', '2017-07-15', 18000, '8000.00', 'no', 'no', 'no', 'no', 'Juego Espejos, burro de arranque.'),
+(4, 6, 11, 'camion', '2016-04-15', '2016-07-15', 20050, '16000.00', 'si', 'si', 'no', 'no', 'Embrague Ventilador'),
+(5, 2, 9, 'acoplado-B', '2016-04-15', '2016-07-16', 24000, '80000.00', 'si', 'no', 'no', 'no', 'Eje Acople, corona');
 
 -- --------------------------------------------------------
 
@@ -103,9 +103,9 @@ CREATE TABLE `presupuesto` (
 -- Volcado de datos para la tabla `presupuesto`
 --
 
-INSERT INTO `presupuesto` (`idPresupuesto`, `idCliente`, `idUsuario`,`idViaje`, `tiempo_estimado`, `km_previstos`, `combustible_previsto`, `costo_real`, `aceptado`, `estado`) VALUES
-(1, 1, 3,1, '02:00:00', 435, 40, '5000.00', 'si', 'en curso'),
-(2, 1, 13,2, '07:00:00', 300, 30, '4000.00', 'si', 'finalizado');
+INSERT INTO `presupuesto` (`idPresupuesto`, `idCliente`, `idUsuario`, `idViaje`, `tiempo_estimado`, `km_previstos`, `combustible_previsto`, `costo_real`, `aceptado`, `estado`) VALUES
+(1, 1, 3, 1, '02:00:00', 435, 40, '5000.00', 'si', 'en curso'),
+(2, 2, 1, 3, '05:00:00', 300, 30, '1000.00', 'si', 'finalizado');
 
 -- --------------------------------------------------------
 
@@ -136,9 +136,9 @@ CREATE TABLE `reporte_viaje` (
   `idChofer` int(11) DEFAULT NULL,
   `desvios` varchar(45) COLLATE utf8_spanish2_ci DEFAULT NULL,
   `km` int(11) DEFAULT NULL,
-  `tiempo` varchar(45) COLLATE utf8_spanish2_ci DEFAULT NULL,
+  `tiempo` time DEFAULT NULL,
   `combustible` int(11) DEFAULT NULL,
-  `paradas` varchar(45) COLLATE utf8_spanish2_ci DEFAULT NULL,
+  `paradas` varchar(80) COLLATE utf8_spanish2_ci DEFAULT NULL,
   `latitud` varchar(45) COLLATE utf8_spanish2_ci DEFAULT NULL,
   `longitud` varchar(45) COLLATE utf8_spanish2_ci DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
@@ -350,7 +350,7 @@ ALTER TABLE `reporte_mantenimiento`
 -- AUTO_INCREMENT de la tabla `reporte_viaje`
 --
 ALTER TABLE `reporte_viaje`
-  MODIFY `idReporteViaje` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idReporteViaje` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --

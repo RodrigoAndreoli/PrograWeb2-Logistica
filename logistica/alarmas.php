@@ -7,6 +7,14 @@
         require_once($_SERVER['DOCUMENT_ROOT'].'/resources/config.php');
         $miSession = new Sesion();
         $miSession -> iniciarSesion();
+        
+        $nombreUsuario = $_SESSION['usuario']; 
+        $rolUsuario = $_SESSION['rol']; 
+    
+        $obj = new controlDB();
+        $usuario = $obj -> consultar("SELECT idUsuario FROM usuario where rol = '$rolUsuario' AND nombre = '$nombreUsuario'");
+        $viajes = $obj -> consultar("SELECT idViaje FROM viaje");
+        $vehiculos = $obj -> consultar("SELECT idVehiculo,patente FROM vehiculo");
     ?>
     <script src="https://maps.google.com/maps/api/js?key=AIzaSyAiq3xISXSZYgkd9GDAOdajy4NK2d3L7dY"></script>
     <style> #map { width: 100%; height: 200px; } </style> 
@@ -73,17 +81,83 @@
                             <div id="map"></div> 
                             <br>
                             <button onclick="localize()" class="btn btn-success">click</button>
+                            <p class="text-muted">obtener la posicion.</p>
                         </div>
                         </div>
                         <br>
                         <div class="row">
-                           <div class="col-xs-12 .col-md-6">
-                                <form action="">
-                                <input type="text" id="lat">
-                                <input type="text" id="long">
-                                <p>FORM CON EL REPORTE DE VIAJE, cambiar la key por una nuestra</p>
-                                </form>
-                           </div>
+                            <div class="col-xs-12 .col-md-6">
+                            <form action="bdAlarma.php" method="post">
+                                <table class="table">
+                                    <?php foreach($usuario as $usr){ ?>
+                                        <input type="hidden" name="idUsuario" value="<?php echo $usr['idUsuario']; ?>" readonly>
+                                    <?php } ?>
+                                    <div class="col-xs-12 col-md-6">
+                                        <div class="form-group">
+                                            <label for="">Latitud</label>
+                                            <input type="text" class="form-control" name="latitud" id="lat" readonly>
+                                        </div>
+                                    </div>  
+                                    <div class="col-xs-12 col-md-6">  
+                                        <div class="form-group">
+                                            <label for="">Longitud</label>
+                                            <input type="text" class="form-control" name="longitud" id="long" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-6">  
+                                        <div class="form-group">
+                                                <select class="form-control" id="idViaje" name="idViaje">
+                                                    <option>Seleccione viaje</option>
+                                                    <?php foreach($viajes as $viaje){ ?>
+                                                        <option value="<?php echo $viaje['idViaje']?>"><?php echo $viaje['idViaje']?></option>
+                                                    <?php } ?>
+                                                </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-6">  
+                                        <div class="form-group">
+                                                <select class="form-control" id="idVehiculo" name="idVehiculo">
+                                                    <option>Seleccione vehiculo</option>
+                                                    <?php foreach($vehiculos as $vehiculo){ ?>
+                                                        <option value="<?php echo $vehiculo['idVehiculo']?>"><?php echo $vehiculo['patente']?></option>
+                                                    <?php } ?>
+                                                </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-6">
+                                             <div class="col-xs-12 col-md-12">  
+                                        <div class="form-group">
+                                            <label for="">Kilometros</label>
+                                            <input type="number" class="form-control" name="km">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-12">  
+                                        <div class="form-group">
+                                            <label for="">Combustible</label>
+                                            <input type="number" class="form-control" name="combustible">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-12">  
+                                        <div class="form-group">
+                                            <label for="">Tiempo</label>
+                                            <input type="text" class="form-control" name="tiempo" placeholder="00:00:00">
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-6">  
+                                        <textarea name="paradas" class="form-control col-xs-12" rows="9" placeholder="Descripcion..."></textarea>
+                                    </div>
+                                    <br>
+                                    <div class="col-xs-12 col-md-12">  
+                                        <br>
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-primary btn-lg">Crear</button>
+                                        </div>
+                                    </div>
+                                </table>
+                                <input type="hidden" name="funcion" value="insertar">
+                            </form>   
+                            </div>
                         </div>
                     </div>
                 </div>

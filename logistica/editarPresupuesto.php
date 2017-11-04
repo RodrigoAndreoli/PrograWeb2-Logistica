@@ -13,10 +13,14 @@
         $presupuestos = $obj -> consultar("SELECT * 
             FROM presupuesto 
             WHERE idPresupuesto = '$cod'");
-    
+        
+        $nombreUsuario = $_SESSION['usuario']; 
+        $rolUsuario = $_SESSION['rol'];  
+
         $clientes = $obj -> consultar("select idCliente,razon from cliente");
         $viajes = $obj -> consultar("SELECT idViaje FROM viaje");
-        $usuario = $obj -> consultar("SELECT u.idUsuario,u.nombre FROM usuario u JOIN presupuesto p ON p.idUsuario=u.idUsuario WHERE u.nombre = '".$_SESSION['usuario']."' AND u.rol= '".$_SESSION['rol']."' ");
+        $usuario = $obj -> consultar("SELECT u.idUsuario,u.nombre FROM usuario u  WHERE u.nombre = '$nombreUsuario' AND u.rol = '$rolUsuario'");
+      
     ?>
 </head>
 
@@ -49,10 +53,10 @@
                                           
                                             <?php foreach($presupuestos as $dato){ ?>
 
-                                           <?php foreach($usuario as $usr){ ?>
+                                            <?php foreach($usuario as $usr){ ?>
                                                 <input type="hidden" name="idUsuario" value="<?php echo $usr['idUsuario']; ?>">
                                             <?php } ?>
-                                            
+
                                             <div class="form-group">
                                                 <div class="col-xs-12 col-lg-6 col-lg-offset-3">
                                                     <label class="control-label col-xs-4 col-sm-3 cliente">Cliente:</label>

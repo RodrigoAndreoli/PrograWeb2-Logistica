@@ -15,6 +15,7 @@
         $idCliente = $_POST['idCliente'];
         $idUsuario = $_POST['idUsuario'];
         $idViaje = $_POST['idViaje'];
+        $cod = $_POST['cod'];
     }
     
     //Instancia de control
@@ -33,6 +34,7 @@
             idUsuario = '$idUsuario',
             idViaje = '$idViaje'
             WHERE idPresupuesto = '$cod'";
+           // print_r($sql);
     }
     
     //Eliminar de usuarios.php
