@@ -49,7 +49,7 @@
         <?php } ?>
         <?php if($_SESSION['rol']=='supervisor'){ ?>
         <li>
-            <a href='presupuestos.php' data-toggle='collapse' data-target='#presupuestos' class='collapsed active'>Presupuestos<span class='icon-wallet'></span></a>
+            <a href='vista_presupuestos.php' data-toggle='collapse' data-target='#presupuestos' class='collapsed active'>Presupuestos<span class='icon-wallet'></span></a>
         </li>
         <?php } ?>
     </ul>

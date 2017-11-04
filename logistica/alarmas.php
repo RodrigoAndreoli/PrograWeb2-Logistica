@@ -16,10 +16,10 @@
         $viajes = $obj -> consultar("SELECT idViaje FROM viaje");
         $vehiculos = $obj -> consultar("SELECT idVehiculo,patente FROM vehiculo");
     ?>
-    <script src="https://maps.google.com/maps/api/js?key=AIzaSyAiq3xISXSZYgkd9GDAOdajy4NK2d3L7dY"></script>
+    <script src="https://maps.google.com/maps/api/js?key=AIzaSyB9YfIPu98xke8YK2bH7eR30E-UKgP66X4"></script>
     <style> #map { width: 100%; height: 200px; } </style> 
     <script>
-        
+
     function localize() { 
         if (navigator.geolocation) { 
         navigator.geolocation.getCurrentPosition(mapa,error); 
@@ -81,7 +81,7 @@
                             <div id="map"></div> 
                             <br>
                             <button onclick="localize()" class="btn btn-success">click</button>
-                            <p class="text-muted">obtener la posicion.</p>
+                            <p class="text-muted">Obtener coordenadas.</p>
                         </div>
                         </div>
                         <br>

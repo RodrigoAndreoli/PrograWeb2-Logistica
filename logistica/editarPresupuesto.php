@@ -138,7 +138,7 @@
                                             </div>    
                                             <tr>
                                                 <td colspan="3" class="text-center">
-                                                    <a href="presupuestos.php" class="btn btn-danger">Volver</a>
+                                                    <a href="vista_presupuestos.php" class="btn btn-danger">Volver</a>
                                                     <input type="submit" value="Modificar" class="btn btn-primary">
                                                 </td>
                                             </tr>

@@ -69,7 +69,7 @@
                                     <div class="col-xs-6">
                                         <div class="form-group">
                                             <label for="">Año</label>
-                                            <input type="text" class="form-control" name="anio" placeholder="Año...">
+                                            <input type="text" class="form-control" name="anio" placeholder="2000">
                                         </div>
                                         <div class="form-group">
                                             <label for="">Kilometros</label>

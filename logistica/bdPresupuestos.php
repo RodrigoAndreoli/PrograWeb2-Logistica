@@ -47,5 +47,5 @@
        VALUES('$tiempo','$estado','$aceptado','$costo_real','$km_previstos','$combustible','$idCliente','$idUsuario','$idViaje')";
     }  
     $obj -> insertar($sql);
-    header("Location: presupuestos.php");
+    header("Location: vista_presupuestos.php");
 ?>

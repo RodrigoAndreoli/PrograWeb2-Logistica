@@ -42,6 +42,6 @@
        VALUES('$idVehiculo','$idMecanico','$tipo_vehiculo','$fecha_entrada','$fecha_salida','$km_unidad','$costo','$externo','$repuestos')";
     }  
     $obj -> insertar($sql);
-    header("Location: mantenimientoReparacion.php");
+    header("Location: vista_mantenimientos.php");
 
 ?>
