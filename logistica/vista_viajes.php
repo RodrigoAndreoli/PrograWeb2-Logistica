@@ -51,11 +51,11 @@
                                                 <th  class="text-center">Tiempo estimado</th>
                                                 <th  class="text-center">Combustible</th>
                                                 <th  class="text-center">km estimado</th>
-                                                <th  class="text-center">Combustible previsto</th>
+                                                <!--<th  class="text-center">Combustible previsto</th>
                                                 <th  class="text-center">Tipo carga</th>
                                                 <th  class="text-center">Km reales</th>
-                                                <th  class="text-center">Combustible real</th>
-												<th  class="text-center">Edicion</th>
+                                                <th  class="text-center">Combustible real</th>-->
+												<th  class="text-center" class="col-sm-6">Operacion</th>
                                             </thead>
                                             <?php foreach($datos as $td){ ?>
                                             <tr>
@@ -67,10 +67,10 @@
                                                 <td><?php echo $td['tiempo']; ?></td>
                                                 <td><?php echo $td['combustible']; ?></td>
                                                 <td><?php echo $td['km_totales']; ?></td>
+												<!--<td></td>
 												<td></td>
 												<td></td>
-												<td></td>
-												<td></td>
+												<td></td>-->
                                                 <td class="text-center">
                                                     <a href="asignarViaje.php?id=<?php echo $td["idViaje"]?>">
                                                         <button class="btn btn-info">Asignar</button>

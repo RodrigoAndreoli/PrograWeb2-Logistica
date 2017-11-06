@@ -31,10 +31,11 @@
                                     <h3>Registrar un nuevo viaje</h3>
                                 </div>
                             </div>
-                            <form action="bdViajes.php" method="post">
+                            <form action="bdViajes.php" method="GET">
                                 <table class="table">
                                     <div class="col-xs-6">
-                                        <div class="form-group">
+                                    
+										<div class="form-group">
                                             <label for="">Fecha</label>
                                             <input type="date" class="form-control" name="fecha" placeholder="dd/mm/aaaa">
                                         </div>
@@ -42,22 +43,22 @@
                                             <label for="">Origen</label>
                                             <input type="text" class="form-control" name="origen" placeholder="Origen...">
                                         </div>
+									</div>
+									<div class="col-xs-6">
 										<div class="form-group">
                                             <label for="">Destino</label>
                                             <input type="text" class="form-control" name="destino" placeholder="Destino...">
                                         </div>
-                                    </div>
-                                    <div class="col-xs-6">
-                                        <div class="form-group">
+										 <div class="form-group">
                                             <label for="">Tipo de Carga</label>
                                             <input type="text" class="form-control" name="carga" placeholder="Tipo de Carga...">
                                         </div>
-                                    </div>
-                                    <div class="form-group">
+								   </div>  
+                                </table>
+								<div class="form-group">
                                         <a href="vista_viajes.php" class="btn btn-danger btn-lg">Volver</a>
                                         <button type="submit" class="btn btn-primary btn-lg">Crear</button>
-                                    </div>
-                                </table>
+                                 </div>
                                 <input type="hidden" name="funcion" value="insertar">
                             </form>
                         </div>

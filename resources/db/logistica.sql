@@ -215,9 +215,11 @@ INSERT INTO `vehiculo` (`idVehiculo`, `tipo_vehiculo`, `patente`, `nro_chasis`, 
 --
 
 CREATE TABLE `vehiculo_chofer_viaje` (
-  `idChofer` int(11) NOT NULL,
+  `idChofer1` int(11) NOT NULL,
   `idViaje` int(11) NOT NULL,
-  `idVehiculo` int(11) NOT NULL
+  `idVehiculo1` int(11) NOT NULL,
+  `idChofer2` int(11) NOT NULL,
+  `idVehiculo2` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 -- --------------------------------------------------------
@@ -310,9 +312,9 @@ ALTER TABLE `vehiculo`
 -- Indices de la tabla `vehiculo_chofer_viaje`
 --
 ALTER TABLE `vehiculo_chofer_viaje`
-  ADD PRIMARY KEY (`idChofer`,`idViaje`,`idVehiculo`),
-  ADD KEY `fk_ternaria_viaje` (`idViaje`),
-  ADD KEY `fk_ternaria_Vehiculo` (`idVehiculo`);
+  ADD PRIMARY KEY (`idChofer`,`idViaje1`,`idVehiculo1`),
+  ADD KEY `fk_ternaria_viaje` (`idViaje1`),
+  ADD KEY `fk_ternaria_Vehiculo` (`idVehiculo1`);
 
 --
 -- Indices de la tabla `viaje`

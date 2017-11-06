@@ -43,7 +43,8 @@
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <div class="table-responsive">
-                                        <table class="table table-striped table-bordered table-condensed table-hover">
+                                        <form action="bdViajes.php" method="GET">
+										<table class="table table-striped table-bordered table-condensed table-hover">
                                             <tr>
                                                 <th  class="text-center">idViaje</th>
 												<th class="text-center">Chofer</th>
@@ -52,29 +53,50 @@
 											<tr>
 												<td> <?php echo $id ; ?></td>
 												
-												<td><select name="chofer"><?php foreach($datos as $td){ ?>
-													<option value="<?php echo $td['idUsuario'];?>"><?php echo $td['idUsuario'];?> </option>
+												<td><select name="chofer1" class="form-control" id="sel1"><?php foreach($datos as $td){ ?>
+													<option value="<?php echo $td['idUsuario'];?>"><?php echo $td['idUsuario']." - ".$td['nombre'];?> </option>
 												
 												<?php } ?>
 												</td>
 												
-												<td><select name="vehiculo"><?php foreach($datos2 as $td2){ ?>
-													<option value="<?php echo $td2['idVehiculo'];?>"><?php echo $td2['idVehiculo'];?></option> 
+												<td><select name="vehiculo1" class="form-control" id="sel1"><?php foreach($datos2 as $td2){ ?>
+													<option value="<?php echo $td2['idVehiculo'];?>"><?php echo $td2['idVehiculo']." - ".$td2['marca'];?></option> 
+												<?php } ?>
+												</td>
+												
+												
+											</tr>
+											
+											<tr>
+												<td> <?php echo $id ; ?></td>
+												
+												<td><select name="chofer2" class="form-control" id="sel1"><option value="0">N/A</option><?php foreach($datos as $td){ ?>
+													<option value="<?php echo $td['idUsuario'];?>"><?php echo $td['idUsuario']." - ".$td['nombre'];?> </option>
+												
+												<?php } ?>
+												</td>
+												
+												<td><select name="vehiculo2" class="form-control" id="sel1"><option value="0">N/A</option><?php foreach($datos2 as $td2){ ?>
+													<option value="<?php echo $td2['idVehiculo'];?>"><?php echo $td2['idVehiculo']." - ".$td2['marca'];?></option> 
 												<?php } ?>
 												</td>
 												
 												
 											</tr>
                                         
-                                        </table>    
+                                        </table> 
+										 <input type="hidden" name="id" value="<?php echo $id ; ?>">
+										 <input type="hidden" name="funcion" value="asignar">
+										 <div class="col"> 
+										<button type="submit" class="btn btn-primary">Guardar</button>
+										</div>
+									</form>
                                     </div>    
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                                <div class="col"> 
-                                <a href="bdViajes.php?idV=<?php echo $id ?>&idU=<?php echo $td['idUsuario']?>&idVe=<?php echo $td2['idVehiculo']?>&funcion=guardar" class="btn btn-primary">Guardar</a>
-                                </div>
+                                
                         </div>
                         <div class="row">
                             <a href="#">
