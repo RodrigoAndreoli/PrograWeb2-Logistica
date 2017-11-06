@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-    <title>Registrar Usuario</title>
+    <title>Registrar Viaje</title>
     <?php 
         require_once($_SERVER['DOCUMENT_ROOT'].'/resources/config.php');
         $miSession = new Sesion();
@@ -31,7 +31,7 @@
                                     <h3>Registrar un nuevo viaje</h3>
                                 </div>
                             </div>
-                            <form action="bdViajes.php" method="GET">
+                            <form action="bdViajes.php" method="POST">
                                 <table class="table">
                                     <div class="col-xs-6">
                                     

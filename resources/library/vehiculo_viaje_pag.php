@@ -8,7 +8,8 @@
     $empezar_desde = ($pag-1) * $tamagno_paginas;*/
 
     $datos = $obj -> consultar("SELECT idUsuario,nombre FROM usuario WHERE rol='chofer'");
-    $datos2 = $obj -> consultar("SELECT idVehiculo,marca FROM vehiculo"   ) ;
+    $datos2 = $obj -> consultar("SELECT idVehiculo,marca,patente FROM vehiculo"   ) ;
+    $datos3 = $obj -> consultar("SELECT idVehiculo,marca,patente FROM vehiculo where tipo_vehiculo like '%acoplado%'") ;
 
 
     /*$num_filas = count($obj->consultar("SELECT *

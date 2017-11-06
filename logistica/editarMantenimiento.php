@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-    <title>Editar Usuario</title>
+    <title>Editar Mantenimiento</title>
     <?php 
         require_once($_SERVER['DOCUMENT_ROOT'].'/resources/config.php');
         $miSession = new Sesion();
@@ -62,7 +62,7 @@
                                                 <div class="col-xs-12 col-lg-6 col-lg-offset-3">
                                                     <label class="control-label col-xs-4 col-sm-3">Fecha entrada:</label>
                                                     <div class="col-xs-8 col-sm-9">
-                                                        <input type="text" class="form-control"  value="<?php echo $mant['fecha_entrada']; ?>" name="fecha_entrada">
+                                                        <input type="date" class="form-control"  value="<?php echo $mant['fecha_entrada']; ?>" name="fecha_entrada">
                                                     </div>
                                                 </div>
                                             </div>
@@ -70,7 +70,7 @@
                                                 <div class="col-xs-12 col-lg-6 col-lg-offset-3">
                                                     <label class="control-label col-xs-4 col-sm-3">Fecha salida:</label>
                                                     <div class="col-xs-8 col-sm-9">
-                                                        <input type="text" class="form-control"  value="<?php echo $mant['fecha_salida']; ?>" name="fecha_salida">
+                                                        <input type="date" class="form-control"  value="<?php echo $mant['fecha_salida']; ?>" name="fecha_salida">
                                                     </div>
                                                 </div>
                                             </div>

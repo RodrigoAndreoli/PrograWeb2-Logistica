@@ -8,7 +8,6 @@
         $miSession = new Sesion();
         $miSession -> iniciarSesion();
         //$miSession -> permisos();
-    
         $obj = new controlDB();
         include $LIBRARY_PATH.'/viajes_pag.php';
     ?>
@@ -102,8 +101,8 @@
                                 </div>
                         </div>
                         <div class="row">
-                            <a href="#">
-                                <button class="btn btn-link" target="_blank">Exportar a PDF</button>
+                            <a href="exportarViaje.php" target="_blank">
+                                <button class="btn btn-link">Exportar a PDF</button>
                             </a>
                         </div>
                     </div>

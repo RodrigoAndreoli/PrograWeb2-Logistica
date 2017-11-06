@@ -1,4 +1,5 @@
 <?php
+
     require_once($_SERVER['DOCUMENT_ROOT'].'/resources/db/control.php');
     include($_SERVER['DOCUMENT_ROOT'].'/resources/templates/pdfPageL.php');
    
@@ -20,7 +21,7 @@
     $pdf -> Ln(10);
     $pdf->Cell(1);
    
-    $pdf->Cell(38,8,'Mecanico',1,0,'C',1);
+    $pdf->Cell(35,8,'Mecanico',1,0,'C',1);
     $pdf->Cell(38,8,'Patente',1,0,'C',1);
     $pdf->Cell(35,8,'Tipo vehiculo',1,0,'C',1);
     $pdf->Cell(38,8,'Fehca entrada',1,0,'C',1);
@@ -31,7 +32,7 @@
     $pdf->SetFont('Arial','',10);
     foreach($datos as $a) {
         $pdf->Cell(1);
-        $pdf->Cell(38,6,utf8_decode($a['nombre']),1,0,'C');
+        $pdf->Cell(35,6,utf8_decode($a['nombre']),1,0,'C');
         $pdf->Cell(38,6,$a['patente'],1,0,'C');
         $pdf->Cell(35,6,$a['tipo_vehiculo'],1,0,'C');
         $pdf->Cell(38,6,$a['fecha_entrada'],1,0,'C');

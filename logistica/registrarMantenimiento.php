@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-    <title>Registrar Usuario</title>
+    <title>Registrar Mantenimiento</title>
     <?php 
         require_once($_SERVER['DOCUMENT_ROOT'].'/resources/config.php');
         $miSession = new Sesion();
@@ -60,11 +60,11 @@
                                     <div class="col-xs-6">
                                         <div class="form-group">
                                             <label for="">Fecha entrada</label>
-                                            <input type="text" class="form-control" name="fecha_entrada" placeholder="2000-12-01">
+                                            <input type="date" class="form-control" name="fecha_entrada" placeholder="2000-12-01">
                                         </div>
                                         <div class="form-group">
                                             <label for="">Fecha_salida</label>
-                                            <input type="text" class="form-control" name="fecha_salida" placeholder="2000-12-01">
+                                            <input type="date" class="form-control" name="fecha_salida" placeholder="2000-12-01">
                                         </div>
                                     </div>
                                     <div class="col-xs-6">

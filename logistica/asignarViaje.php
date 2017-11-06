@@ -34,7 +34,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col">
-                                    <h1>Zona de Viajes</h1>
+                                    <h1>Asignar Viajes</h1>
                                     <hr/>
                                 </div>
                             </div>
@@ -43,7 +43,7 @@
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <div class="table-responsive">
-                                        <form action="bdViajes.php" method="GET">
+                                        <form action="bdVehiculoChoferViaje.php" method="POST">
 										<table class="table table-striped table-bordered table-condensed table-hover">
                                             <tr>
                                                 <th  class="text-center">idViaje</th>
@@ -60,7 +60,7 @@
 												</td>
 												
 												<td><select name="vehiculo1" class="form-control" id="sel1"><?php foreach($datos2 as $td2){ ?>
-													<option value="<?php echo $td2['idVehiculo'];?>"><?php echo $td2['idVehiculo']." - ".$td2['marca'];?></option> 
+													<option value="<?php echo $td2['idVehiculo'];?>"><?php echo $td2['patente']." - ".$td2['marca'];?></option> 
 												<?php } ?>
 												</td>
 												
@@ -76,8 +76,8 @@
 												<?php } ?>
 												</td>
 												
-												<td><select name="vehiculo2" class="form-control" id="sel1"><option value="0">N/A</option><?php foreach($datos2 as $td2){ ?>
-													<option value="<?php echo $td2['idVehiculo'];?>"><?php echo $td2['idVehiculo']." - ".$td2['marca'];?></option> 
+												<td><select name="vehiculo2" class="form-control" id="sel1"><option value="0">N/A</option><?php foreach($datos3 as $td3){ ?>
+													<option value="<?php echo $td3['idVehiculo'];?>"><?php echo $td3['patente']." - ".$td3['marca'];?></option> 
 												<?php } ?>
 												</td>
 												
@@ -99,9 +99,7 @@
                                 
                         </div>
                         <div class="row">
-                            <a href="#">
-                                <button class="btn btn-link" target="_blank">Exportar a PDF</button>
-                            </a>
+                         
                         </div>
                     </div>
                 </div>
