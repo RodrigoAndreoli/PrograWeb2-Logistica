@@ -48,17 +48,38 @@
         */
         
         /*---------------------INSERTAR-----------------------------*/
-        //Esta funcion se encarga de los insert, delete, update, etc.
+//        Esta funcion se encarga de los insert, delete, update, etc.
         function insertar($sql){
             //mysqli_query($this->con,$sql);
-            $stmt = mysqli_prepare($this->con, $sql); 
+            $stmt = mysqli_prepare($this->con, $sql);
             mysqli_stmt_execute($stmt); 
             //validar cuando se inserta,columnas afectadas
             //if si no hay cambios en la tabla
-           if(mysqli_affected_rows($this->con)<=0){
-               echo "No se pudo realizar la operacion";
-            }else{
-                echo "Se realizaron los cambios";  
+           if(mysqli_affected_rows($this->con)<=0) {
+            //   echo "No se pudo realizar la operaciontrue
+               return false;
+            } else {
+              //  echo "Se realizaron los cambios";  
+               return true;
+            }
+        }
+        
+        /*---------------------VALIDAR-----------------------------*/
+        function validstring ($valid) {
+            $regexstring = '/([A-Z]+[a-z]*)/';
+            if (preg_match($regexstring, $valid)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        
+        function validint ($valid) {
+            $regexint = '/([0-9]+)/';
+            if (preg_match($regexint, $valid)) {
+                return true;
+            } else {
+                return false;
             }
         }
         

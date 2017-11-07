@@ -5,7 +5,7 @@
     //Capturas los input hidden, request captura tanto get como post
     $funcion = $_REQUEST['funcion'];
     $id = $_REQUEST['id'];
-    
+
     //Al eliminar no me interesan los campos nombre y password y demas. Para evitar errores se pone un if
     if($funcion!="eliminar"){
         $nomb = $_POST['nombre'];
@@ -17,16 +17,27 @@
         $clave_md5 = md5($pass);
         $cod = $_POST['cod'];    
     }
-    
-    //Instancia de control
-    $obj = new controlDB();
-    
+
+//    //Instancia de validacion
+//    $vobj = new controlDB();
+//
+//    if($vobj -> validstring($nomb)) {
+//        if($vobj -> validint($doc)) {
+//            if($vobj -> validstring($tipo)) {
+//                if($vobj -> validstring($rol)) {
+//                    $obj = new controlDB();
+//                }
+//            }
+//        }
+//    }
+
+
     //Modificar value del input hidden
     if($funcion == "modificar"){
         $sql = "UPDATE usuario 
             SET nombre = '$nomb', 
             password = '$clave_md5', 
-            num_doc = '$doc', 
+            num_doc = $doc, 
             tipo_doc = '$tipo', 
             rol = '$rol', 
             fecha_nacimiento = '$fecha' 
@@ -40,11 +51,12 @@
             WHERE idUsuario='$id'";
     } else {
        $sql = "INSERT INTO usuario(nombre,password,num_doc,tipo_doc,rol,fecha_nacimiento)
-       VALUES('$nomb','$clave_md5','$doc','$tipo','$rol','$fecha')";
-    }  
+       VALUES('$nomb','$clave_md5',$doc,'$tipo','$rol','$fecha')";
+    }
 
+    //Instancia de control
+    $obj = new controlDB();
     $obj -> insertar($sql);
-    header("Location: vista_usuarios.php");  
+    header("Location: vista_usuarios.php");
 
-    
 ?>
