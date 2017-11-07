@@ -88,7 +88,7 @@
                         </div>
                         <div class="row">
                                 <div class="col">
-                                    <a href="resgistrarPresupuesto.php" class="btn btn-primary">Nuevo Presupuesto</a>
+                                    <a href="registrarPresupuesto.php" class="btn btn-primary">Nuevo Presupuesto</a>
                                 </div>
                         </div>
                         <div class="row">
@@ -99,7 +99,5 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</body>
+    </body>
 </html>

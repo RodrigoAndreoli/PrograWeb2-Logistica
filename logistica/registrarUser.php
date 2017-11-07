@@ -8,6 +8,7 @@
         $miSession = new Sesion();
         $miSession -> iniciarSesion();
     ?>
+    <script type="text/javascript" src="/resources/js/validUser.js"></script>
 </head>
 
 <body>
@@ -31,32 +32,32 @@
                                     <h3>Registrar nuevo usuario</h3>
                                 </div>
                             </div>
-                            <form action="bdUser.php" method="post">
+                            <form action="bdUser.php" method="post" name="form" id="form" onsubmit="return validar()">
                                 <table class="table">
                                     <div class="col-xs-6">
                                         <div class="form-group">
                                             <label for="nombre">Nombre</label>
-                                            <input type="text" class="form-control" name="nombre" placeholder="Nombre...">
+                                            <input type="text" class="form-control" name="nombre" id="nombre" onblur="return validar()" placeholder="Nombre...">
                                         </div>
                                         <div class="form-group">
                                             <label for="doc">Tipo documento</label>
-                                            <input type="text" class="form-control" name="tipo_doc" placeholder="Tipo...">
+                                            <input type="text" class="form-control" name="tipo_doc" id="tipo_doc" onblur="return validar()" placeholder="Tipo...">
                                         </div>
                                     </div>
                                     <div class="col-xs-6">
                                         <div class="form-group">
                                             <label for="">Password</label>
-                                            <input type="password" class="form-control" name="pass" placeholder="****">
+                                            <input type="password" class="form-control" name="pass" id="pass" onblur="return validar()" placeholder="****">
                                         </div>
                                         <div class="form-group">
                                             <label for="">Numero documento</label>
-                                            <input type="text" class="form-control" name="num_doc" placeholder="Numero...">
+                                            <input type="text" class="form-control" name="num_doc" id="num_doc" onblur="return validar()" placeholder="Numero...">
                                         </div>
                                     </div>
                                     <div class="col-xs-6">
                                         <div class="form-group">
                                             <label for="sel1">Rol</label>
-                                            <select class="form-control" id="sel1" name="rol">
+                                            <select class="form-control" id="sel1" onblur="return validar()" name="rol">
                                                 <option value="chofer">chofer</option>
                                                 <option value="admin">admin</option>
                                                 <option value="supervisor">supervisor</option>
@@ -67,9 +68,10 @@
                                     <div class="col-xs-6">
                                         <div class="form-group">
                                             <label for="">Fecha nacimiento</label>
-                                            <input type="text" class="form-control" name="fecha_nacimiento" placeholder="2017-07-28">
+                                            <input type="text" class="form-control" name="fecha_nacimiento" id="fecha_nacimiento" onblur="return validar()" placeholder="2017-07-28">
                                         </div>
                                     </div>
+                                    <div id="mensaje" class="alert alert-danger alert-dismissable" style="clear: both; display: none;"></div>
                                     <div class="form-group">
                                         <a href="vista_usuarios.php" class="btn btn-danger btn-lg">Volver</a>
                                         <button type="submit" class="btn btn-primary btn-lg">Crear</button>
@@ -77,6 +79,7 @@
                                 </table>
                                 <input type="hidden" name="funcion" value="insertar">
                             </form>
+                            
                         </div>
                     </div>
                 </div>
