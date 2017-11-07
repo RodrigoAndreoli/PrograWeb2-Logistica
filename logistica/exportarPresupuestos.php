@@ -3,7 +3,11 @@
     include($_SERVER['DOCUMENT_ROOT'].'/resources/templates/pdfPageP.php');
    
     $obj = new controlDB();
-    $datos = $obj -> consultar("SELECT u.nombre,c.razon,v.origen,v.destino,p.estado,p.aceptado,p.costo_real FROM presupuesto p join usuario u on u.idUsuario=p.idUsuario join cliente c on c.idCliente=p.idCliente join viaje v on v.idViaje=p.idViaje");
+    $datos = $obj -> consultar("SELECT U.nombre, C.razon, V.origen, V.destino, P.estado, P.aceptado, P.costo_real 
+    FROM Presupuesto P 
+    JOIN Usuario U ON U.idUsuario=P.idUsuario 
+    JOIN Cliente C ON C.idCliente=P.idCliente 
+    JOIN Viaje V ON V.idViaje=P.idViaje");
     
     $pdf=new PDF();
     //Alias de pagina para poder usar nb
@@ -30,7 +34,7 @@
         $pdf->Cell(30,6,$a['nombre'],1,0,'C');
         $pdf->Cell(30,6,ucwords($a['razon']),1,0,'C');
         $pdf->Cell(30,6,ucwords($a['origen']),1,0,'C');
-        $pdf->Cell(30,6,$a['destino'],1,0,'C');
+        $pdf->Cell(30,6,utf8_decode($a['destino']),1,0,'C');
         $pdf->Cell(30,6,$a['estado'],1,0,'C');
         $pdf->Cell(20,6,$a['aceptado'],1,0,'C');
         $pdf->Cell(25,6,$a['costo_real'],1,1,'C');

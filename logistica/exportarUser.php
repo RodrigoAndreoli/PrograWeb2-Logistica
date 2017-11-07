@@ -9,7 +9,7 @@
     $pdf=new PDF();
     //Alias de pagina para poder usar nb
     $pdf->AliasNbPages();
-    $pdf->AddPage('p','A4');
+    $pdf->AddPage('P','A4');
     $pdf->setTitle('Logistica');
     $pdf->SetFont('Arial','B',12);
     $pdf->SetFillColor(232,232,232);

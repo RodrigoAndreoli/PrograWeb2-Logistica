@@ -1,0 +1,28 @@
+Rodri:
++ vista_vehiculos.php
+	Formato de texto (Letra capital en cada inicio de palabra, resto minuscula)
+
++ sidebar
+	Que viajes tenga Viajes y Reportes en lugar de Reportes y Alarmas
+	Viajes muestra la lista de viajes con la asignacion y demas
+	Reportes deberia mostrar todos los reportes de un viaje que se elije por select
+
++ Arreglar PDF Presupuestos
+
++ Arreglar PDF Viaje Asignado (imprimirViajeQR.php)
+	Tira error cuando no se asigna un segundo chofer o acoplado (Algo da problema por el ForEach)
+	En base de datos se guarda bien, el problema es al abrir el PDF.
+
++ Revisar la permision de nulls en la base de datos y validaciones JS
+
++ Revisar los permisos de accesos segun correspondan
+
++ Ejecutar el login con redireccion cuando se entra por QR
+
++ Revisar el link que dan los QR (Me parecio ver que el link era "localhost/bitacora.php?id=1" en lugar de "localhost/logistica/bitacora.php?id=1")
+
++ Modificar alarmas.php (Que se llame "vista_reportes.php") que deberia mostrar todos los reportes de un viaje que se elije por select
+
++ bitacora.php
+	Deberia conseguir Latitud, Longitud y Timestamp al entrar
+	Revisar el formulario para que quede bien

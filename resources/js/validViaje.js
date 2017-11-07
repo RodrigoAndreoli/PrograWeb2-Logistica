@@ -6,7 +6,7 @@ function validar() {
 
     //expresiones regulares
     var regexstr = /\b([A-Z]*[a-z]+)+\b/;
-    var regexfecha = /(19|20)\d{2}-(0[1-9]|1[0-2])-(0[1-9]|1\d|2\d|3[0-1])/;
+    var regexfecha = /((19|20)\d{2}-(0[1-9]|1[0-2])-(0[1-9]|1\d|2\d|3[0-1]))\s(\d\d\:(0\d|1\d|2\d|3\d|4\d|5\d)\:(0\d|1\d|2\d|3\d|4\d|5\d))/;
     
     //variables auxiliares
     var mensaje = "";
