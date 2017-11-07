@@ -26,3 +26,5 @@ Rodri:
 + bitacora.php
 	Deberia conseguir Latitud, Longitud y Timestamp al entrar
 	Revisar el formulario para que quede bien
+	
++ Asignar viajes no deberia dejar asignar viajes que ya estan asignados
