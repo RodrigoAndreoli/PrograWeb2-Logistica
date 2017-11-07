@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-11-2017 a las 07:21:01
+-- Tiempo de generación: 07-11-2017 a las 20:37:30
 -- Versión del servidor: 10.1.26-MariaDB
 -- Versión de PHP: 7.1.8
 
@@ -245,9 +245,9 @@ CREATE TABLE `viaje` (
   `idPresupuesto` int(11) NOT NULL,
   `idCliente` int(11) NOT NULL,
   `fecha` datetime NOT NULL,
-  `origen` varchar(45) COLLATE utf8_spanish2_ci DEFAULT NULL,
+  `origen` varchar(45) COLLATE utf8_spanish2_ci NOT NULL,
   `destino` varchar(45) COLLATE utf8_spanish2_ci NOT NULL,
-  `tipo_carga` varchar(45) COLLATE utf8_spanish2_ci DEFAULT NULL,
+  `tipo_carga` varchar(45) COLLATE utf8_spanish2_ci NOT NULL,
   `tiempo` time NOT NULL,
   `combustible` int(11) DEFAULT NULL,
   `km_totales` int(11) DEFAULT NULL

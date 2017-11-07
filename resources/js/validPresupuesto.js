@@ -11,8 +11,6 @@ function validar() {
     //expresiones regulares
     var regexnum = /([0-9]+(\.|\,?)[0-9]{0,2})/;
     var regextime = /\d\d\:(0\d|1\d|2\d|3\d|4\d|5\d)\:(0\d|1\d|2\d|3\d|4\d|5\d)/;
-    var regexstr = /\b([A-Z]*[a-z]+)+\b/;
-    var regexfecha = /(19|20)\d{2}-(0[1-9]|1[0-2])-(0[1-9]|1\d|2\d|3[0-1])/;
     
     //variables auxiliares
     var mensaje = "";
