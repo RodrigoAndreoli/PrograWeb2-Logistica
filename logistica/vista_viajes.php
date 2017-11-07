@@ -55,6 +55,7 @@
                                                 <th  class="text-center">Km reales</th>
                                                 <th  class="text-center">Combustible real</th>-->
 												<th  class="text-center" class="col-sm-6">Operacion</th>
+                                                <th  class="text-center">QR</th>
                                             </thead>
                                             <?php foreach($datos as $td){ ?>
                                             <tr>
@@ -77,6 +78,14 @@
                                                     <a href="bdViajes.php?id=<?php echo $td["idViaje"]?>&funcion=eliminar"> 
                                                         <button class="btn btn-danger">Eliminar</button>
                                                     </a>
+                                                </td>
+                                                 <td class="text-center">                             
+                                                    <a href="exportarViajeQr.php?id=<?php echo $td["idViaje"]?>">
+                                                        <button class="btn btn-info">Solicitar</button>
+                                                    </a>
+                                                    <a href="bitacora.php?id=<?php echo $td["idViaje"]?>">
+                                                        <button class="btn btn-link">Simulación</button>
+                                                    </a>                                                    
                                                 </td>
                                             </tr>
                                             <?php } ?>
