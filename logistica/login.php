@@ -1,11 +1,21 @@
 <?php 
-	
-    if(isset($_POST['enviar'])) {
+
+    if(isset($_REQUEST['id'])) {
+        $idViaje = $_REQUEST['id'];
+    }
+    else if  (isset($_POST['enviar'])){
+              $idViaje = $_POST['idViaje'];       
+            }
+      else  $idViaje = null;
+
+    
+    if(isset($_POST['enviar'])) {   
+
         require_once($_SERVER['DOCUMENT_ROOT'].'/resources/config.php');
 		$user = $_POST['num_doc'];
 		$pass = md5($_POST['password']);
 		$hoy = date("Y-m-d H:i:s");
-	   
+
         //Prepared statement
 		$ingreso = $conexion->prepare("
             SELECT idUsuario,nombre,rol 
@@ -13,7 +23,7 @@
             WHERE num_doc = ? and password = ? 
             ");
         
-		$ingreso->bind_param("si",$user,$pass);
+		$ingreso->bind_param("is",$user,$pass);
 		//Ejecucion de la sentencia preparada
 		$ingreso->execute();
 		//Formateo de resultados
@@ -24,7 +34,11 @@
 			session_start();
 			$_SESSION['usuario'] = $fila['nombre'];
             $_SESSION['rol'] = $fila['rol'];
-			header('Location: ppal.php');
+                if ($idViaje >= 1 && $fila['rol'] == 'chofer') {
+                    header('Location: bitacora.php?id=' .$idViaje);    
+                    exit();
+                }
+            header('Location: ppal.php');
             exit();
 		} else {
             echo "
@@ -36,6 +50,7 @@
             ;
         }
 	}
+
 ?>
 
 <!DOCTYPE html>
@@ -73,10 +88,17 @@
                                 <input type="text" class="form-control" id="usuario" placeholder="N&uacute;mero de Documento" name='num_doc' required='required'>
                             </div>
                         </div>
+
                         <div class="form-group">
                             <label class="col-lg-12" for="hasta">Contrase&ntilde;a:</label>
                             <div class="col-lg-12">
                                 <input type="password" class="form-control" id="pass" placeholder="Password" name='password' required='required'>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-12">
+                                <input type="hidden" class="form-control" id="viaje"  name='idViaje' 
+                                value=<?php echo $idViaje ?> >
                             </div>
                         </div>
                         <div class="form-group">

@@ -15,7 +15,7 @@
     JOIN Vehiculo A ON T.idVehiculo2 = A.idVehiculo 
     WHERE T.idViaje = '$idViaje'");
 
-    QRcode::png('localhost/bitacora.php?id='.$idViaje ,'qrBitacora.png');
+    QRcode::png('localhost/logistica/login.php?id='.$idViaje ,'qrBitacora.png');
     $pdf=new PDF();
     $pdf->AliasNbPages();
     $pdf->AddPage('P','A4');

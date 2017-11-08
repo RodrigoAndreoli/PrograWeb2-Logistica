@@ -38,7 +38,7 @@
 
                                                 <div class="form-group">
                                                     <label for="">Fecha</label>
-                                                    <input type="date" class="form-control" name="fecha" id="fecha" onblur="return validar()" placeholder="aaaa/mm/dd">
+                                                    <input type="datetime" class="form-control" name="fecha" id="fecha" onblur="return validar()" placeholder="aaaa/mm/dd">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="">Origen</label>
