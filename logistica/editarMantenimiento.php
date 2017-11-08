@@ -7,6 +7,7 @@
         require_once($_SERVER['DOCUMENT_ROOT'].'/resources/config.php');
         $miSession = new Sesion();
         $miSession -> iniciarSesion();
+      
     
         $cod = $_GET['id'];
         $obj = new controlDB();
@@ -109,7 +110,42 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                             
+                                             <div class="form-group">
+                                                <div class="col-xs-12 col-lg-6 col-lg-offset-3">
+                                                    <label class="control-label col-xs-4 col-sm-3">Direccion:</label>
+                                                    <div class="col-xs-8 col-sm-9">
+                                                        <select class="form-control" id="direccion" name="direccion">
+                                                            <option value="">n/d</option>
+                                                            <option value="si">si</option>
+                                                            <option value="no">no</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                             <div class="form-group">
+                                                <div class="col-xs-12 col-lg-6 col-lg-offset-3">
+                                                    <label class="control-label col-xs-4 col-sm-3">Cambio aceite:</label>
+                                                    <div class="col-xs-8 col-sm-9">
+                                                        <select class="form-control" id="cambio_aceite" name="cambio_aceite">
+                                                            <option value="">n/d</option>
+                                                            <option value="si">si</option>
+                                                            <option value="no">no</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                             <div class="form-group">
+                                                <div class="col-xs-12 col-lg-6 col-lg-offset-3">
+                                                    <label class="control-label col-xs-4 col-sm-3">Filtro aire:</label>
+                                                    <div class="col-xs-8 col-sm-9">
+                                                        <select class="form-control" id="filtro_aire" name="filtro_aire">
+                                                            <option value="">n/d</option>
+                                                            <option value="si">si</option>
+                                                            <option value="no">no</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div> 
                                             <tr>
                                                 <td colspan="3" class="text-center">
                                                     <a href="vista_mantenimientos.php" class="btn btn-danger">Volver</a>

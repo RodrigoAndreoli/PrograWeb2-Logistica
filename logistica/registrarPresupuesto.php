@@ -7,6 +7,9 @@
         require_once($_SERVER['DOCUMENT_ROOT'].'/resources/config.php');
         $miSession = new Sesion();
         $miSession -> iniciarSesion();
+        if($_SESSION['rol']!='supervisor'){
+            $miSession -> permisos();
+        }  
         $obj = new controlDB();
         $clientes = $obj -> consultar("SELECT c.idCliente, c.razon FROM cliente c");
         $viajes = $obj -> consultar("SELECT idViaje FROM viaje");

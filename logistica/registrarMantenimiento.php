@@ -7,7 +7,7 @@
         require_once($_SERVER['DOCUMENT_ROOT'].'/resources/config.php');
         $miSession = new Sesion();
         $miSession -> iniciarSesion();
-    
+        
         $obj = new controlDB();
         $vehiculos = $obj -> consultar("SELECT idVehiculo,patente FROM vehiculo");
         $mecanico = $obj -> consultar("SELECT m.idMecanico FROM mantenimiento m join usuario u ON u.idUsuario=m.idMantenimiento where rol = '".$_SESSION['rol']."' AND nombre = '".$_SESSION['usuario']."'");
@@ -91,17 +91,56 @@
                                             <label class="control-label col-xs-4 col-sm-3">Externo:</label>
                                             <div class="">
                                                 <select class="form-control" name="externo" id="externo" onblur="return validar()">
+                                                    <option value="">n/d</opion>
                                                     <option value="si">si</option>
                                                     <option value="no">no</option>
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
-                                    <div id="mensaje" class="alert alert-danger alert-dismissable" style="clear: both; display: none;"></div>
-                                    <div class="form-group">
+                                    <div class="col-xs-6">
+                                        <div class="form-group">
+                                            <label class="control-label col-xs-4 col-sm-3">Cambio aceite:</label>
+                                            <div class="">
+                                                <select class="form-control" name="cambio_aceite" id="cambio_aceite" onblur="return validar()">
+                                                    <option value="">n/d</opion>
+                                                    <option value="si">si</option>
+                                                    <option value="no">no</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <div class="form-group">
+                                            <label class="control-label col-xs-4 col-sm-3">Filtro aire:</label>
+                                            <div class="">
+                                                <select class="form-control" name="filtro_aire" id="filtro_aire" onblur="return validar()">
+                                                    <option value="">n/d</opion>
+                                                    <option value="si">si</option>
+                                                    <option value="no">no</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <div class="form-group">
+                                            <label class="control-label col-xs-4 col-sm-3">Direccion:</label>
+                                            <div class="">
+                                                <select class="form-control" name="direccion" id="direccion" onblur="return validar()">
+                                                    <option value="">n/d</opion>
+                                                    <option value="si">si</option>
+                                                    <option value="no">no</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <div class="form-group">
                                         <a href="vista_mantenimientos.php" class="btn btn-danger btn-lg">Volver</a>
                                         <button type="submit" class="btn btn-primary btn-lg">Crear</button>
                                     </div>
+                                    </div>
+                                    <div id="mensaje" class="alert alert-danger alert-dismissable" style="clear: both; display: none;"></div>
                                 </table>
                                 <input type="hidden" name="funcion" value="insertar">
                             </form>

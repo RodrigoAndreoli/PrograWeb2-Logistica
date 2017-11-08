@@ -49,12 +49,10 @@
                                                 <th  class="text-center">Tipo de Carga</th>
                                                 <th  class="text-center">Tiempo estimado</th>
                                                 <th  class="text-center">Combustible</th>
-                                                <th  class="text-center">km estimado</th>
-                                                <!--<th  class="text-center">Combustible previsto</th>
-                                                <th  class="text-center">Tipo carga</th>
-                                                <th  class="text-center">Km reales</th>
-                                                <th  class="text-center">Combustible real</th>-->
+                                                <th  class="text-center">Km estimado</th>
+                                                <?php if($_SESSION['rol'] == 'admin' || $_SESSION["rol"] == 'supervisor') {?>   
 												<th  class="text-center" class="col-sm-6">Operacion</th>
+                                                <?php } ?>
                                             </thead>
                                             <?php foreach($datos as $td){ ?>
                                             <tr>
@@ -66,10 +64,7 @@
                                                 <td><?php echo $td['tiempo']; ?></td>
                                                 <td><?php echo $td['combustible']; ?></td>
                                                 <td><?php echo $td['km_totales']; ?></td>
-												<!--<td></td>
-												<td></td>
-												<td></td>
-												<td></td>-->
+                                                <?php if($_SESSION['rol'] == 'admin' || $_SESSION["rol"] == 'supervisor') {?>   
                                                 <td class="text-center">
                                                     <a href="asignarViaje.php?id=<?php echo $td["idViaje"]?>">
                                                         <button class="btn btn-info">Asignar</button>
@@ -78,6 +73,7 @@
                                                         <button class="btn btn-danger">Eliminar</button>
                                                     </a>
                                                 </td>
+                                                <?php } ?>  
                                             </tr>
                                             <?php } ?>
                                         </table>    
@@ -96,9 +92,11 @@
                             </div>
                         </div>
                         <div class="row">
+                                <?php if($_SESSION['rol'] == 'admin' || $_SESSION["rol"] == 'supervisor') {?>   
                                 <div class="col">
                                     <a href="registrarViaje.php" class="btn btn-primary">Nuevo viaje</a>
                                 </div>
+                                <?php } ?>
                         </div>
                         <div class="row">
                             <a href="exportarViaje.php" target="_blank">
