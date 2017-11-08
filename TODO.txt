@@ -7,7 +7,6 @@ Rodri:
 	Viajes muestra la lista de viajes con la asignacion y demas
 	Reportes deberia mostrar todos los reportes de un viaje que se elije por select
 
-+ Arreglar PDF Presupuestos
 
 + Arreglar PDF Viaje Asignado (imprimirViajeQR.php)
 	Tira error cuando no se asigna un segundo chofer o acoplado (Algo da problema por el ForEach)
@@ -28,3 +27,8 @@ Rodri:
 	Revisar el formulario para que quede bien
 	
 + Asignar viajes no deberia dejar asignar viajes que ya estan asignados
+
+
+##HECHO
+	
++ Arreglar PDF Presupuestos
