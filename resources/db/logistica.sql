@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-11-2017 a las 20:37:30
+-- Tiempo de generación: 09-11-2017 a las 00:50:10
 -- Versión del servidor: 10.1.26-MariaDB
 -- Versión de PHP: 7.1.8
 
@@ -219,10 +219,10 @@ INSERT INTO `vehiculo` (`idVehiculo`, `tipo_vehiculo`, `patente`, `nro_chasis`, 
 --
 
 CREATE TABLE `vehiculo_chofer_viaje` (
-  `idUsuario` int(11) NOT NULL,
   `idViaje` int(11) NOT NULL,
-  `idVehiculo` int(11) NOT NULL,
+  `idUsuario` int(11) NOT NULL,
   `idUsuario2` int(11) DEFAULT NULL,
+  `idVehiculo` int(11) NOT NULL,
   `idVehiculo2` int(11) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
@@ -230,9 +230,9 @@ CREATE TABLE `vehiculo_chofer_viaje` (
 -- Volcado de datos para la tabla `vehiculo_chofer_viaje`
 --
 
-INSERT INTO `vehiculo_chofer_viaje` (`idUsuario`, `idViaje`, `idVehiculo`, `idUsuario2`, `idVehiculo2`) VALUES
-(2, 2, 2, 7, 5),
-(7, 3, 4, 0, 0);
+INSERT INTO `vehiculo_chofer_viaje` (`idViaje`, `idUsuario`, `idUsuario2`, `idVehiculo`, `idVehiculo2`) VALUES
+(2, 2, 7, 2, 5),
+(3, 7, 0, 4, 0);
 
 -- --------------------------------------------------------
 
@@ -323,9 +323,7 @@ ALTER TABLE `vehiculo`
 -- Indices de la tabla `vehiculo_chofer_viaje`
 --
 ALTER TABLE `vehiculo_chofer_viaje`
-  ADD PRIMARY KEY (`idUsuario`,`idViaje`,`idVehiculo`),
-  ADD KEY `fk_ternaria_viaje` (`idViaje`),
-  ADD KEY `fk_ternaria_Vehiculo` (`idVehiculo`);
+  ADD PRIMARY KEY (`idViaje`) USING BTREE;
 
 --
 -- Indices de la tabla `viaje`
