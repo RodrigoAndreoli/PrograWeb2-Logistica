@@ -24,7 +24,6 @@ Rodri:
 	Deberia conseguir Latitud, Longitud y Timestamp al entrar
 	Revisar el formulario para que quede bien
 	
-+ Asignar viajes no deberia dejar asignar viajes que ya estan asignados
 
 
 ##HECHO
@@ -37,3 +36,5 @@ Y EN EL MEDIO QUEDAN LOS INSERTS O SEA QUE EL AUTOINCREMENT SE LO PASA POR EL CU
 + Arreglar PDF Viaje Asignado (imprimirViajeQR.php)
 	Tira error cuando no se asigna un segundo chofer o acoplado (Algo da problema por el ForEach)
 	En base de datos se guarda bien, el problema es al abrir el PDF.
+
++ Asignar viajes no deberia dejar asignar viajes que ya estan asignados

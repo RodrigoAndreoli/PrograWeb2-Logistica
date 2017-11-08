@@ -66,9 +66,11 @@
                                                 <td><?php echo $td['km_totales']; ?></td>
                                                 <?php if($_SESSION['rol'] == 'admin' || $_SESSION["rol"] == 'supervisor') {?>   
                                                 <td class="text-center">
-                                                    <a href="asignarViaje.php?id=<?php echo $td["idViaje"]?>">
-                                                        <button class="btn btn-info">Asignar</button>
-                                                    </a>
+                                                        <?php if($td['idUsuario2']==null || $td['idVehiculo2']==null){?>
+                                                        <a href="asignarViaje.php?id=<?php echo $td["idViaje"]?>">
+                                                            <button class="btn btn-info">Asignar</button>
+                                                        </a>
+                                                    <?php } ?>
                                                     <a href="bdViajes.php?id=<?php echo $td["idViaje"]?>&funcion=eliminar"> 
                                                         <button class="btn btn-danger">Eliminar</button>
                                                     </a>
