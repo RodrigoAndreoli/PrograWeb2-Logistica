@@ -8,9 +8,7 @@ Rodri:
 	Reportes deberia mostrar todos los reportes de un viaje que se elije por select
 
 
-+ Arreglar PDF Viaje Asignado (imprimirViajeQR.php)
-	Tira error cuando no se asigna un segundo chofer o acoplado (Algo da problema por el ForEach)
-	En base de datos se guarda bien, el problema es al abrir el PDF.
+
 
 + Revisar la permision de nulls en la base de datos y validaciones JS
 
@@ -35,3 +33,7 @@ Rodri:
 
 +HACERLO MIERDA PARA VER TODAS LAS BOLUDECES. COMO POR EJEMPLO QUE PHPMYADMIN CREA LAS TABLAS Y DESPUES LE AGREGA LAS CONSTRAINTS
 Y EN EL MEDIO QUEDAN LOS INSERTS O SEA QUE EL AUTOINCREMENT SE LO PASA POR EL CULO Y NO ANDAN LOS INSERTS.
+
++ Arreglar PDF Viaje Asignado (imprimirViajeQR.php)
+	Tira error cuando no se asigna un segundo chofer o acoplado (Algo da problema por el ForEach)
+	En base de datos se guarda bien, el problema es al abrir el PDF.
