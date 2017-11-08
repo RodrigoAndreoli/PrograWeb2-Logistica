@@ -27,15 +27,11 @@
          //$sql va ser el select, los select
         function consultar($sql){
         //conexion,consulta
-        //$res=mysqli_query($this->con,$sql);
-        $link=$this->con;
-        $stmt = mysqli_prepare($link, $sql);  
-        mysqli_stmt_execute($stmt);  
-        $result = $stmt->get_result();
+        $result=mysqli_query($this->con,$sql);
         //array vacio
         $data=null;
         //capturar la info,fecth captura datos fila por fila y almacena con el indice de la tabla, el nombre, fethc row no trae el nombre del campo
-        while($fila=$result->fetch_assoc()){
+        while($fila=mysqli_fetch_assoc($result)){
             $data[]=$fila;
         }
         return $data;
@@ -50,12 +46,11 @@
         /*---------------------INSERTAR-----------------------------*/
 //        Esta funcion se encarga de los insert, delete, update, etc.
         function insertar($sql){
-            //mysqli_query($this->con,$sql);
-            $stmt = mysqli_prepare($this->con, $sql);
-            mysqli_stmt_execute($stmt); 
+			
+			mysqli_query($this->con,$sql);
             //validar cuando se inserta,columnas afectadas
             //if si no hay cambios en la tabla
-           if(mysqli_affected_rows($this->con)<=0) {
+		   if(mysqli_affected_rows($this->con)<=0) {
             //   echo "No se pudo realizar la operaciontrue
                return false;
             } else {

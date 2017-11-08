@@ -4,7 +4,7 @@
     $dbname="logistica";
     $user="root";
     $pass=""; 
-    $conexion = new mysqli($host,$user,$pass,$dbname);
+    $conexion = mysqli_connect($host,$user,$pass,$dbname);
 	mysqli_set_charset($conexion, "utf8"); 
     if( $conexion->connect_errno)
     {
