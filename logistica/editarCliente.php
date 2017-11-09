@@ -7,7 +7,9 @@
         require_once($_SERVER['DOCUMENT_ROOT'].'/resources/config.php');
         $miSession = new Sesion();
         $miSession -> iniciarSesion();
-    
+        if($_SESSION['rol']=='chofer' ||  $_SESSION['rol']=='mecanico'){
+                $miSession -> permisos();
+            } 
         $cod = $_GET['id'];
         $obj = new controlDB();
         $cliente = $obj -> consultar("SELECT * 

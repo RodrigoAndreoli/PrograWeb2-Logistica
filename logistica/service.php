@@ -9,7 +9,9 @@
         $miSession -> iniciarSesion();
         if($_SESSION['rol']!="mecanico" && $_SESSION['rol']!="admin"){
         $miSession -> permisos();}
-        
+        if($_SESSION['rol']=='chofer'){
+                $miSession -> permisos();
+            } 
     
         $obj = new controlDB();  
 

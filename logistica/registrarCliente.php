@@ -7,6 +7,9 @@
         require_once($_SERVER['DOCUMENT_ROOT'].'/resources/config.php');
         $miSession = new Sesion();
         $miSession -> iniciarSesion();
+        if($_SESSION['rol']=='chofer' ||  $_SESSION['rol']=='mecanico'){
+                $miSession -> permisos();
+            } 
     ?>
     <script type="text/javascript" src="/resources/js/validCliente.js"></script>
 </head>

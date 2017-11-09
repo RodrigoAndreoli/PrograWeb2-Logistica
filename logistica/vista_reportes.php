@@ -7,7 +7,8 @@
         require_once($_SERVER['DOCUMENT_ROOT'].'/resources/config.php');
         $miSession = new Sesion();
         $miSession -> iniciarSesion();
-        $miSession -> permisos();
+                $miSession -> permisos();
+
     
         $obj = new controlDB();
         include $LIBRARY_PATH.'/reportes_pag.php';
@@ -84,7 +85,7 @@
                         </div>
                         <div class="row">
                                 <div class="col">
-                                    <a href="#" class="btn btn-primary">Nuevo usuario</a>
+                                    <a href="registrarReporte.php" class="btn btn-primary">Nuevo Reporte</a>
                                 </div>
                         </div>
                         <div class="row">

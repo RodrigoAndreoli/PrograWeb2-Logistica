@@ -38,9 +38,9 @@
                 case 'mecanico':
                     header('Location: vista_viajes.php');
                     header('Location: vista_vehiculos.php');
-                    header('Location: vista_mantenimientos.php');
                     header('Location: graficos.php');
                     header('Location: service.php');
+                    header('Location: vista_mantenimientos.php');
                     break;
             }
         }

@@ -7,7 +7,10 @@
         require_once($_SERVER['DOCUMENT_ROOT'].'/resources/config.php');
         $miSession = new Sesion();
         $miSession -> iniciarSesion();
-        
+        if($_SESSION['rol']=='chofer'){
+                $miSession -> permisos();
+            }    
+    
         $obj = new controlDB();
         $vehiculos = $obj -> consultar("SELECT idVehiculo,patente FROM vehiculo");
         $mecanico = $obj -> consultar("SELECT m.idMecanico FROM mantenimiento m join usuario u ON u.idUsuario=m.idMantenimiento where rol = '".$_SESSION['rol']."' AND nombre = '".$_SESSION['usuario']."'");

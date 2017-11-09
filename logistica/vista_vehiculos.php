@@ -7,7 +7,9 @@
         require_once($_SERVER['DOCUMENT_ROOT'].'/resources/config.php');
         $miSession = new Sesion();
         $miSession -> iniciarSesion();
-    
+        if($_SESSION['rol']=='chofer'){
+                $miSession -> permisos();
+            } 
         $obj = new controlDB();
         include $LIBRARY_PATH.'/vehiculo_pag.php';
 
