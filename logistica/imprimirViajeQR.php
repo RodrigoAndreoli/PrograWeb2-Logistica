@@ -24,7 +24,7 @@
         JOIN Vehiculo C ON T.idVehiculo = C.idVehiculo 
         WHERE T.idViaje = '$idViaje'");
                 
-        QRcode::png('localhost/bitacora.php?id='.$idViaje ,'qrBitacora.png');
+        QRcode::png('localhost/logistica/bitacora.php?id='.$idViaje ,'qrBitacora.png');
         $pdf=new PDF();
         $pdf->AliasNbPages();
         $pdf->AddPage('P','A4');
@@ -55,7 +55,7 @@
         $pdf -> Cell(120,5, 'Chofer',0,0,'C');
         $pdf -> Ln(10);
         $pdf->Cell(30);  
-        $pdf->Cell(120,8,'1do Chofer',1,1,'C',1);
+        $pdf->Cell(120,8,'1er Chofer',1,1,'C',1);
         $pdf->SetFont('Arial','',10);
         foreach($datos2 as $a) {
             $pdf->Cell(30);

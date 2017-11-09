@@ -37,8 +37,8 @@
                                             <div class="col-xs-6">
 
                                                 <div class="form-group">
-                                                    <label for="">Fecha</label>
-                                                    <input type="datetime" class="form-control" name="fecha" id="fecha" onblur="return validar()" placeholder="aaaa/mm/dd">
+                                                    <label for="">Fecha de Partida</label>
+                                                    <input type="datetime" class="form-control" name="fecha" id="fecha" onblur="return validar()" placeholder="2000-12-31 23:59:59">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="">Origen</label>
