@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-11-2017 a las 00:50:10
+-- Tiempo de generación: 09-11-2017 a las 07:06:06
 -- Versión del servidor: 10.1.26-MariaDB
 -- Versión de PHP: 7.1.8
 
@@ -136,16 +136,25 @@ CREATE TABLE `reporte_mantenimiento` (
 CREATE TABLE `reporte_viaje` (
   `idReporteViaje` int(11) NOT NULL,
   `idViaje` int(11) NOT NULL,
-  `idVehiculo` int(11) NOT NULL,
   `idChofer` int(11) NOT NULL,
-  `desvios` varchar(45) COLLATE utf8_spanish2_ci DEFAULT NULL,
-  `km` int(11) DEFAULT NULL,
-  `tiempo` time NOT NULL,
-  `combustible` int(11) DEFAULT NULL,
-  `paradas` varchar(80) COLLATE utf8_spanish2_ci DEFAULT NULL,
+  `tiempo` datetime NOT NULL,
   `latitud` varchar(45) COLLATE utf8_spanish2_ci NOT NULL,
-  `longitud` varchar(45) COLLATE utf8_spanish2_ci NOT NULL
+  `longitud` varchar(45) COLLATE utf8_spanish2_ci NOT NULL,
+  `motivo` enum('Parada Tecnica','Desvio','Accidente','') COLLATE utf8_spanish2_ci NOT NULL DEFAULT 'Parada Tecnica',
+  `km` int(11) NOT NULL,
+  `combustible` int(11) DEFAULT NULL,
+  `descripcion` varchar(100) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `reporte_viaje`
+--
+
+INSERT INTO `reporte_viaje` (`idReporteViaje`, `idViaje`, `idChofer`, `tiempo`, `latitud`, `longitud`, `motivo`, `km`, `combustible`, `descripcion`) VALUES
+(5, 0, 0, '2017-11-09 00:56:13', '-58.6581128', '-34.6380318', 'Parada Tecnica', 0, 0, ''),
+(6, 0, 0, '2017-11-09 00:56:23', '-58.6581104', '-34.6380328', 'Parada Tecnica', 0, 0, ''),
+(7, 0, 0, '2017-11-09 02:22:51', '-58.65811779999999', '-34.6380262', '', 56800, 1200, 'Carga Nafta YPF'),
+(8, 0, 0, '2017-11-09 02:24:21', '-58.6581092', '-34.6380325', 'Parada Tecnica', 56800, 1200, 'Carga Nafta YPF');
 
 -- --------------------------------------------------------
 
@@ -232,7 +241,8 @@ CREATE TABLE `vehiculo_chofer_viaje` (
 
 INSERT INTO `vehiculo_chofer_viaje` (`idViaje`, `idUsuario`, `idUsuario2`, `idVehiculo`, `idVehiculo2`) VALUES
 (2, 2, 7, 2, 5),
-(3, 7, 0, 4, 0);
+(3, 7, 0, 4, 0),
+(10, 2, 0, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -261,7 +271,8 @@ INSERT INTO `viaje` (`idViaje`, `idPresupuesto`, `idCliente`, `fecha`, `origen`,
 (1, 1, 1, '2017-11-22 10:00:00', 'Logistica S.A.', 'Lujan Bs As', 'Sustancias y objetos peligrosos varios', '02:00:02', 2, 120),
 (2, 2, 1, '2017-10-24 09:00:00', 'Logistica S.A.', 'Cordoba', 'Material radiactivo', '07:00:07', 52, 740),
 (3, 5, 2, '2017-10-27 10:00:00', 'Logistica S.A.', 'José de Urquiza 4537', 'refrigerados y congelados', '01:02:01', 2, 22),
-(4, 3, 2, '2017-11-07 00:00:00', 'Logistica S.A.', 'Av. Vergara 6060, Hurlingham', 'frutas', '04:00:00', 8, 80);
+(4, 3, 2, '2017-11-07 00:00:00', 'Logistica S.A.', 'Av. Vergara 6060, Hurlingham', 'frutas', '04:00:00', 8, 80),
+(10, 0, 0, '2017-12-09 09:00:00', 'Bariloche', 'Buenos Aires', 'Chocolates', '00:00:00', NULL, NULL);
 
 --
 -- Índices para tablas volcadas
@@ -303,7 +314,6 @@ ALTER TABLE `reporte_mantenimiento`
 ALTER TABLE `reporte_viaje`
   ADD PRIMARY KEY (`idReporteViaje`),
   ADD KEY `fk_report_viaje_ternaria_idViaje` (`idViaje`),
-  ADD KEY `fk_report_viaje_ternaria_idVehiculo` (`idVehiculo`),
   ADD KEY `fk_report_viaje_ternaria_idChofer` (`idChofer`);
 
 --
@@ -361,7 +371,7 @@ ALTER TABLE `reporte_mantenimiento`
 -- AUTO_INCREMENT de la tabla `reporte_viaje`
 --
 ALTER TABLE `reporte_viaje`
-  MODIFY `idReporteViaje` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idReporteViaje` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
@@ -376,7 +386,7 @@ ALTER TABLE `vehiculo`
 -- AUTO_INCREMENT de la tabla `viaje`
 --
 ALTER TABLE `viaje`
-  MODIFY `idViaje` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;COMMIT;
+  MODIFY `idViaje` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
