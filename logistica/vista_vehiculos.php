@@ -57,11 +57,11 @@
                                             </thead>
                                             <?php foreach($datos as $td){ ?>
                                             <tr>
-                                                <td><?php echo $td['marca']; ?></td>
-                                                <td><?php echo $td['modelo']; ?></td>
-                                                <td><?php echo $td['tipo_vehiculo']; ?></td>
-                                                <td><?php echo $td['patente']; ?></td>
-                                                <td><?php echo $td['nro_chasis']; ?></td>
+                                                <td><?php echo utf8_decode(ucwords(strtolower($td['marca']))); ?></td>
+                                                <td><?php echo utf8_decode(ucwords(strtolower($td['modelo']))); ?></td>
+                                                <td><?php echo ucwords(strtolower($td['tipo_vehiculo'])); ?></td>
+                                                <td><?php echo strtoupper($td['patente']); ?></td>
+                                                <td><?php echo strtoupper($td['nro_chasis']); ?></td>
                                                 <td><?php echo $td['km']; ?></td>
                                                 <td><?php echo $td['anio']; ?></td>
                                                 <td><?php echo $td['nro_motor']; ?></td>

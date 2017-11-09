@@ -52,11 +52,11 @@
                                             </thead>
                                             <?php foreach($datos as $td){ ?>
                                             <tr>
-                                                <td><?php echo $td['nombre']; ?></td>
-                                                <td><?php echo $td['tipo_doc']; ?></td>
+                                                <td><?php echo ($td['nombre']); ?></td>
+                                                <td><?php echo strtoupper($td['tipo_doc']); ?></td>
                                                 <td><?php echo $td['num_doc']; ?></td>
                                                 <td><?php echo $td['fecha_nacimiento']; ?></td>
-                                                <td><?php echo $td['rol']; ?></td>
+                                                <td><?php echo ucwords(strtolower($td['rol'])); ?></td>
                                                 <td class="text-center">
                                                     <a href="editarUser.php?id=<?php echo $td["idUsuario"]?>">
                                                         <button class="btn btn-info">Editar</button>

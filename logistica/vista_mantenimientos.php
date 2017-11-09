@@ -59,13 +59,13 @@
                                             </thead>
                                             <?php foreach($datos as $td){ ?>
                                             <tr>
-                                                <td><?php echo $td['nombre'];?></td>
-                                                <td><?php echo $td['patente'];?></td>
-                                                <td><?php echo $td['tipo_vehiculo'];?></td>
+                                                <td><?php echo ($td['nombre']);?></td>
+                                                <td><?php echo strtoupper($td['patente']);?></td>
+                                                <td><?php echo ucwords(strtolower($td['tipo_vehiculo']));?></td>
                                                 <td><?php echo $td['km_unidad'];?></td>
                                                 <td><?php echo $td['fecha_entrada'];?></td>
-                                                <td><?php echo $td['repuestos'];?></td>
-                                                <td><?php echo $td['externo'];?></td>
+                                                <td><?php echo ucwords(strtolower($td['repuestos']));?></td>
+                                                <td><?php echo ucwords(strtolower($td['externo']));?></td>
                                                 <td><?php echo $td['costo'];?></td>
                                                 <?php if($_SESSION["rol"]!='supervisor'){?>  
                                                 <td class="text-center">

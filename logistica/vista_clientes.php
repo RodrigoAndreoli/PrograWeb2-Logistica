@@ -57,8 +57,8 @@
                                             <?php foreach($datos as $td){ ?>
                                             <tr>
                                                 <td><?php echo $td['cuit']; ?></td>
-                                                <td><?php echo $td['razon']; ?></td>
-                                                <td><?php echo $td['dom_calle']; ?></td>
+                                                <td><?php echo utf8_decode(ucwords(strtolower($td['razon']))); ?></td>
+                                                <td><?php echo utf8_decode(ucwords(strtolower($td['dom_calle']))); ?></td>
                                                 <td><?php echo $td['dom_numero']; ?></td>
                                                 <td><?php echo $td['dom_piso']; ?></td>
                                                 <td><?php echo $td['dom_cp']; ?></td>

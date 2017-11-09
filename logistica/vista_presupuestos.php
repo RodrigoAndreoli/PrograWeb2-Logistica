@@ -55,15 +55,16 @@
                                             </thead>
                                             <?php foreach($datos as $td){ ?>
                                             <tr>
-                                                <td><?php echo $td['nombre']; ?></td>
-                                                <td><?php echo $td['razon']; ?></td>
-                                                <td><?php echo $td['origen']; ?></td>
-                                                <td><?php echo $td['destino']; ?></td>
-                                                <td><?php echo $td['estado']; ?></td>
-                                                <td><?php echo $td['aceptado']; ?></td>
+                                                <td><?php echo utf8_decode(ucwords(strtolower($td['nombre']))); ?></td>
+                                                <td><?php echo utf8_decode(ucwords(strtolower($td['razon']))); ?></td>
+                                                <td><?php echo utf8_decode(ucwords(strtolower($td['origen']))); ?></td>
+                                                <td><?php echo utf8_decode(ucwords(strtolower($td['destino']))); ?></td>
+                                                <td><?php echo ucwords(strtolower($td['estado'])); ?></td>
+                                                <td><?php echo ucwords(strtolower($td['aceptado'])); ?></td>
                                                 <td><?php echo $td['costo_real']; ?></td>
                                                 <td class="text-center">
-                                                    <a href="editarPresupuesto.php?id=<?php echo $td["idPresupuesto"]?>" class="btn btn-info">Editar</button>
+                                                    <a href="editarPresupuesto.php?id=<?php echo $td["idPresupuesto"]?>"> 
+                                                        <button class="btn btn-info">Editar</button>
                                                     </a>
                                                      <a href="bdPresupuestos.php?id=<?php echo $td["idPresupuesto"]?>&funcion=eliminar"> 
                                                         <button class="btn btn-danger">Eliminar</button>
