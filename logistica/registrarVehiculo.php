@@ -60,17 +60,17 @@
                                             <div class="col-xs-6">
                                                 <div class="form-group">
                                                     <label for="">Número de chasis</label>
-                                                    <input type="text" class="form-control" name="num_chasis" id="num_chasis" onblur="return validar()"placeholder="Número de chasis...">
+                                                    <input type="text" class="form-control" name="num_chasis" id="num_chasis" onblur="return validar()" placeholder="Número de chasis...">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="">Número de motor</label>
-                                                    <input type="text" class="form-control" name="num_motor" id="num_motor" onblur="return validar()"placeholder="Número de motor...">
+                                                    <input type="text" class="form-control" name="num_motor" id="num_motor" onblur="return validar()" placeholder="Número de motor...">
                                                 </div>
                                             </div>
                                             <div class="col-xs-6">
                                                 <div class="form-group">
                                                     <label for="">Año</label>
-                                                    <input type="text" class="form-control" name="anio" id="anio" onblur="return validar()"placeholder="2000">
+                                                    <input type="text" class="form-control" name="anio" id="anio" onblur="return validar()" placeholder="2000">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="">Kilometros</label>

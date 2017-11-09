@@ -19,7 +19,11 @@
 + Revisar los permisos de accesos segun correspondan
 
 + Ejecutar el login con redireccion cuando se entra por QR
-	
+
++ HACER vista_reportes.php
+    El admin tiene que poder ver en un select todos los viajes y los reportes asociados.
+    El chofer tiene que poder ver en un select todos SUS viajes y los reportes asociados.
+
 + HACERLO MIERDA PARA VER TODAS LAS BOLUDECES.
     PHPMYADMIN CREA LAS TABLAS Y DESPUES LE AGREGA LAS CONSTRAINTS Y EN EL MEDIO QUEDAN LOS INSERTS O SEA QUE EL AUTOINCREMENT SE LO PASA POR EL CULO Y NO ANDAN LOS INSERTS.
 
