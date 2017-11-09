@@ -15,7 +15,7 @@
         </li>
         <ul class='sub-menu collapse' id='reparacion'>
             <li>
-                <a href='vista_mantenimientos.php'><i>Reportes</i></a>
+                <a href='vista_mantenimientos.php'><i>Reportes de Mantenimiento</i></a>
             </li>
             <li>
                 <a href='graficos.php'><i>Graficos</i></a>
@@ -35,10 +35,10 @@
         </li>
         <ul class='sub-menu collapse' id='viajes'>
             <li>
-                <a href='vista_viajes.php'><i>Reportes</i></a>
+                <a href='vista_viajes.php'><i>Viajes</i></a>
             </li>
             <li>
-                <a href='alarmas.php'><i>Alarmas</i></a>
+                <a href='vista_reportes.php'><i>Reportes de Viaje</i></a>
             </li>
         </ul>
         <?php } ?>

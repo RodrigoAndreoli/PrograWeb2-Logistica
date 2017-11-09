@@ -93,7 +93,7 @@
                     <br>
                     <div class="row">
                         <div class="col-xs-12 .col-md-6">
-                            <form action="bdAlarma.php" method="post">
+                            <form action="bdReporte.php" method="post">
 
                                    <!-- <?php foreach($usuario as $usr){ ?>
                                         <input type="hidden" name="idUsuario" value="<?php echo $usr['idUsuario']; ?>" readonly>

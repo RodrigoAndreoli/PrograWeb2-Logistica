@@ -35,7 +35,7 @@
 			$_SESSION['usuario'] = $fila['nombre'];
             $_SESSION['rol'] = $fila['rol'];
                 if ($idViaje >= 1 && $fila['rol'] == 'chofer') {
-                    header('Location: bitacora.php?id=' .$idViaje);    
+                    header('Location: registrarReporte.php?id=' .$idViaje);    
                     exit();
                 }
             header('Location: ppal.php');

@@ -24,7 +24,7 @@
         JOIN Vehiculo C ON T.idVehiculo = C.idVehiculo 
         WHERE T.idViaje = '$idViaje'");
                 
-        QRcode::png('localhost/logistica/bitacora.php?id='.$idViaje ,'qrBitacora.png');
+        QRcode::png('localhost/logistica/registrarReporte.php?id='.$idViaje ,'qrBitacora.png');
         $pdf=new PDF();
         $pdf->AliasNbPages();
         $pdf->AddPage('P','A4');
@@ -86,7 +86,7 @@
     
     }else{
         
-        QRcode::png('localhost/bitacora.php?id='.$idViaje ,'qrBitacora.png');
+        QRcode::png('localhost/logistica/registrarReporte.php?id='.$idViaje ,'qrBitacora.png');
         $pdf=new PDF();
         $pdf->AliasNbPages();
         $pdf->AddPage('P','A4');
