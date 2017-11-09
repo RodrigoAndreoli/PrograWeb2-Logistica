@@ -24,7 +24,7 @@
         JOIN Vehiculo C ON T.idVehiculo = C.idVehiculo 
         WHERE T.idViaje = '$idViaje'");
                 
-        QRcode::png('localhost/logistica/registrarReporte.php?id='.$idViaje ,'qrBitacora.png');
+        QRcode::png('localhost/logistica/login.php?id='.$idViaje, $_SERVER['DOCUMENT_ROOT'].'/resources/library/qr/qrReporte.png');
         $pdf=new PDF();
         $pdf->AliasNbPages();
         $pdf->AddPage('P','A4');
@@ -80,13 +80,13 @@
         //  $pdf->ezImage(pepe.png, 0, 420, ‘none’, ‘left’);
         //  QRcode::png($qr,false,QR_ECLEVEL_Q,8);
         $pdf -> Ln(20); 
-        $pdf->Image('qrBitacora.png', 75, 200, 50,50);
+        $pdf->Image($_SERVER['DOCUMENT_ROOT'].'/resources/library/qr/qrReporte.png', 75, 200, 50,50);
         $pdf->Output('I','Logistica.pdf');
 
     
     }else{
         
-        QRcode::png('localhost/logistica/registrarReporte.php?id='.$idViaje ,'qrBitacora.png');
+        QRcode::png('localhost/logistica/login.php?id='.$idViaje, $_SERVER['DOCUMENT_ROOT'].'/resources/library/qr/qrReporte.png');
         $pdf=new PDF();
         $pdf->AliasNbPages();
         $pdf->AddPage('P','A4');
@@ -146,7 +146,7 @@
         //  $pdf->ezImage(pepe.png, 0, 420, ‘none’, ‘left’);
         //  QRcode::png($qr,false,QR_ECLEVEL_Q,8);
         $pdf -> Ln(20); 
-        $pdf->Image('qrBitacora.png', 75, 200, 50,50);
+        $pdf->Image($_SERVER['DOCUMENT_ROOT'].'/resources/library/qr/qrReporte.png', 75, 200, 50,50);
         $pdf->Output('I','Logistica.pdf');
     }
 ?>

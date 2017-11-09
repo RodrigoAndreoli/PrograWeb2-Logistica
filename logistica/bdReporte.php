@@ -47,6 +47,6 @@
     }
 
     $obj -> insertar($sql);
-    header("Location: alarmas.php"); 
+    header("Location: vista_reportes.php"); 
     
 ?>
