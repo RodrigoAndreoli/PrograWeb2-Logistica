@@ -84,11 +84,11 @@
                         </div>
                         <div class="row">
                                 <div class="col">
-                                    <a href="registrarUser.php" class="btn btn-primary">Nuevo usuario</a>
+                                    <a href="#" class="btn btn-primary">Nuevo usuario</a>
                                 </div>
                         </div>
                         <div class="row">
-                            <a href="/logistica/exportarUser.php" target="_blank">
+                            <a href="#" target="_blank">
                                 <button class="btn btn-link" target="_blank">Exportar a PDF</button>
                             </a>
                         </div>
