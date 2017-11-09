@@ -1,12 +1,12 @@
 <?php 
 
-    if(isset($_REQUEST['id'])) {
-        $idViaje = $_REQUEST['id'];
-    }
-    else if  (isset($_POST['enviar'])){
-              $idViaje = $_POST['idViaje'];       
-            }
-      else  $idViaje = null;
+        if(isset($_REQUEST['id'])) {
+            $idViaje = $_REQUEST['id'];
+        }
+        else if  (isset($_POST['enviar'])){
+          $idViaje = $_POST['idViaje'];       
+        }
+        else  $idViaje = null;
 
     
     if(isset($_POST['enviar'])) {   
@@ -34,8 +34,10 @@
 			session_start();
 			$_SESSION['usuario'] = $fila['nombre'];
             $_SESSION['rol'] = $fila['rol'];
+            $_SESSION['idUsuario'] = $fila['idUsuario'];
+
                 if ($idViaje >= 1 && $fila['rol'] == 'chofer') {
-                    header('Location: vista_reportes.php?id=' .$idViaje);    
+                    header('Location: registrarReporte.php?id=' .$idViaje);    
                     exit();
                 }
             header('Location: ppal.php');

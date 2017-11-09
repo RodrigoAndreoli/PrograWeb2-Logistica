@@ -10,6 +10,7 @@
 
     $nombreUsuario = $_SESSION['usuario']; 
     $rolUsuario = $_SESSION['rol']; 
+    $idUsuario = $_SESSION['idUsuario'];
     
     $obj = new controlDB();
     $usuario = $obj -> consultar("SELECT idUsuario FROM usuario where rol = '$rolUsuario' AND nombre = '$nombreUsuario'");
@@ -17,6 +18,18 @@
     $vehiculos = $obj -> consultar("SELECT idVehiculo,patente FROM vehiculo");
     $idViaje = $_REQUEST['id'];
     $hoy = date("Y-m-d H:i:s");
+
+        $verificacion = $obj -> consultar("SELECT idUsuario, idUsuario2 FROM vehiculo_chofer_viaje WHERE 
+            idViaje = '$idViaje'");
+
+        
+        foreach($verificacion as $v) {
+        if($idUsuario != $v['idUsuario'] && $idUsuario != $v['idUsuario2']){
+            header('Location: vista_reportes.php');
+            exit();
+        }
+
+        }
     ?>
     <script src="https://maps.google.com/maps/api/js?key=AIzaSyDZT1AooixAZ5wKBVyG-3nwMX3LyfqiyYY"></script>
     <style> #map { width: 100%; height: 200px; } </style> 
