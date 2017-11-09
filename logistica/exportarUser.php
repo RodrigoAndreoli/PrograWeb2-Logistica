@@ -18,17 +18,21 @@
     $pdf -> Ln(10);
     $pdf->Cell(7);
     //Longitud, alto, titulo, border, salto, alineado
-    $pdf->Cell(45,8,'Nombre',1,0,'C',1);
-    $pdf->Cell(45,8,'Documento',1,0,'C',1);
-    $pdf->Cell(45,8,'Numero',1,0,'C',1);
-    $pdf->Cell(45,8,'Rol',1,1,'C',1);
+    $pdf->Cell(30,8,'Nombre',1,0,'C',1);
+    $pdf->Cell(30,8,'Documento',1,0,'C',1);
+    $pdf->Cell(30,8,'Numero',1,0,'C',1);
+    $pdf->Cell(30,8,'Rol',1,0,'C',1);
+	$pdf->Cell(30,8,'Tipo Licencia',1,0,'C',1);
+	$pdf->Cell(30,8,'Nro Licencia',1,1,'C',1);
     $pdf->SetFont('Arial','',10);
     foreach($datos as $a) {
         $pdf->Cell(7);
-        $pdf->Cell(45,6,utf8_decode($a['nombre']),1,0,'C');
-        $pdf->Cell(45,6,strtoupper($a['tipo_doc']),1,0,'C');
-        $pdf->Cell(45,6,$a['num_doc'],1,0,'C');
-        $pdf->Cell(45,6,utf8_decode(ucfirst($a['rol'])),1,1,'C');
+        $pdf->Cell(30,6,utf8_decode($a['nombre']),1,0,'C');
+        $pdf->Cell(30,6,strtoupper($a['tipo_doc']),1,0,'C');
+        $pdf->Cell(30,6,$a['num_doc'],1,0,'C');
+        $pdf->Cell(30,6,utf8_decode(ucfirst($a['rol'])),1,0,'C');
+		$pdf->Cell(30,6,utf8_decode(ucfirst($a['tipo_licencia'])),1,0,'C');
+		$pdf->Cell(30,6,utf8_decode(ucfirst($a['nro_licencia'])),1,1,'C');
     }
     $pdf->Output('I','Logistica.pdf');
 

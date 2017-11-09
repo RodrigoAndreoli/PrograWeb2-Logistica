@@ -1,5 +1,6 @@
 <?php
     require_once($_SERVER['DOCUMENT_ROOT'].'/resources/config.php');
+	require_once($_SERVER['DOCUMENT_ROOT'].'/resources/log/creaLog.php');
     $miSession = new Sesion();
     $miSession -> iniciarSesion();
     $funcion = $_REQUEST['funcion'];
@@ -41,6 +42,11 @@
        $sql = "INSERT INTO mantenimiento(idVehiculo,idMecanico,tipo_vehiculo,fecha_entrada,fecha_salida,km_unidad,costo,externo,repuestos)
        VALUES('$idVehiculo','$idMecanico','$tipo_vehiculo','$fecha_entrada','$fecha_salida','$km_unidad','$costo','$externo','$repuestos')";
     }  
+	
+	// escribe en el log
+	$log = new creaLog();
+	$log->escribir($sql);
+	
     $obj -> insertar($sql);
     header("Location: vista_mantenimientos.php");
 

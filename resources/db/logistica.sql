@@ -6,12 +6,15 @@
 -- Tiempo de generación: 09-11-2017 a las 07:06:06
 -- Versión del servidor: 10.1.26-MariaDB
 -- Versión de PHP: 7.1.8
-
+drop database if exists logistica;
+CREATE DATABASE LOGISTICA;
+USE LOGISTICA;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
+drop table usuario;
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -163,7 +166,7 @@ INSERT INTO `reporte_viaje` (`idReporteViaje`, `idViaje`, `idChofer`, `tiempo`, 
 --
 
 CREATE TABLE `usuario` (
-  `idUsuario` int(11) NOT NULL,
+  `idUsuario` int(11) AUTO_INCREMENT NOT NULL,
   `tipo_doc` varchar(45) COLLATE utf8_spanish2_ci NOT NULL,
   `num_doc` int(11) NOT NULL,
   `nombre` varchar(45) COLLATE utf8_spanish2_ci NOT NULL,

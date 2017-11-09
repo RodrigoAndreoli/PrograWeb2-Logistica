@@ -50,7 +50,7 @@
                                                 <th  class="text-center">Rol</th>
                                                 <th  class="text-center">Operacion</th>
                                             </thead>
-                                            <?php foreach($datos as $td){ ?>
+                                            <?php if($datos) foreach($datos as $td){ ?>
                                             <tr>
                                                 <td><?php echo ($td['nombre']); ?></td>
                                                 <td><?php echo strtoupper($td['tipo_doc']); ?></td>

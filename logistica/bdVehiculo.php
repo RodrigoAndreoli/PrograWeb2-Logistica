@@ -1,5 +1,6 @@
 <?php
     require_once($_SERVER['DOCUMENT_ROOT'].'/resources/config.php');
+	require_once($_SERVER['DOCUMENT_ROOT'].'/resources/log/creaLog.php');
     $miSession = new Sesion();
     $miSession -> iniciarSesion();
     
@@ -41,6 +42,11 @@
         $sql = "INSERT INTO Vehiculo (marca,modelo,tipo_vehiculo,patente,nro_chasis,km,anio,nro_motor)
             VALUES('$marca','$modelo','$tipo_vehi','$patente','$num_chasis','$kilometros','$anio','$num_motor')";
     }
+	
+	// escribe en el log
+	$log = new creaLog();
+	$log->escribir($sql);
+	
     $obj -> insertar($sql);
     header("Location: vista_vehiculos.php"); 
 ?>

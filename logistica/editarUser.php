@@ -97,6 +97,29 @@
                                                     </div>
                                                 </div>
                                             </div>    
+											<div class="form-group" id="tp_licencia_mostrar">
+                                                <div class="col-xs-12 col-lg-6 col-lg-offset-3">
+                                                    <div class="control-label col-xs-4 col-sm-3">
+                                                        <label for="sel2 ">Tipo Licencia</label>
+                                                    </div>
+                                                    <div class="col-xs-8 col-sm-9">
+                                                        <select class="form-control" id="sel2" name="tp_licencia">
+                                                            <option value="<?php echo $users['tipo_licencia']; ?>" selected><?php echo $users['tipo_licencia']; ?></option>
+                                                            <option value="a">a</option>
+                                                            <option value="b">b</option>
+                                                            <option value="c">c</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>  
+											<div class="form-group" id="tp_licencia_mostrar">
+                                                <div class="col-xs-12 col-lg-6 col-lg-offset-3">
+                                                    <label class="control-label col-xs-4 col-sm-3">Nro Licencia:</label>
+                                                    <div class="col-xs-8 col-sm-9">       
+                                                        <input type="text" class="form-control"  value="<?php echo $users['nro_licencia']; ?>" name="nro_licencia">
+													</div>
+												</div>
+                                            </div>
                                             <tr>
                                                 <td colspan="3" class="text-center">
                                                     <a href="vista_usuarios.php" class="btn btn-danger">Volver</a>

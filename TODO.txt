@@ -24,8 +24,11 @@
     El admin tiene que poder ver en un select todos los viajes y los reportes asociados.
     El chofer tiene que poder ver en un select todos SUS viajes y los reportes asociados.
 
-+ HACERLO MIERDA PARA VER TODAS LAS BOLUDECES.
-    PHPMYADMIN CREA LAS TABLAS Y DESPUES LE AGREGA LAS CONSTRAINTS Y EN EL MEDIO QUEDAN LOS INSERTS O SEA QUE EL AUTOINCREMENT SE LO PASA POR EL CULO Y NO ANDAN LOS INSERTS.
++ Revisar los select, insert, delete y updates, tira warnings por campos que no se graban ( usuario ya esta hecho)
+
++ Me falta seguir modificando todos los abm con sus validaciones y ajustarlos.
+
++ Tira error generar pdf en vista viajes
 
 
 ############### HECHO ###############
@@ -54,3 +57,7 @@
 	Reportes deberia mostrar todos los reportes de un viaje que se elije por select
     
 + Modificar alarmas.php (Que se llame "vista_reportes.php") que deberia mostrar todos los reportes de un viaje que se elije por select
+
++ Se modifico usuarios
+
++ Se agrego un log en todos los archivos bdXXXX.php

@@ -1,5 +1,6 @@
 <?php
     require_once($_SERVER['DOCUMENT_ROOT'].'/resources/config.php');
+	require_once($_SERVER['DOCUMENT_ROOT'].'/resources/log/creaLog.php');
     $miSession = new Sesion();
     $miSession -> iniciarSesion();
     $funcion = $_REQUEST['funcion'];
@@ -46,6 +47,11 @@
        $sql = "INSERT INTO presupuesto(tiempo_estimado,estado,aceptado,costo_real,km_previstos,combustible_previsto,idCliente,idUsuario,idViaje)
        VALUES('$tiempo','$estado','$aceptado','$costo_real','$km_previstos','$combustible','$idCliente','$idUsuario','$idViaje')";
     }  
+	
+	// escribe en el log
+	$log = new creaLog();
+	$log->escribir($sql);
+	
     $obj -> insertar($sql);
     header("Location: vista_presupuestos.php");
 ?>
