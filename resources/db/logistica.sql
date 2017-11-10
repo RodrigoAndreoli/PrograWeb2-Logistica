@@ -6,7 +6,7 @@ USE logistica;
 -- Tablas
 CREATE TABLE Cliente(
 	idCliente int(11) NOT NULL AUTO_INCREMENT,
-    cuit int(11) NOT NULL,
+    cuit bigint(11) NOT NULL,
     razon varchar(45) COLLATE utf8_spanish_ci NOT NULL,
     telefono varchar(45) COLLATE utf8_spanish_ci NOT NULL,
     dom_cp int(11) NOT NULL,
