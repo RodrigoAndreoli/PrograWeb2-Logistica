@@ -10,7 +10,7 @@
 
     $datos = $obj -> consultar("SELECT *
         FROM Reporte_viaje
-        ORDER BY idViaje
+        ORDER BY tiempo
         LIMIT $empezar_desde, $tamagno_paginas
     ");
 

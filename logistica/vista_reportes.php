@@ -46,18 +46,21 @@
                                             <thead>
                                                 <th  class="text-center">idReporteViaje</th>
                                                 <th  class="text-center">idViaje</th>
+                                                <th  class="text-center">Tiempo</th>
                                                 <th  class="text-center">Latitud</th>
                                                 <th  class="text-center">Longitud</th>
-                                                <th  class="text-center">Tiempo</th>
-                                                <th  class="text-center">Operacion</th>
+                                                <th  class="text-center">Motivo</th>
+                                                <th  class="text-center">Descripción</th>
                                             </thead>
                                             <?php foreach($datos as $td){ ?>
                                             <tr>
                                                 <td><?php echo $td['idReporteViaje']; ?></td>
                                                 <td><?php echo $td['idViaje']; ?></td>
+                                                <td><?php echo $td['tiempo']; ?></td>
                                                 <td><?php echo $td['latitud']; ?></td>
                                                 <td><?php echo $td['longitud']; ?></td>
-                                                <td><?php echo $td['tiempo']; ?></td>
+                                                <td><?php echo $td['motivo']; ?></td>
+                                                <td><?php echo $td['descripcion']; ?></td>
                                                 <td class="text-center">
                                                     <a href="#<?php echo "";?>">
                                                         <button class="btn btn-info">Editar</button>

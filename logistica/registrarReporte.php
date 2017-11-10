@@ -151,22 +151,11 @@
                                             <button type="submit" class="btn btn-primary btn-lg">Crear</button>
                                         </div>
                                     </div>
-                                    <div class="col-xs-12 col-md-6">
-                                        <div class="form-group">
                                             <input type="hidden" class="form-control" name="latitud" id="latitud" readonly>
-                                        </div>
-                                    </div>  
-                                    <div class="col-xs-12 col-md-6">  
-                                        <div class="form-group">
                                             <input type="hidden" class="form-control" name="longitud" id="longitud" readonly>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 col-md-6">  
-                                        <div class="form-group">
-                                            <input type="hidden" class="form-control" name="tiempo" value="<?php echo $hoy; ?>">
-                                        </div>
-                                    </div>
-                                    <input type="hidden" name="funcion" value="insertar">
+                                            <input type="hidden" class="form-control" name="tiempo" id="tiempo" value="<?php echo $hoy; ?>" readonly>
+                                            <input type="hidden" class="form-control" name="idViaje" id="idViaje" value="<?php echo $idViaje; ?>" readonly> 
+                                            <input type="hidden" name="funcion" id="funcion" value="insertar" readonly>
                                 </form>   
                             </div>
                         </div>

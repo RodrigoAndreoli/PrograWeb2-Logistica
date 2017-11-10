@@ -3,10 +3,11 @@
 	require_once($_SERVER['DOCUMENT_ROOT'].'/resources/log/creaLog.php');
     $miSession = new Sesion();
     $miSession -> iniciarSesion();
-    $funcion = $_REQUEST['funcion'];
-    $idViaje = $_REQUEST['id'];
 
-    $idChofer = $_POST['idUsuario'];
+    $idChofer = $_SESSION['idUsuario'];
+    
+    $funcion = $_POST['funcion'];
+    $idViaje = $_POST['idViaje'];
     $tiempo = $_POST['tiempo'];
     $latitud = $_POST['latitud'];
     $longitud = $_POST['longitud'];
