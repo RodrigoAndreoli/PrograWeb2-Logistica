@@ -1,396 +1,202 @@
--- phpMyAdmin SQL Dump
--- version 4.7.0
--- https://www.phpmyadmin.net/
---
--- Servidor: 127.0.0.1
--- Tiempo de generación: 09-11-2017 a las 07:06:06
--- Versión del servidor: 10.1.26-MariaDB
--- Versión de PHP: 7.1.8
-drop database if exists logistica;
-CREATE DATABASE LOGISTICA;
-USE LOGISTICA;
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
-SET time_zone = "+00:00";
+-- Funciones
+DROP DATABASE IF EXISTS logistica;
+CREATE DATABASE IF NOT EXISTS logistica;
+USE logistica;
 
-drop table usuario;
+-- Tablas
+CREATE TABLE Cliente(
+	idCliente int(11) NOT NULL AUTO_INCREMENT,
+    cuit int(11) NOT NULL,
+    razon varchar(45) COLLATE utf8_spanish_ci NOT NULL,
+    telefono varchar(45) COLLATE utf8_spanish_ci NOT NULL,
+    dom_cp int(11) NOT NULL,
+    dom_calle varchar(45) COLLATE utf8_spanish_ci NOT NULL, 
+    dom_numero int(11) NOT NULL,
+    dom_piso int(11) NOT NULL,
+    PRIMARY KEY (idCliente)
+);
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+CREATE TABLE Usuario(
+	idUsuario int(11) NOT NULL AUTO_INCREMENT,
+    num_doc int(11) NOT NULL,
+    pass varchar(45) COLLATE utf8_spanish_ci NOT NULL,
+    rol enum('Supervisor', 'Administrador', 'Chofer', 'Mecanico') NOT NULL DEFAULT 'Supervisor',
+    nombre varchar(45) COLLATE utf8_spanish_ci NOT NULL,
+    fecha_nacimiento date NOT NULL,
+    tipo_licencia varchar(45) COLLATE utf8_spanish_ci,
+    PRIMARY KEY (idUsuario)
+);
 
---
--- Base de datos: `logistica`
---
+CREATE TABLE Vehiculo(
+	idVehiculo int(11) NOT NULL AUTO_INCREMENT,
+    tipo_vehiculo enum('Camion', 'Acoplado') NOT NULL DEFAULT 'Camion',
+    patente varchar(45) COLLATE utf8_spanish_ci NOT NULL,
+	marca varchar(45) COLLATE utf8_spanish_ci NOT NULL,
+    modelo varchar(45) COLLATE utf8_spanish_ci NOT NULL,
+    anio year(4) NOT NULL,
+    nro_chasis varchar(45) COLLATE utf8_spanish_ci NOT NULL,
+    nro_motor int(11),
+    km int(11) NOT NULL,
+    PRIMARY KEY (idVehiculo)
+);
 
--- --------------------------------------------------------
+CREATE TABLE Mantenimiento(
+	idMantenimiento int(11) NOT NULL AUTO_INCREMENT,
+    fkVehiculoM int(11) NOT NULL,
+    fkMecanicoM int(11) NOT NULL,
+    fecha_entrada date NOT NULL,
+    fecha_salida date NOT NULL,
+    costo decimal(11,2) NOT NULL,
+    externo enum('Si', 'No') NOT NULL DEFAULT 'No',
+    cambio_aceite enum('Si', 'No') NOT NULL DEFAULT 'No',
+    filtro_aire enum('Si', 'No') NOT NULL DEFAULT 'No',
+    direccion enum('Si', 'No') NOT NULL DEFAULT 'No',
+    repuestos varchar(90) COLLATE utf8_spanish_ci NOT NULL,
+    PRIMARY KEY (idMantenimiento),
+    CONSTRAINT fk_vehm FOREIGN KEY (fkVehiculoM)
+		REFERENCES Vehiculo (idVehiculo),
+	CONSTRAINT fk_mecm FOREIGN KEY (fkMecanicoM)
+		REFERENCES Usuario (idUsuario)
+);
 
---
--- Estructura de tabla para la tabla `cliente`
---
+CREATE TABLE Presupuesto(
+	idPresupuesto int(11) NOT NULL AUTO_INCREMENT,
+    fkClienteP int(11) NOT NULL,
+    fkAdministradorP int(11) NOT NULL,
+    tiempo_estimado time NOT NULL,
+    km_estimado int(11) NOT NULL,
+    combustible_estimado decimal(11,2) NOT NULL,
+    costo_real decimal(11,2) NOT NULL,
+    aceptado enum('Si', 'No') NOT NULL DEFAULT 'No',
+    PRIMARY KEY (idPresupuesto),
+    CONSTRAINT fk_clip FOREIGN KEY (fkClienteP)
+		REFERENCES Cliente (idCliente),
+	CONSTRAINT fk_admp FOREIGN KEY (fkAdministradorP)
+		REFERENCES Usuario (idUsuario)
+);
 
-CREATE TABLE `cliente` (
-  `idCliente` int(11) NOT NULL,
-  `cuit` int(11) NOT NULL,
-  `razon` varchar(45) COLLATE utf8_spanish2_ci NOT NULL,
-  `dom_numero` int(11) NOT NULL,
-  `dom_calle` varchar(45) COLLATE utf8_spanish2_ci NOT NULL,
-  `dom_cp` varchar(45) COLLATE utf8_spanish2_ci NOT NULL,
-  `dom_piso` int(11) NOT NULL DEFAULT '0',
-  `telefono` varchar(45) COLLATE utf8_spanish2_ci NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+CREATE TABLE Viaje(
+	idViaje int(11) NOT NULL AUTO_INCREMENT,
+    fkPresupuestoV int(11) NOT NULL,
+    fecha datetime NOT NULL,
+    origen varchar(45) COLLATE utf8_spanish_ci NOT NULL,
+    destino varchar(45) COLLATE utf8_spanish_ci NOT NULL,
+    tipo_carga varchar(45) COLLATE utf8_spanish_ci NOT NULL,
+    tiempo_total time,
+    combustible_total decimal(11,2),
+    km_total int(11),
+    PRIMARY KEY (idViaje),
+    CONSTRAINT fk_prev FOREIGN KEY (fkPresupuestoV)
+		REFERENCES Presupuesto (idPresupuesto)
+);
 
---
--- Volcado de datos para la tabla `cliente`
---
+CREATE TABLE Vehiculo_chofer_viaje(
+	fkViajeT int(11) NOT NULL,
+    fkChoferT int(11) NOT NULL,
+    fkAcompanianteT int(11),
+    fkCamionT int(11) NOT NULL,
+    fkAcopladoT int(11),
+    PRIMARY KEY (fkViajeT),
+    CONSTRAINT fk_viat FOREIGN KEY (fkViajeT)
+		REFERENCES Viaje (idViaje),
+	CONSTRAINT fk_chot FOREIGN KEY (fkChoferT)
+		REFERENCES Usuario (idUsuario),
+	CONSTRAINT fk_acomt FOREIGN KEY (fkAcompanianteT)
+		REFERENCES Usuario (idUsuario),
+	CONSTRAINT fk_camt FOREIGN KEY (fkCamionT)
+		REFERENCES Vehiculo (idVehiculo),
+	CONSTRAINT fk_acopt FOREIGN KEY (fkAcopladoT)
+		REFERENCES Vehiculo (idVehiculo)
+); 
 
-INSERT INTO `cliente` (`idCliente`, `cuit`, `razon`, `dom_numero`, `dom_calle`, `dom_cp`, `dom_piso`, `telefono`) VALUES
-(1, 2147483647, 'Julio Garcia', 1212, 'Esmeralda', '1706', 0, '1163654361'),
-(2, 2147483647, 'Julio Rios', 6750, 'Rivadavia', '1706', 0, '1147436789'),
-(3, 2147483647, 'Hugo Perez', 1200, 'Paco', '1708', 0, '1153964073'),
-(4, 2147483647, 'Luis Blanco', 1212, 'Esmeralda', '1706', 0, '1148755133');
+CREATE TABLE Reporte(
+	idReporteViaje int(11) NOT NULL AUTO_INCREMENT,
+    fkViajeR int(11) NOT NULL,
+    fkChoferR int(11) NOT NULL,
+    tiempo time NOT NULL,
+    latitud varchar(45) COLLATE utf8_spanish_ci NOT NULL,
+    longitud varchar(45) COLLATE utf8_spanish_ci NOT NULL,
+    motivo enum('Parada Tecnica', 'Desvio', 'Accidente') NOT NULL DEFAULT 'Parada Tecnica',
+    km int(11) NOT NULL,
+    combustible decimal(11,2),
+    descripcion varchar(90) COLLATE utf8_spanish_ci NOT NULL,
+    PRIMARY KEY (idReporteViaje),
+    CONSTRAINT fk_viar FOREIGN KEY (fkViajeR)
+		REFERENCES Viaje (idViaje),
+	CONSTRAINT fk_chor FOREIGN KEY (fkChoferR)
+		REFERENCES Usuario (idUsuario)
+);
 
--- --------------------------------------------------------
+-- Inserts
+INSERT INTO Cliente (cuit, razon, telefono, dom_cp, dom_calle, dom_numero, dom_piso) VALUES
+(20712944235, 'Julio García', '46237709', 1714, 'Esmeralda', 1212, 0),
+(20337174709, 'Julián Ríos', '46236006', 1712, 'Rivadavia', 6750, 5),
+(20558172314, 'Hugo Perez', '46231445', 1804, 'Martin Fierro', 1200, 0),
+(27549804571, 'Mariela Franco', '46235700', 7160, 'Avellaneda', 1589, 1),
+(27893492482, 'Mirna Miranda', '46231243', 8150, 'Francia', 7980, 3),
+(30855702826, 'Chocolates San Alberto', '46233431', 6230, 'Rusia', 4776, 0);
 
---
--- Estructura de tabla para la tabla `mantenimiento`
---
+INSERT INTO Usuario (num_doc, pass, rol, nombre, fecha_nacimiento, tipo_licencia) VALUES
+(1,'c4ca4238a0b923820dcc509a6f75849b', 'Chofer', 'Roberto Navarro', '1992-02-01', 'E1'),
+(2, '81dc9bdb52d04dc20036dbd8313ed055', 'Supervisor', 'Juan Gonzalez', '1991-10-02', NULL),
+(3, 'eccbc87e4b5ce2fe28308fd9f2a7baf3', 'Mecanico', 'Javier Beltrán', '1989-07-22', NULL),
+(4, 'a87ff679a2f3e71d9181a67b7542122c', 'Administrador', 'Daniel Solis', '1990-03-02', NULL),
+(5, '81dc9bdb52d04dc20036dbd8313ed055', 'Chofer', 'Mauricio Choñol', '1986-02-08', 'E1'),
+(1234, '81dc9bdb52d04dc20036dbd8313ed055', 'Chofer', 'Pepe Lopez', '1992-06-06', 'E1'),
+(358087832, '84eb13cfed01764d9c401219faa56d53', 'Supervisor', 'Paula Ramirez', '1990-10-01', NULL),
+(26094040, 'c4ca4238a0b923820dcc509a6f75849b', 'Mecanico', 'Lucas Silva', '1885-10-01', NULL),
+(123, '202cb962ac59075b964b07152d234b70', 'Administrador', 'Martin Diaz', '1995-10-03', NULL),
+(44139463, '202cb962ac59075b964b07152d234b70', 'Administrador', 'Luis Ruiz', '1994-08-01', NULL),
+(34609195, '81dc9bdb52d04dc20036dbd8313ed055', 'Chofer', 'Alberto López', '2000-07-07', 'E1'),
+(25173964, '81dc9bdb52d04dc20036dbd8313ed055', 'Mecanico', 'Jorge Gómez', '1980-07-07', NULL),
+(36707564, '81dc9bdb52d04dc20036dbd8313ed055', 'Supervisor', 'Marcela Rodríguez ', '1998-02-02', NULL);
 
-CREATE TABLE `mantenimiento` (
-  `idMantenimiento` int(11) NOT NULL,
-  `idVehiculo` int(11) NOT NULL,
-  `idMecanico` int(11) NOT NULL,
-  `tipo_vehiculo` varchar(45) COLLATE utf8_spanish2_ci NOT NULL,
-  `fecha_entrada` date NOT NULL,
-  `fecha_salida` date DEFAULT NULL,
-  `km_unidad` int(11) NOT NULL,
-  `costo` decimal(12,2) DEFAULT NULL,
-  `externo` enum('si','no') CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL DEFAULT 'no',
-  `cambio_aceite` enum('si','no') CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL DEFAULT 'no',
-  `filtro_aire` enum('si','no') CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL DEFAULT 'no',
-  `direccion` enum('si','no') CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL DEFAULT 'no',
-  `repuestos` varchar(80) COLLATE utf8_spanish2_ci DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+INSERT INTO Vehiculo (tipo_vehiculo, patente, marca, modelo, anio, nro_chasis, nro_motor, km) VALUES
+('Camion', 'MXX123', 'Scania', '1634', 2012, '81dc9bdb52d04dc', 670062, 79851),
+('Acoplado', 'ABM372', 'Astivia', 'Roller', 2015, '81dcM372', NULL, 20272),
+('Camion', 'LAB372', 'Mercedes-Benz', '1710', 2000, '1HD1BRY195Y0808', 268268, 98788),
+('Acoplado', 'AB372CD', 'Nortrucks', '2508', 2017, '21BRz195Y0808', NULL, 6977),
+('Camion', 'BA273DC', 'Iveco', 'Daily', 2017, '8AD3CN6AP4G0032', 378478, 900),
+('Camion', 'AR747AK', 'Iveco', 'Daily', 2016, '8AD3CN6AP4G0032', 578596, 7892);
 
---
--- Volcado de datos para la tabla `mantenimiento`
---
+INSERT INTO Mantenimiento (fkVehiculoM, fkMecanicoM, fecha_entrada, fecha_salida, costo, externo, cambio_aceite, filtro_aire, direccion, repuestos) VALUES
+(1, 3, '2017-01-15', '2017-06-15', '80000.00', 'No', 'Si', 'Si', 'Si', 'Faro de Giro, paragolpes, amortiguador'),
+(1, 3, '2017-08-11', '2017-08-15', '1000.00', 'No', 'Si', 'Si', 'no', 'Cubiertas, electroinyector'),
+(4, 8, '2017-07-10', '2017-07-15', '8000.00', 'Si', 'No', 'No', 'No', 'Juego de Espejos, burro de arranque.'),
+(6, 8, '2016-04-15', '2016-07-15', '16000.00', 'Si', 'Si', 'No', 'No', 'Embrague ventilador'),
+(2, 12, '2016-04-15', '2016-07-16', '80000.00', 'No', 'No', 'No', 'No', 'Eje Acople, corona');
 
-INSERT INTO `mantenimiento` (`idMantenimiento`, `idVehiculo`, `idMecanico`, `tipo_vehiculo`, `fecha_entrada`, `fecha_salida`, `km_unidad`, `costo`, `externo`, `cambio_aceite`, `filtro_aire`, `direccion`, `repuestos`) VALUES
-(1, 1, 9, 'camion', '2017-01-15', '2017-07-15', 3080, '8000.00', 'no', 'si', 'si', 'no', 'Faro Giro, paragolpes'),
-(2, 1, 9, 'camion', '2017-08-11', '2017-08-15', 3080, '1000.00', 'no', 'si', 'si', 'no', 'Cubiertas, Electroinyector'),
-(3, 4, 11, 'camion', '2017-07-10', '2017-07-15', 18000, '8000.00', 'no', 'no', 'no', 'no', 'Juego Espejos, burro de arranque.'),
-(4, 6, 11, 'camion', '2016-04-15', '2016-07-15', 20050, '16000.00', 'si', 'si', 'no', 'no', 'Embrague Ventilador'),
-(5, 2, 9, 'acoplado-B', '2016-04-15', '2016-07-16', 24000, '80000.00', 'si', 'no', 'no', 'no', 'Eje Acople, corona');
+INSERT INTO Presupuesto (fkClienteP, fkAdministradorP, tiempo_estimado, km_estimado, combustible_estimado, costo_real, aceptado) VALUES
+(1, 3, '02:00:00', 135, 230.00, '1300.00', 'Si'),
+(2, 1, '05:00:00', 435, 900.00, '2700.00', 'Si'),
+(6, 1, '23:00:00', 1600, 2700.00, '4000.00', 'Si'),
+(6, 1, '23:00:00', 1600, 2700.00, '4000.00', 'Si'),
+(6, 1, '23:00:00', 1600, 2700.00, '4000.00', 'Si'),
+(3, 1, '06:00:00', 560, 400.00, '1000.00', 'Si'),
+(4, 1, '06:00:00', 560, 400.00, '1000.00', 'Si'),
+(5, 1, '00:30:00', 82, 20.00, '500.00', 'No'),
+(2, 2, '44:00:00', 2900, 5000.00, '6900.00', 'Si');
 
--- --------------------------------------------------------
+INSERT INTO Viaje (fkPresupuestoV, fecha, origen, destino, tipo_carga, tiempo_total, combustible_total, km_total) VALUES
+(1, '2017-11-22 10:00:00', 'Logistica S.A.', 'Lujan Bs As', 'Sustancias y objetos peligrosos varios', '01:45:30', 230.00, 135),
+(2, '2017-10-24 09:00:00', 'Logistica S.A.', 'Cordoba', 'Mudanza', '05:35:00', 900.00, 900),
+(3, '2017-10-07 05:00:00', 'Logistica S.A.', 'Bariloche', 'Chocolates', '25:00:00', 2700.00, 1600),
+(4, '2017-11-07 05:00:00', 'Logistica S.A.', 'Bariloche', 'Chocolates', '23:55:00', 2700.00, 1600),
+(5, '2017-12-09 05:00:00', 'Logistica S.A.', 'Bariloche', 'Chocolates', '29:50:50', 2900.00, 1600),
+(6, '2017-11-10 08:00:00', 'Cordoba', 'Logistica S.A.', 'Refrigerados y congelados', '05:55:50', 400.00, 560),
+(7, '2018-01-08 14:00:00', 'Cordoba', 'Logistica S.A.', 'Refrigerados y congelados', '07:45:30', 460.00, 560),
+(9, '2017-12-20 21:00:00', 'Logistica S.A.', 'Rio Grande', 'Material radiactivo', '47:00:00', 5300.00, 5100);
 
---
--- Estructura de tabla para la tabla `presupuesto`
---
+INSERT INTO Vehiculo_chofer_viaje (fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT) VALUES
+(2, 11, NULL, 5, NULL),
+(3, 1, 6, 1, 2),
+(4, 1, 6, 3, 4),
+(6, 2, 6, 6, NULL);
 
-CREATE TABLE `presupuesto` (
-  `idPresupuesto` int(11) NOT NULL,
-  `idCliente` int(11) NOT NULL,
-  `idUsuario` int(11) NOT NULL,
-  `idViaje` int(11) NOT NULL,
-  `tiempo_estimado` time NOT NULL,
-  `km_previstos` int(11) NOT NULL,
-  `combustible_previsto` int(11) NOT NULL,
-  `costo_real` decimal(12,2) NOT NULL,
-  `aceptado` enum('si','no') CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL DEFAULT 'no',
-  `estado` enum('en curso','finalizado','cancelado') CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL DEFAULT 'en curso'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
-
---
--- Volcado de datos para la tabla `presupuesto`
---
-
-INSERT INTO `presupuesto` (`idPresupuesto`, `idCliente`, `idUsuario`, `idViaje`, `tiempo_estimado`, `km_previstos`, `combustible_previsto`, `costo_real`, `aceptado`, `estado`) VALUES
-(1, 1, 3, 1, '02:00:00', 435, 40, '5000.00', 'si', 'en curso'),
-(2, 2, 1, 3, '05:00:00', 300, 30, '1000.00', 'si', 'finalizado'),
-(5, 4, 1, 3, '01:00:00', 22, 2, '2000.00', 'si', 'en curso'),
-(3, 2, 2, 4, '04:00:00', 80, 8, '5000.00', 'si', 'en curso');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `reporte_mantenimiento`
---
-
-CREATE TABLE `reporte_mantenimiento` (
-  `idReporteMantenimiento` int(11) NOT NULL,
-  `idMantenimiento` int(11) NOT NULL,
-  `fecha_entrada` date NOT NULL,
-  `fecha_salida` date NOT NULL,
-  `km_recorridos` int(11) DEFAULT NULL,
-  `costo_mantenimiento` decimal(10,2) DEFAULT NULL,
-  `costo_km_recorrido` varchar(45) COLLATE utf8_spanish2_ci DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `reporte_viaje`
---
-
-CREATE TABLE `reporte_viaje` (
-  `idReporteViaje` int(11) NOT NULL,
-  `idViaje` int(11) NOT NULL,
-  `idChofer` int(11) NOT NULL,
-  `tiempo` datetime NOT NULL,
-  `latitud` varchar(45) COLLATE utf8_spanish2_ci NOT NULL,
-  `longitud` varchar(45) COLLATE utf8_spanish2_ci NOT NULL,
-  `motivo` enum('Parada Tecnica','Desvio','Accidente','') COLLATE utf8_spanish2_ci NOT NULL DEFAULT 'Parada Tecnica',
-  `km` int(11) NOT NULL,
-  `combustible` int(11) DEFAULT NULL,
-  `descripcion` varchar(100) COLLATE utf8_spanish2_ci NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
-
---
--- Volcado de datos para la tabla `reporte_viaje`
---
-
-INSERT INTO `reporte_viaje` (`idReporteViaje`, `idViaje`, `idChofer`, `tiempo`, `latitud`, `longitud`, `motivo`, `km`, `combustible`, `descripcion`) VALUES
-(5, 0, 0, '2017-11-09 00:56:13', '-58.6581128', '-34.6380318', 'Parada Tecnica', 0, 0, ''),
-(6, 0, 0, '2017-11-09 00:56:23', '-58.6581104', '-34.6380328', 'Parada Tecnica', 0, 0, ''),
-(7, 0, 0, '2017-11-09 02:22:51', '-58.65811779999999', '-34.6380262', '', 56800, 1200, 'Carga Nafta YPF'),
-(8, 0, 0, '2017-11-09 02:24:21', '-58.6581092', '-34.6380325', 'Parada Tecnica', 56800, 1200, 'Carga Nafta YPF');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `usuario`
---
-
-CREATE TABLE `usuario` (
-  `idUsuario` int(11) AUTO_INCREMENT NOT NULL,
-  `tipo_doc` varchar(45) COLLATE utf8_spanish2_ci NOT NULL,
-  `num_doc` int(11) NOT NULL,
-  `nombre` varchar(45) COLLATE utf8_spanish2_ci NOT NULL,
-  `fecha_nacimiento` date NOT NULL,
-  `rol` enum('chofer','admin','supervisor','mecanico') CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL DEFAULT 'chofer',
-  `password` varchar(45) COLLATE utf8_spanish2_ci NOT NULL,
-  `tipo_licencia` varchar(20) COLLATE utf8_spanish2_ci NOT NULL,
-  `nro_licencia` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
-
---
--- Volcado de datos para la tabla `usuario`
---
-
-INSERT INTO `usuario` (`idUsuario`, `tipo_doc`, `num_doc`, `nombre`, `fecha_nacimiento`, `rol`, `password`, `tipo_licencia`, `nro_licencia`) VALUES
-(1, 'dni', 2, 'Juan Gonzalez', '1991-10-02', 'supervisor', '81dc9bdb52d04dc20036dbd8313ed055', 'c', 0),
-(2, 'dni', 1234, 'Pepe Lopez', '1992-06-06', 'chofer', '81dc9bdb52d04dc20036dbd8313ed055', 'c', 0),
-(3, 'dni', 358087832, 'Paula Ramirez', '1990-10-01', 'supervisor', '84eb13cfed01764d9c401219faa56d53', '', 0),
-(9, 'libreta', 26094040, 'Lucas Silva', '1885-10-01', 'mecanico', 'c4ca4238a0b923820dcc509a6f75849b', '', 0),
-(8, 'libreta', 123, 'Martin Diaz', '1995-10-03', 'admin', '202cb962ac59075b964b07152d234b70', '', 0),
-(6, 'dni', 44139463, 'Luis Ruiz', '1994-08-01', 'admin', '202cb962ac59075b964b07152d234b70', '', 0),
-(7, 'dni', 1, 'Roberto Navarro', '1992-02-01', 'chofer', 'c4ca4238a0b923820dcc509a6f75849b', 'c', 0),
-(10, 'dni', 34609195, 'Alberto López', '2000-07-07', 'chofer', '81dc9bdb52d04dc20036dbd8313ed055', 'c', 0),
-(11, 'dni', 25173964, 'Jorge Gómez', '1980-07-07', 'mecanico', '81dc9bdb52d04dc20036dbd8313ed055', '', 0),
-(13, 'dni', 36707564, 'Marcela Rodríguez ', '1998-02-02', 'supervisor', '81dc9bdb52d04dc20036dbd8313ed055', '', 0),
-(4, 'dni', 4, 'Daniel Solis', '1990-03-02', 'admin', 'a87ff679a2f3e71d9181a67b7542122c', '', 0),
-(5, 'dni', 3, 'Javier Beltrán', '1989-07-22', 'mecanico', 'eccbc87e4b5ce2fe28308fd9f2a7baf3', '', 0);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `vehiculo`
---
-
-CREATE TABLE `vehiculo` (
-  `idVehiculo` int(11) NOT NULL,
-  `tipo_vehiculo` varchar(45) COLLATE utf8_spanish2_ci NOT NULL,
-  `patente` varchar(45) COLLATE utf8_spanish2_ci NOT NULL,
-  `nro_chasis` varchar(45) COLLATE utf8_spanish2_ci DEFAULT NULL,
-  `marca` varchar(45) COLLATE utf8_spanish2_ci NOT NULL,
-  `modelo` varchar(45) COLLATE utf8_spanish2_ci NOT NULL,
-  `nro_motor` varchar(45) COLLATE utf8_spanish2_ci DEFAULT NULL,
-  `km` int(11) DEFAULT NULL,
-  `anio` year(4) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
-
---
--- Volcado de datos para la tabla `vehiculo`
---
-
-INSERT INTO `vehiculo` (`idVehiculo`, `tipo_vehiculo`, `patente`, `nro_chasis`, `marca`, `modelo`, `nro_motor`, `km`, `anio`) VALUES
-(1, 'camion', 'M123xxA', '81dc9bdb52d04dc', 'Scania', '1634', '113545', 2900, 2012),
-(2, 'acoplado', 'ABM372', '81dcM372', 'Astivia', '1634', '113545', 24000, 2015),
-(4, 'camion', 'AB372CD', '1HD1BRY195Y0808', 'Mercedes-Benz', '1710', '213545', 45000, 2000),
-(5, 'acoplado', 'LAB0372', '21BRz195Y0808', 'NORTRUCKS', '2508', '333545', 4000, 2017),
-(6, 'camion', 'A372BCD', '8AD3CN6AP4G0032', 'Iveco', 'Daily', '153545', 20050, 2016);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `vehiculo_chofer_viaje`
---
-
-CREATE TABLE `vehiculo_chofer_viaje` (
-  `idViaje` int(11) NOT NULL,
-  `idUsuario` int(11) NOT NULL,
-  `idUsuario2` int(11) DEFAULT NULL,
-  `idVehiculo` int(11) NOT NULL,
-  `idVehiculo2` int(11) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
-
---
--- Volcado de datos para la tabla `vehiculo_chofer_viaje`
---
-
-INSERT INTO `vehiculo_chofer_viaje` (`idViaje`, `idUsuario`, `idUsuario2`, `idVehiculo`, `idVehiculo2`) VALUES
-(2, 2, 7, 2, 5),
-(3, 7, 0, 4, 0),
-(10, 2, 0, 1, 0);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `viaje`
---
-
-CREATE TABLE `viaje` (
-  `idViaje` int(11) NOT NULL,
-  `idPresupuesto` int(11) NOT NULL,
-  `idCliente` int(11) NOT NULL,
-  `fecha` datetime NOT NULL,
-  `origen` varchar(45) COLLATE utf8_spanish2_ci NOT NULL,
-  `destino` varchar(45) COLLATE utf8_spanish2_ci NOT NULL,
-  `tipo_carga` varchar(45) COLLATE utf8_spanish2_ci NOT NULL,
-  `tiempo` time NOT NULL,
-  `combustible` int(11) DEFAULT NULL,
-  `km_totales` int(11) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
-
---
--- Volcado de datos para la tabla `viaje`
---
-
-INSERT INTO `viaje` (`idViaje`, `idPresupuesto`, `idCliente`, `fecha`, `origen`, `destino`, `tipo_carga`, `tiempo`, `combustible`, `km_totales`) VALUES
-(1, 1, 1, '2017-11-22 10:00:00', 'Logistica S.A.', 'Lujan Bs As', 'Sustancias y objetos peligrosos varios', '02:00:02', 2, 120),
-(2, 2, 1, '2017-10-24 09:00:00', 'Logistica S.A.', 'Cordoba', 'Material radiactivo', '07:00:07', 52, 740),
-(3, 5, 2, '2017-10-27 10:00:00', 'Logistica S.A.', 'José de Urquiza 4537', 'refrigerados y congelados', '01:02:01', 2, 22),
-(4, 3, 2, '2017-11-07 00:00:00', 'Logistica S.A.', 'Av. Vergara 6060, Hurlingham', 'frutas', '04:00:00', 8, 80),
-(10, 0, 0, '2017-12-09 09:00:00', 'Bariloche', 'Buenos Aires', 'Chocolates', '00:00:00', NULL, NULL);
-
---
--- Índices para tablas volcadas
---
-
---
--- Indices de la tabla `cliente`
---
-ALTER TABLE `cliente`
-  ADD PRIMARY KEY (`idCliente`);
-
---
--- Indices de la tabla `mantenimiento`
---
-ALTER TABLE `mantenimiento`
-  ADD PRIMARY KEY (`idMantenimiento`),
-  ADD KEY `fk_mantenimiento_idVehiculo` (`idVehiculo`),
-  ADD KEY `fk_mantenimiento_mecanico` (`idMecanico`);
-
---
--- Indices de la tabla `presupuesto`
---
-ALTER TABLE `presupuesto`
-  ADD PRIMARY KEY (`idPresupuesto`),
-  ADD KEY `fk_presupuesto_idCliente` (`idCliente`),
-  ADD KEY `fk_presupuesto_idViaje` (`idViaje`),
-  ADD KEY `fk_presupuesto_idUsuario` (`idUsuario`);
-
---
--- Indices de la tabla `reporte_mantenimiento`
---
-ALTER TABLE `reporte_mantenimiento`
-  ADD PRIMARY KEY (`idReporteMantenimiento`),
-  ADD KEY `fk_reporte_mante_idMantenimiento` (`idMantenimiento`);
-
---
--- Indices de la tabla `reporte_viaje`
---
-ALTER TABLE `reporte_viaje`
-  ADD PRIMARY KEY (`idReporteViaje`),
-  ADD KEY `fk_report_viaje_ternaria_idViaje` (`idViaje`),
-  ADD KEY `fk_report_viaje_ternaria_idChofer` (`idChofer`);
-
---
--- Indices de la tabla `usuario`
---
-ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`idUsuario`);
-
---
--- Indices de la tabla `vehiculo`
---
-ALTER TABLE `vehiculo`
-  ADD PRIMARY KEY (`idVehiculo`),
-  ADD UNIQUE KEY `patente` (`patente`);
-
---
--- Indices de la tabla `vehiculo_chofer_viaje`
---
-ALTER TABLE `vehiculo_chofer_viaje`
-  ADD PRIMARY KEY (`idViaje`) USING BTREE;
-
---
--- Indices de la tabla `viaje`
---
-ALTER TABLE `viaje`
-  ADD PRIMARY KEY (`idViaje`),
-  ADD KEY `fk_viaje_idPresupuesto` (`idPresupuesto`),
-  ADD KEY `fk_viaje_cliente` (`idCliente`);
-
---
--- AUTO_INCREMENT de las tablas volcadas
---
-
---
--- AUTO_INCREMENT de la tabla `cliente`
---
-ALTER TABLE `cliente`
-  MODIFY `idCliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
---
--- AUTO_INCREMENT de la tabla `mantenimiento`
---
-ALTER TABLE `mantenimiento`
-  MODIFY `idMantenimiento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
---
--- AUTO_INCREMENT de la tabla `presupuesto`
---
-ALTER TABLE `presupuesto`
-  MODIFY `idPresupuesto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
---
--- AUTO_INCREMENT de la tabla `reporte_mantenimiento`
---
-ALTER TABLE `reporte_mantenimiento`
-  MODIFY `idReporteMantenimiento` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT de la tabla `reporte_viaje`
---
-ALTER TABLE `reporte_viaje`
-  MODIFY `idReporteViaje` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
---
--- AUTO_INCREMENT de la tabla `usuario`
---
-ALTER TABLE `usuario`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
---
--- AUTO_INCREMENT de la tabla `vehiculo`
---
-ALTER TABLE `vehiculo`
-  MODIFY `idVehiculo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
---
--- AUTO_INCREMENT de la tabla `viaje`
---
-ALTER TABLE `viaje`
-  MODIFY `idViaje` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+INSERT INTO Reporte (fkViajeR, fkChoferR, tiempo, latitud, longitud, motivo, km, combustible, descripcion) VALUES
+(2, 11, '2017-10-24 09:00:00', '-58.6581128', '-34.6380318', 'Parada Tecnica', 0),
+(2, 11, '2017-10-24 14:35:00', '-59.111061', '-34.570730', 'Parada Tecnica', 435),
+(2, 11, '2017-10-24 20:00:00', '-58.6581128', '-34.6380318', 'Parada Tecnica', 900),
+(3, 1, '2017-10-07 05:00:00', '-58.6581128', '-34.6380318', 'Parada Tecnica', 79306),
+(3, 6, '2017-10-07 12:00:00', '-64.287881', '-36.608621', 'Parada Tecnica', 79851),
+(4, 6, '2017-11-07 05:00:00', '-58.6581128', '-34.6380318','Parada Tecnica', 98788);
