@@ -46,12 +46,11 @@
                                         <table class="table table-striped table-bordered table-condensed table-hover">
                                             <thead>
                                                 <th  class="text-center">Mecanico</th>
+                                                <th  class="text-center">Externo</th>
                                                 <th  class="text-center">Patente</th>
-                                                <th  class="text-center">Tipo Vehiculo</th>
-                                                <th  class="text-center">Km</th>
-                                                <th  class="text-center">Fecha entrada</th>
+                                                <th  class="text-center">Fecha de entrada</th>
+                                                <th  class="text-center">Fecha de salida</th>
                                                 <th  class="text-center">Repuestos</th>
-                                                <th  class="text-center">Service externo</th>
                                                 <th  class="text-center">Costo</th>
                                                 <?php if($_SESSION["rol"]!='Supervisor'){?> 
                                                 <th  class="text-center">Operacion</th>
@@ -59,14 +58,13 @@
                                             </thead>
                                             <?php foreach($datos as $td){ ?>
                                             <tr>
-                                                <td><?php echo ($td['nombre']);?></td>
-                                                <td><?php echo strtoupper($td['patente']);?></td>
-                                                <td><?php echo ucwords(strtolower($td['tipo_vehiculo']));?></td>
-                                                <td><?php echo $td['km_unidad'];?></td>
+                                                <td><?php echo $td['nombre'];?></td>
+                                                <td><?php echo $td['externo'];?></td>
+                                                <td><?php echo $td['patente'];?></td>
                                                 <td><?php echo $td['fecha_entrada'];?></td>
-                                                <td><?php echo ucwords(strtolower($td['repuestos']));?></td>
-                                                <td><?php echo ucwords(strtolower($td['externo']));?></td>
-                                                <td><?php echo $td['costo'];?></td>
+                                                <td><?php echo $td['fecha_salida'];?></td>
+                                                <td><?php echo ucwords($td['repuestos']);?></td>
+                                                <td><?php echo '$'.$td['costo'];?></td>
                                                 <?php if($_SESSION["rol"]!='Supervisor'){?>  
                                                 <td class="text-center">
                                                     <a href="editarMantenimiento.php?id=<?php echo $td["idMantenimiento"]?>">
@@ -74,7 +72,7 @@
                                                     </a>
                                                     <a href="bdMantenimiento.php?id=<?php echo $td["idMantenimiento"]?>&funcion=eliminar"> 
                                                         <button class="btn btn-danger">Eliminar</button>
-                                                    </a>      
+                                                    </a>
                                             </td>
                                             <?php } ?> 
                                         </tr>

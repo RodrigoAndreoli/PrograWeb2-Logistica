@@ -5,7 +5,7 @@
     $miSession -> iniciarSesion();
     $funcion = $_POST['funcion'];
 
-    $fkChoferR = $_SESSION['idUsuario'];
+    $fkChoferR = $_POST['fkChoferR'];
     $fkViajeR = $_POST['fkViajeR'];
     $tiempo = $_POST['tiempo'];
     $latitud = $_POST['latitud'];

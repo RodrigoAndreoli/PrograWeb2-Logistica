@@ -44,18 +44,19 @@
                                     <div class="table-responsive">
                                         <table class="table table-striped table-bordered table-condensed table-hover">
                                             <thead>
-                                                <th  class="text-center">idReporteViaje</th>
-                                                <th  class="text-center">idViaje</th>
+                                                <th  class="text-center">idReporte</th>
+                                                <th  class="text-center">fkViajeR</th>
                                                 <th  class="text-center">Tiempo</th>
                                                 <th  class="text-center">Latitud</th>
                                                 <th  class="text-center">Longitud</th>
                                                 <th  class="text-center">Motivo</th>
-                                                <th  class="text-center">Descripción</th>
+                                                <th  class="text-center">Descripci&oacute;n</th>
+                                                <th  class="text-center">Operaci&oacute;n</th>
                                             </thead>
                                             <?php foreach($datos as $td){ ?>
                                             <tr>
-                                                <td><?php echo $td['idReporteViaje']; ?></td>
-                                                <td><?php echo $td['idViaje']; ?></td>
+                                                <td><?php echo $td['idReporte']; ?></td>
+                                                <td><?php echo $td['fkViajeR']; ?></td>
                                                 <td><?php echo $td['tiempo']; ?></td>
                                                 <td><?php echo $td['latitud']; ?></td>
                                                 <td><?php echo $td['longitud']; ?></td>

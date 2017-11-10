@@ -1,26 +1,20 @@
-function mostrarLic()
-	{
-		var sel1 = document.getElementById('sel1').value;
-		if (sel1 == "Chofer"){ 
-			document.getElementById("tp_licencia_mostrar").style.display = "block";
-			document.getElementById("nro_licencia_mostrar").style.display = "block";
-		}
-		else {
-			document.getElementById("tp_licencia_mostrar").style.display = "none";
-			document.getElementById("nro_licencia_mostrar").style.display = "none";
-		}
-		
-	}
+function mostrarLic(){
+    var rol = document.getElementById('rol').value;
+    var lic = document.getElementById("mostrarLicencia");
+    if (rol == "Chofer"){ 
+        lic.style.display = "block";
+    } else {
+        lic.style.display = "none";
+    }
+}
 
 function validar() {
-    var nombre = document.getElementById('nombre').value;
-    var tipo_doc = document.getElementById('tipo_doc').value;
-    var pass = document.getElementById('pass').value;
     var num_doc = document.getElementById('num_doc').value;
-    var sel1 = document.getElementById('sel1').value;
+    var pass = document.getElementById('pass').value;
+    var rol = document.getElementById('rol').value;
+    var nombre = document.getElementById('nombre').value;
     var fecha_nacimiento = document.getElementById('fecha_nacimiento').value;
-	var sel2 = document.getElementById('sel2').value;
-	var nro_lic = document.getElementById('nro_licencia').value;
+	var lic = document.getElementById('tipo_licencia').value;
 
     //expresiones regulares
     var regexnum = /([0-9]+)/;
@@ -30,6 +24,26 @@ function validar() {
     //variables auxiliares
     var mensaje = "";
     var error = 0;
+
+    if (num_doc == "") {
+        mensaje += "<p>Campo 'Numero Documento' vac&iacute;o.</p>";
+        error++;
+    } else {
+        if (!(regexnum).test(num_doc)) {
+            mensaje += "<p>Campo 'Numero Documento' inv&aacute;lido.</p>";
+            error++;
+        }
+    }
+    
+    if (pass == "") {
+        mensaje += "<p>Campo 'Password' vac&iacute;o.</p>";
+        error++;
+    } else {
+        if (pass.length < 4 || pass.length > 10) {
+            mensaje += "<p>La Password debe tener entre 4 y 10 caracteres.</p>";
+            error++;
+        }
+    }
 
     if (nombre == "") {
         mensaje += "<p>Campo 'Nombre y Apellido' vac&iacute;o.</p>";
@@ -41,31 +55,6 @@ function validar() {
         }
     }
     
-    if (tipo_doc == "") {
-        mensaje += "<p>Campo 'Tipo Documento' vac&iacute;o.</p>";
-        error++;
-    }
-
-    if (pass == "") {
-        mensaje += "<p>Campo 'Password' vac&iacute;o.</p>";
-        error++;
-    } else {
-        if (pass.length < 4 || pass.length > 10) {
-            mensaje += "<p>La Password debe tener entre 4 y 10 caracteres.</p>";
-            error++;
-        }
-    }
-
-    if (num_doc == "") {
-        mensaje += "<p>Campo 'Numero Documento' vac&iacute;o.</p>";
-        error++;
-    } else {
-        if (!(regexnum).test(num_doc)) {
-            mensaje += "<p>Campo 'Numero Documento' inv&aacute;lido.</p>";
-            error++;
-        }
-    }
-
     if (fecha_nacimiento == "") {
         mensaje += "<p>Campo 'Fecha de Nacimiento' vac&iacute;o.</p>";
         error++;
@@ -76,23 +65,12 @@ function validar() {
         }
     }
 	
-	if (sel1 == "Chofer"){
-		if ( sel2 == '') {
-			mensaje += "<p>Debe Seleccionar un Tipo de Licencia</p>";
+	if (rol == "Chofer"){
+		if (lic == '') {
+			mensaje += "<p>Debe Seleccionar un Tipo de Licencia.</p>";
 			error++;
-		}
-		
-		if (nro_lic == "") {
-			mensaje += "<p>Campo 'Numero Licencia' vac&iacute;o.</p>";
-			error++;
-		// } else {
-			// if (!(regexnum).test(num_doc)) {
-				// mensaje += "<p>Campo 'Numero Licencia' inv&aacute;lido.</p>";
-				// error++;
-			// }
 		}
 	}
-	
 
     if (error > 0) {
         document.getElementById('mensaje').style.display = "block";

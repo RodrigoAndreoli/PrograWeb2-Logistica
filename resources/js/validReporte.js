@@ -1,15 +1,19 @@
-function validar() {
+function habilitarCombustible {
     var motivo = document.getElementById('motivo').value;
-    var km = document.getElementById('km').value;
     var combustible = document.getElementById('combustible');
-    var descripcion = document.getElementById('descripcion').value;
-
     if(motivo == "Parada Tecnica"){
         combustible.disabled = false;
     } else {
         combustible.value = "";
         combustible.disabled = true;
     }
+}
+
+function validar() {
+    var motivo = document.getElementById('motivo').value;
+    var km = document.getElementById('km').value;
+    var combustible = document.getElementById('combustible').value;
+    var descripcion = document.getElementById('descripcion').value;
     
     //expresiones regulares
     var regexstr = /\b([A-Z]*[a-z]+)+\b/;
@@ -35,11 +39,11 @@ function validar() {
         }
     }
 
-    if (combustible.value == "") {
+    if (combustible == "") {
         mensaje += "<p>Campo 'Combustible' vac&iacute;o.</p>";
         error++;
     } else {
-        if (!(regexnum).test(combustible.value)) {
+        if (!(regexnum).test(combustible)) {
             mensaje += "<p>Campo 'Combustible' inv&aacute;lido.</p>";
             error++;
         }

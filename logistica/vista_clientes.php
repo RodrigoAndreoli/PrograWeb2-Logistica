@@ -46,23 +46,23 @@
                                         <table class="table table-striped table-bordered table-condensed table-hover">
                                             <thead>
                                                 <th  class="text-center">Cuit</th>
-                                                <th  class="text-center">Razón social</th>
+                                                <th  class="text-center">Raz&oacute;n social</th>
+                                                <th  class="text-center">Tel&eacute;fono</th>
+                                                <th  class="text-center">C&oacute;d. Postal</th>
                                                 <th  class="text-center">Calle</th>
-                                                <th  class="text-center">Número</th>
+                                                <th  class="text-center">N&uacute;mero</th>
                                                 <th  class="text-center">Piso</th>
-                                                <th  class="text-center">Cód. Postal</th>
-                                                <th  class="text-center">Teléfono</th>
-                                                <th  class="text-center">Operación</th>
+                                                <th  class="text-center">Operaci&oacute;n</th>
                                             </thead>
                                             <?php foreach($datos as $td){ ?>
                                             <tr>
                                                 <td><?php echo $td['cuit']; ?></td>
-                                                <td><?php echo utf8_decode(ucwords(strtolower($td['razon']))); ?></td>
-                                                <td><?php echo utf8_decode(ucwords(strtolower($td['dom_calle']))); ?></td>
+                                                <td><?php echo $td['razon']; ?></td>
+                                                <td><?php echo $td['telefono']; ?></td>
+                                                <td><?php echo $td['dom_cp']; ?></td>
+                                                <td><?php echo $td['dom_calle']; ?></td>
                                                 <td><?php echo $td['dom_numero']; ?></td>
                                                 <td><?php echo $td['dom_piso']; ?></td>
-                                                <td><?php echo $td['dom_cp']; ?></td>
-                                                <td><?php echo $td['telefono']; ?></td>
                                                 <td class="text-center">
                                                     <a href="editarCliente.php?id=<?php echo $td["idCliente"]?>">
                                                         <button class="btn btn-info">Editar</button>

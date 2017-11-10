@@ -56,7 +56,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <div class="col-xs-12 col-lg-6 col-lg-offset-3">
-                                                    <label class="control-label col-xs-4 col-sm-3">Razón social:</label>
+                                                    <label class="control-label col-xs-4 col-sm-3">Raz&oacute;n social:</label>
                                                     <div class="col-xs-8 col-sm-9">
                                                         <input type="text" class="form-control"  value="<?php echo $clientes['razon']; ?>" name="razon" id="razon">
                                                     </div>
@@ -64,7 +64,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <div class="col-xs-12 col-lg-6 col-lg-offset-3">
-                                                    <label class="control-label col-xs-4 col-sm-3">Teléfono:</label>
+                                                    <label class="control-label col-xs-4 col-sm-3">Tel&eacute;fono:</label>
                                                     <div class="col-xs-8 col-sm-9">
                                                         <input type="text" class="form-control"  value="<?php echo $clientes['telefono']; ?>" name="telefono" id="telefono">
                                                     </div>
@@ -72,7 +72,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <div class="col-xs-12 col-lg-6 col-lg-offset-3">
-                                                    <label class="control-label col-xs-4 col-sm-3">Cód. Postal:</label>
+                                                    <label class="control-label col-xs-4 col-sm-3">C&oacute;d. Postal:</label>
                                                     <div class="col-xs-8 col-sm-9">
                                                         <input type="text" class="form-control"  value="<?php echo $clientes['dom_cp']; ?>" name="dom_cp" id="dom_cp">
                                                     </div>
@@ -88,7 +88,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <div class="col-xs-12 col-lg-6 col-lg-offset-3">
-                                                    <label class="control-label col-xs-4 col-sm-3">Número:</label>
+                                                    <label class="control-label col-xs-4 col-sm-3">N&uacute;mero:</label>
                                                     <div class="col-xs-8 col-sm-9">
                                                         <input type="text" class="form-control"  value="<?php echo $clientes['dom_numero']; ?>" name="dom_numero" id="dom_numero">
                                                     </div>

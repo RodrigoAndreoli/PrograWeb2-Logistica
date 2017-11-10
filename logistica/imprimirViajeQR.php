@@ -8,21 +8,21 @@
     $obj = new controlDB();
     $datos = $obj -> consultar("SELECT V.fecha qfecha, V.destino qdestino, V.tipo_carga qcarga, U.nombre qprimer, U2.nombre qsegundo, C.patente qcamion, C.km qkm, A.patente qacoplado
     FROM Vehiculo_Chofer_viaje T 
-    JOIN Viaje V ON T.idViaje = V.idViaje 
-    JOIN Usuario U ON T.idUsuario = U.idUsuario 
-    JOIN Usuario U2 ON T.idUsuario2 = U2.idUsuario 
-    JOIN Vehiculo C ON T.idVehiculo = C.idVehiculo 
-    JOIN Vehiculo A ON T.idVehiculo2 = A.idVehiculo 
-    WHERE T.idViaje = '$idViaje'");
+    JOIN Viaje V ON T.fkViajeT = V.idViaje 
+    JOIN Usuario U ON T.fkChoferT = U.idUsuario 
+    JOIN Usuario U2 ON T.fkAcompanianteT = U2.idUsuario 
+    JOIN Vehiculo C ON T.fkCamionT = C.idVehiculo 
+    JOIN Vehiculo A ON T.fkAcopladoT = A.idVehiculo 
+    WHERE T.fkViajeT = '$idViaje'");
 
     if($datos==null){
         
         $datos2 = $obj -> consultar("SELECT V.fecha qfecha, V.destino qdestino, V.tipo_carga qcarga, U.nombre qprimer, C.patente qcamion, C.km qkm
         FROM Vehiculo_Chofer_viaje T 
-        JOIN Viaje V ON T.idViaje = V.idViaje 
-        JOIN Usuario U ON T.idUsuario = U.idUsuario 
-        JOIN Vehiculo C ON T.idVehiculo = C.idVehiculo 
-        WHERE T.idViaje = '$idViaje'");
+        JOIN Viaje V ON T.fkVIajeT = V.idViaje 
+        JOIN Usuario U ON T.fkChoferT = U.idUsuario 
+        JOIN Vehiculo C ON T.fkCamionT = C.idVehiculo 
+        WHERE T.fkViajeT = '$idViaje'");
                 
         QRcode::png('localhost/logistica/login.php?id='.$idViaje, $_SERVER['DOCUMENT_ROOT'].'/resources/library/qr/qrReporte.png');
         $pdf=new PDF();
@@ -44,8 +44,8 @@
         foreach($datos2 as $a) {
             $pdf->Cell(20);
             $pdf->Cell(40,8,$a['qfecha'],1,0,'C');
-            $pdf->Cell(40,8,$a['qdestino'],1,0,'C');
-            $pdf->Cell(65,8,$a['qcarga'],1,1,'C');
+            $pdf->Cell(40,8,utf8_decode(ucwords($a['qdestino'])),1,0,'C');
+            $pdf->Cell(65,8,utf8_decode(ucwords($a['qcarga'])),1,1,'C');
         }
         //Choferes
         $pdf -> Ln(20); 
@@ -59,7 +59,7 @@
         $pdf->SetFont('Arial','',10);
         foreach($datos2 as $a) {
             $pdf->Cell(30);
-            $pdf->Cell(120,8,$a['qprimer'],1,0,'C');
+            $pdf->Cell(120,8,utf8_decode(ucwords($a['qprimer'])),1,0,'C');
         }
         //Vehiculos
         $pdf -> Ln(20); 
@@ -106,8 +106,8 @@
         foreach($datos as $a) {
             $pdf->Cell(30);
             $pdf->Cell(40,8,$a['qfecha'],1,0,'C');
-            $pdf->Cell(40,8,$a['qdestino'],1,0,'C');
-            $pdf->Cell(40,8,$a['qcarga'],1,1,'C');
+            $pdf->Cell(40,8,utf8_decode(ucwords($a['qdestino'])),1,0,'C');
+            $pdf->Cell(40,8,utf8_decode(ucwords($a['qcarga'])),1,1,'C');
         }
         //Choferes
         $pdf -> Ln(20); 
@@ -122,8 +122,8 @@
         $pdf->SetFont('Arial','',10);
         foreach($datos as $a) {
             $pdf->Cell(30);
-            $pdf->Cell(60,8,$a['qprimer'],1,0,'C');
-            $pdf->Cell(60,8,$a['qsegundo'],1,1,'C');
+            $pdf->Cell(60,8,utf8_decode(ucwords($a['qprimer'])),1,0,'C');
+            $pdf->Cell(60,8,utf8_decode(ucwords($a['qsegundo'])),1,1,'C');
         }
         //Vehiculos
         $pdf -> Ln(20); 

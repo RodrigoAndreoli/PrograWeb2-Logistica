@@ -43,20 +43,18 @@
                                     <div class="table-responsive">
                                         <table class="table table-striped table-bordered table-condensed table-hover">
                                             <thead>
-                                                <th  class="text-center">Nombre</th>
-                                                <th  class="text-center">Documento</th>
-                                                <th  class="text-center">Nro documento</th>
-                                                <th  class="text-center">Nacimiento</th>
+                                                <th  class="text-center">Nro. de documento</th>
                                                 <th  class="text-center">Rol</th>
-                                                <th  class="text-center">Operacion</th>
+                                                <th  class="text-center">Nombre</th>
+                                                <th  class="text-center">Fecha de Nacimiento</th>
+                                                <th  class="text-center">Operaci&oacute;n</th>
                                             </thead>
                                             <?php if($datos) foreach($datos as $td){ ?>
                                             <tr>
-                                                <td><?php echo ($td['nombre']); ?></td>
-                                                <td><?php echo strtoupper($td['tipo_doc']); ?></td>
                                                 <td><?php echo $td['num_doc']; ?></td>
+                                                <td><?php echo $td['rol']; ?></td>
+                                                <td><?php echo $td['nombre']; ?></td>
                                                 <td><?php echo $td['fecha_nacimiento']; ?></td>
-                                                <td><?php echo ucwords(strtolower($td['rol'])); ?></td>
                                                 <td class="text-center">
                                                     <a href="editarUser.php?id=<?php echo $td["idUsuario"]?>">
                                                         <button class="btn btn-info">Editar</button>

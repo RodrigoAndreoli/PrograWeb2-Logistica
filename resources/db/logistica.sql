@@ -110,17 +110,17 @@ CREATE TABLE Vehiculo_chofer_viaje(
 ); 
 
 CREATE TABLE Reporte(
-	idReporteViaje int(11) NOT NULL AUTO_INCREMENT,
+	idReporte int(11) NOT NULL AUTO_INCREMENT,
     fkViajeR int(11) NOT NULL,
     fkChoferR int(11) NOT NULL,
-    tiempo time NOT NULL,
+    tiempo datetime NOT NULL,
     latitud varchar(45) COLLATE utf8_spanish_ci NOT NULL,
     longitud varchar(45) COLLATE utf8_spanish_ci NOT NULL,
     motivo enum('Parada Tecnica', 'Desvio', 'Accidente') NOT NULL DEFAULT 'Parada Tecnica',
     km int(11) NOT NULL,
     combustible decimal(11,2),
     descripcion varchar(90) COLLATE utf8_spanish_ci NOT NULL,
-    PRIMARY KEY (idReporteViaje),
+    PRIMARY KEY (idReporte),
     CONSTRAINT fk_viar FOREIGN KEY (fkViajeR)
 		REFERENCES Viaje (idViaje),
 	CONSTRAINT fk_chor FOREIGN KEY (fkChoferR)

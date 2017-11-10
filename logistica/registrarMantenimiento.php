@@ -12,8 +12,15 @@
             }    
     
         $obj = new controlDB();
-        $vehiculos = $obj -> consultar("SELECT idVehiculo,patente FROM vehiculo");
-        $Mecanico = $obj -> consultar("SELECT m.idMecanico FROM mantenimiento m join usuario u ON u.idUsuario=m.idMantenimiento where rol = '".$_SESSION['rol']."' AND nombre = '".$_SESSION['usuario']."'");
+        
+        $vehiculos = $obj -> consultar("SELECT idVehiculo, patente 
+            FROM Vehiculo");
+        
+        $mecanicos = $obj -> consultar("SELECT M.fkMecanicoM 
+        FROM Mantenimiento M 
+        JOIN Usuario U ON U.idUsuario=M.fkMecanicoM 
+        WHERE U.rol = '".$_SESSION['rol']."' 
+            AND U.nombre = '".$_SESSION['usuario']."'");
         
     ?>
     <script type="text/javascript" src="/resources/js/validMantenimiento.js"></script>
@@ -42,61 +49,42 @@
                             </div>
                             <form action="bdMantenimiento.php" method="post" name="form" id="form" onsubmit="return validar()">
                                 <table class="table">
-                                  
-                                   <?php foreach($Mecanico as $m){ ?>
-                                       <input type="hidden" name="idMecanico" value="<?php echo $m['idMecanico']?>">
-                                   <?php } ?>
-                                   
                                     <div class="col-xs-6">
                                         <div class="form-group">
-                                            <label for="nombre">Vehiculo</label>
-                                            <select class="form-control" name="idVehiculo" id="idVehiculo" onblur="return validar()">
+                                            <label for="nombre">Vehiculo:</label>
+                                            <select class="form-control" name="idVehiculo" id="idVehiculo">
                                                 <?php foreach($vehiculos as $vehiculo){ ?>
                                                     <option value="<?php echo $vehiculo['idVehiculo']?>"><?php echo $vehiculo['patente']?></option>
                                                 <?php } ?>
                                             </select>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="doc">Tipo vehiculo</label>
-                                            <input type="text" class="form-control"name="tipo_vehiculo" id="tipo_vehiculo" onblur="return validar()" placeholder="Tipo...">
-                                        </div>
                                     </div>
+                                    <?php foreach($mecanicos as $m){ ?>
+                                        <input type="hidden" id="fkMecanicoM" name="fkMecanicoM" value="<?php echo $m['fkMecanicoM']?>" readonly>
+                                    <?php } ?>
                                     <div class="col-xs-6">
                                         <div class="form-group">
-                                            <label for="">Fecha entrada</label>
-                                            <input type="date" class="form-control"name="fecha_entrada" id="fecha_entrada" onblur="return validar() "placeholder="2000-12-01">
+                                            <label for="">Fecha de Entrada:</label>
+                                            <input type="date" class="form-control" name="fecha_entrada" id="fecha_entrada" placeholder="2000-12-31">
                                         </div>
                                         <div class="form-group">
-                                            <label for="">Fecha_salida</label>
-                                            <input type="date" class="form-control" name="fecha_salida" id="fecha_salida" onblur="return validar()" placeholder="2000-12-01">
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6">
-                                        <div class="form-group">
-                                            <label for="">Km</label>
-                                            <input type="number" class="form-control" name="km_unidad" id="km_unidad" onblur="return validar()" placeholder="km...">
+                                            <label for="">Fecha de Salida:</label>
+                                            <input type="date" class="form-control" name="fecha_salida" id="fecha_salida" placeholder="2000-12-31">
                                         </div>
                                     </div>
                                     <div class="col-xs-6">
                                         <div class="form-group">
                                             <label for="">Costo</label>
-                                            <input type="number" class="form-control" name="costo" id="costo" onblur="return validar() "placeholder="costo...">
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6">
-                                        <div class="form-group">
-                                            <label for="">Repuestos</label>
-                                            <input type="text" class="form-control" name="repuestos" id="repuestos" onblur="return validar()" placeholder="repuestos...">
+                                            <input type="number" class="form-control" name="costo" id="costo" placeholder="Costo...">
                                         </div>
                                     </div>
                                     <div class="col-xs-6">
                                         <div class="form-group">
                                             <label class="control-label col-xs-4 col-sm-3">Externo:</label>
                                             <div class="">
-                                                <select class="form-control" name="externo" id="externo" onblur="return validar()">
-                                                    <option value="">n/d</opion>
-                                                    <option value="si">si</option>
-                                                    <option value="no">no</option>
+                                                <select class="form-control" name="externo" id="externo">
+                                                    <option value="No" selected>No</option>
+                                                    <option value="Si">Si</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -105,10 +93,9 @@
                                         <div class="form-group">
                                             <label class="control-label col-xs-4 col-sm-3">Cambio aceite:</label>
                                             <div class="">
-                                                <select class="form-control" name="cambio_aceite" id="cambio_aceite" onblur="return validar()">
-                                                    <option value="">n/d</opion>
-                                                    <option value="si">si</option>
-                                                    <option value="no">no</option>
+                                                <select class="form-control" name="cambio_aceite" id="cambio_aceite">
+                                                    <option value="No" selected>No</option>
+                                                    <option value="Si">Si</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -117,10 +104,9 @@
                                         <div class="form-group">
                                             <label class="control-label col-xs-4 col-sm-3">Filtro aire:</label>
                                             <div class="">
-                                                <select class="form-control" name="filtro_aire" id="filtro_aire" onblur="return validar()">
-                                                    <option value="">n/d</opion>
-                                                    <option value="si">si</option>
-                                                    <option value="no">no</option>
+                                                <select class="form-control" name="filtro_aire" id="filtro_aire">
+                                                    <option value="No" selected>No</option>
+                                                    <option value="Si">Si</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -129,12 +115,17 @@
                                         <div class="form-group">
                                             <label class="control-label col-xs-4 col-sm-3">Direccion:</label>
                                             <div class="">
-                                                <select class="form-control" name="direccion" id="direccion" onblur="return validar()">
-                                                    <option value="">n/d</opion>
-                                                    <option value="si">si</option>
-                                                    <option value="no">no</option>
+                                                <select class="form-control" name="direccion" id="direccion">
+                                                    <option value="No" selected>No</option>
+                                                    <option value="Si">Si</option>
                                                 </select>
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <div class="form-group">
+                                            <label for="">Repuestos</label>
+                                            <input type="text" class="form-control" name="repuestos" id="repuestos" placeholder="repuestos..." onblur="return validar()">
                                         </div>
                                     </div>
                                     <div class="col-xs-6">
@@ -145,7 +136,7 @@
                                     </div>
                                     <div id="mensaje" class="alert alert-danger alert-dismissable" style="clear: both; display: none;"></div>
                                 </table>
-                                <input type="hidden" name="funcion" value="insertar">
+                                <input type="hidden" name="funcion" id="funcion" value="insertar" readonly>
                             </form>
                         </div>
                     </div>

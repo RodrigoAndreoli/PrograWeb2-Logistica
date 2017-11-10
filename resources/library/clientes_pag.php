@@ -9,16 +9,16 @@
         $empezar_desde = ($pag-1) * $tamagno_paginas;
         //Consulta, variable el objeto y la funcion de la clase
         $datos = $obj -> consultar("SELECT *
-            FROM cliente
+            FROM Cliente
             ORDER BY cuit
             LIMIT $empezar_desde, $tamagno_paginas");
         //print_r($datos);
 
         /*-------------Paginacion-------------------*/
         $num_filas = count($obj->consultar("SELECT *
-            FROM cliente"));
+            FROM Cliente"));
         $total_paginas = ceil($num_filas/$tamagno_paginas); //CEIL: Redondea paginas
         $sql_limite=$obj -> consultar("SELECT *
-            FROM cliente"); 
+            FROM Cliente"); 
 
 ?>

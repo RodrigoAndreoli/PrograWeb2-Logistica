@@ -36,74 +36,57 @@
                                 </div>
                             </div>
                             <form action="bdUser.php" method="post" name="form" id="form" onsubmit="return validar()">
-                                <table class="table">
-                                    <div class="col-xs-6">
-                                        <div class="form-group">
-                                            <label for="nombre">Nombre</label>
-                                            <input type="text" class="form-control" name="nombre" id="nombre"  placeholder="Nombre..." tabindex="1">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="doc">Tipo documento</label>
-                                            <select class="form-control" name="tipo_doc" id="tipo_doc" tabindex="3">
-												<option value="DNI"> DU </option>
-												<option value="DNI"> LC </option>
-												<option value="DNI"> LE </option>
-											</select>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6">
-                                        <div class="form-group">
-                                            <label for="">Password</label>
-                                            <input type="password" class="form-control" name="pass" id="pass"  placeholder="****" tabindex="2" >
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="">Numero documento</label>
-                                            <input type="text" class="form-control" name="num_doc" id="num_doc"  placeholder="Numero..." tabindex="4">
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6">
-                                        <div class="form-group">
-                                            <label for="sel1">Rol</label>
-                                            <select class="form-control" id="sel1"  name="rol" tabindex="5" onblur="mostrarLic()">
-                                                <option value="Chofer">Chofer</option>
-                                                <option value="Administrador">Administrador</option>
-                                                <option value="Supervisor">Supervisor</option>
-                                                <option value="Mecanico">Mecanico</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6">
-                                        <div class="form-group">
-                                            <label for="">Fecha nacimiento</label>
-                                            <input type="date" class="form-control" name="fecha_nacimiento" id="fecha_nacimiento"  placeholder="2017-07-28" tabindex="6">
-                                        </div>
-                                    </div>
-									 <div class="col-xs-6" style="display:none" id="tp_licencia_mostrar">
-                                        <div class="form-group">
-                                            <label for="">Tipo de Licencia</label>
-											<select class="form-control" id="sel2"  name="tp_licencia" tabindex="7">
-                                                <option value="">Seleccione el tipo de licencia. . .</option>
-												<option value="a">a</option>
-                                                <option value="b">b</option>
-                                                <option value="c">c</option>
-                                            </select>
-										</div>
-									</div>
-									<div class="col-xs-6" style="display:none" id="nro_licencia_mostrar">	
-										<div class="form-group">
-											<label for="">Nro Licencia</label>
-											<input type="text" class="form-control" name="nro_licencia" id="nro_licencia" placeholder="Nro de Licencia..." tabindex="8">
-										</div>
-									</div>
-                                    <div id="mensaje" class="alert alert-danger alert-dismissable" style="clear: both; display: none;"></div>
+                                <div class="col-xs-6">
                                     <div class="form-group">
-                                        <a href="vista_usuarios.php" class="btn btn-danger btn-lg" tabindex="9">Volver</a>
-                                        <button type="submit" class="btn btn-primary btn-lg" tabindex="10">Crear</button>
+                                        <label for="">Nro. de documento:</label>
+                                        <input type="text" class="form-control" name="num_doc" id="num_doc"  placeholder="Nro. de documento..." tabindex="1">
                                     </div>
-                                </table>
-                                <input type="hidden" name="funcion" value="insertar">
+                                    <div class="form-group">
+                                        <label for="">Contrase&ntilde;a:</label>
+                                        <input type="password" class="form-control" name="pass" id="pass" placeholder="****" tabindex="2" >
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="form-group">
+                                        <label for="">Rol</label>
+                                        <select class="form-control" id="rol" name="rol" tabindex="3" onblur="mostrarLic()">
+                                            <option value="Supervisor" selected>Supervisor</option>
+                                            <option value="Administrador">Administrador</option>
+                                            <option value="Chofer">Chofer</option>
+                                            <option value="Mecanico">Mecanico</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="form-group">
+                                        <label for="nombre">Nombre:</label>
+                                        <input type="text" class="form-control" name="nombre" id="nombre"  placeholder="Nombre..." tabindex="4">
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="form-group">
+                                        <label for="">Fecha de nacimiento:</label>
+                                        <input type="date" class="form-control" name="fecha_nacimiento" id="fecha_nacimiento"  placeholder="2017-07-28" tabindex="5" onblur="return validar()">
+                                    </div>
+                                </div>
+                                <div class="col-xs-6" style="display:none" id="mostrarLicencia">
+                                    <div class="form-group">
+                                        <label for="">Tipo de Licencia:</label>
+                                        <select class="form-control" id="tipo_licencia" name="tipo_licencia" tabindex="6">
+                                            <option value="" selected disabled></option>
+                                            <option value="C">C</option>
+                                            <option value="D1">D1</option>
+                                            <option value="E1">E1</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div id="mensaje" class="alert alert-danger alert-dismissable" style="clear: both; display: none;"></div>
+                                <div class="form-group">
+                                    <a href="vista_usuarios.php" class="btn btn-danger btn-lg">Volver</a>
+                                    <button type="submit" class="btn btn-primary btn-lg">Crear</button>
+                                </div>
+                                <input type="hidden" name="funcion" id="funcion" value="insertar" readonly>
                             </form>
-                            
                         </div>
                     </div>
                 </div>

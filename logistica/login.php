@@ -20,7 +20,7 @@ else if  (isset($_POST['enviar'])){
 
         //Prepared statement
 		$ingreso = $conexion->prepare("
-            SELECT idUsuario, nombre, rol 
+            SELECT idUsuario, rol, nombre
             FROM Usuario 
             WHERE num_doc = ? and pass = ? 
             ");
@@ -34,9 +34,9 @@ else if  (isset($_POST['enviar'])){
 	
 		if($resultado->num_rows>=1) {
 			session_start();
-			$_SESSION['usuario'] = $fila['nombre'];
-            $_SESSION['rol'] = $fila['rol'];
             $_SESSION['idUsuario'] = $fila['idUsuario'];
+            $_SESSION['rol'] = $fila['rol'];
+			$_SESSION['usuario'] = $fila['nombre'];
 
                 if ($idViaje >= 1 && $fila['rol'] == 'Chofer') {
                     header('Location: registrarReporte.php?id=' .$idViaje);    
@@ -89,7 +89,7 @@ else if  (isset($_POST['enviar'])){
                         <div class="form-group">
                             <label class="col-lg-12">N&uacute;mero de Documento:</label>
                             <div class="col-lg-12">
-                                <input type="text" class="form-control" id="usuario" placeholder="N&uacute;mero de Documento" name='num_doc' required='required'>
+                                <input type="text" class="form-control" id="num_doc" placeholder="N&uacute;mero de Documento" name='num_doc' required='required'>
                             </div>
                         </div>
 
@@ -99,12 +99,7 @@ else if  (isset($_POST['enviar'])){
                                 <input type="password" class="form-control" id="pass" placeholder="Password" name='pass' required='required'>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <div class="col-lg-12">
-                                <input type="hidden" class="form-control" id="viaje"  name='idViaje' 
-                                value=<?php echo $idViaje ?> >
-                            </div>
-                        </div>
+                        <input type="hidden" class="form-control" id="idViaje"  name='idViaje' value=<?php echo $idViaje ?> readonly>
                         <div class="form-group">
                             <label class="control-label col-md-8" for="msjError" id="msjError" style="visibility: hidden; color:red; font-size:12px; text-align: left;">Usuario o contrase&ntilde;a incorrecto.</label>
                         </div>

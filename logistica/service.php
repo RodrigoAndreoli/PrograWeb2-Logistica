@@ -20,11 +20,17 @@
         }
         if(empty($buscar)){
             $buscar="";
+        } else {
+            $datos = $obj -> consultar("SELECT V.idVehiculo, V.marca, V.patente, V.km, M.cambio_aceite, M.filtro_aire, M.direccion
+                FROM Mantenimiento M
+                JOIN Vehiculo V ON M.fkVehiculoM = V.idVehiculo 
+                WHERE V.patente LIKE '%".$buscar."%'
+                GROUP BY V.idVehiculo, V.patente, V.km, M.cambio_aceite, M.filtro_aire, M.direccion");
         }
-        else{
-            $datos = $obj -> consultar("SELECT v.idVehiculo,v.patente,m.km_unidad,m.cambio_aceite,m.filtro_aire,m.direccion,v.marca FROM mantenimiento m join vehiculo v on v.idVehiculo = m.idVehiculo WHERE v.patente like '%".$buscar."%' GROUP by v.idVehiculo,v.patente,m.km_unidad,m.cambio_aceite,m.filtro_aire,m.direccion");
-        }
-        $patentes = $obj -> consultar("SELECT v.idVehiculo,v.patente,m.km_unidad,m.cambio_aceite,m.filtro_aire,m.direccion,v.marca FROM mantenimiento m join vehiculo v on v.idVehiculo = m.idVehiculo GROUP by v.idVehiculo,v.patente,m.km_unidad,m.cambio_aceite,m.filtro_aire,m.direccion");
+        $patentes = $obj -> consultar("SELECT V.idVehiculo, V.marca, V.patente, V.km, M.cambio_aceite, M.filtro_aire, M.direccion
+                FROM Mantenimiento M
+                JOIN Vehiculo V ON M.fkVehiculoM = V.idVehiculo
+                GROUP BY V.idVehiculo, V.patente, V.km, M.cambio_aceite, M.filtro_aire, M.direccion");
 
     ?>
 </head>
@@ -53,8 +59,6 @@
                             </div>
                         </div>           
                         <div class="col-lg-8 col-lg-offset-2">
-    
-                             
                             <div class="row">
                                 <form action="service.php" method="post" class="form-inline">
                                     <div class="col-md-6 col-md-offset-3">
@@ -91,15 +95,18 @@
                                             foreach($datos as $td){ ?>
                                         <tr>   
                                             <td><?php echo $td['patente']?></td>
-                                            <td><?php echo $td['km_unidad']?></td>
+                                            <td><?php echo $td['km']?></td>
                                             <td><?php echo $td['cambio_aceite']?></td>
                                             <td><?php echo $td['filtro_aire']?></td>
                                             <td><?php echo $td['direccion']?></td>
                                         </tr>
                                         <?php }} ?>  
-                                        <tr>
-                                            <td colspan="5"><p class="text-muted">Seleccione una patente</p></td>
-                                        </tr>               
+                                        <?php 
+                                        if(!($datos)){ ?>
+                                            <tr>
+                                                <td colspan="5"><p class="text-muted">Seleccione una patente</p></td>
+                                            </tr>
+                                        <?php } ?>  
                                     </tbody>
                                 </table>
                             </div>

@@ -7,16 +7,16 @@
         require_once($_SERVER['DOCUMENT_ROOT'].'/resources/config.php');
         $miSession = new Sesion();
         $miSession -> iniciarSesion();
-        if($_SESSION['rol']=="Chofer"){
-            $miSession -> permisos();}
-          
+        if($_SESSION['rol']=="Chofer") {
+            $miSession -> permisos();
+        }
     ?>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript">
     google.charts.load('current', {packages: ['corechart']});
     google.charts.setOnLoadCallback(cargar);
-    function cargar(){
+    function cargar() {
         $.ajax({
             url:"graficos/total_reparaciones_km.php",
             dataType:"JSON",

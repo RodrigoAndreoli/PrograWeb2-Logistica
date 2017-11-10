@@ -1,4 +1,4 @@
-10 11 2017 01:11:56 INSERT INTO viaje(fecha,origen,destino,tipo_carga) VALUES ('2017-12-24 22:00:00','Polo Norte','Todo el mundo','Regalos navideños')
+10 11 2017 01:11:56 INSERT INTO viaje(fecha,origen,destino,tipo_carga) VALUES ('2017-12-24 22:00:00','Polo Norte','Todo el mundo','Regalos navide&ntilde;os')
 10 11 2017 01:11:23 INSERT INTO vehiculo_chofer_viaje(idViaje,idUsuario,idVehiculo,idUsuario2,idVehiculo2) VALUES ('11','2','1','7','5')
 10 11 2017 01:11:16 INSERT INTO Reporte_viaje(idViaje, idChofer, tiempo, latitud, longitud, motivo, km, combustible, descripcion) 
             VALUES ('', '', '2017-11-10 01:39:58', '-58.58213130000001', '-34.7047208', 'Parada Tecnica', '15', '40', 'Carga de combustible')
