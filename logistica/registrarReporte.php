@@ -13,23 +13,33 @@
     $idUsuario = $_SESSION['idUsuario'];
     
     $obj = new controlDB();
-    $usuario = $obj -> consultar("SELECT idUsuario FROM usuario where rol = '$rolUsuario' AND nombre = '$nombreUsuario'");
-    $viajes = $obj -> consultar("SELECT idViaje FROM viaje");
-    $vehiculos = $obj -> consultar("SELECT idVehiculo,patente FROM vehiculo");
     $idViaje = $_REQUEST['id'];
     $hoy = date("Y-m-d H:i:s");
 
-        $verificacion = $obj -> consultar("SELECT idUsuario, idUsuario2 FROM vehiculo_chofer_viaje WHERE 
-            idViaje = '$idViaje'");
+    $verificacion = $obj -> consultar("SELECT idViaje, idUsuario, idUsuario2 FROM vehiculo_chofer_viaje WHERE 
+        idViaje = '$idViaje'");
 
+
+    $asignar = array(); 
+    foreach($verificacion as $v){
+        $asignar[] = $v['idViaje'];
+    }
+
+    
+        if(!in_array($v['idViaje'], $asignar)) {
+            header('Location: vista_reportes.php');
+        }
+    
         
-        foreach($verificacion as $v) {
-        if($idUsuario != $v['idUsuario'] && $idUsuario != $v['idUsuario2']){
+    foreach($verificacion as $v) {
+        if($idUsuario != $v['idUsuario'] && $idUsuario != $v['idUsuario2']) {
             header('Location: vista_reportes.php');
             exit();
         }
+    }
 
-        }
+
+
     ?>
     <script src="https://maps.google.com/maps/api/js?key=AIzaSyDZT1AooixAZ5wKBVyG-3nwMX3LyfqiyYY"></script>
     <style> #map { width: 100%; height: 200px; } </style> 

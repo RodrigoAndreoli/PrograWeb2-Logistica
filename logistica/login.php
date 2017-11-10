@@ -1,12 +1,14 @@
 <?php 
 
-        if(isset($_REQUEST['id'])) {
-            $idViaje = $_REQUEST['id'];
-        }
-        else if  (isset($_POST['enviar'])){
+if(isset($_REQUEST['id'])) {
+    $idViaje = $_REQUEST['id'];
+}
+else if  (isset($_POST['enviar'])){
           $idViaje = $_POST['idViaje'];       
-        }
-        else  $idViaje = null;
+    }
+    else {
+        $idViaje = null;
+    }
 
     
     if(isset($_POST['enviar'])) {   
