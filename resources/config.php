@@ -19,5 +19,9 @@
 
     //Se importa la clase Sesion
     require_once($LIBRARY_PATH.'/sesion.php');
+	
+	// Se importa la clase creaLog()
+	require_once($_SERVER['DOCUMENT_ROOT'].'/resources/log/creaLog.php');
+
 
 ?>

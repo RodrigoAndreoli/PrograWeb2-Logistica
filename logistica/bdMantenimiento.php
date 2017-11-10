@@ -1,6 +1,5 @@
 <?php
     require_once($_SERVER['DOCUMENT_ROOT'].'/resources/config.php');
-	require_once($_SERVER['DOCUMENT_ROOT'].'/resources/log/creaLog.php');
     $miSession = new Sesion();
     $miSession -> iniciarSesion();
     $funcion = $_REQUEST['funcion'];
