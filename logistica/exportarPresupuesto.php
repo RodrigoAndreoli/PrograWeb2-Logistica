@@ -7,7 +7,8 @@
         FROM Presupuesto P
         JOIN Cliente C ON C.idCliente=P.fkClienteP
         ORDER BY Razon");
-    
+   
+
     $pdf=new PDF();
     //Alias de pagina para poder usar nb
     $pdf->AliasNbPages();

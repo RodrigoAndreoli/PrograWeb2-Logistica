@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-    <title>Registrar Usuario</title>
+    <title>Registrar Presupuesto</title>
     <?php 
         require_once($_SERVER['DOCUMENT_ROOT'].'/resources/config.php');
         $miSession = new Sesion();
@@ -11,12 +11,12 @@
             $miSession -> permisos();
         }  
         $obj = new controlDB();
-        $clientes = $obj -> consultar("SELECT c.idCliente, c.razon FROM cliente c");
+        $clientes = $obj -> consultar("SELECT c.idCliente AS fkClienteP, c.razon FROM cliente c");
         $viajes = $obj -> consultar("SELECT idViaje FROM viaje");
         
-        $usuario = $obj -> consultar("SELECT idUsuario,nombre FROM usuario WHERE nombre = '".$_SESSION['usuario']."' AND rol= '".$_SESSION['rol']."' ");
+        $usuario = $obj -> consultar("SELECT idUsuario,nombre FROM usuario WHERE idUsuario = '".$_SESSION['idUsuario']."' ");
     ?>
-    <script type="text/javascript" src="/resources/js/validPresupuesto.js"></script>
+    <script type="text/javascript" src="/resources/js/valida.js"></script>
 </head>
 
 <body>
@@ -44,17 +44,18 @@
                                         <table class="table">
 
                                             <?php foreach($usuario as $usr){ ?>
-                                            <input type="hidden" name="idUsuario" value="<?php echo $usr['idUsuario']; ?>">
+                                            <input type="hidden" name="fkAdministradorP" value="<?php echo $usr['idUsuario']; ?>">
                                             <?php } ?>
 
                                             <div class="col-xs-6">
                                                 <div class="form-group">
                                                     <label for="idCliente">Cliente</label>
-                                                    <select class="form-control" id="idCliente" name="idCliente" onblur="return validar()">
-                                               <?php foreach($clientes as $cliente){ ?>
-                                                <option value="<?php echo $cliente['idCliente']; ?>"><?php echo $cliente['razon']; ?></option>
-                                                <?php } ?>
-                                            </select>
+                                                    <select class="form-control" id="idCliente" name="fkClienteP" onblur="return validar()" >
+                                                        <option value="">n/d</option>
+                                                        <?php foreach($clientes as $cliente){ ?>
+                                                            <option value="<?php echo $cliente['fkClienteP']; ?>"><?php echo $cliente['razon']; ?></option>
+                                                        <?php } ?>
+                                                    </select>
                                                 </div>
 												<div class="form-group">
                                                     <label for="nombre">Tiempo</label>
@@ -62,7 +63,7 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="doc">km previstos</label>
-                                                    <input type="number" class="form-control" name="km_previstos" id="km_previstos" onblur="return validar()" placeholder="Km">
+                                                    <input type="number" class="form-control" name="km_estimado" id="km_estimado" onblur="return validar()" placeholder="Km">
                                                 </div>
                                             </div>
                                      
@@ -70,16 +71,15 @@
                                                 <div class="form-group">
                                                     <label for="sel1">Aceptado</label>
                                                     <select class="form-control" id="aceptado" onblur="return validar()" name="aceptado">
-                                                <option value="no">no</option>
-                                                <option value="si">si</option>
-                                            </select>
+                                                        <option value="no">no</option>
+                                                        <option value="si">si</option>
+                                                    </select>
                                                 </div>
-                                                
                                             </div>
                                             <div class="col-xs-6">
                                                 <div class="form-group">
                                                     <label for="">Combustible previsto</label>
-                                                    <input type="number" class="form-control" name="combustible_previsto" id="combustible_previsto" onblur="return validar()" placeholder="combustible...">
+                                                    <input type="number" class="form-control" name="combustible_estimado" id="combustible_previsto" onblur="return validar()" placeholder="combustible...">
                                                 </div>
                                             </div>
                                             <div class="col-xs-6">

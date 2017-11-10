@@ -87,7 +87,7 @@
                                 </div>
                         </div>
                         <div class="row">
-                            <a href="exportarPresupuesto.php">
+                            <a href="exportarPresupuesto.php" target="_blank">
                                 <button class="btn btn-link">Exportar a PDF</button>
                             </a>
                         </div>

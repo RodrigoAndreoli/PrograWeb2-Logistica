@@ -1,13 +1,14 @@
 function validar() {
-    var idViaje = document.getElementById('idViaje').value;
     var idCliente = document.getElementById('idCliente').value;
     var tiempo_estimado = document.getElementById('tiempo_estimado').value;
-    var km_previstos = document.getElementById('km_previstos').value;
+    var km_estimado = document.getElementById('km_estimado').value;
     var aceptado = document.getElementById('aceptado').value;
-    var sel2 = document.getElementById('sel2').value;
     var combustible_previsto = document.getElementById('combustible_previsto').value;
     var costo_real = document.getElementById('costo_real').value;
 
+   
+
+    
     //expresiones regulares
     var regexnum = /([0-9]+(\.|\,?)[0-9]{0,2})/;
     var regextime = /\d\d\:(0\d|1\d|2\d|3\d|4\d|5\d)\:(0\d|1\d|2\d|3\d|4\d|5\d)/;
@@ -16,16 +17,7 @@ function validar() {
     var mensaje = "";
     var error = 0;
     
-    if (idViaje == "") {
-        mensaje += "<p>Campo 'Viaje' vac&iacute;o.</p>";
-        error++;
-    } else {
-        if (!(regexnum).test(idViaje)) {
-            mensaje += "<p>Campo 'Viaje' inv&aacute;lido.</p>";
-            error++;
-        }
-    }
-
+    
     if (idCliente == "") {
         mensaje += "<p>Campo 'Cliente' vac&iacute;o.</p>";
         error++;
@@ -45,24 +37,19 @@ function validar() {
             error++;
         }
     }
-
-    if (km_previstos == "") {
+    
+    if (km_estimado == "") {
         mensaje += "<p>Campo 'Km Previstos' vac&iacute;o.</p>";
         error++;
     } else {
-        if (!(regexnum).test(km_previstos)) {
+        if (!(regexnum).test(km_estimado)) {
             mensaje += "<p>Campo 'Km Previstos' inv&aacute;lido.</p>";
             error++;
         }
     }
-
+    
     if (aceptado == "") {
         mensaje += "<p>Campo 'Aceptado' vac&iacute;o.</p>";
-        error++;
-    }
-    
-    if (sel2 == "") {
-        mensaje += "<p>Campo 'Estado' vac&iacute;o.</p>";
         error++;
     }
     
@@ -85,7 +72,9 @@ function validar() {
             error++;
         }
     }
-
+    
+    
+    
     if (error > 0) {
         document.getElementById('mensaje').style.display = "block";
         document.getElementById('mensaje').innerHTML = mensaje;
@@ -94,5 +83,4 @@ function validar() {
         document.getElementById('mensaje').style.display = "none";
         return true;
     }
-
 }
