@@ -5,18 +5,16 @@
     $miSession -> iniciarSesion();
     //Capturas los input hidden, request captura tanto get como post
     $funcion = $_REQUEST['funcion'];
-    
+    $id = $_REQUEST['id'];
 
     //Al eliminar no me interesan los campos nombre y password y demas. Para evitar errores se pone un if
     if($funcion!="eliminar"){
-        $nomb = $_POST['nombre'];
+        $num_doc = $_POST['num_doc'];
         $pass = $_POST['pass'];
-        $doc = $_POST['num_doc'];
-        $tipo = $_POST['tipo_doc'];
         $rol = $_POST['rol'];
-        $fecha = $_POST['fecha_nacimiento'];
-		$tplicencia = $_POST['tp_licencia'];
-		$nrolicencia = $_POST['nro_licencia'];
+        $nombre = $_POST['nombre'];
+        $fecha_nacimiento = $_POST['fecha_nacimiento'];
+        $tipo_licencia = $_POST['tipo_licencia'];
         $clave_md5 = md5($pass);
         $cod = $_POST['cod'];    
     }
@@ -37,26 +35,24 @@
 
     //Modificar value del input hidden
     if($funcion == "modificar"){
-        $sql = "UPDATE usuario 
-            SET nombre = '$nomb', 
-            password = '$clave_md5', 
-            num_doc = $doc, 
-            tipo_doc = '$tipo', 
-            rol = '$rol', 
-            fecha_nacimiento = '$fecha' 
+        $sql = "UPDATE Usuario 
+            SET num_doc = '$num_doc',
+                pass = '$clave_md5',
+                rol = '$rol',
+                nombre = '$nombre',
+                fecha_nacimiento = '$fecha_nacimiento',
+                tipo_licencia = '$tipo_licencia'
             WHERE idUsuario = '$cod'";
     }
     
     //Eliminar de usuarios.php
     else if($funcion == "eliminar"){
-        $id = $_REQUEST['id'];
 		$sql = "DELETE
-            FROM usuario 
+            FROM Usuario 
             WHERE idUsuario='$id'";
     } else {
-		if ($nrolicencia=='') $nrolicencia = 0;
-       $sql = "INSERT INTO usuario(nombre,password,num_doc,tipo_doc,rol,fecha_nacimiento,tipo_licencia,nro_licencia)
-       VALUES('$nomb','$clave_md5',$doc,'$tipo','$rol','$fecha','$tplicencia','$nrolicencia')";
+       $sql = "INSERT INTO Usuario(num_doc, pass, rol, nombre, fecha_nacimiento, tipo_licencia)
+       VALUES('$num_doc', '$clave_md5', '$rol', '$nombre', '$fecha_nacimiento', '$tipo_licencia')";
     }
 	
 	// escribe en el log

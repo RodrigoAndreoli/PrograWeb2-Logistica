@@ -4,12 +4,12 @@
         <li>
             <a href='ppal.php'>LOGISTICA</a>
         </li>
-        <?php if($_SESSION['rol']=='supervisor'){ ?>
+        <?php if($_SESSION['rol']=='Supervisor'){ ?>
         <li>
             <a href='vista_usuarios.php'>Usuarios<span class='icon-users'></span></a>
         </li>
         <?php } ?>
-        <?php if($_SESSION['rol']=='admin' || $_SESSION['rol']=='mecanico' || $_SESSION['rol']=='supervisor'){ ?>
+        <?php if($_SESSION['rol']=='Administrador' || $_SESSION['rol']=='Mecanico' || $_SESSION['rol']=='Supervisor'){ ?>
         <li>
             <a href='#' data-toggle='collapse' data-target='#reparacion' class='collapsed active'>Mantenimiento<span class='icon-wrench'></span></a>
         </li>
@@ -29,7 +29,7 @@
             <a href='vista_vehiculos.php' data-toggle='collapse' data-target='#vehiculos' class='collapsed active'>Vehiculos<span class='icon-truck'></span></a>
         </li>
         <?php } ?>
-        <?php if($_SESSION['rol']=='admin' || $_SESSION['rol']=='mecanico' || $_SESSION['rol']=='supervisor' || $_SESSION['rol']=='chofer'){ ?>
+        <?php if($_SESSION['rol']=='Administrador' || $_SESSION['rol']=='Mecanico' || $_SESSION['rol']=='Supervisor' || $_SESSION['rol']=='Chofer'){ ?>
         <li>
             <a href='#' data-toggle='collapse' data-target='#viajes' class='collapsed active'>Viajes<span class='icon-location'></span></a>
         </li>
@@ -42,12 +42,12 @@
             </li>
         </ul>
         <?php } ?>
-        <?php if($_SESSION['rol']=='admin' || $_SESSION['rol']=='supervisor'){ ?>
+        <?php if($_SESSION['rol']=='Administrador' || $_SESSION['rol']=='Supervisor'){ ?>
         <li>
             <a href='vista_clientes.php' data-toggle='collapse' data-target='#clientes' class='collapsed active'>Clientes<span class='icon-user'></span></a>
         </li>
         <?php } ?>
-        <?php if($_SESSION['rol']=='supervisor'){ ?>
+        <?php if($_SESSION['rol']=='Supervisor'){ ?>
         <li>
             <a href='vista_presupuestos.php' data-toggle='collapse' data-target='#presupuestos' class='collapsed active'>Presupuestos<span class='icon-wallet'></span></a>
         </li>

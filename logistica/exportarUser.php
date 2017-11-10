@@ -4,7 +4,8 @@
    
     $obj = new controlDB();
     $datos=$obj->consultar("SELECT * 
-        FROM usuario");
+        FROM Usuario
+        ORDER BY rol");
     
     $pdf=new PDF();
     //Alias de pagina para poder usar nb
@@ -16,23 +17,21 @@
     $pdf -> Cell(30);
     $pdf -> Cell(120,5, 'Usuarios',0,0,'C');
     $pdf -> Ln(10);
-    $pdf->Cell(7);
+    $pdf->Cell(5);
     //Longitud, alto, titulo, border, salto, alineado
-    $pdf->Cell(30,8,'Nombre',1,0,'C',1);
-    $pdf->Cell(30,8,'Documento',1,0,'C',1);
-    $pdf->Cell(30,8,'Numero',1,0,'C',1);
+    $pdf->Cell(30,8,'DNI',1,0,'C',1);
     $pdf->Cell(30,8,'Rol',1,0,'C',1);
-	$pdf->Cell(30,8,'Tipo Licencia',1,0,'C',1);
-	$pdf->Cell(30,8,'Nro Licencia',1,1,'C',1);
+    $pdf->Cell(40,8,'Nombre',1,0,'C',1);
+	$pdf->Cell(50,8,'Fecha de Nacimiento',1,0,'C',1);
+	$pdf->Cell(30,8,'Tipo Licencia',1,1,'C',1);
     $pdf->SetFont('Arial','',10);
     foreach($datos as $a) {
-        $pdf->Cell(7);
-        $pdf->Cell(30,6,utf8_decode($a['nombre']),1,0,'C');
-        $pdf->Cell(30,6,strtoupper($a['tipo_doc']),1,0,'C');
-        $pdf->Cell(30,6,$a['num_doc'],1,0,'C');
-        $pdf->Cell(30,6,utf8_decode(ucfirst($a['rol'])),1,0,'C');
-		$pdf->Cell(30,6,utf8_decode(ucfirst($a['tipo_licencia'])),1,0,'C');
-		$pdf->Cell(30,6,utf8_decode(ucfirst($a['nro_licencia'])),1,1,'C');
+        $pdf->Cell(5);
+        $pdf->Cell(30,8,$a['num_doc'],1,0,'C');
+        $pdf->Cell(30,8,utf8_decode(ucfirst($a['rol'])),1,0,'C');
+        $pdf->Cell(40,8,utf8_decode(ucwords($a['nombre'])),1,0,'C');
+        $pdf->Cell(50,8,$a['fecha_nacimiento'],1,0,'C');
+		$pdf->Cell(30,8,utf8_decode(ucfirst($a['tipo_licencia'])),1,1,'C');
     }
     $pdf->Output('I','Logistica.pdf');
 

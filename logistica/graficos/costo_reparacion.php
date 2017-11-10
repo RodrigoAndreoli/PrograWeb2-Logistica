@@ -1,17 +1,17 @@
 <?php
     require_once($_SERVER['DOCUMENT_ROOT'].'/resources/db/conexion.php');
     
-    $sql="  SELECT m.idVehiculo,v.patente AS patente,sum(m.costo) AS costo
-            FROM mantenimiento m
-            JOIN vehiculo v on v.idVehiculo = m.idVehiculo
-            GROUP by m.idVehiculo";
+    $sql="SELECT M.idVehiculo IdVehiculo, V.patente Patente, SUM(M.costo) Costo
+            FROM Mantenimiento M
+            JOIN Vehiculo V ON V.idVehiculo = M.idVehiculo
+            GROUP BY IdVehiculo";
 
     $resultado=$conexion->query($sql);
-   // print_r($resultado);
-    $dataTable=array(array("patente","costo"));
+    // print_r($resultado);
+    $dataTable=array(array("Patente","Costo"));
 
     while($fila=mysqli_fetch_assoc($resultado)){
-        $dataTable[]=array($fila['patente'],(int)$fila['costo']);
+        $dataTable[]=array($fila['Patente'],(int)$fila['Costo']);
     }
 
     mysqli_close($conexion);

@@ -66,7 +66,7 @@
                                                     <a href="editarPresupuesto.php?id=<?php echo $td["idPresupuesto"]?>"> 
                                                         <button class="btn btn-info">Editar</button>
                                                     </a>
-                                                     <a href="bdPresupuestos.php?id=<?php echo $td["idPresupuesto"]?>&funcion=eliminar"> 
+                                                     <a href="bdPresupuesto.php?id=<?php echo $td["idPresupuesto"]?>&funcion=eliminar"> 
                                                         <button class="btn btn-danger">Eliminar</button>
                                                     </a>
                                                 </td>
@@ -93,7 +93,7 @@
                                 </div>
                         </div>
                         <div class="row">
-                            <a href="exportarPresupuestos.php">
+                            <a href="exportarPresupuesto.php">
                                 <button class="btn btn-link">Exportar a PDF</button>
                             </a>
                         </div>

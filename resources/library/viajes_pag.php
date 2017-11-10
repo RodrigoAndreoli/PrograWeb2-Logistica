@@ -15,7 +15,7 @@
     ");
 
     $cons = $obj -> consultar("SELECT T.idViaje TViaje
-        FROM Vehiculo_chofer_viaje T
+        FROM Vehiculo_Chofer_viaje T
         ORDER BY T.idViaje
     ");
 

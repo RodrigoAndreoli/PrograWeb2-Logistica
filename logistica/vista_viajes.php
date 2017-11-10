@@ -50,7 +50,7 @@
                                                 <th  class="text-center">Tiempo estimado</th>
                                                 <th  class="text-center">Combustible</th>
                                                 <th  class="text-center">Km estimado</th>
-                                                <?php if($_SESSION['rol'] == 'admin' || $_SESSION["rol"] == 'supervisor') {?>   
+                                                <?php if($_SESSION['rol'] == 'Administrador' || $_SESSION["rol"] == 'Supervisor') {?>   
 												<th  class="text-center">Operacion</th>
                                                 <?php } ?>
                                             </thead>
@@ -64,7 +64,7 @@
                                                 <td><?php echo $td['Tiempo']; ?></td>
                                                 <td><?php echo $td['Combustible']; ?></td>
                                                 <td><?php echo $td['Km']; ?></td>
-                                                <?php if($_SESSION['rol'] == 'admin' || $_SESSION["rol"] == 'supervisor') {?>   
+                                                <?php if($_SESSION['rol'] == 'Administrador' || $_SESSION["rol"] == 'Supervisor') {?>   
                                                 <td class="text-center">
                                                     <?php if(!in_array($td['VViaje'], $asignar)) { ?>  
                                                         <a href="asignarViaje.php?id=<?php echo $td['VViaje']?>">
@@ -99,7 +99,7 @@
                             </div>
                         </div>
                         <div class="row">
-                                <?php if($_SESSION['rol'] == 'admin' || $_SESSION["rol"] == 'supervisor') {?>   
+                                <?php if($_SESSION['rol'] == 'Administrador' || $_SESSION["rol"] == 'Supervisor') {?>   
                                 <div class="col">
                                     <a href="registrarViaje.php" class="btn btn-primary">Nuevo viaje</a>
                                 </div>

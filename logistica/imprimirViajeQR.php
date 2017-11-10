@@ -7,7 +7,7 @@
     $idViaje = $_REQUEST['id'];
     $obj = new controlDB();
     $datos = $obj -> consultar("SELECT V.fecha qfecha, V.destino qdestino, V.tipo_carga qcarga, U.nombre qprimer, U2.nombre qsegundo, C.patente qcamion, C.km qkm, A.patente qacoplado
-    FROM Vehiculo_chofer_viaje T 
+    FROM Vehiculo_Chofer_viaje T 
     JOIN Viaje V ON T.idViaje = V.idViaje 
     JOIN Usuario U ON T.idUsuario = U.idUsuario 
     JOIN Usuario U2 ON T.idUsuario2 = U2.idUsuario 
@@ -18,7 +18,7 @@
     if($datos==null){
         
         $datos2 = $obj -> consultar("SELECT V.fecha qfecha, V.destino qdestino, V.tipo_carga qcarga, U.nombre qprimer, C.patente qcamion, C.km qkm
-        FROM Vehiculo_chofer_viaje T 
+        FROM Vehiculo_Chofer_viaje T 
         JOIN Viaje V ON T.idViaje = V.idViaje 
         JOIN Usuario U ON T.idUsuario = U.idUsuario 
         JOIN Vehiculo C ON T.idVehiculo = C.idVehiculo 

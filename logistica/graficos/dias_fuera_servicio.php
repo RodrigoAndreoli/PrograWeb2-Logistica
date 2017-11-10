@@ -1,16 +1,18 @@
 <?php
     require_once($_SERVER['DOCUMENT_ROOT'].'/resources/db/conexion.php');
     
-    $sql="SELECT sum(datediff(m.fecha_salida,m.fecha_entrada)) as dias,m.idVehiculo,v.patente FROM mantenimiento m
-    join vehiculo v on v.idVehiculo = m.idVehiculo
-    GROUP by idVehiculo order by dias";
+    $sql="SELECT SUM(DATEDIFF(M.fecha_salida, M.fecha_entrada)) Dias, M.idVehiculo IdVehiculo, V.patente Patente
+        FROM Mantenimiento M
+        JOIN Vehiculo V ON V.idVehiculo = M.idVehiculo
+        GROUP BY IdVehiculo 
+        ORDER BY Dias";
 
     $resultado=$conexion->query($sql);
    // print_r($resultado);
-    $dataTable=array(array("patente","dias"));
+    $dataTable=array(array("Patente","Dias"));
     //print_r($resultado);
     while($fila=mysqli_fetch_assoc($resultado)){
-        $dataTable[]=array($fila['patente'],(int)$fila['dias']);
+        $dataTable[]=array($fila['Patente'],(int)$fila['Dias']);
     }
 
     mysqli_close($conexion);

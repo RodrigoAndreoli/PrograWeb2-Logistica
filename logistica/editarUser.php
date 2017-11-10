@@ -7,13 +7,13 @@
         require_once($_SERVER['DOCUMENT_ROOT'].'/resources/config.php');
         $miSession = new Sesion();
         $miSession -> iniciarSesion();
-        if($_SESSION['rol']!='supervisor'){
+        if($_SESSION['rol']!='Supervisor'){
             $miSession -> permisos();
         }
         $cod = $_GET['id'];
         $obj = new controlDB();
         $user = $obj -> consultar("SELECT * 
-            FROM usuario 
+            FROM Usuario 
             WHERE idUsuario = '$cod'");
     ?>
 </head>
@@ -45,80 +45,68 @@
                                     <form action="bdUser.php" method="post" class="form-horizontal">
                                         <table class="table table-striped  table-condensed table-hover">
                                             <?php foreach($user as $users){ ?>
-
-                                           
-                                            <input type="hidden" class="form-control"  value="<?php echo $users['nombre']; ?>" name="nombre">
-                                              
-                                            <div class="form-group">
-                                                <div class="col-xs-12 col-lg-6 col-lg-offset-3">
-                                                    <label class="control-label col-xs-4 col-sm-3">Password:</label>
-                                                    <div class="col-xs-8 col-sm-9">
-                                                        <input type="password" class="form-control"  placeholder="****" name="pass" required>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-xs-12 col-lg-6 col-lg-offset-3">
-                                                    <label class="control-label col-xs-4 col-sm-3">Documento:</label>
-                                                    <div class="col-xs-8 col-sm-9">
-                                                        <input type="text" class="form-control"  value="<?php echo $users['tipo_doc']; ?>" name="tipo_doc">
-                                                    </div>
-                                                </div>
-                                            </div>
                                             <div class="form-group">
                                                 <div class="col-xs-12 col-lg-6 col-lg-offset-3">
                                                     <label class="control-label col-xs-4 col-sm-3">Nro documento:</label>
                                                     <div class="col-xs-8 col-sm-9">
-                                                        <input type="text" class="form-control"  value="<?php echo $users['num_doc']; ?>" name="num_doc">
+                                                        <input type="text" class="form-control"  value="<?php echo $users['num_doc']; ?>" name="num_doc" id="num_doc">
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <div class="col-xs-12 col-lg-6 col-lg-offset-3">
-                                                    <label class="control-label col-xs-4 col-sm-3">Nacimiento:</label>
+                                                    <label class="control-label col-xs-4 col-sm-3">Password:</label>
                                                     <div class="col-xs-8 col-sm-9">
-                                                        <input type="text" class="form-control"  value="<?php echo $users['fecha_nacimiento']; ?>" name="fecha_nacimiento">
+                                                        <input type="password" class="form-control" placeholder="****" name="pass" id="pass" required>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <div class="col-xs-12 col-lg-6 col-lg-offset-3">
                                                     <div class="control-label col-xs-4 col-sm-3">
-                                                        <label for="sel1 ">Rol</label>
+                                                        <label for="sel1 ">Rol:</label>
                                                     </div>
                                                     <div class="col-xs-8 col-sm-9">
                                                         <select class="form-control" id="sel1" name="rol">
-                                                            <option value="<?php echo $users['rol']; ?>" selected><?php echo $users['rol']; ?></option>
-                                                            <option value="chofer">chofer</option>
-                                                            <option value="admin'">admin</option>
-                                                            <option value="supervisor">supervisor</option>
-                                                            <option value="mecanico">mecanico</option>
+                                                            <option value="<?php echo $users['rol']; ?>" selected disabled><?php echo $users['rol']; ?></option>
+                                                            <option value="Chofer">Chofer</option>
+                                                            <option value="Administrador">Administrador</option>
+                                                            <option value="Supervisor">Supervisor</option>
+                                                            <option value="Mecanico">Mecanico</option>
                                                         </select>
                                                     </div>
                                                 </div>
-                                            </div>    
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-xs-12 col-lg-6 col-lg-offset-3">
+                                                    <label class="control-label col-xs-4 col-sm-3">Nombre y Apellido:</label>
+                                                    <div class="col-xs-8 col-sm-9">
+                                                        <input type="text" class="form-control"  value="<?php echo $users['nombre']; ?>" name="nombre" id="nombre">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-xs-12 col-lg-6 col-lg-offset-3">
+                                                    <label class="control-label col-xs-4 col-sm-3">Fecha de Nacimiento:</label>
+                                                    <div class="col-xs-8 col-sm-9">
+                                                        <input type="text" class="form-control"  value="<?php echo $users['fecha_nacimiento']; ?>" name="fecha_nacimiento" id="fecha_nacimiento">
+                                                    </div>
+                                                </div>
+                                            </div>
 											<div class="form-group" id="tp_licencia_mostrar">
                                                 <div class="col-xs-12 col-lg-6 col-lg-offset-3">
                                                     <div class="control-label col-xs-4 col-sm-3">
-                                                        <label for="sel2 ">Tipo Licencia</label>
+                                                        <label for="sel2 ">Tipo Licencia:</label>
                                                     </div>
                                                     <div class="col-xs-8 col-sm-9">
-                                                        <select class="form-control" id="sel2" name="tp_licencia">
-                                                            <option value="<?php echo $users['tipo_licencia']; ?>" selected><?php echo $users['tipo_licencia']; ?></option>
-                                                            <option value="a">a</option>
-                                                            <option value="b">b</option>
-                                                            <option value="c">c</option>
+                                                        <select class="form-control" id="tipo_licencia" name="tp_licencia">
+                                                            <option value="<?php echo $users['tipo_licencia']; ?>" selected disabled><?php echo $users['tipo_licencia']; ?></option>
+                                                            <option value="C">C</option>
+                                                            <option value="D1">D1</option>
+                                                            <option value="E1">E1</option>
                                                         </select>
                                                     </div>
                                                 </div>
-                                            </div>  
-											<div class="form-group" id="tp_licencia_mostrar">
-                                                <div class="col-xs-12 col-lg-6 col-lg-offset-3">
-                                                    <label class="control-label col-xs-4 col-sm-3">Nro Licencia:</label>
-                                                    <div class="col-xs-8 col-sm-9">       
-                                                        <input type="text" class="form-control"  value="<?php echo $users['nro_licencia']; ?>" name="nro_licencia">
-													</div>
-												</div>
                                             </div>
                                             <tr>
                                                 <td colspan="3" class="text-center">
@@ -128,8 +116,8 @@
                                             </tr>
                                             <?php } ?>
                                         </table>
-                                        <input type="hidden" name="funcion" value="modificar"> 
-                                        <input type="hidden" name="cod" value="<?php echo $cod; ?>">
+                                        <input type="hidden" name="funcion" id="funcion" value="modificar" readonly> 
+                                        <input type="hidden" name="cod" id="cod" value="<?php echo $cod; ?>" readonly>
                                     </form>
                                 </div>
                             </div>

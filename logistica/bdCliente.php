@@ -11,11 +11,11 @@
         $obj = new controlDB();
         $cuit = $_POST['cuit'];
         $razon = $_POST['razon'];
-        $dom_numero = $_POST['dom_numero'];
-        $dom_calle = $_POST['dom_calle'];
-        $dom_cp = $_POST['dom_cp'];
-        $dom_piso = $_POST['dom_piso'];
         $telefono = $_POST['telefono'];   
+        $dom_cp = $_POST['dom_cp'];
+        $dom_calle = $_POST['dom_calle'];
+        $dom_numero = $_POST['dom_numero'];
+        $dom_piso = $_POST['dom_piso'];
         $cod = $_POST['cod'];
     }
 
@@ -24,12 +24,12 @@
     if($funcion == "modificar"){
         $sql = "UPDATE Cliente
             SET cuit = '$cuit',
-            razon = '$razon',
-            dom_numero = '$dom_numero',
-            dom_calle = '$dom_calle',
-            dom_cp = '$dom_cp',
-            dom_piso = '$dom_piso',
-            telefono = '$telefono'
+                razon = '$razon',
+                telefono = '$telefono'
+                dom_cp = '$dom_cp',
+                dom_calle = '$dom_calle',
+                dom_numero = '$dom_numero',
+                dom_piso = '$dom_piso',
             WHERE idCliente = '$cod'";
     }
         
@@ -39,8 +39,8 @@
                 FROM Cliente 
                 WHERE idCliente='$id'";
     } else {
-        $sql = "INSERT INTO Cliente (cuit,razon,dom_numero,dom_calle,dom_cp,dom_piso,telefono)
-            VALUES('$cuit','$razon','$dom_numero','$dom_calle','$dom_cp','$dom_piso','$telefono')";
+        $sql = "INSERT INTO Cliente(cuit, razon, telefono, dom_cp, dom_calle, dom_numero, dom_piso)
+        VALUES('$cuit', '$razon', '$telefono', '$dom_cp', '$dom_calle', '$dom_numero', '$dom_piso')";
     }
 	
 	// escribe en el log

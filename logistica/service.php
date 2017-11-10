@@ -7,9 +7,9 @@
         require_once($_SERVER['DOCUMENT_ROOT'].'/resources/config.php');
         $miSession = new Sesion();
         $miSession -> iniciarSesion();
-        if($_SESSION['rol']!="mecanico" && $_SESSION['rol']!="admin"){
+        if($_SESSION['rol']!="Mecanico" && $_SESSION['rol']!="Administrador"){
         $miSession -> permisos();}
-        if($_SESSION['rol']=='chofer'){
+        if($_SESSION['rol']=='Chofer'){
                 $miSession -> permisos();
             } 
     

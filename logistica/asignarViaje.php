@@ -7,7 +7,7 @@
         require_once($_SERVER['DOCUMENT_ROOT'].'/resources/config.php');
         $miSession = new Sesion();
         $miSession -> iniciarSesion();
-        if($_SESSION['rol']=='chofer' || $_SESSION['rol']=='mecanico' || $_SESSION['rol']=='admin'){
+        if($_SESSION['rol']=='Chofer' || $_SESSION['rol']=='Mecanico' || $_SESSION['rol']=='Administrador'){
                 $miSession -> permisos();
             } 
 		$id = $_REQUEST['id'];
@@ -59,29 +59,29 @@
                                                         <tr>
                                                             <td>
                                                                 <select name="chofer1" class="form-control" id="sel1"><?php foreach($datos as $td){ ?>
-													               <option value="<?php echo $td['idUsuario'];?>"><?php echo $td['idUsuario']." - ".$td['nombre'];?> </option>
+													               <option value="<?php echo $td['IdUsuario'];?>"><?php echo $td['IdUsuario']." - ".$td['Nombre'];?> </option>
 												                <?php } ?>
 												            </td>
 												            <td>
                                                                 <select name="vehiculo1" class="form-control" id="sel1"><?php foreach($datos2 as $td2){ ?>
-													               <option value="<?php echo $td2['idVehiculo'];?>"><?php echo $td2['patente']." - ".$td2['marca'];?></option> 
+													               <option value="<?php echo $td2['IdVehiculo'];?>"><?php echo $td2['Patente']." - ".$td2['Marca'];?></option> 
 												                <?php } ?>
 												            </td>
 												        </tr>
                                                         <tr>
                                                             <td>
-                                                                <select name="chofer2" class="form-control" id="sel1"><option value="0">N/A</option><?php foreach($datos as $td){ ?>
-													               <option value="<?php echo $td['idUsuario'];?>"><?php echo $td['idUsuario']." - ".$td['nombre'];?> </option>
+                                                                <select name="Chofer2" class="form-control" id="sel1"><option value="0">N/A</option><?php foreach($datos as $td){ ?>
+													               <option value="<?php echo $td['IdUsuario'];?>"><?php echo $td['IdUsuario']." - ".$td['Nombre'];?> </option>
                                                                 <?php } ?>
                                                             </td>
                                                             <td>
                                                                 <select name="vehiculo2" class="form-control" id="sel1"><option value="0">N/A</option><?php foreach($datos3 as $td3){ ?>
-                                                                    <option value="<?php echo $td3['idVehiculo'];?>"><?php echo $td3['patente']." - ".$td3['marca'];?></option> 
+                                                                    <option value="<?php echo $td3['IdVehiculo'];?>"><?php echo $td3['Patente']." - ".$td3['Marca'];?></option> 
                                                                 <?php } ?>
                                                             </td>
                                                         </tr>
                                                     </table> 
-                                                    <input type="hidden" name="id" value="<?php echo $id ; ?>">
+                                                    <input type="hidden" name="id" value="<?php echo $id; ?>">
                                                     <input type="hidden" name="funcion" value="asignar">
                                                     <div class="col"> 
                                                         <button type="submit" class="btn btn-primary">Guardar</button>

@@ -1,7 +1,7 @@
 function mostrarLic()
 	{
 		var sel1 = document.getElementById('sel1').value;
-		if (sel1 == "chofer"){ 
+		if (sel1 == "Chofer"){ 
 			document.getElementById("tp_licencia_mostrar").style.display = "block";
 			document.getElementById("nro_licencia_mostrar").style.display = "block";
 		}
@@ -76,7 +76,7 @@ function validar() {
         }
     }
 	
-	if (sel1 == "chofer"){
+	if (sel1 == "Chofer"){
 		if ( sel2 == '') {
 			mensaje += "<p>Debe Seleccionar un Tipo de Licencia</p>";
 			error++;

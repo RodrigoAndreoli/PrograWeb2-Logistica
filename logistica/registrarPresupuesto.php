@@ -7,7 +7,7 @@
         require_once($_SERVER['DOCUMENT_ROOT'].'/resources/config.php');
         $miSession = new Sesion();
         $miSession -> iniciarSesion();
-        if($_SESSION['rol']!='supervisor'){
+        if($_SESSION['rol']!='Supervisor'){
             $miSession -> permisos();
         }  
         $obj = new controlDB();
@@ -40,7 +40,7 @@
                                             <h3>Registrar nuevo presupuesto</h3>
                                         </div>
                                     </div>
-                                    <form action="bdPresupuestos.php" method="post" name="form" id="form" onsubmit="return validar()">
+                                    <form action="bdPresupuesto.php" method="post" name="form" id="form" onsubmit="return validar()">
                                         <table class="table">
 
                                             <?php foreach($usuario as $usr){ ?>

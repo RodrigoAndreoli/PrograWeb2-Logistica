@@ -7,7 +7,7 @@
         require_once($_SERVER['DOCUMENT_ROOT'].'/resources/config.php');
         $miSession = new Sesion();
         $miSession -> iniciarSesion();
-        if($_SESSION['rol']=='chofer'){
+        if($_SESSION['rol']=='Chofer'){
                 $miSession -> permisos();
             } 
         $obj = new controlDB();
@@ -53,7 +53,7 @@
                                                 <th  class="text-center">Kilometros</th>
                                                 <th  class="text-center">Año</th>
                                                 <th  class="text-center">Número de motor</th>
-                                                <?php if($_SESSION["rol"]!='supervisor' && $_SESSION["rol"]!='mecanico'){?>  
+                                                <?php if($_SESSION["rol"]!='Supervisor' && $_SESSION["rol"]!='Mecanico'){?>  
                                                 <th  class="text-center">Operacion</th>
                                                 <?php } ?>
                                             </thead>
@@ -67,7 +67,7 @@
                                                 <td><?php echo $td['km']; ?></td>
                                                 <td><?php echo $td['anio']; ?></td>
                                                 <td><?php echo $td['nro_motor']; ?></td>
-                                                <?php if($_SESSION["rol"]!='supervisor' && $_SESSION["rol"]!='mecanico'){?>  
+                                                <?php if($_SESSION["rol"]!='Supervisor' && $_SESSION["rol"]!='Mecanico'){?>  
                                                 <td class="text-center">
                                                     <a href="editarVehiculo.php?id=<?php echo $td["idVehiculo"]?>">
                                                         <button class="btn btn-info">Editar</button>
@@ -95,7 +95,7 @@
                             </div>
                         </div>
                         <div class="row">
-                                <?php if($_SESSION["rol"]!='supervisor' && $_SESSION["rol"]!='mecanico'){?>  
+                                <?php if($_SESSION["rol"]!='Supervisor' && $_SESSION["rol"]!='Mecanico'){?>  
                                 <div class="col">
                                     <a href="registrarVehiculo.php" class="btn btn-primary">Nuevo vehículo</a>
                                 </div>

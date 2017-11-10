@@ -8,26 +8,31 @@
     $id = $_REQUEST['id'];
 	
     if($funcion!="eliminar"){
+        $fkPresupuestoV = $_POST['fkPresupuestoV'];
         $fecha = $_POST['fecha'];
         $origen = $_POST['origen'];
         $destino = $_POST['destino'];
-        $carga = $_POST['carga'];
+        $tipo_carga = $_POST['tipo_carga'];
+        $cod = $_POST['cod']; 
     }
 	
     $obj = new controlDB();
     
-     if($funcion == "modificar"){
-        $sql = "UPDATE viaje
-            SET fecha = '$fecha',
-            origen = '$origen',
-            destino = '$destino',
+    if($funcion == "modificar"){
+        $sql = "UPDATE Viaje
+            SET fkPresupuestoV = '$fkPresupuestoV',
+                fecha = '$fecha',
+                origen = '$origen',
+                destino = '$destino',
+                tipo_carga = '$tipo_carga'
             WHERE idViaje = '$cod'";
     }else if($funcion == "eliminar"){
-            $sql = "DELETE
-                FROM viaje 
-                WHERE idViaje='$id'";
+        $sql = "DELETE
+            FROM Viaje 
+            WHERE idViaje='$id'";
     }else{
-        $sql = "INSERT INTO viaje(fecha,origen,destino,tipo_carga) VALUES ('$fecha','$origen','$destino','$carga')"; 
+        $sql = "INSERT INTO Viaje(fkPresupuestoV, fecha, origen, destino, tipo_carga)
+        VALUES('$fkPresupuestoV', '$fecha', '$origen', '$destino', '$tipo_carga')"; 
     }
 	
 	// escribe en el log

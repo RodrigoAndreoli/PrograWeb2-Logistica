@@ -7,22 +7,24 @@
         require_once($_SERVER['DOCUMENT_ROOT'].'/resources/config.php');
         $miSession = new Sesion();
         $miSession -> iniciarSesion();
-        if($_SESSION['rol']!='supervisor'){
+        if($_SESSION['rol']!='Supervisor'){
             $miSession -> permisos();
         }
         $cod = $_GET['id'];
         $obj = new controlDB();
+        $idUsuario = $_SESSION['idUsuario'];
         $presupuestos = $obj -> consultar("SELECT * 
-            FROM presupuesto 
+            FROM Presupuesto 
             WHERE idPresupuesto = '$cod'");
         
         $nombreUsuario = $_SESSION['usuario']; 
         $rolUsuario = $_SESSION['rol'];  
 
-        $clientes = $obj -> consultar("select idCliente,razon from cliente");
-        $viajes = $obj -> consultar("SELECT idViaje FROM viaje");
-        $usuario = $obj -> consultar("SELECT u.idUsuario,u.nombre FROM usuario u  WHERE u.nombre = '$nombreUsuario' AND u.rol = '$rolUsuario'");
-      
+        $clientes = $obj -> consultar("SELECT idCliente, razon 
+            FROM Cliente");
+    
+        $viajes = $obj -> consultar("SELECT idViaje 
+            FROM Viaje");
     ?>
 </head>
 
@@ -50,20 +52,15 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col">
-                                    <form action="bdPresupuestos.php" method="post" class="form-horizontal">
+                                    <form action="bdPresupuesto.php" method="post" class="form-horizontal">
                                         <table class="table table-striped  table-condensed table-hover">
-                                          
                                             <?php foreach($presupuestos as $dato){ ?>
-
-                                            <?php foreach($usuario as $usr){ ?>
-                                                <input type="hidden" name="idUsuario" value="<?php echo $usr['idUsuario']; ?>">
-                                            <?php } ?>
-
+                                                <input type="hidden" name="fkAdministradorP" id="fkAdministradorP" value="<?php echo $idUsuario; ?>" readonly>
                                             <div class="form-group">
                                                 <div class="col-xs-12 col-lg-6 col-lg-offset-3">
                                                     <label class="control-label col-xs-4 col-sm-3 cliente">Cliente:</label>
                                                     <div class="col-xs-8 col-sm-9">
-                                                        <select class="form-control" id="cliente" name="idCliente">
+                                                        <select class="form-control" id="fkClienteP" name="fkClienteP">
                                                            <?php foreach($clientes as $cliente){ ?>
                                                             <option value="<?php echo $cliente['idCliente']; ?>"><?php echo $cliente['razon']; ?></option>
                                                             <?php } ?>
@@ -73,37 +70,25 @@
                                             </div>
                                             <div class="form-group">
                                                 <div class="col-xs-12 col-lg-6 col-lg-offset-3">
-                                                    <label class="control-label col-xs-4 col-sm-3 viaje">Viaje:</label>
+                                                    <label class="control-label col-xs-4 col-sm-3">Tiempo Estimado:</label>
                                                     <div class="col-xs-8 col-sm-9">
-                                                        <select class="form-control" id="viaje" name="idViaje">
-                                                           <?php foreach($viajes as $viaje){ ?>
-                                                            <option value="<?php echo $viaje['idViaje']; ?>"><?php echo $viaje['idViaje']; ?></option>
-                                                            <?php } ?>
-                                                        </select>
+                                                        <input type="text" class="form-control" value="<?php echo $dato['tiempo_estimado']; ?>" name="tiempo_estimado" id="tiempo_estimado">
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <div class="col-xs-12 col-lg-6 col-lg-offset-3">
-                                                    <label class="control-label col-xs-4 col-sm-3">Tiempo:</label>
+                                                    <label class="control-label col-xs-4 col-sm-3">Kilometraje Estimado:</label>
                                                     <div class="col-xs-8 col-sm-9">
-                                                        <input type="text" class="form-control"  value="<?php echo $dato['tiempo_estimado']; ?>" name="tiempo_estimado">
+                                                        <input type="text" class="form-control" value="<?php echo $dato['km_estimado']; ?>" name="km_estimado" id="km_estimado">
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <div class="col-xs-12 col-lg-6 col-lg-offset-3">
-                                                    <label class="control-label col-xs-4 col-sm-3">Km:</label>
+                                                    <label class="control-label col-xs-4 col-sm-3">Combustible Estimado:</label>
                                                     <div class="col-xs-8 col-sm-9">
-                                                        <input type="text" class="form-control"  value="<?php echo $dato['km_previstos']; ?>" name="km_previstos">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-xs-12 col-lg-6 col-lg-offset-3">
-                                                    <label class="control-label col-xs-4 col-sm-3">Combustible:</label>
-                                                    <div class="col-xs-8 col-sm-9">
-                                                        <input type="text" class="form-control"  value="<?php echo $dato['combustible_previsto']; ?>" name="combustible_previsto">
+                                                        <input type="text" class="form-control" value="<?php echo $dato['combustible_estimado']; ?>" name="combustible_estimado" id="combustible_estimado">
                                                     </div>
                                                 </div>
                                             </div>
@@ -111,7 +96,7 @@
                                                 <div class="col-xs-12 col-lg-6 col-lg-offset-3">
                                                     <label class="control-label col-xs-4 col-sm-3">Costo:</label>
                                                     <div class="col-xs-8 col-sm-9">
-                                                        <input type="text" class="form-control"  value="<?php echo $dato['costo_real']; ?>" name="costo_real">
+                                                        <input type="text" class="form-control" value="<?php echo $dato['costo_real']; ?>" name="costo_real" id="costo_real">
                                                     </div>
                                                 </div>
                                             </div>
@@ -120,24 +105,12 @@
                                                     <label class="control-label col-xs-4 col-sm-3 aceptado">Aceptado:</label>
                                                     <div class="col-xs-8 col-sm-9">
                                                         <select class="form-control" id="aceptado" name="aceptado" required>
-                                                            <option value="si">si</option>
-                                                            <option value="no">no</option>
+                                                            <option value="No" selected>No</option>
+                                                            <option value="Si">Si</option>
                                                         </select>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="form-group">
-                                                <div class="col-xs-12 col-lg-6 col-lg-offset-3">
-                                                    <label class="control-label col-xs-4 col-sm-3 estado">Estado:</label>
-                                                    <div class="col-xs-8 col-sm-9">
-                                                        <select class="form-control" id="aceptado" name="estado" required>
-                                                            <option value="en curso">En curso</option>
-                                                            <option value="finalizado">Finalizado</option>
-                                                            <option value="cancelado">Cancelado</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>    
                                             <tr>
                                                 <td colspan="3" class="text-center">
                                                     <a href="vista_presupuestos.php" class="btn btn-danger">Volver</a>
@@ -146,8 +119,8 @@
                                             </tr>
                                             <?php } ?>
                                         </table>
-                                        <input type="hidden" name="funcion" value="modificar"> 
-                                        <input type="hidden" name="cod" value="<?php echo $cod; ?>">
+                                        <input type="hidden" name="funcion" id="funcion" value="modificar" readonly> 
+                                        <input type="hidden" name="cod" id="cod" value="<?php echo $cod; ?>" readonly>
                                     </form>
                                 </div>
                             </div>

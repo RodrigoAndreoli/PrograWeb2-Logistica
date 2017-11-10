@@ -7,13 +7,13 @@
         require_once($_SERVER['DOCUMENT_ROOT'].'/resources/config.php');
         $miSession = new Sesion();
         $miSession -> iniciarSesion();
-        if($_SESSION['rol']=='chofer' || $_SESSION['rol']=='mecanico'){
+        if($_SESSION['rol']=='Chofer' || $_SESSION['rol']=='Mecanico'){
                 $miSession -> permisos();
             } 
         $cod = $_GET['id'];
         $obj = new controlDB();
         $vehiculo = $obj -> consultar("SELECT * 
-            FROM vehiculo 
+            FROM Vehiculo 
             WHERE idVehiculo = '$cod'");
     ?>
 </head>
@@ -45,15 +45,34 @@
                                     <form action="bdVehiculo.php" method="post" class="form-horizontal">
                                         <table class="table table-striped  table-condensed table-hover">
                                             <?php foreach($vehiculo as $vehiculos){ ?>
-                                            
-                                            <input type="hidden" class="form-control"  placeholder="<?php echo $vehiculos['idVehiculo']; ?>" name="idVehiculo" readonly="readonly">
-                                                  
+                                            <input type="hidden" class="form-control"  placeholder="<?php echo $vehiculos['idVehiculo']; ?>" id="idVehiculo" name="idVehiculo" readonly>
+                                            <div class="form-group">
+                                                <div class="col-xs-12 col-lg-6 col-lg-offset-3">
+                                                    <div class="control-label col-xs-4 col-sm-3">
+                                                        <label for="">Tipo de vehículo</label>
+                                                    </div>
+                                                    <div class="col-xs-8 col-sm-9">
+                                                        <select class="form-control" id="tipo_vehiculo" name="tipo_vehiculo">
+                                                            <option value="<?php echo $vehiculos['tipo_vehiculo'];?>" selected disabled><?php echo $vehiculos['tipo_vehiculo']; ?></option>
+                                                            <option value="Camion">Camion</option>
+                                                            <option value="Acoplado">Acoplado</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-xs-12 col-lg-6 col-lg-offset-3">
+                                                    <label class="control-label col-xs-4 col-sm-3">Patente:</label>
+                                                    <div class="col-xs-8 col-sm-9">
+                                                        <input type="text" class="form-control" value="<?php echo $vehiculos['patente']; ?>" name="patente" id="patente">
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="form-group">
                                                 <div class="col-xs-12 col-lg-6 col-lg-offset-3">
                                                     <label class="control-label col-xs-4 col-sm-3">Marca:</label>
                                                     <div class="col-xs-8 col-sm-9">
-                                                        <input type="text" class="form-control"  value="<?php echo $vehiculos['marca']; ?>" name="marca">
+                                                        <input type="text" class="form-control" value="<?php echo $vehiculos['marca']; ?>" name="marca" id="marca">
                                                     </div>
                                                 </div>
                                             </div>
@@ -61,45 +80,7 @@
                                                 <div class="col-xs-12 col-lg-6 col-lg-offset-3">
                                                     <label class="control-label col-xs-4 col-sm-3">Modelo:</label>
                                                     <div class="col-xs-8 col-sm-9">
-                                                        <input type="text" class="form-control"  value="<?php echo $vehiculos['modelo']; ?>" name="modelo">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-xs-12 col-lg-6 col-lg-offset-3">
-                                                    <div class="control-label col-xs-4 col-sm-3">
-                                                        <label for="">Tipo de vehículo</label>
-                                                    </div>
-                                                    <div class="col-xs-8 col-sm-9">
-                                                        <select class="form-control" id="selVehi" name="tipo_vehi">
-                                                            <option value="<?php echo $vehiculos['tipo_vehiculo'];?>" selected><?php echo $vehiculos['tipo_vehiculo']; ?></option>
-                                                            <option value="camion">Camión</option>
-                                                            <option value="acoplado">Acoplado</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>    
-                                            <div class="form-group">
-                                                <div class="col-xs-12 col-lg-6 col-lg-offset-3">
-                                                    <label class="control-label col-xs-4 col-sm-3">Patente:</label>
-                                                    <div class="col-xs-8 col-sm-9">
-                                                        <input type="text" class="form-control"  value="<?php echo $vehiculos['patente']; ?>" name="patente">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-xs-12 col-lg-6 col-lg-offset-3">
-                                                    <label class="control-label col-xs-4 col-sm-3">Número de chasis:</label>
-                                                    <div class="col-xs-8 col-sm-9">
-                                                        <input type="text" class="form-control"  value="<?php echo $vehiculos['nro_chasis']; ?>" name="num_chasis">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-xs-12 col-lg-6 col-lg-offset-3">
-                                                    <label class="control-label col-xs-4 col-sm-3">Kilometros:</label>
-                                                    <div class="col-xs-8 col-sm-9">
-                                                        <input type="text" class="form-control"  value="<?php echo $vehiculos['km']; ?>" name="kilometros">
+                                                        <input type="text" class="form-control" value="<?php echo $vehiculos['modelo']; ?>" name="modelo" id="modelo">
                                                     </div>
                                                 </div>
                                             </div>
@@ -107,7 +88,15 @@
                                                 <div class="col-xs-12 col-lg-6 col-lg-offset-3">
                                                     <label class="control-label col-xs-4 col-sm-3">Año:</label>
                                                     <div class="col-xs-8 col-sm-9">
-                                                        <input type="text" class="form-control"  value="<?php echo $vehiculos['anio']; ?>" name="anio">
+                                                        <input type="number" class="form-control" value="<?php echo $vehiculos['anio']; ?>" name="anio" id="anio">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-xs-12 col-lg-6 col-lg-offset-3">
+                                                    <label class="control-label col-xs-4 col-sm-3">Número de chasis:</label>
+                                                    <div class="col-xs-8 col-sm-9">
+                                                        <input type="text" class="form-control" value="<?php echo $vehiculos['nro_chasis']; ?>" name="nro_chasis" id="nro_chasis">
                                                     </div>
                                                 </div>
                                             </div>
@@ -115,7 +104,15 @@
                                                 <div class="col-xs-12 col-lg-6 col-lg-offset-3">
                                                     <label class="control-label col-xs-4 col-sm-3">Número de motor:</label>
                                                     <div class="col-xs-8 col-sm-9">
-                                                        <input type="text" class="form-control"  value="<?php echo $vehiculos['nro_motor']; ?>" name="num_motor">
+                                                        <input type="number" class="form-control" value="<?php echo $vehiculos['nro_motor']; ?>" name="nro_motor" id="nro_motor">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-xs-12 col-lg-6 col-lg-offset-3">
+                                                    <label class="control-label col-xs-4 col-sm-3">Kilometraje:</label>
+                                                    <div class="col-xs-8 col-sm-9">
+                                                        <input type="text" class="form-control" value="<?php echo $vehiculos['km']; ?>" name="km" id="km">
                                                     </div>
                                                 </div>
                                             </div>
@@ -127,8 +124,8 @@
                                             </tr>
                                             <?php } ?>
                                         </table>
-                                        <input type="hidden" name="funcion" value="modificar"> 
-                                        <input type="hidden" name="cod" value="<?php echo $cod; ?>">
+                                        <input type="hidden" name="funcion" id="funcion" value="modificar" readonly> 
+                                        <input type="hidden" name="cod" id="cod" value="<?php echo $cod; ?>" readonly>
                                     </form>
                                 </div>
                             </div>

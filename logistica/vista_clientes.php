@@ -7,7 +7,7 @@
         require_once($_SERVER['DOCUMENT_ROOT'].'/resources/config.php');
         $miSession = new Sesion();
         $miSession -> iniciarSesion();
-        if($_SESSION['rol']!='admin'){
+        if($_SESSION['rol']!='Administrador'){
             $miSession -> permisos();
         }    
         $obj = new controlDB();

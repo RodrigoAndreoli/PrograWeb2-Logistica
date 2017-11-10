@@ -194,9 +194,9 @@ INSERT INTO Vehiculo_chofer_viaje (fkViajeT, fkChoferT, fkAcompanianteT, fkCamio
 (6, 2, 6, 6, NULL);
 
 INSERT INTO Reporte (fkViajeR, fkChoferR, tiempo, latitud, longitud, motivo, km, combustible, descripcion) VALUES
-(2, 11, '2017-10-24 09:00:00', '-58.6581128', '-34.6380318', 'Parada Tecnica', 0),
-(2, 11, '2017-10-24 14:35:00', '-59.111061', '-34.570730', 'Parada Tecnica', 435),
-(2, 11, '2017-10-24 20:00:00', '-58.6581128', '-34.6380318', 'Parada Tecnica', 900),
-(3, 1, '2017-10-07 05:00:00', '-58.6581128', '-34.6380318', 'Parada Tecnica', 79306),
-(3, 6, '2017-10-07 12:00:00', '-64.287881', '-36.608621', 'Parada Tecnica', 79851),
-(4, 6, '2017-11-07 05:00:00', '-58.6581128', '-34.6380318','Parada Tecnica', 98788);
+(2, 11, '2017-10-24 09:00:00', '-58.6581128', '-34.6380318', 'Parada Tecnica', 0, 0.00, 'Saliendo de la Central'),
+(2, 11, '2017-10-24 14:35:00', '-59.111061', '-34.570730', 'Parada Tecnica', 435, 0.00, 'Realizando la entrega'),
+(2, 11, '2017-10-24 20:00:00', '-58.6581128', '-34.6380318', 'Parada Tecnica', 900, 0.00, 'Llegando a la Central'),
+(3, 1, '2017-10-07 05:00:00', '-58.6581128', '-34.6380318', 'Parada Tecnica', 79306, 0.00, 'Saliendo de la Central'),
+(3, 6, '2017-10-07 12:00:00', '-64.287881', '-36.608621', 'Parada Tecnica', 79851, 900.00, 'Carga de combustible'),
+(4, 6, '2017-11-07 05:00:00', '-58.6581128', '-34.6380318','Parada Tecnica', 98788, 0.00, 'Saliendo de la Central');

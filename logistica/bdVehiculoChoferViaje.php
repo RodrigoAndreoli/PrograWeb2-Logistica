@@ -9,13 +9,15 @@
     $obj = new controlDB();
     
      if($funcion=="asignar"){
-		$idViaje = $_POST['id'];
-		$idUsuario1 = $_POST['chofer1'];
-		$idVehiculo1 = $_POST['vehiculo1'];
-		$idUsuario2 = $_POST['chofer2'];
-		$idVehiculo2 = $_POST['vehiculo2'];
-		$sql= "INSERT INTO vehiculo_chofer_viaje(idViaje,idUsuario,idVehiculo,idUsuario2,idVehiculo2) VALUES ('$idViaje','$idUsuario1','$idVehiculo1','$idUsuario2','$idVehiculo2')";
-	}
+		$fkViajeT = $_POST['fkViajeT'];
+		$fkChoferT = $_POST['fkChoferT'];
+		$fkAcompanianteT = $_POST['fkAcompanianteT'];
+		$fkCamionT = $_POST['fkCamionT'];
+		$fkAcopladoT = $_POST['fkAcopladoT'];
+		
+        $sql= "INSERT INTO Vehiculo_Chofer_viaje(fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT)
+        VALUES('$fkViajeT', '$fkChoferT', '$fkAcompanianteT', '$fkCamionT', '$fkAcopladoT')";
+     }
 	
 	// escribe en el log
 	$log = new creaLog();

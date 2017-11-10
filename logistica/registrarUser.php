@@ -7,7 +7,7 @@
         require_once($_SERVER['DOCUMENT_ROOT'].'/resources/config.php');
         $miSession = new Sesion();
         $miSession -> iniciarSesion();
-        if($_SESSION['rol']!='supervisor'){
+        if($_SESSION['rol']!='Supervisor'){
                 $miSession -> permisos();
             }
     ?>
@@ -65,10 +65,10 @@
                                         <div class="form-group">
                                             <label for="sel1">Rol</label>
                                             <select class="form-control" id="sel1"  name="rol" tabindex="5" onblur="mostrarLic()">
-                                                <option value="chofer">chofer</option>
-                                                <option value="admin">admin</option>
-                                                <option value="supervisor">supervisor</option>
-                                                <option value="mecanico">mecanico</option>
+                                                <option value="Chofer">Chofer</option>
+                                                <option value="Administrador">Administrador</option>
+                                                <option value="Supervisor">Supervisor</option>
+                                                <option value="Mecanico">Mecanico</option>
                                             </select>
                                         </div>
                                     </div>

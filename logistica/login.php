@@ -15,14 +15,14 @@ else if  (isset($_POST['enviar'])){
 
         require_once($_SERVER['DOCUMENT_ROOT'].'/resources/config.php');
 		$user = $_POST['num_doc'];
-		$pass = md5($_POST['password']);
+		$pass = md5($_POST['pass']);
 		$hoy = date("Y-m-d H:i:s");
 
         //Prepared statement
 		$ingreso = $conexion->prepare("
-            SELECT idUsuario,nombre,rol 
-            FROM usuario 
-            WHERE num_doc = ? and password = ? 
+            SELECT idUsuario, nombre, rol 
+            FROM Usuario 
+            WHERE num_doc = ? and pass = ? 
             ");
         
 		$ingreso->bind_param("is",$user,$pass);
@@ -38,7 +38,7 @@ else if  (isset($_POST['enviar'])){
             $_SESSION['rol'] = $fila['rol'];
             $_SESSION['idUsuario'] = $fila['idUsuario'];
 
-                if ($idViaje >= 1 && $fila['rol'] == 'chofer') {
+                if ($idViaje >= 1 && $fila['rol'] == 'Chofer') {
                     header('Location: registrarReporte.php?id=' .$idViaje);    
                     exit();
                 }
@@ -96,7 +96,7 @@ else if  (isset($_POST['enviar'])){
                         <div class="form-group">
                             <label class="col-lg-12" for="hasta">Contrase&ntilde;a:</label>
                             <div class="col-lg-12">
-                                <input type="password" class="form-control" id="pass" placeholder="Password" name='password' required='required'>
+                                <input type="password" class="form-control" id="pass" placeholder="Password" name='pass' required='required'>
                             </div>
                         </div>
                         <div class="form-group">

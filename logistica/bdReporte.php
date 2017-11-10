@@ -3,11 +3,10 @@
 	require_once($_SERVER['DOCUMENT_ROOT'].'/resources/log/creaLog.php');
     $miSession = new Sesion();
     $miSession -> iniciarSesion();
-
-    $idChofer = $_SESSION['idUsuario'];
-    
     $funcion = $_POST['funcion'];
-    $idViaje = $_POST['idViaje'];
+
+    $fkChoferR = $_SESSION['idUsuario'];
+    $fkViajeR = $_POST['fkViajeR'];
     $tiempo = $_POST['tiempo'];
     $latitud = $_POST['latitud'];
     $longitud = $_POST['longitud'];
@@ -19,8 +18,8 @@
     $obj = new controlDB();
 
     if($funcion == "insertar") {
-        $sql = "INSERT INTO Reporte_viaje(idViaje, idChofer, tiempo, latitud, longitud, motivo, km, combustible, descripcion) 
-            VALUES ('$idViaje', '$idChofer', '$tiempo', '$latitud', '$longitud', '$motivo', '$km', '$combustible', '$descripcion')";
+        $sql = "INSERT INTO Reporte(fkViajeR, fkChoferR, tiempo, latitud, longitud, motivo, km, combustible, descripcion)
+        VALUES ('$fkViajeR', '$fkChoferR', '$tiempo', '$latitud', '$longitud', '$motivo', '$km', '$combustible', '$descripcion')";
     }
 	
 	// escribe en el log

@@ -1,7 +1,10 @@
 <?php
     require_once($_SERVER['DOCUMENT_ROOT'].'/resources/db/conexion.php');
     
-    $sql="SELECT COUNT(*) Reparaciones,SUM(km_unidad) Kilometros FROM mantenimiento GROUP by idVehiculo;";
+    $sql="SELECT COUNT(*) Reparaciones, SUM(km_unidad) Kilometros 
+        FROM Mantenimiento 
+        GROUP BY idVehiculo";
+
     $resultado=$conexion->query($sql);
    // print_r($resultado);
     $dataTable=array(array("Reparaciones","Kilometros"));

@@ -7,14 +7,13 @@
         require_once($_SERVER['DOCUMENT_ROOT'].'/resources/config.php');
         $miSession = new Sesion();
         $miSession -> iniciarSesion();
-        if($_SESSION['rol']=='chofer'){
+        if($_SESSION['rol']=='Chofer'){
                 $miSession -> permisos();
-            } 
-    
+        } 
         $cod = $_GET['id'];
         $obj = new controlDB();
         $mantenimientos = $obj -> consultar("SELECT * 
-            FROM mantenimiento 
+            FROM Mantenimiento 
             WHERE idMantenimiento = '$cod'");
     ?>
 </head>
@@ -46,26 +45,13 @@
                                     <form action="bdMantenimiento.php" method="post" class="form-horizontal">
                                         <table class="table table-striped  table-condensed table-hover">
                                             <?php foreach($mantenimientos as $mant){ ?>
-
-                                            
-                                            <input type="hidden" value="<?php echo $mant['idVehiculo']; ?>" name="idVehiculo"/>
-                                            <input type="hidden" value="<?php echo $mant['idMecanico']; ?>" name="idMecanico"/>
-                                            
-                                            
-                                            <div class="form-group">
-                                                <div class="col-xs-12 col-lg-6 col-lg-offset-3">
-                                                    <label class="control-label col-xs-4 col-sm-3">Tipo vehiculo:</label>
-                                                    <div class="col-xs-8 col-sm-9">
-                                                        <input type="text" class="form-control"  placeholder="Tipo..." name="tipo_vehiculo"
-                                                        value="<?php echo $mant['tipo_vehiculo']; ?>" >
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            <input type="hidden" value="<?php echo $mant['idVehiculo']; ?>" name="fkVehiculoM" id="fkVehiculoM" readonly>
+                                            <input type="hidden" value="<?php echo $mant['idMecanico']; ?>" name="fkMecanicoM" id="fkMecanicoM" readonly>
                                             <div class="form-group">
                                                 <div class="col-xs-12 col-lg-6 col-lg-offset-3">
                                                     <label class="control-label col-xs-4 col-sm-3">Fecha entrada:</label>
                                                     <div class="col-xs-8 col-sm-9">
-                                                        <input type="date" class="form-control"  value="<?php echo $mant['fecha_entrada']; ?>" name="fecha_entrada">
+                                                        <input type="date" class="form-control" value="<?php echo $mant['fecha_entrada']; ?>" name="fecha_entrada" id="fecha_entrada">
                                                     </div>
                                                 </div>
                                             </div>
@@ -73,15 +59,7 @@
                                                 <div class="col-xs-12 col-lg-6 col-lg-offset-3">
                                                     <label class="control-label col-xs-4 col-sm-3">Fecha salida:</label>
                                                     <div class="col-xs-8 col-sm-9">
-                                                        <input type="date" class="form-control"  value="<?php echo $mant['fecha_salida']; ?>" name="fecha_salida">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-xs-12 col-lg-6 col-lg-offset-3">
-                                                    <label class="control-label col-xs-4 col-sm-3">Km:</label>
-                                                    <div class="col-xs-8 col-sm-9">
-                                                        <input type="text" class="form-control"  value="<?php echo $mant['km_unidad']; ?>" name="km_unidad">
+                                                        <input type="date" class="form-control" value="<?php echo $mant['fecha_salida']; ?>" name="fecha_salida" id="fecha_salida">
                                                     </div>
                                                 </div>
                                             </div>
@@ -89,7 +67,7 @@
                                                 <div class="col-xs-12 col-lg-6 col-lg-offset-3">
                                                     <label class="control-label col-xs-4 col-sm-3">Costo:</label>
                                                     <div class="col-xs-8 col-sm-9">
-                                                        <input type="text" class="form-control"  value="<?php echo $mant['costo']; ?>" name="costo">
+                                                        <input type="text" class="form-control" value="<?php echo $mant['costo']; ?>" name="costo" id="costo">
                                                     </div>
                                                 </div>
                                             </div>
@@ -98,8 +76,41 @@
                                                     <label class="control-label col-xs-4 col-sm-3">Externo:</label>
                                                     <div class="col-xs-8 col-sm-9">
                                                         <select class="form-control" id="externo" name="externo">
-                                                            <option value="si">si</option>
-                                                            <option value="no">no</option>
+                                                            <option value="No" selected>No</option>
+                                                            <option value="Si">Si</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-xs-12 col-lg-6 col-lg-offset-3">
+                                                    <label class="control-label col-xs-4 col-sm-3">Cambio de Aceite:</label>
+                                                    <div class="col-xs-8 col-sm-9">
+                                                        <select class="form-control" id="cambio_aceite" name="cambio_aceite">
+                                                            <option value="No" selected>No</option>
+                                                            <option value="Si">Si</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-xs-12 col-lg-6 col-lg-offset-3">
+                                                    <label class="control-label col-xs-4 col-sm-3">Filtro de Aire:</label>
+                                                    <div class="col-xs-8 col-sm-9">
+                                                        <select class="form-control" id="filtro_aire" name="filtro_aire">
+                                                            <option value="No" selected>No</option>
+                                                            <option value="Si">Si</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-xs-12 col-lg-6 col-lg-offset-3">
+                                                    <label class="control-label col-xs-4 col-sm-3">Direccion:</label>
+                                                    <div class="col-xs-8 col-sm-9">
+                                                        <select class="form-control" id="direccion" name="direccion">
+                                                            <option value="No" selected>No</option>
+                                                            <option value="Si">Si</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -108,43 +119,7 @@
                                                 <div class="col-xs-12 col-lg-6 col-lg-offset-3">
                                                     <label class="control-label col-xs-4 col-sm-3">Repuestos:</label>
                                                     <div class="col-xs-8 col-sm-9">
-                                                        <input type="text" class="form-control"  value="<?php echo $mant['repuestos']; ?>" name="repuestos">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                             <div class="form-group">
-                                                <div class="col-xs-12 col-lg-6 col-lg-offset-3">
-                                                    <label class="control-label col-xs-4 col-sm-3">Direccion:</label>
-                                                    <div class="col-xs-8 col-sm-9">
-                                                        <select class="form-control" id="direccion" name="direccion">
-                                                            <option value="">n/d</option>
-                                                            <option value="si">si</option>
-                                                            <option value="no">no</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                             <div class="form-group">
-                                                <div class="col-xs-12 col-lg-6 col-lg-offset-3">
-                                                    <label class="control-label col-xs-4 col-sm-3">Cambio aceite:</label>
-                                                    <div class="col-xs-8 col-sm-9">
-                                                        <select class="form-control" id="cambio_aceite" name="cambio_aceite">
-                                                            <option value="">n/d</option>
-                                                            <option value="si">si</option>
-                                                            <option value="no">no</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                             <div class="form-group">
-                                                <div class="col-xs-12 col-lg-6 col-lg-offset-3">
-                                                    <label class="control-label col-xs-4 col-sm-3">Filtro aire:</label>
-                                                    <div class="col-xs-8 col-sm-9">
-                                                        <select class="form-control" id="filtro_aire" name="filtro_aire">
-                                                            <option value="">n/d</option>
-                                                            <option value="si">si</option>
-                                                            <option value="no">no</option>
-                                                        </select>
+                                                        <input type="text" class="form-control" value="<?php echo $mant['repuestos']; ?>" name="repuestos" id="repuestos">
                                                     </div>
                                                 </div>
                                             </div> 
@@ -156,8 +131,8 @@
                                             </tr>
                                             <?php } ?>
                                         </table>
-                                        <input type="hidden" name="funcion" value="modificar"> 
-                                        <input type="hidden" name="cod" value="<?php echo $cod; ?>">
+                                        <input type="hidden" id="funcion" name="funcion" value="modificar" readonly> 
+                                        <input type="hidden" id="cod" name="cod" value="<?php echo $cod; ?>" readonly>
                                     </form>
                                 </div>
                             </div>

@@ -16,7 +16,7 @@
     $idViaje = $_REQUEST['id'];
     $hoy = date("Y-m-d H:i:s");
 
-    $verificacion = $obj -> consultar("SELECT idViaje, idUsuario, idUsuario2 FROM vehiculo_chofer_viaje WHERE 
+    $verificacion = $obj -> consultar("SELECT idViaje, idUsuario, idUsuario2 FROM vehiculo_Chofer_viaje WHERE 
         idViaje = '$idViaje'");
 
 

@@ -3,44 +3,43 @@
 	require_once($_SERVER['DOCUMENT_ROOT'].'/resources/log/creaLog.php');
     $miSession = new Sesion();
     $miSession -> iniciarSesion();
-    
     $funcion = $_REQUEST['funcion'];
     $id = $_REQUEST['id'];
     
     if($funcion!="eliminar"){
+        $tipo_vehiculo = $_POST['tipo_vehiculo'];
+        $patente = $_POST['patente'];
         $marca = $_POST['marca'];
         $modelo = $_POST['modelo'];
-        $tipo_vehi = $_POST['tipo_vehi'];
-        $patente = $_POST['patente'];
-        $num_chasis = $_POST['num_chasis'];
-        $num_motor = $_POST['num_motor'];
         $anio = $_POST['anio'];
-        $kilometros = $_POST['kilometros'];   
+        $nro_chasis = $_POST['nro_chasis'];
+        $nro_motor = $_POST['nro_motor'];
+        $km = $_POST['km'];
         $cod = $_POST['cod']; 
     }
 
     $obj = new controlDB();
 
     if($funcion == "modificar"){
-            $sql = "UPDATE Vehiculo
-            SET marca = '$marca',
-                modelo = '$modelo',
-                tipo_vehiculo = '$tipo_vehi',
+        $sql = "UPDATE Vehiculo
+            SET tipo_vehiculo = '$tipo_vehiculo',
                 patente = '$patente',
-                nro_chasis = '$num_chasis',
-                km = '$kilometros',
+                marca = '$marca',
+                modelo = '$modelo',
                 anio = '$anio',
-                nro_motor = '$num_motor'
+                nro_chasis = '$nro_chasis',
+                nro_motor = '$nro_motor',
+                km = '$km'
             WHERE idVehiculo = '$cod'";
     }
 
     else if($funcion == "eliminar"){
-            $sql = "DELETE
-                FROM Vehiculo
-                WHERE idVehiculo='$id'";
+        $sql = "DELETE
+            FROM Vehiculo
+            WHERE idVehiculo='$id'";
     } else {
-        $sql = "INSERT INTO Vehiculo (marca,modelo,tipo_vehiculo,patente,nro_chasis,km,anio,nro_motor)
-            VALUES('$marca','$modelo','$tipo_vehi','$patente','$num_chasis','$kilometros','$anio','$num_motor')";
+        $sql = "INSERT INTO Vehiculo(tipo_vehiculo, patente, marca, modelo, anio, nro_chasis, nro_motor, km)
+        VALUES('$tipo_vehiculo', '$patente', '$marca', '$modelo', '$anio', '$nro_chasis', '$nro_motor', '$km')";
     }
 	
 	// escribe en el log

@@ -19,15 +19,15 @@
         public function permisos(){
             
             $rol=$_SESSION['rol'];/*
-            if($rol!='supervisor' )
+            if($rol!='Supervisor' )
             {
                 header('Location: ppal.php');
             }*/
             switch ($rol) {
-                case 'chofer':
+                case 'Chofer':
                     header('Location: vista_viajes.php');
                    break;
-                case 'admin':
+                case 'Administrador':
                     header('Location: vista_viajes.php');
                     header('Location: vista_vehiculos.php');
                     header('Location: vista_clientes.php');
@@ -35,7 +35,7 @@
                     header('Location: graficos.php');
                     header('Location: service.php');
                     break;
-                case 'mecanico':
+                case 'Mecanico':
                     header('Location: vista_viajes.php');
                     header('Location: vista_vehiculos.php');
                     header('Location: graficos.php');

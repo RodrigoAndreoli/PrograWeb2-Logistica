@@ -7,7 +7,7 @@
         require_once($_SERVER['DOCUMENT_ROOT'].'/resources/config.php');
         $miSession = new Sesion();
         $miSession -> iniciarSesion();
-        if($_SESSION['rol']=='chofer'){
+        if($_SESSION['rol']=='Chofer'){
             $miSession -> permisos();
         }
         
@@ -53,7 +53,7 @@
                                                 <th  class="text-center">Repuestos</th>
                                                 <th  class="text-center">Service externo</th>
                                                 <th  class="text-center">Costo</th>
-                                                <?php if($_SESSION["rol"]!='supervisor'){?> 
+                                                <?php if($_SESSION["rol"]!='Supervisor'){?> 
                                                 <th  class="text-center">Operacion</th>
                                                 <?php } ?>  
                                             </thead>
@@ -67,7 +67,7 @@
                                                 <td><?php echo ucwords(strtolower($td['repuestos']));?></td>
                                                 <td><?php echo ucwords(strtolower($td['externo']));?></td>
                                                 <td><?php echo $td['costo'];?></td>
-                                                <?php if($_SESSION["rol"]!='supervisor'){?>  
+                                                <?php if($_SESSION["rol"]!='Supervisor'){?>  
                                                 <td class="text-center">
                                                     <a href="editarMantenimiento.php?id=<?php echo $td["idMantenimiento"]?>">
                                                         <button class="btn btn-info">Editar</button>
@@ -95,7 +95,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <?php if($_SESSION["rol"]!='supervisor'){?>  
+                            <?php if($_SESSION["rol"]!='Supervisor'){?>  
                             <div class="col">
                                 <a href="registrarMantenimiento.php" class="btn btn-primary">Nuevo mantenimiento</a>
                             </div>

@@ -20,21 +20,21 @@
     //Longitud, alto, titulo, border, salto, alineado
     $pdf->Cell(30,8,'Cuit',1,0,'C',1);
     $pdf->Cell(30,8,'Razon Social',1,0,'C',1);
+    $pdf->Cell(30,8,'Telefono',1,1,'C',1);
+    $pdf->Cell(30,8,'Codigo Postal',1,0,'C',1);
     $pdf->Cell(30,8,'Calle',1,0,'C',1);
     $pdf->Cell(20,8,'Numero',1,0,'C',1);
     $pdf->Cell(15,8,'Piso',1,0,'C',1);
-    $pdf->Cell(30,8,'Codigo Postal',1,0,'C',1);
-    $pdf->Cell(30,8,'Telefono',1,1,'C',1);
     $pdf->SetFont('Arial','',10);
     foreach($datos as $a) {
         $pdf->Cell(1);
         $pdf->Cell(30,6,$a['cuit'],1,0,'C');
         $pdf->Cell(30,6,ucwords($a['razon']),1,0,'C');
+        $pdf->Cell(30,6,$a['telefono'],1,1,'C');
+        $pdf->Cell(30,6,$a['dom_cp'],1,0,'C');
         $pdf->Cell(30,6,ucwords($a['dom_calle']),1,0,'C');
         $pdf->Cell(20,6,$a['dom_numero'],1,0,'C');
         $pdf->Cell(15,6,ucfirst($a['dom_piso']),1,0,'C');
-        $pdf->Cell(30,6,$a['dom_cp'],1,0,'C');
-        $pdf->Cell(30,6,$a['telefono'],1,1,'C');
     }
     $pdf->Output('I','Logistica.pdf');
 
