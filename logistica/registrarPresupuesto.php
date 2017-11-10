@@ -49,14 +49,6 @@
 
                                             <div class="col-xs-6">
                                                 <div class="form-group">
-                                                    <label for="idViaje">Viajes</label>
-                                                    <select class="form-control" id="idViaje" name="idViaje" onblur="return validar()">
-                                               <?php foreach($viajes as $viaje){ ?>
-                                                <option value="<?php echo $viaje['idViaje']; ?>"><?php echo $viaje['idViaje']; ?></option>
-                                                <?php } ?>
-                                            </select>
-                                                </div>
-                                                <div class="form-group">
                                                     <label for="idCliente">Cliente</label>
                                                     <select class="form-control" id="idCliente" name="idCliente" onblur="return validar()">
                                                <?php foreach($clientes as $cliente){ ?>
@@ -64,9 +56,7 @@
                                                 <?php } ?>
                                             </select>
                                                 </div>
-                                            </div>
-                                            <div class="col-xs-6">
-                                                <div class="form-group">
+												<div class="form-group">
                                                     <label for="nombre">Tiempo</label>
                                                     <input type="text" class="form-control" name="tiempo_estimado" id="tiempo_estimado" onblur="return validar()" placeholder="00:00:00">
                                                 </div>
@@ -75,6 +65,7 @@
                                                     <input type="number" class="form-control" name="km_previstos" id="km_previstos" onblur="return validar()" placeholder="Km">
                                                 </div>
                                             </div>
+                                     
                                             <div class="col-xs-6">
                                                 <div class="form-group">
                                                     <label for="sel1">Aceptado</label>
@@ -83,14 +74,7 @@
                                                 <option value="si">si</option>
                                             </select>
                                                 </div>
-                                                <div class="form-group">
-                                                    <label for="sel2">Estado</label>
-                                                    <select class="form-control" id="sel2" onblur="return validar()" name="estado">
-                                                <option value="en curso">en curso</option>
-                                                <option value="finalizado">finalizado</option>
-                                                <option value="cancelado">cancelado</option> 
-                                              </select>
-                                                </div>
+                                                
                                             </div>
                                             <div class="col-xs-6">
                                                 <div class="form-group">

@@ -46,9 +46,6 @@
                                             <thead>
                                                 <th  class="text-center">Supervisor</th>
                                                 <th  class="text-center">Cliente</th>
-                                                <th  class="text-center">Origen</th>
-                                                <th  class="text-center">Destino</th>
-                                                <th  class="text-center">Estado</th>
                                                 <th  class="text-center">Aceptado</th>
                                                 <th>Costo</th>
                                                 <th>Operacion</th>
@@ -57,9 +54,6 @@
                                             <tr>
                                                 <td><?php echo utf8_decode(ucwords(strtolower($td['nombre']))); ?></td>
                                                 <td><?php echo utf8_decode(ucwords(strtolower($td['razon']))); ?></td>
-                                                <td><?php echo utf8_decode(ucwords(strtolower($td['origen']))); ?></td>
-                                                <td><?php echo utf8_decode(ucwords(strtolower($td['destino']))); ?></td>
-                                                <td><?php echo ucwords(strtolower($td['estado'])); ?></td>
                                                 <td><?php echo ucwords(strtolower($td['aceptado'])); ?></td>
                                                 <td><?php echo $td['costo_real']; ?></td>
                                                 <td class="text-center">

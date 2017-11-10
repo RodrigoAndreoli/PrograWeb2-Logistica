@@ -10,9 +10,8 @@
     $empezar_desde = ($pag-1) * $tamagno_paginas;
     
     $datos = $obj -> consultar("
-	SELECT c.razon, u.nombre, p.idPresupuesto,p.idCliente,p.tiempo_estimado,p.estado,p.aceptado,p.costo_real,p.km_previstos,p.combustible_previsto,v.destino, v.origen
-    FROM presupuesto p JOIN cliente c on c.idCliente=p.idCliente JOIN
-    usuario u on u.idUsuario=p.idUsuario join viaje v on v.idViaje=p.idViaje
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
     ORDER BY u.nombre LIMIT $empezar_desde, $tamagno_paginas");
 
 

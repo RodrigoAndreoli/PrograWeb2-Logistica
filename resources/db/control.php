@@ -26,12 +26,15 @@
         /*----------------------CONSULTAR-------------------------*/
          //$sql va ser el select, los select
         function consultar($sql){
-            //conexion,consulta
+            
+			
+			$log = new creaLog();
+			$log->escribir($sql);//conexion,consulta
             $result=mysqli_query($this->con,$sql);
             //array vacio
             $data=null;
             //capturar la info,fecth captura datos fila por fila y almacena con el indice de la tabla, el nombre, fethc row no trae el nombre del campo
-            while($fila=mysqli_fetch_assoc($result)){
+            while($fila=mysqli_fetch_array($result)){
                 $data[]=$fila;
             }
             return $data;
