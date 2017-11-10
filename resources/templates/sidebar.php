@@ -29,7 +29,7 @@
             <a href='vista_vehiculos.php' data-toggle='collapse' data-target='#vehiculos' class='collapsed active'>Vehiculos<span class='icon-truck'></span></a>
         </li>
         <?php } ?>
-        <?php if($_SESSION['rol']=='Administrador' || $_SESSION['rol']=='Mecanico' || $_SESSION['rol']=='Supervisor' || $_SESSION['rol']=='Chofer'){ ?>
+        <?php if($_SESSION['rol']=='Supervisor' || $_SESSION['rol']=='Administrador' || $_SESSION['rol']=='Chofer'){ ?>
         <li>
             <a href='#' data-toggle='collapse' data-target='#viajes' class='collapsed active'>Viajes<span class='icon-location'></span></a>
         </li>

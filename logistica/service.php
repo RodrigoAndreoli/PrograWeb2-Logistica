@@ -13,8 +13,7 @@
                 $miSession -> permisos();
             } 
     
-        $obj = new controlDB();  
-
+        $obj = new controlDB();
         if($_POST){
             $buscar=trim($_POST['buscar']);   
         }
@@ -60,11 +59,11 @@
                         </div>           
                         <div class="col-lg-8 col-lg-offset-2">
                             <div class="row">
-                                <form action="service.php" method="post" class="form-inline">
+                                <form action="service.php" method="post" class="form-inline" id="formu" name="formu">
                                     <div class="col-md-6 col-md-offset-3">
                                     <div class="form-group">
                                         <select name="buscar" class="form-control" id="patente">
-                                        <option>Seleccion una patente:</option> 
+                                        <option selected disabled>Seleccione una patente:</option> 
                                         <?php foreach($patentes as $pat){ ?>
                                         <option value="<?php echo $pat['patente']?>"><?php echo $pat['patente']?>
                                         </option>
@@ -75,9 +74,7 @@
                                     </div>
                                 </form>
                             </div>
-                              
-                            <br>      
-                              
+                            <br>
                             <div class="table-responsive container-fluid">
                                 <table class="table table-condensed table-bordered table-hover">
                                     <thead>
@@ -100,13 +97,7 @@
                                             <td><?php echo $td['filtro_aire']?></td>
                                             <td><?php echo $td['direccion']?></td>
                                         </tr>
-                                        <?php }} ?>  
-                                        <?php 
-                                        if(!($datos)){ ?>
-                                            <tr>
-                                                <td colspan="5"><p class="text-muted">Seleccione una patente</p></td>
-                                            </tr>
-                                        <?php } ?>  
+                                        <?php }} ?>
                                     </tbody>
                                 </table>
                             </div>

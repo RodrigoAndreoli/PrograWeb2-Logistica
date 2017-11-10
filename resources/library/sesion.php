@@ -26,6 +26,7 @@
             switch ($rol) {
                 case 'Chofer':
                     header('Location: vista_viajes.php');
+                    header('Location: vista_reportes.php');
                    break;
                 case 'Administrador':
                     header('Location: vista_viajes.php');
