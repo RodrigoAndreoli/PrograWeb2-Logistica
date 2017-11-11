@@ -32,12 +32,18 @@
     }else{
         $sql = "INSERT INTO Viaje(fkPresupuestoV, fecha, origen, destino, tipo_carga)
         VALUES('$fkPresupuestoV', '$fecha', '$origen', '$destino', '$tipo_carga')"; 
+        $sql2 = "UPDATE presupuesto
+            SET aceptado = 'si'
+            WHERE idPresupuesto = '$fkPresupuestoV'";
+                 
     }
 	
 	// escribe en el log
 	$log = new creaLog();
 	$log->escribir($sql);
+    $log->escribir($sql2);
 
     $obj -> insertar($sql);
-    header("Location: vista_viajes.php");  
+    $obj -> insertar($sql2);
+    header("Location: vista_presupuestos.php");  
 ?>

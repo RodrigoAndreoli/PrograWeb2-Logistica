@@ -14,6 +14,16 @@
     FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
     ORDER BY u.nombre LIMIT $empezar_desde, $tamagno_paginas");
 
+    $datos2 = $obj -> consultar("
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'");
+
+    $asignar = array(); 
+    foreach($datos2 as $v){
+        $asignar[] = $v['idPresupuesto'];
+    }    
+
 
     $num_filas = count($obj->consultar("SELECT * FROM presupuesto"));
     $total_paginas = ceil($num_filas/$tamagno_paginas);

@@ -6,11 +6,11 @@
     $id = $_REQUEST['id'];
  
     if($funcion!="eliminar"){
-        $fkClienteP = $_POST['idCliente'];
-        $fkAdministradorP = $_POST['idUsuario'];
+        $fkClienteP = $_POST['fkClienteP'];
+        $fkAdministradorP = $_POST['fkAdministradorP'];
         $tiempo_estimado = $_POST['tiempo_estimado'];
-        $km_estimado = $_POST['km_previstos'];
-        $combustible_estimado = $_POST['combustible_previsto'];
+        $km_estimado = $_POST['km_estimado'];
+        $combustible_estimado = $_POST['combustible_estimado'];
         $costo_real = $_POST['costo_real'];
         $aceptado = $_POST['aceptado'];
         $cod = $_POST['cod'];
@@ -21,7 +21,7 @@
     
     //Modificar value del input hidden
     if($funcion == "modificar"){
-        $sql = "UPDATE Presupuesto 
+        $sql = "UPDATE presupuesto 
             SET tiempo_estimado = '$tiempo_estimado',
                 km_estimado = '$km_estimado',
                 combustible_estimado = '$combustible_estimado',

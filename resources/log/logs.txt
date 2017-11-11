@@ -3570,3 +3570,2228 @@
         WHERE T.fkChoferT = '1'
             OR T.fkAcompanianteT = '1'
         ORDER BY Viaje
+11 11 2017 03:11:08 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 03:11:08 SELECT * FROM presupuesto
+11 11 2017 03:11:08 SELECT * FROM presupuesto
+11 11 2017 03:11:11 SELECT c.idCliente AS fkClienteP, c.razon FROM cliente c
+11 11 2017 03:11:11 SELECT idViaje FROM viaje
+11 11 2017 03:11:11 SELECT idUsuario,nombre FROM usuario WHERE idUsuario = '2' 
+11 11 2017 03:11:53 INSERT INTO Presupuesto(fkClienteP, fkAdministradorP, tiempo_estimado, km_estimado, combustible_estimado, costo_real, aceptado)
+       VALUES('', '', '12:00:00', '', '', '3000', 'no')
+11 11 2017 03:11:54 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 03:11:54 SELECT * FROM presupuesto
+11 11 2017 03:11:54 SELECT * FROM presupuesto
+11 11 2017 03:11:34 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 6, 6
+11 11 2017 03:11:34 SELECT * FROM presupuesto
+11 11 2017 03:11:34 SELECT * FROM presupuesto
+11 11 2017 03:11:38 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 03:11:38 SELECT * FROM presupuesto
+11 11 2017 03:11:38 SELECT * FROM presupuesto
+11 11 2017 03:11:42 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 6, 6
+11 11 2017 03:11:42 SELECT * FROM presupuesto
+11 11 2017 03:11:42 SELECT * FROM presupuesto
+11 11 2017 03:11:01 SELECT c.idCliente AS fkClienteP, c.razon FROM cliente c
+11 11 2017 03:11:01 SELECT idViaje FROM viaje
+11 11 2017 03:11:01 SELECT idUsuario,nombre FROM usuario WHERE idUsuario = '2' 
+11 11 2017 03:11:20 INSERT INTO Presupuesto(fkClienteP, fkAdministradorP, tiempo_estimado, km_estimado, combustible_estimado, costo_real, aceptado)
+       VALUES('', '', '99:99:99', '', '', '9999', 'no')
+11 11 2017 03:11:20 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 03:11:20 SELECT * FROM presupuesto
+11 11 2017 03:11:20 SELECT * FROM presupuesto
+11 11 2017 03:11:23 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 6, 6
+11 11 2017 03:11:23 SELECT * FROM presupuesto
+11 11 2017 03:11:23 SELECT * FROM presupuesto
+11 11 2017 03:11:04 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 03:11:04 SELECT * FROM presupuesto
+11 11 2017 03:11:04 SELECT * FROM presupuesto
+11 11 2017 03:11:45 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 6, 6
+11 11 2017 03:11:45 SELECT * FROM presupuesto
+11 11 2017 03:11:45 SELECT * FROM presupuesto
+11 11 2017 03:11:53 SELECT * 
+            FROM Presupuesto 
+            WHERE idPresupuesto = '8'
+11 11 2017 03:11:53 SELECT idCliente, razon 
+            FROM Cliente
+11 11 2017 03:11:53 SELECT idViaje 
+            FROM Viaje
+11 11 2017 03:11:59 UPDATE Presupuesto 
+            SET tiempo_estimado = '',
+                km_estimado = '',
+                combustible_estimado = '',
+                costo_real = '<br /><b>Notice</b>:  Undefined index: costo_real in <b>C:\xampp\htdocs\logistica\logistica\editarPresupuesto.php</b> on line <b>80</b><br />',
+                aceptado = 'Si'
+            WHERE idPresupuesto = '8'
+11 11 2017 03:11:59 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 03:11:59 SELECT * FROM presupuesto
+11 11 2017 03:11:59 SELECT * FROM presupuesto
+11 11 2017 03:11:01 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 6, 6
+11 11 2017 03:11:01 SELECT * FROM presupuesto
+11 11 2017 03:11:01 SELECT * FROM presupuesto
+11 11 2017 03:11:05 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 03:11:05 SELECT * FROM presupuesto
+11 11 2017 03:11:05 SELECT * FROM presupuesto
+11 11 2017 03:11:57 SELECT * 
+            FROM Presupuesto 
+            WHERE idPresupuesto = '1'
+11 11 2017 03:11:57 SELECT idCliente, razon 
+            FROM Cliente
+11 11 2017 03:11:57 SELECT idViaje 
+            FROM Viaje
+11 11 2017 03:11:10 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 03:11:10 SELECT * FROM presupuesto
+11 11 2017 03:11:10 SELECT * FROM presupuesto
+11 11 2017 03:11:14 SELECT c.idCliente AS fkClienteP, c.razon FROM cliente c
+11 11 2017 03:11:14 SELECT idViaje FROM viaje
+11 11 2017 03:11:14 SELECT idUsuario,nombre FROM usuario WHERE idUsuario = '2' 
+11 11 2017 03:11:17 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 03:11:17 SELECT * FROM presupuesto
+11 11 2017 03:11:17 SELECT * FROM presupuesto
+11 11 2017 03:11:22 SELECT c.idCliente AS fkClienteP, c.razon FROM cliente c
+11 11 2017 03:11:22 SELECT idViaje FROM viaje
+11 11 2017 03:11:22 SELECT idUsuario,nombre FROM usuario WHERE idUsuario = '2' 
+11 11 2017 03:11:41 INSERT INTO Presupuesto(fkClienteP, fkAdministradorP, tiempo_estimado, km_estimado, combustible_estimado, costo_real, aceptado)
+       VALUES('6', '2', '99:99:99', '9999', '9999', '9999', 'no')
+11 11 2017 03:11:41 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 03:11:41 SELECT * FROM presupuesto
+11 11 2017 03:11:41 SELECT * FROM presupuesto
+11 11 2017 03:11:51 SELECT * 
+            FROM Presupuesto 
+            WHERE idPresupuesto = '12'
+11 11 2017 03:11:51 SELECT idCliente, razon 
+            FROM Cliente
+11 11 2017 03:11:51 SELECT idViaje 
+            FROM Viaje
+11 11 2017 03:11:53 UPDATE presupuesto 
+            SET tiempo_estimado = '',
+                km_estimado = '<br /><b>Notice</b>:  Undefined index: km_estimado in <b>C:\xampp\htdocs\logistica\logistica\editarPresupuesto.php</b> on line <b>64</b><br />',
+                combustible_estimado = '<br /><b>Notice</b>:  Undefined index: combustible_estimado in <b>C:\xampp\htdocs\logistica\logistica\editarPresupuesto.php</b> on line <b>72</b><br />',
+                costo_real = '<br /><b>Notice</b>:  Undefined index: costo_real in <b>C:\xampp\htdocs\logistica\logistica\editarPresupuesto.php</b> on line <b>80</b><br />',
+                aceptado = 'Si'
+            WHERE idPresupuesto = '12'
+11 11 2017 03:11:54 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 03:11:54 SELECT * FROM presupuesto
+11 11 2017 03:11:54 SELECT * FROM presupuesto
+11 11 2017 03:11:59 DELETE
+            FROM Presupuesto 
+            WHERE idPresupuesto='12'
+11 11 2017 03:11:59 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 03:11:59 SELECT * FROM presupuesto
+11 11 2017 03:11:59 SELECT * FROM presupuesto
+11 11 2017 03:11:02 SELECT c.idCliente AS fkClienteP, c.razon FROM cliente c
+11 11 2017 03:11:02 SELECT idViaje FROM viaje
+11 11 2017 03:11:02 SELECT idUsuario,nombre FROM usuario WHERE idUsuario = '2' 
+11 11 2017 03:11:14 INSERT INTO Presupuesto(fkClienteP, fkAdministradorP, tiempo_estimado, km_estimado, combustible_estimado, costo_real, aceptado)
+       VALUES('6', '2', '99:99:99', '999', '9999', '9999', 'si')
+11 11 2017 03:11:14 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 03:11:14 SELECT * FROM presupuesto
+11 11 2017 03:11:14 SELECT * FROM presupuesto
+11 11 2017 03:11:01 SELECT * 
+            FROM Presupuesto 
+            WHERE idPresupuesto = '13'
+11 11 2017 03:11:01 SELECT idCliente, razon 
+            FROM Cliente
+11 11 2017 03:11:01 SELECT idViaje 
+            FROM Viaje
+11 11 2017 03:11:11 UPDATE presupuesto 
+            SET tiempo_estimado = '',
+                km_estimado = '888',
+                combustible_estimado = '8888',
+                costo_real = '8888',
+                aceptado = 'Si'
+            WHERE idPresupuesto = '13'
+11 11 2017 03:11:11 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 03:11:11 SELECT * FROM presupuesto
+11 11 2017 03:11:11 SELECT * FROM presupuesto
+11 11 2017 03:11:29 SELECT * 
+            FROM Presupuesto 
+            WHERE idPresupuesto = '13'
+11 11 2017 03:11:29 SELECT idCliente, razon 
+            FROM Cliente
+11 11 2017 03:11:29 SELECT idViaje 
+            FROM Viaje
+11 11 2017 03:11:35 UPDATE presupuesto 
+            SET tiempo_estimado = '',
+                km_estimado = '888',
+                combustible_estimado = '8888.00',
+                costo_real = '8888.00',
+                aceptado = 'Si'
+            WHERE idPresupuesto = '13'
+11 11 2017 03:11:36 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 03:11:36 SELECT * FROM presupuesto
+11 11 2017 03:11:36 SELECT * FROM presupuesto
+11 11 2017 03:11:50 DELETE
+            FROM Presupuesto 
+            WHERE idPresupuesto='13'
+11 11 2017 03:11:50 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 03:11:50 SELECT * FROM presupuesto
+11 11 2017 03:11:50 SELECT * FROM presupuesto
+11 11 2017 03:11:00 SELECT c.idCliente AS fkClienteP, c.razon FROM cliente c
+11 11 2017 03:11:00 SELECT idViaje FROM viaje
+11 11 2017 03:11:00 SELECT idUsuario,nombre FROM usuario WHERE idUsuario = '2' 
+11 11 2017 03:11:24 INSERT INTO Presupuesto(fkClienteP, fkAdministradorP, tiempo_estimado, km_estimado, combustible_estimado, costo_real, aceptado)
+       VALUES('6', '2', '22:00:00', '9999', '9999', '9999', 'si')
+11 11 2017 03:11:24 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 03:11:24 SELECT * FROM presupuesto
+11 11 2017 03:11:24 SELECT * FROM presupuesto
+11 11 2017 03:11:45 SELECT * 
+            FROM Presupuesto 
+            WHERE idPresupuesto = '14'
+11 11 2017 03:11:45 SELECT idCliente, razon 
+            FROM Cliente
+11 11 2017 03:11:45 SELECT idViaje 
+            FROM Viaje
+11 11 2017 03:11:50 UPDATE presupuesto 
+            SET tiempo_estimado = '',
+                km_estimado = '9999',
+                combustible_estimado = '9999.00',
+                costo_real = '9999.00',
+                aceptado = 'No'
+            WHERE idPresupuesto = '14'
+11 11 2017 03:11:50 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 03:11:50 SELECT * FROM presupuesto
+11 11 2017 03:11:50 SELECT * FROM presupuesto
+11 11 2017 03:11:10 DELETE
+            FROM Presupuesto 
+            WHERE idPresupuesto='14'
+11 11 2017 03:11:10 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 03:11:10 SELECT * FROM presupuesto
+11 11 2017 03:11:10 SELECT * FROM presupuesto
+11 11 2017 03:11:11 SELECT c.idCliente AS fkClienteP, c.razon FROM cliente c
+11 11 2017 03:11:11 SELECT idViaje FROM viaje
+11 11 2017 03:11:11 SELECT idUsuario,nombre FROM usuario WHERE idUsuario = '2' 
+11 11 2017 03:11:22 INSERT INTO Presupuesto(fkClienteP, fkAdministradorP, tiempo_estimado, km_estimado, combustible_estimado, costo_real, aceptado)
+       VALUES('6', '2', '22:00:00', '999', '999', '999', 'no')
+11 11 2017 03:11:22 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 03:11:22 SELECT * FROM presupuesto
+11 11 2017 03:11:22 SELECT * FROM presupuesto
+11 11 2017 03:11:32 SELECT * 
+            FROM Presupuesto 
+            WHERE idPresupuesto = '15'
+11 11 2017 03:11:32 SELECT idCliente, razon 
+            FROM Cliente
+11 11 2017 03:11:32 SELECT idViaje 
+            FROM Viaje
+11 11 2017 03:11:35 UPDATE presupuesto 
+            SET tiempo_estimado = '',
+                km_estimado = '999',
+                combustible_estimado = '999.00',
+                costo_real = '999.00',
+                aceptado = 'Si'
+            WHERE idPresupuesto = '15'
+11 11 2017 03:11:35 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 03:11:35 SELECT * FROM presupuesto
+11 11 2017 03:11:35 SELECT * FROM presupuesto
+11 11 2017 03:11:48 SELECT * 
+            FROM Presupuesto 
+            WHERE idPresupuesto = '15'
+11 11 2017 03:11:48 SELECT idCliente, razon 
+            FROM Cliente
+11 11 2017 03:11:48 SELECT idViaje 
+            FROM Viaje
+11 11 2017 03:11:08 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 03:11:08 SELECT * FROM presupuesto
+11 11 2017 03:11:08 SELECT * FROM presupuesto
+11 11 2017 03:11:10 SELECT * 
+            FROM Presupuesto 
+            WHERE idPresupuesto = '15'
+11 11 2017 03:11:10 SELECT idCliente, razon 
+            FROM Cliente
+11 11 2017 03:11:10 SELECT idViaje 
+            FROM Viaje
+11 11 2017 03:11:18 UPDATE presupuesto 
+            SET tiempo_estimado = '22:00:00',
+                km_estimado = '999',
+                combustible_estimado = '999.00',
+                costo_real = '999.00',
+                aceptado = 'No'
+            WHERE idPresupuesto = '15'
+11 11 2017 03:11:18 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 03:11:18 SELECT * FROM presupuesto
+11 11 2017 03:11:18 SELECT * FROM presupuesto
+11 11 2017 03:11:30 SELECT * 
+            FROM Presupuesto 
+            WHERE idPresupuesto = '15'
+11 11 2017 03:11:30 SELECT idCliente, razon 
+            FROM Cliente
+11 11 2017 03:11:30 SELECT idViaje 
+            FROM Viaje
+11 11 2017 03:11:35 UPDATE presupuesto 
+            SET tiempo_estimado = '21:00:00',
+                km_estimado = '999',
+                combustible_estimado = '999.00',
+                costo_real = '999.00',
+                aceptado = 'No'
+            WHERE idPresupuesto = '15'
+11 11 2017 03:11:35 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 03:11:35 SELECT * FROM presupuesto
+11 11 2017 03:11:35 SELECT * FROM presupuesto
+11 11 2017 03:11:06 SELECT * 
+            FROM Presupuesto 
+            WHERE idPresupuesto = '15'
+11 11 2017 03:11:06 SELECT idCliente, razon 
+            FROM Cliente
+11 11 2017 03:11:06 SELECT idViaje 
+            FROM Viaje
+11 11 2017 03:11:12 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 03:11:12 SELECT * FROM presupuesto
+11 11 2017 03:11:12 SELECT * FROM presupuesto
+11 11 2017 03:11:14 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 6, 6
+11 11 2017 03:11:14 SELECT * FROM presupuesto
+11 11 2017 03:11:14 SELECT * FROM presupuesto
+11 11 2017 03:11:16 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 03:11:16 SELECT * FROM presupuesto
+11 11 2017 03:11:16 SELECT * FROM presupuesto
+11 11 2017 03:11:25 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 03:11:25 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '2'
+            OR T.fkAcompanianteT = '2'
+        ORDER BY Viaje
+11 11 2017 03:11:30 SELECT V.idViaje VViaje, V.idCliente Cliente, V.fecha Fecha, V.origen Origen, V.destino Destino, V.tipo_carga Carga, V.tiempo Tiempo, V.combustible Combustible, V.km_totales Km
+        FROM Viaje V
+        ORDER BY V.idViaje
+        LIMIT 0, 6
+    
+11 11 2017 03:11:30 SELECT T.idViaje TViaje
+        FROM Vehiculo_Chofer_viaje T
+        ORDER BY T.idViaje
+    
+11 11 2017 03:11:30 SELECT *
+        FROM viaje
+    
+11 11 2017 03:11:30 SELECT *
+        FROM Viaje
+    
+11 11 2017 03:11:52 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 03:11:52 SELECT * FROM presupuesto
+11 11 2017 03:11:52 SELECT * FROM presupuesto
+11 11 2017 03:11:40 SELECT fkViajeT, idChoferT, idAcompanianteT 
+            FROM Vehiculo_chofer_viaje 
+            WHERE idViaje = '1'
+11 11 2017 03:11:40 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 03:11:40 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '1'
+            OR T.fkAcompanianteT = '1'
+        ORDER BY Viaje
+11 11 2017 03:11:50 SELECT fkViajeT, idChoferT, idAcompanianteT 
+            FROM Vehiculo_chofer_viaje 
+            WHERE idViaje = '2'
+11 11 2017 03:11:50 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 03:11:50 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '1'
+            OR T.fkAcompanianteT = '1'
+        ORDER BY Viaje
+11 11 2017 03:11:57 SELECT fkViajeT, idChoferT, idAcompanianteT 
+            FROM Vehiculo_chofer_viaje 
+            WHERE idViaje = '2'
+11 11 2017 03:11:57 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 03:11:58 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '1'
+            OR T.fkAcompanianteT = '1'
+        ORDER BY Viaje
+11 11 2017 03:11:09 SELECT fkViajeT, idChoferT, idAcompanianteT 
+            FROM Vehiculo_chofer_viaje 
+            WHERE idViaje = ''
+11 11 2017 03:11:09 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 03:11:09 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '1'
+            OR T.fkAcompanianteT = '1'
+        ORDER BY Viaje
+11 11 2017 03:11:13 SELECT fkViajeT, idChoferT, idAcompanianteT 
+            FROM Vehiculo_chofer_viaje 
+            WHERE idViaje = ''
+11 11 2017 03:11:13 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 03:11:13 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '1'
+            OR T.fkAcompanianteT = '1'
+        ORDER BY Viaje
+11 11 2017 03:11:23 SELECT fkViajeT, idChoferT, idAcompanianteT 
+            FROM Vehiculo_chofer_viaje 
+            WHERE idViaje = '3'
+11 11 2017 03:11:23 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 03:11:23 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '1'
+            OR T.fkAcompanianteT = '1'
+        ORDER BY Viaje
+11 11 2017 03:11:33 SELECT fkViajeT, idChoferT, idAcompanianteT 
+            FROM Vehiculo_chofer_viaje 
+            WHERE fkViajeT = '2'
+11 11 2017 03:11:33 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 03:11:33 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '1'
+            OR T.fkAcompanianteT = '1'
+        ORDER BY Viaje
+11 11 2017 04:11:09 SELECT fkViajeT, idChoferT, idAcompanianteT 
+            FROM Vehiculo_chofer_viaje 
+            WHERE fkViajeT = '4'
+11 11 2017 04:11:09 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 04:11:09 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '1'
+            OR T.fkAcompanianteT = '1'
+        ORDER BY Viaje
+11 11 2017 04:11:09 SELECT fkViajeT, idChoferT, idAcompanianteT 
+            FROM Vehiculo_chofer_viaje 
+            WHERE fkViajeT = '4'
+11 11 2017 04:11:09 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 04:11:09 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '1'
+            OR T.fkAcompanianteT = '1'
+        ORDER BY Viaje
+11 11 2017 04:11:30 SELECT fkViajeT, idChoferT, idAcompanianteT 
+            FROM Vehiculo_chofer_viaje 
+            WHERE idViaje = '4'
+11 11 2017 04:11:30 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 04:11:30 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '1'
+            OR T.fkAcompanianteT = '1'
+        ORDER BY Viaje
+11 11 2017 04:11:34 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 04:11:34 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '1'
+            OR T.fkAcompanianteT = '1'
+        ORDER BY Viaje
+11 11 2017 04:11:39 SELECT fkViajeT, idChoferT, idAcompanianteT 
+            FROM Vehiculo_chofer_viaje 
+            WHERE idViaje = ''
+11 11 2017 04:11:39 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 04:11:39 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '1'
+            OR T.fkAcompanianteT = '1'
+        ORDER BY Viaje
+11 11 2017 04:11:37 SELECT *
+            FROM Vehiculo
+            ORDER BY tipo_vehiculo, patente
+            LIMIT 0, 7
+11 11 2017 04:11:37 SELECT *
+            FROM Vehiculo
+11 11 2017 04:11:37 SELECT *
+            FROM Vehiculo
+11 11 2017 04:11:39 SELECT *
+            FROM Cliente
+            ORDER BY cuit
+            LIMIT 0, 6
+11 11 2017 04:11:39 SELECT *
+            FROM Cliente
+11 11 2017 04:11:39 SELECT *
+            FROM Cliente
+11 11 2017 04:11:46 SELECT V.idViaje VViaje, V.idCliente Cliente, V.fecha Fecha, V.origen Origen, V.destino Destino, V.tipo_carga Carga, V.tiempo Tiempo, V.combustible Combustible, V.km_totales Km
+        FROM Viaje V
+        ORDER BY V.idViaje
+        LIMIT 0, 6
+    
+11 11 2017 04:11:46 SELECT T.idViaje TViaje
+        FROM Vehiculo_Chofer_viaje T
+        ORDER BY T.idViaje
+    
+11 11 2017 04:11:46 SELECT *
+        FROM viaje
+    
+11 11 2017 04:11:46 SELECT *
+        FROM Viaje
+    
+11 11 2017 04:11:50 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 04:11:50 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '2'
+            OR T.fkAcompanianteT = '2'
+        ORDER BY Viaje
+11 11 2017 04:11:19 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 04:11:19 SELECT * FROM presupuesto
+11 11 2017 04:11:19 SELECT * FROM presupuesto
+11 11 2017 04:11:18 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 04:11:18 SELECT * FROM presupuesto
+11 11 2017 04:11:18 SELECT * FROM presupuesto
+11 11 2017 04:11:26 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 04:11:27 SELECT * FROM presupuesto
+11 11 2017 04:11:27 SELECT * FROM presupuesto
+11 11 2017 04:11:27 SELECT V.idVehiculo, V.marca, V.patente, V.km, M.cambio_aceite, M.filtro_aire, M.direccion
+                FROM Mantenimiento M
+                JOIN Vehiculo V ON M.fkVehiculoM = V.idVehiculo
+                GROUP BY V.idVehiculo, V.patente, V.km, M.cambio_aceite, M.filtro_aire, M.direccion
+11 11 2017 04:11:36 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 04:11:36 SELECT * FROM presupuesto
+11 11 2017 04:11:36 SELECT * FROM presupuesto
+11 11 2017 04:11:36 SELECT V.idVehiculo, V.marca, V.patente, V.km, M.cambio_aceite, M.filtro_aire, M.direccion
+                FROM Mantenimiento M
+                JOIN Vehiculo V ON M.fkVehiculoM = V.idVehiculo
+                GROUP BY V.idVehiculo, V.patente, V.km, M.cambio_aceite, M.filtro_aire, M.direccion
+11 11 2017 04:11:43 SELECT V.idVehiculo, V.marca, V.patente, V.km, M.cambio_aceite, M.filtro_aire, M.direccion
+                FROM Mantenimiento M
+                JOIN Vehiculo V ON M.fkVehiculoM = V.idVehiculo 
+                WHERE V.patente LIKE '%ABM372%'
+                GROUP BY V.idVehiculo, V.patente, V.km, M.cambio_aceite, M.filtro_aire, M.direccion
+11 11 2017 04:11:43 SELECT V.idVehiculo, V.marca, V.patente, V.km, M.cambio_aceite, M.filtro_aire, M.direccion
+                FROM Mantenimiento M
+                JOIN Vehiculo V ON M.fkVehiculoM = V.idVehiculo
+                GROUP BY V.idVehiculo, V.patente, V.km, M.cambio_aceite, M.filtro_aire, M.direccion
+11 11 2017 04:11:49 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 04:11:49 SELECT * FROM presupuesto
+11 11 2017 04:11:49 SELECT * FROM presupuesto
+11 11 2017 04:11:53 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 6, 6
+11 11 2017 04:11:53 SELECT * FROM presupuesto
+11 11 2017 04:11:53 SELECT * FROM presupuesto
+11 11 2017 04:11:55 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 04:11:55 SELECT * FROM presupuesto
+11 11 2017 04:11:55 SELECT * FROM presupuesto
+11 11 2017 04:11:03 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 04:11:03 SELECT * FROM presupuesto
+11 11 2017 04:11:03 SELECT * FROM presupuesto
+11 11 2017 04:11:05 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 6, 6
+11 11 2017 04:11:05 SELECT * FROM presupuesto
+11 11 2017 04:11:05 SELECT * FROM presupuesto
+11 11 2017 04:11:07 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 04:11:07 SELECT * FROM presupuesto
+11 11 2017 04:11:07 SELECT * FROM presupuesto
+11 11 2017 04:11:55 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 04:11:55 SELECT * FROM presupuesto
+11 11 2017 04:11:55 SELECT * FROM presupuesto
+11 11 2017 04:11:18 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 04:11:18 SELECT * FROM presupuesto
+11 11 2017 04:11:18 SELECT * FROM presupuesto
+11 11 2017 04:11:55 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 04:11:55 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 04:11:55 SELECT * FROM presupuesto
+11 11 2017 04:11:55 SELECT * FROM presupuesto
+11 11 2017 04:11:57 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 6, 6
+11 11 2017 04:11:57 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 04:11:57 SELECT * FROM presupuesto
+11 11 2017 04:11:57 SELECT * FROM presupuesto
+11 11 2017 04:11:01 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 04:11:01 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 04:11:01 SELECT * FROM presupuesto
+11 11 2017 04:11:01 SELECT * FROM presupuesto
+11 11 2017 04:11:20 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 04:11:20 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 04:11:20 SELECT * FROM presupuesto
+11 11 2017 04:11:20 SELECT * FROM presupuesto
+11 11 2017 04:11:10 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 04:11:10 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 04:11:10 SELECT * FROM presupuesto
+11 11 2017 04:11:10 SELECT * FROM presupuesto
+11 11 2017 04:11:20 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 6, 6
+11 11 2017 04:11:20 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 04:11:20 SELECT * FROM presupuesto
+11 11 2017 04:11:20 SELECT * FROM presupuesto
+11 11 2017 04:11:21 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 04:11:21 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 04:11:21 SELECT * FROM presupuesto
+11 11 2017 04:11:21 SELECT * FROM presupuesto
+11 11 2017 04:11:08 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 04:11:08 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 04:11:08 SELECT * FROM presupuesto
+11 11 2017 04:11:08 SELECT * FROM presupuesto
+11 11 2017 04:11:33 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 04:11:33 
+    SELECT idPresupuesto
+    FROM presupuesto
+
+11 11 2017 04:11:33 SELECT * FROM presupuesto
+11 11 2017 04:11:33 SELECT * FROM presupuesto
+11 11 2017 04:11:13 SELECT * 
+            FROM Presupuesto 
+            WHERE idPresupuesto = '1'
+11 11 2017 04:11:13 SELECT idCliente, razon 
+            FROM Cliente
+11 11 2017 04:11:13 SELECT idViaje 
+            FROM Viaje
+11 11 2017 04:11:15 UPDATE presupuesto 
+            SET tiempo_estimado = '02:00:00',
+                km_estimado = '135',
+                combustible_estimado = '230.00',
+                costo_real = '1300.00',
+                aceptado = 'No'
+            WHERE idPresupuesto = '1'
+11 11 2017 04:11:15 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 04:11:15 
+    SELECT idPresupuesto
+    FROM presupuesto
+
+11 11 2017 04:11:15 SELECT * FROM presupuesto
+11 11 2017 04:11:15 SELECT * FROM presupuesto
+11 11 2017 04:11:17 SELECT * 
+            FROM Presupuesto 
+            WHERE idPresupuesto = '9'
+11 11 2017 04:11:17 SELECT idCliente, razon 
+            FROM Cliente
+11 11 2017 04:11:17 SELECT idViaje 
+            FROM Viaje
+11 11 2017 04:11:18 UPDATE presupuesto 
+            SET tiempo_estimado = '44:00:00',
+                km_estimado = '2900',
+                combustible_estimado = '5000.00',
+                costo_real = '6900.00',
+                aceptado = 'No'
+            WHERE idPresupuesto = '9'
+11 11 2017 04:11:18 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 04:11:18 
+    SELECT idPresupuesto
+    FROM presupuesto
+
+11 11 2017 04:11:18 SELECT * FROM presupuesto
+11 11 2017 04:11:18 SELECT * FROM presupuesto
+11 11 2017 04:11:19 SELECT * 
+            FROM Presupuesto 
+            WHERE idPresupuesto = '3'
+11 11 2017 04:11:19 SELECT idCliente, razon 
+            FROM Cliente
+11 11 2017 04:11:19 SELECT idViaje 
+            FROM Viaje
+11 11 2017 04:11:20 UPDATE presupuesto 
+            SET tiempo_estimado = '23:00:00',
+                km_estimado = '1600',
+                combustible_estimado = '2700.00',
+                costo_real = '4000.00',
+                aceptado = 'No'
+            WHERE idPresupuesto = '3'
+11 11 2017 04:11:21 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 04:11:21 
+    SELECT idPresupuesto
+    FROM presupuesto
+
+11 11 2017 04:11:21 SELECT * FROM presupuesto
+11 11 2017 04:11:21 SELECT * FROM presupuesto
+11 11 2017 04:11:28 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 04:11:28 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 04:11:28 SELECT * FROM presupuesto
+11 11 2017 04:11:28 SELECT * FROM presupuesto
+11 11 2017 04:11:17 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 04:11:17 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 04:11:17 SELECT * FROM presupuesto
+11 11 2017 04:11:17 SELECT * FROM presupuesto
+11 11 2017 04:11:06 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 04:11:06 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 04:11:06 SELECT * FROM presupuesto
+11 11 2017 04:11:06 SELECT * FROM presupuesto
+11 11 2017 04:11:09 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 6, 6
+11 11 2017 04:11:09 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 04:11:09 SELECT * FROM presupuesto
+11 11 2017 04:11:09 SELECT * FROM presupuesto
+11 11 2017 04:11:10 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 04:11:10 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 04:11:10 SELECT * FROM presupuesto
+11 11 2017 04:11:10 SELECT * FROM presupuesto
+11 11 2017 04:11:12 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 04:11:12 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 04:11:12 SELECT * FROM presupuesto
+11 11 2017 04:11:12 SELECT * FROM presupuesto
+11 11 2017 04:11:15 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 6, 6
+11 11 2017 04:11:15 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 04:11:15 SELECT * FROM presupuesto
+11 11 2017 04:11:15 SELECT * FROM presupuesto
+11 11 2017 04:11:17 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 04:11:17 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 04:11:17 SELECT * FROM presupuesto
+11 11 2017 04:11:17 SELECT * FROM presupuesto
+11 11 2017 04:11:16 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 04:11:16 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 04:11:16 SELECT * FROM presupuesto
+11 11 2017 04:11:16 SELECT * FROM presupuesto
+11 11 2017 04:11:41 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 04:11:41 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 04:11:41 SELECT * FROM presupuesto
+11 11 2017 04:11:41 SELECT * FROM presupuesto
+11 11 2017 04:11:22 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 04:11:22 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 04:11:22 SELECT * FROM presupuesto
+11 11 2017 04:11:22 SELECT * FROM presupuesto
+11 11 2017 04:11:34 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 04:11:34 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 04:11:34 SELECT * FROM presupuesto
+11 11 2017 04:11:34 SELECT * FROM presupuesto
+11 11 2017 04:11:39 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 04:11:39 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 04:11:39 SELECT * FROM presupuesto
+11 11 2017 04:11:39 SELECT * FROM presupuesto
+11 11 2017 04:11:16 SELECT c.idCliente AS fkClienteP, c.razon FROM cliente c
+11 11 2017 04:11:16 SELECT idViaje FROM viaje
+11 11 2017 04:11:16 SELECT idUsuario,nombre FROM usuario WHERE idUsuario = '2' 
+11 11 2017 04:11:19 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 04:11:19 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 04:11:19 SELECT * FROM presupuesto
+11 11 2017 04:11:19 SELECT * FROM presupuesto
+11 11 2017 05:11:09 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:09 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:09 SELECT * FROM presupuesto
+11 11 2017 05:11:09 SELECT * FROM presupuesto
+11 11 2017 05:11:12 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 6, 6
+11 11 2017 05:11:12 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:12 SELECT * FROM presupuesto
+11 11 2017 05:11:12 SELECT * FROM presupuesto
+11 11 2017 05:11:13 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:13 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:13 SELECT * FROM presupuesto
+11 11 2017 05:11:13 SELECT * FROM presupuesto
+11 11 2017 05:11:16 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 6, 6
+11 11 2017 05:11:16 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:16 SELECT * FROM presupuesto
+11 11 2017 05:11:16 SELECT * FROM presupuesto
+11 11 2017 05:11:18 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:18 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:18 SELECT * FROM presupuesto
+11 11 2017 05:11:18 SELECT * FROM presupuesto
+11 11 2017 05:11:38 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:39 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:39 SELECT * FROM presupuesto
+11 11 2017 05:11:39 SELECT * FROM presupuesto
+11 11 2017 05:11:17 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:17 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:17 SELECT * FROM presupuesto
+11 11 2017 05:11:17 SELECT * FROM presupuesto
+11 11 2017 05:11:03 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:03 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:03 SELECT * FROM presupuesto
+11 11 2017 05:11:03 SELECT * FROM presupuesto
+11 11 2017 05:11:09 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:09 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:09 SELECT * FROM presupuesto
+11 11 2017 05:11:09 SELECT * FROM presupuesto
+11 11 2017 05:11:13 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:13 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:13 SELECT * FROM presupuesto
+11 11 2017 05:11:13 SELECT * FROM presupuesto
+11 11 2017 05:11:12 SELECT *
+            FROM Usuario
+            ORDER BY nombre
+            LIMIT 0, 6
+11 11 2017 05:11:12 SELECT *
+            FROM Usuario
+11 11 2017 05:11:12 SELECT *
+            FROM Usuario
+11 11 2017 05:11:18 SELECT *
+            FROM Usuario
+            ORDER BY nombre
+            LIMIT 0, 6
+11 11 2017 05:11:18 SELECT *
+            FROM Usuario
+11 11 2017 05:11:18 SELECT *
+            FROM Usuario
+11 11 2017 05:11:21 SELECT *
+            FROM Cliente
+            ORDER BY cuit
+            LIMIT 0, 6
+11 11 2017 05:11:21 SELECT *
+            FROM Cliente
+11 11 2017 05:11:21 SELECT *
+            FROM Cliente
+11 11 2017 05:11:23 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:23 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:23 SELECT * FROM presupuesto
+11 11 2017 05:11:23 SELECT * FROM presupuesto
+11 11 2017 05:11:07 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:07 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:07 SELECT * FROM presupuesto
+11 11 2017 05:11:07 SELECT * FROM presupuesto
+11 11 2017 05:11:08 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:08 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:08 SELECT * FROM presupuesto
+11 11 2017 05:11:08 SELECT * FROM presupuesto
+11 11 2017 05:11:50 INSERT INTO Viaje(fkPresupuestoV, fecha, origen, destino, tipo_carga)
+        VALUES('15', '2017-12-24 22:00:00', 'Polo Norte', 'Todo el mundo', 'Regalos navideños')
+11 11 2017 05:11:50 UPDATE presupuesto
+            SET aceptado = 'si'
+            WHERE idPresupuesto = '15'
+11 11 2017 05:11:50 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:50 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:50 SELECT * FROM presupuesto
+11 11 2017 05:11:50 SELECT * FROM presupuesto
+11 11 2017 05:11:12 SELECT * 
+            FROM Presupuesto 
+            WHERE idPresupuesto = '1'
+11 11 2017 05:11:12 SELECT idCliente, razon 
+            FROM Cliente
+11 11 2017 05:11:12 SELECT idViaje 
+            FROM Viaje
+11 11 2017 05:11:18 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:18 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:18 SELECT * FROM presupuesto
+11 11 2017 05:11:18 SELECT * FROM presupuesto
+11 11 2017 05:11:25 SELECT c.idCliente AS fkClienteP, c.razon FROM cliente c
+11 11 2017 05:11:25 SELECT idViaje FROM viaje
+11 11 2017 05:11:25 SELECT idUsuario,nombre FROM usuario WHERE idUsuario = '2' 
+11 11 2017 05:11:36 SELECT c.idCliente AS fkClienteP, c.razon FROM cliente c
+11 11 2017 05:11:36 SELECT idViaje FROM viaje
+11 11 2017 05:11:36 SELECT idUsuario,nombre FROM usuario WHERE idUsuario = '2' 
+11 11 2017 05:11:01 SELECT c.idCliente AS fkClienteP, c.razon FROM cliente c
+11 11 2017 05:11:01 SELECT idViaje FROM viaje
+11 11 2017 05:11:01 SELECT idUsuario,nombre FROM usuario WHERE idUsuario = '2' 
+11 11 2017 05:11:06 SELECT c.idCliente AS fkClienteP, c.razon FROM cliente c
+11 11 2017 05:11:06 SELECT idViaje FROM viaje
+11 11 2017 05:11:06 SELECT idUsuario,nombre FROM usuario WHERE idUsuario = '2' 
+11 11 2017 05:11:16 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:16 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:16 SELECT * FROM presupuesto
+11 11 2017 05:11:16 SELECT * FROM presupuesto
+11 11 2017 05:11:19 SELECT c.idCliente AS fkClienteP, c.razon FROM cliente c
+11 11 2017 05:11:19 SELECT idViaje FROM viaje
+11 11 2017 05:11:19 SELECT idUsuario,nombre FROM usuario WHERE idUsuario = '2' 
+11 11 2017 05:11:38 INSERT INTO Presupuesto(fkClienteP, fkAdministradorP, tiempo_estimado, km_estimado, combustible_estimado, costo_real, aceptado)
+       VALUES('6', '2', '88:00:00', '888', '888', '888', 'no')
+11 11 2017 05:11:38 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:38 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:38 SELECT * FROM presupuesto
+11 11 2017 05:11:38 SELECT * FROM presupuesto
+11 11 2017 05:11:17 INSERT INTO Viaje(fkPresupuestoV, fecha, origen, destino, tipo_carga)
+        VALUES('16', '1991-12-12 12:12:12', 'asd', 'asd', 'asd')
+11 11 2017 05:11:17 UPDATE presupuesto
+            SET aceptado = 'si'
+            WHERE idPresupuesto = '16'
+11 11 2017 05:11:17 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:17 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:17 SELECT * FROM presupuesto
+11 11 2017 05:11:17 SELECT * FROM presupuesto
+11 11 2017 05:11:56 DELETE
+            FROM Presupuesto 
+            WHERE idPresupuesto='16'
+11 11 2017 05:11:56 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:56 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:56 SELECT * FROM presupuesto
+11 11 2017 05:11:56 SELECT * FROM presupuesto
+11 11 2017 05:11:59 DELETE
+            FROM Presupuesto 
+            WHERE idPresupuesto='16'
+11 11 2017 05:11:59 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:59 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:59 SELECT * FROM presupuesto
+11 11 2017 05:11:59 SELECT * FROM presupuesto
+11 11 2017 05:11:10 DELETE
+            FROM Presupuesto 
+            WHERE idPresupuesto='4'
+11 11 2017 05:11:10 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:10 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:10 SELECT * FROM presupuesto
+11 11 2017 05:11:10 SELECT * FROM presupuesto
+11 11 2017 05:11:13 DELETE
+            FROM Presupuesto 
+            WHERE idPresupuesto='4'
+11 11 2017 05:11:13 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:13 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:13 SELECT * FROM presupuesto
+11 11 2017 05:11:13 SELECT * FROM presupuesto
+11 11 2017 05:11:14 DELETE
+            FROM Presupuesto 
+            WHERE idPresupuesto='3'
+11 11 2017 05:11:14 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:14 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:14 SELECT * FROM presupuesto
+11 11 2017 05:11:14 SELECT * FROM presupuesto
+11 11 2017 05:11:28 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 6, 6
+11 11 2017 05:11:28 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:28 SELECT * FROM presupuesto
+11 11 2017 05:11:28 SELECT * FROM presupuesto
+11 11 2017 05:11:31 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:31 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:31 SELECT * FROM presupuesto
+11 11 2017 05:11:31 SELECT * FROM presupuesto
+11 11 2017 05:11:47 DELETE
+            FROM Presupuesto 
+            WHERE idPresupuesto='1'
+11 11 2017 05:11:47 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:47 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:47 SELECT * FROM presupuesto
+11 11 2017 05:11:47 SELECT * FROM presupuesto
+11 11 2017 05:11:49 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:49 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:49 SELECT * FROM presupuesto
+11 11 2017 05:11:49 SELECT * FROM presupuesto
+11 11 2017 05:11:50 SELECT * 
+            FROM Presupuesto 
+            WHERE idPresupuesto = '1'
+11 11 2017 05:11:50 SELECT idCliente, razon 
+            FROM Cliente
+11 11 2017 05:11:50 SELECT idViaje 
+            FROM Viaje
+11 11 2017 05:11:52 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:52 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:52 SELECT * FROM presupuesto
+11 11 2017 05:11:52 SELECT * FROM presupuesto
+11 11 2017 05:11:53 DELETE
+            FROM Presupuesto 
+            WHERE idPresupuesto='1'
+11 11 2017 05:11:53 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:53 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:53 SELECT * FROM presupuesto
+11 11 2017 05:11:53 SELECT * FROM presupuesto
+11 11 2017 05:11:43 SELECT * 
+            FROM Presupuesto 
+            WHERE idPresupuesto = '1'
+11 11 2017 05:11:43 SELECT idCliente, razon 
+            FROM Cliente
+11 11 2017 05:11:43 SELECT idViaje 
+            FROM Viaje
+11 11 2017 05:11:45 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:45 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:45 SELECT * FROM presupuesto
+11 11 2017 05:11:45 SELECT * FROM presupuesto
+11 11 2017 05:11:04 SELECT * 
+            FROM Presupuesto 
+            WHERE idPresupuesto = '1'
+11 11 2017 05:11:04 SELECT idCliente, razon 
+            FROM Cliente
+11 11 2017 05:11:04 SELECT idViaje 
+            FROM Viaje
+11 11 2017 05:11:33 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:33 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:33 SELECT * FROM presupuesto
+11 11 2017 05:11:33 SELECT * FROM presupuesto
+11 11 2017 05:11:41 SELECT * 
+            FROM Presupuesto 
+            WHERE idPresupuesto = '1'
+11 11 2017 05:11:41 SELECT idCliente, razon 
+            FROM Cliente
+11 11 2017 05:11:41 SELECT idViaje 
+            FROM Viaje
+11 11 2017 05:11:44 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:44 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:44 SELECT * FROM presupuesto
+11 11 2017 05:11:44 SELECT * FROM presupuesto
+11 11 2017 05:11:02 SELECT * 
+            FROM Presupuesto 
+            WHERE idPresupuesto = '16'
+11 11 2017 05:11:02 SELECT idCliente, razon 
+            FROM Cliente
+11 11 2017 05:11:02 SELECT idViaje 
+            FROM Viaje
+11 11 2017 05:11:11 UPDATE presupuesto 
+            SET tiempo_estimado = '77',
+                km_estimado = '777',
+                combustible_estimado = '777',
+                costo_real = '777',
+                aceptado = ''
+            WHERE idPresupuesto = '16'
+11 11 2017 05:11:11 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:11 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:11 SELECT * FROM presupuesto
+11 11 2017 05:11:11 SELECT * FROM presupuesto
+11 11 2017 05:11:17 SELECT * 
+            FROM Presupuesto 
+            WHERE idPresupuesto = '16'
+11 11 2017 05:11:17 SELECT idCliente, razon 
+            FROM Cliente
+11 11 2017 05:11:17 SELECT idViaje 
+            FROM Viaje
+11 11 2017 05:11:24 UPDATE presupuesto 
+            SET tiempo_estimado = '77:00:00',
+                km_estimado = '777',
+                combustible_estimado = '777.00',
+                costo_real = '777.00',
+                aceptado = ''
+            WHERE idPresupuesto = '16'
+11 11 2017 05:11:24 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:24 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:24 SELECT * FROM presupuesto
+11 11 2017 05:11:24 SELECT * FROM presupuesto
+11 11 2017 05:11:22 DELETE
+            FROM Presupuesto 
+            WHERE idPresupuesto='16'
+11 11 2017 05:11:22 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:22 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:22 SELECT * FROM presupuesto
+11 11 2017 05:11:22 SELECT * FROM presupuesto
+11 11 2017 05:11:42 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 6, 6
+11 11 2017 05:11:42 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:42 SELECT * FROM presupuesto
+11 11 2017 05:11:42 SELECT * FROM presupuesto
+11 11 2017 05:11:43 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:43 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:43 SELECT * FROM presupuesto
+11 11 2017 05:11:43 SELECT * FROM presupuesto
+11 11 2017 05:11:44 SELECT c.idCliente AS fkClienteP, c.razon FROM cliente c
+11 11 2017 05:11:44 SELECT idViaje FROM viaje
+11 11 2017 05:11:44 SELECT idUsuario,nombre FROM usuario WHERE idUsuario = '2' 
+11 11 2017 05:11:57 INSERT INTO Presupuesto(fkClienteP, fkAdministradorP, tiempo_estimado, km_estimado, combustible_estimado, costo_real, aceptado)
+       VALUES('1', '2', '99:99:99', '123', '123', 'dada', 'no')
+11 11 2017 05:11:58 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:58 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:58 SELECT * FROM presupuesto
+11 11 2017 05:11:58 SELECT * FROM presupuesto
+11 11 2017 05:11:01 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 6, 6
+11 11 2017 05:11:01 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:01 SELECT * FROM presupuesto
+11 11 2017 05:11:01 SELECT * FROM presupuesto
+11 11 2017 05:11:04 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:04 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:04 SELECT * FROM presupuesto
+11 11 2017 05:11:04 SELECT * FROM presupuesto
+11 11 2017 05:11:54 DELETE
+            FROM Presupuesto 
+            WHERE idPresupuesto='17'
+11 11 2017 05:11:54 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:54 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:54 SELECT * FROM presupuesto
+11 11 2017 05:11:54 SELECT * FROM presupuesto
+11 11 2017 05:11:59 SELECT c.idCliente AS fkClienteP, c.razon FROM cliente c
+11 11 2017 05:11:59 SELECT idViaje FROM viaje
+11 11 2017 05:11:59 SELECT idUsuario,nombre FROM usuario WHERE idUsuario = '2' 
+11 11 2017 05:11:12 INSERT INTO Presupuesto(fkClienteP, fkAdministradorP, tiempo_estimado, km_estimado, combustible_estimado, costo_real, aceptado)
+       VALUES('6', '2', '99:99:99', '999999999999', '99999999', '999999999', 'no')
+11 11 2017 05:11:12 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:12 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:12 SELECT * FROM presupuesto
+11 11 2017 05:11:12 SELECT * FROM presupuesto
+11 11 2017 05:11:24 SELECT * 
+            FROM Presupuesto 
+            WHERE idPresupuesto = '18'
+11 11 2017 05:11:24 SELECT idCliente, razon 
+            FROM Cliente
+11 11 2017 05:11:24 SELECT idViaje 
+            FROM Viaje
+11 11 2017 05:11:38 UPDATE presupuesto 
+            SET tiempo_estimado = '99:00:00',
+                km_estimado = '2147483647',
+                combustible_estimado = '88888888888',
+                costo_real = '999999999.00',
+                aceptado = 'no'
+            WHERE idPresupuesto = '18'
+11 11 2017 05:11:38 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:38 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:38 SELECT * FROM presupuesto
+11 11 2017 05:11:38 SELECT * FROM presupuesto
+11 11 2017 05:11:43 DELETE
+            FROM Presupuesto 
+            WHERE idPresupuesto='18'
+11 11 2017 05:11:43 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:43 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:43 SELECT * FROM presupuesto
+11 11 2017 05:11:43 SELECT * FROM presupuesto
+11 11 2017 05:11:45 SELECT c.idCliente AS fkClienteP, c.razon FROM cliente c
+11 11 2017 05:11:45 SELECT idViaje FROM viaje
+11 11 2017 05:11:45 SELECT idUsuario,nombre FROM usuario WHERE idUsuario = '2' 
+11 11 2017 05:11:02 INSERT INTO Presupuesto(fkClienteP, fkAdministradorP, tiempo_estimado, km_estimado, combustible_estimado, costo_real, aceptado)
+       VALUES('6', '2', '77:00:00', '7777', '7777', '7777', 'no')
+11 11 2017 05:11:02 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:02 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:02 SELECT * FROM presupuesto
+11 11 2017 05:11:02 SELECT * FROM presupuesto
+11 11 2017 05:11:31 DELETE
+            FROM Presupuesto 
+            WHERE idPresupuesto='16'
+11 11 2017 05:11:31 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:31 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:31 SELECT * FROM presupuesto
+11 11 2017 05:11:31 SELECT * FROM presupuesto
+11 11 2017 05:11:33 DELETE
+            FROM Presupuesto 
+            WHERE idPresupuesto='16'
+11 11 2017 05:11:33 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:33 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:33 SELECT * FROM presupuesto
+11 11 2017 05:11:33 SELECT * FROM presupuesto
+11 11 2017 05:11:43 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:43 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:43 SELECT * FROM presupuesto
+11 11 2017 05:11:43 SELECT * FROM presupuesto
+11 11 2017 05:11:46 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 6, 6
+11 11 2017 05:11:46 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:46 SELECT * FROM presupuesto
+11 11 2017 05:11:46 SELECT * FROM presupuesto
+11 11 2017 05:11:47 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:47 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:47 SELECT * FROM presupuesto
+11 11 2017 05:11:47 SELECT * FROM presupuesto
+11 11 2017 05:11:49 SELECT c.idCliente AS fkClienteP, c.razon FROM cliente c
+11 11 2017 05:11:49 SELECT idViaje FROM viaje
+11 11 2017 05:11:49 SELECT idUsuario,nombre FROM usuario WHERE idUsuario = '2' 
+11 11 2017 05:11:05 INSERT INTO Presupuesto(fkClienteP, fkAdministradorP, tiempo_estimado, km_estimado, combustible_estimado, costo_real, aceptado)
+       VALUES('6', '2', '99:00:00', '999', '999', '999', 'no')
+11 11 2017 05:11:05 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:05 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:05 SELECT * FROM presupuesto
+11 11 2017 05:11:05 SELECT * FROM presupuesto
+11 11 2017 05:11:11 SELECT * 
+            FROM Presupuesto 
+            WHERE idPresupuesto = '10'
+11 11 2017 05:11:11 SELECT idCliente, razon 
+            FROM Cliente
+11 11 2017 05:11:11 SELECT idViaje 
+            FROM Viaje
+11 11 2017 05:11:22 UPDATE presupuesto 
+            SET tiempo_estimado = '88:00:00',
+                km_estimado = '888',
+                combustible_estimado = '888',
+                costo_real = '888',
+                aceptado = 'no'
+            WHERE idPresupuesto = '10'
+11 11 2017 05:11:22 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:22 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:22 SELECT * FROM presupuesto
+11 11 2017 05:11:22 SELECT * FROM presupuesto
+11 11 2017 05:11:27 DELETE
+            FROM Presupuesto 
+            WHERE idPresupuesto='10'
+11 11 2017 05:11:27 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:27 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:27 SELECT * FROM presupuesto
+11 11 2017 05:11:27 SELECT * FROM presupuesto
+11 11 2017 05:11:30 DELETE
+            FROM Presupuesto 
+            WHERE idPresupuesto='1'
+11 11 2017 05:11:30 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:30 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:30 SELECT * FROM presupuesto
+11 11 2017 05:11:30 SELECT * FROM presupuesto
+11 11 2017 05:11:32 DELETE
+            FROM Presupuesto 
+            WHERE idPresupuesto='1'
+11 11 2017 05:11:32 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:32 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:32 SELECT * FROM presupuesto
+11 11 2017 05:11:32 SELECT * FROM presupuesto
+11 11 2017 05:11:33 DELETE
+            FROM Presupuesto 
+            WHERE idPresupuesto='9'
+11 11 2017 05:11:33 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:33 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:33 SELECT * FROM presupuesto
+11 11 2017 05:11:33 SELECT * FROM presupuesto
+11 11 2017 05:11:33 DELETE
+            FROM Presupuesto 
+            WHERE idPresupuesto='7'
+11 11 2017 05:11:33 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:33 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:33 SELECT * FROM presupuesto
+11 11 2017 05:11:33 SELECT * FROM presupuesto
+11 11 2017 05:11:34 DELETE
+            FROM Presupuesto 
+            WHERE idPresupuesto='8'
+11 11 2017 05:11:34 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:34 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:34 SELECT * FROM presupuesto
+11 11 2017 05:11:34 SELECT * FROM presupuesto
+11 11 2017 05:11:36 DELETE
+            FROM Presupuesto 
+            WHERE idPresupuesto='1'
+11 11 2017 05:11:36 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:36 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:36 SELECT * FROM presupuesto
+11 11 2017 05:11:36 SELECT * FROM presupuesto
+11 11 2017 05:11:37 DELETE
+            FROM Presupuesto 
+            WHERE idPresupuesto='9'
+11 11 2017 05:11:37 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:37 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:37 SELECT * FROM presupuesto
+11 11 2017 05:11:37 SELECT * FROM presupuesto
+11 11 2017 05:11:37 DELETE
+            FROM Presupuesto 
+            WHERE idPresupuesto='7'
+11 11 2017 05:11:37 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:37 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:37 SELECT * FROM presupuesto
+11 11 2017 05:11:37 SELECT * FROM presupuesto
+11 11 2017 05:11:38 DELETE
+            FROM Presupuesto 
+            WHERE idPresupuesto='2'
+11 11 2017 05:11:38 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:38 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:38 SELECT * FROM presupuesto
+11 11 2017 05:11:38 SELECT * FROM presupuesto
+11 11 2017 05:11:38 DELETE
+            FROM Presupuesto 
+            WHERE idPresupuesto='3'
+11 11 2017 05:11:38 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:38 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:38 SELECT * FROM presupuesto
+11 11 2017 05:11:38 SELECT * FROM presupuesto
+11 11 2017 05:11:39 DELETE
+            FROM Presupuesto 
+            WHERE idPresupuesto='4'
+11 11 2017 05:11:39 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:39 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:39 SELECT * FROM presupuesto
+11 11 2017 05:11:39 SELECT * FROM presupuesto
+11 11 2017 05:11:55 SELECT c.idCliente AS fkClienteP, c.razon FROM cliente c
+11 11 2017 05:11:55 SELECT idViaje FROM viaje
+11 11 2017 05:11:55 SELECT idUsuario,nombre FROM usuario WHERE idUsuario = '2' 
+11 11 2017 05:11:04 INSERT INTO Presupuesto(fkClienteP, fkAdministradorP, tiempo_estimado, km_estimado, combustible_estimado, costo_real, aceptado)
+       VALUES('5', '2', '12:00:00', '123', '123', '123', 'no')
+11 11 2017 05:11:04 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:04 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:04 SELECT * FROM presupuesto
+11 11 2017 05:11:04 SELECT * FROM presupuesto
+11 11 2017 05:11:22 INSERT INTO Viaje(fkPresupuestoV, fecha, origen, destino, tipo_carga)
+        VALUES('11', '1991-12-12 12:12:12', 'asd', 'asd', 'asd')
+11 11 2017 05:11:22 UPDATE presupuesto
+            SET aceptado = 'si'
+            WHERE idPresupuesto = '11'
+11 11 2017 05:11:22 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:22 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:22 SELECT * FROM presupuesto
+11 11 2017 05:11:22 SELECT * FROM presupuesto
+11 11 2017 05:11:42 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:42 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:42 SELECT * FROM presupuesto
+11 11 2017 05:11:42 SELECT * FROM presupuesto
+11 11 2017 05:11:44 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:44 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:44 SELECT * FROM presupuesto
+11 11 2017 05:11:44 SELECT * FROM presupuesto
+11 11 2017 05:11:08 SELECT c.idCliente AS fkClienteP, c.razon FROM cliente c
+11 11 2017 05:11:08 SELECT idViaje FROM viaje
+11 11 2017 05:11:08 SELECT idUsuario,nombre FROM usuario WHERE idUsuario = '2' 
+11 11 2017 05:11:22 INSERT INTO Presupuesto(fkClienteP, fkAdministradorP, tiempo_estimado, km_estimado, combustible_estimado, costo_real, aceptado)
+       VALUES('6', '2', '12:00:00', '123', '123', '123', 'no')
+11 11 2017 05:11:22 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:22 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:22 SELECT * FROM presupuesto
+11 11 2017 05:11:22 SELECT * FROM presupuesto
+11 11 2017 05:11:25 DELETE
+            FROM Presupuesto 
+            WHERE idPresupuesto='12'
+11 11 2017 05:11:25 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 05:11:25 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 05:11:25 SELECT * FROM presupuesto
+11 11 2017 05:11:25 SELECT * FROM presupuesto
+11 11 2017 06:11:03 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 06:11:03 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 06:11:03 SELECT * FROM presupuesto
+11 11 2017 06:11:03 SELECT * FROM presupuesto
+11 11 2017 06:11:09 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 06:11:09 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 06:11:09 SELECT * FROM presupuesto
+11 11 2017 06:11:10 SELECT * FROM presupuesto
+11 11 2017 06:11:34 SELECT c.idCliente AS fkClienteP, c.razon FROM cliente c
+11 11 2017 06:11:34 SELECT idViaje FROM viaje
+11 11 2017 06:11:34 SELECT idUsuario,nombre FROM usuario WHERE idUsuario = '2' 
+11 11 2017 06:11:06 INSERT INTO Presupuesto(fkClienteP, fkAdministradorP, tiempo_estimado, km_estimado, combustible_estimado, costo_real, aceptado)
+       VALUES('6', '2', '00:00:01', '1', '1', '1', 'no')
+11 11 2017 06:11:07 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 06:11:07 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 06:11:07 SELECT * FROM presupuesto
+11 11 2017 06:11:07 SELECT * FROM presupuesto
+11 11 2017 06:11:22 INSERT INTO Viaje(fkPresupuestoV, fecha, origen, destino, tipo_carga)
+        VALUES('13', '1991-12-12 12:12:12', 'Polo Norte', 'Todo el mundo', 'Regalos navideños')
+11 11 2017 06:11:22 UPDATE presupuesto
+            SET aceptado = 'si'
+            WHERE idPresupuesto = '13'
+11 11 2017 06:11:22 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 06:11:22 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 06:11:22 SELECT * FROM presupuesto
+11 11 2017 06:11:22 SELECT * FROM presupuesto
+11 11 2017 06:11:51 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 06:11:51 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 06:11:51 SELECT * FROM presupuesto
+11 11 2017 06:11:51 SELECT * FROM presupuesto
+11 11 2017 06:11:56 SELECT * 
+            FROM Presupuesto 
+            WHERE idPresupuesto = '1'
+11 11 2017 06:11:56 SELECT idCliente, razon 
+            FROM Cliente
+11 11 2017 06:11:56 SELECT idViaje 
+            FROM Viaje
+11 11 2017 06:11:58 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 06:11:58 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 06:11:58 SELECT * FROM presupuesto
+11 11 2017 06:11:58 SELECT * FROM presupuesto
+11 11 2017 06:11:03 SELECT * 
+            FROM Presupuesto 
+            WHERE idPresupuesto = '13'
+11 11 2017 06:11:03 SELECT idCliente, razon 
+            FROM Cliente
+11 11 2017 06:11:03 SELECT idViaje 
+            FROM Viaje
+11 11 2017 06:11:07 UPDATE presupuesto 
+            SET tiempo_estimado = '00:00:01',
+                km_estimado = '2',
+                combustible_estimado = '1.00',
+                costo_real = '1.00',
+                aceptado = 'no'
+            WHERE idPresupuesto = '13'
+11 11 2017 06:11:07 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 06:11:07 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 06:11:07 SELECT * FROM presupuesto
+11 11 2017 06:11:07 SELECT * FROM presupuesto
+11 11 2017 06:11:51 SELECT * 
+            FROM Presupuesto 
+            WHERE idPresupuesto = '13'
+11 11 2017 06:11:51 SELECT idCliente, razon 
+            FROM Cliente
+11 11 2017 06:11:51 SELECT idViaje 
+            FROM Viaje
+11 11 2017 06:11:00 UPDATE presupuesto 
+            SET tiempo_estimado = '00:00:03',
+                km_estimado = '3',
+                combustible_estimado = '3.00',
+                costo_real = '3.00',
+                aceptado = 'no'
+            WHERE idPresupuesto = '13'
+11 11 2017 06:11:00 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 06:11:00 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 06:11:00 SELECT * FROM presupuesto
+11 11 2017 06:11:00 SELECT * FROM presupuesto
+11 11 2017 06:11:26 INSERT INTO Viaje(fkPresupuestoV, fecha, origen, destino, tipo_carga)
+        VALUES('13', '2017-12-24 22:00:00', 'a', 'a', 'a')
+11 11 2017 06:11:26 UPDATE presupuesto
+            SET aceptado = 'si'
+            WHERE idPresupuesto = '13'
+11 11 2017 06:11:27 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 06:11:27 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 06:11:27 SELECT * FROM presupuesto
+11 11 2017 06:11:27 SELECT * FROM presupuesto
+11 11 2017 06:11:13 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 06:11:13 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 06:11:13 SELECT * FROM presupuesto
+11 11 2017 06:11:13 SELECT * FROM presupuesto
+11 11 2017 06:11:29 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 06:11:29 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 06:11:29 SELECT * FROM presupuesto
+11 11 2017 06:11:29 SELECT * FROM presupuesto
+11 11 2017 06:11:57 SELECT c.idCliente AS fkClienteP, c.razon FROM cliente c
+11 11 2017 06:11:57 SELECT idViaje FROM viaje
+11 11 2017 06:11:57 SELECT idUsuario,nombre FROM usuario WHERE idUsuario = '2' 
+11 11 2017 06:11:20 INSERT INTO Presupuesto(fkClienteP, fkAdministradorP, tiempo_estimado, km_estimado, combustible_estimado, costo_real, aceptado)
+       VALUES('6', '2', '00:00:03', '3', '3', '3', 'no')
+11 11 2017 06:11:20 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 06:11:20 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 06:11:20 SELECT * FROM presupuesto
+11 11 2017 06:11:20 SELECT * FROM presupuesto
+11 11 2017 06:11:14 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 06:11:14 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 06:11:14 SELECT * FROM presupuesto
+11 11 2017 06:11:14 SELECT * FROM presupuesto
+11 11 2017 06:11:27 SELECT * 
+            FROM Presupuesto 
+            WHERE idPresupuesto = '14'
+11 11 2017 06:11:27 SELECT idCliente, razon 
+            FROM Cliente
+11 11 2017 06:11:27 SELECT idViaje 
+            FROM Viaje
+11 11 2017 06:11:32 UPDATE presupuesto 
+            SET tiempo_estimado = '00:00:03',
+                km_estimado = '2',
+                combustible_estimado = '3.00',
+                costo_real = '3.00',
+                aceptado = 'no'
+            WHERE idPresupuesto = '14'
+11 11 2017 06:11:32 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 06:11:32 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 06:11:32 SELECT * FROM presupuesto
+11 11 2017 06:11:32 SELECT * FROM presupuesto
+11 11 2017 06:11:35 SELECT * 
+            FROM Presupuesto 
+            WHERE idPresupuesto = '14'
+11 11 2017 06:11:35 SELECT idCliente, razon 
+            FROM Cliente
+11 11 2017 06:11:35 SELECT idViaje 
+            FROM Viaje
+11 11 2017 06:11:38 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 06:11:38 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 06:11:38 SELECT * FROM presupuesto
+11 11 2017 06:11:38 SELECT * FROM presupuesto
+11 11 2017 06:11:54 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 06:11:54 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 06:11:54 SELECT * FROM presupuesto
+11 11 2017 06:11:54 SELECT * FROM presupuesto
+11 11 2017 06:11:59 SELECT * 
+            FROM Presupuesto 
+            WHERE idPresupuesto = '14'
+11 11 2017 06:11:59 SELECT idCliente, razon 
+            FROM Cliente
+11 11 2017 06:11:59 SELECT idViaje 
+            FROM Viaje
+11 11 2017 06:11:01 UPDATE presupuesto 
+            SET tiempo_estimado = '00:00:03',
+                km_estimado = '3',
+                combustible_estimado = '3.00',
+                costo_real = '3.00',
+                aceptado = 'no'
+            WHERE idPresupuesto = '14'
+11 11 2017 06:11:01 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 06:11:01 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 06:11:01 SELECT * FROM presupuesto
+11 11 2017 06:11:01 SELECT * FROM presupuesto
+11 11 2017 06:11:33 DELETE
+            FROM Presupuesto 
+            WHERE idPresupuesto='14'
+11 11 2017 06:11:33 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 06:11:33 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 06:11:33 SELECT * FROM presupuesto
+11 11 2017 06:11:33 SELECT * FROM presupuesto

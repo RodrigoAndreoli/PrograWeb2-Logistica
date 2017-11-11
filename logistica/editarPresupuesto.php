@@ -61,7 +61,7 @@
                                                 <div class="col-xs-12 col-lg-6 col-lg-offset-3">
                                                     <label class="control-label col-xs-4 col-sm-3">Kilometraje Estimado:</label>
                                                     <div class="col-xs-8 col-sm-9">
-                                                        <input type="text" class="form-control" value="<?php echo $presupuestos['km_estimado']; ?>" name="km_estimado" id="km_estimado">
+                                                        <input type="text" class="form-control" value="<?php echo $dato['km_estimado']; ?>" name="km_estimado" id="km_estimado">
                                                     </div>
                                                 </div>
                                             </div>
@@ -69,7 +69,15 @@
                                                 <div class="col-xs-12 col-lg-6 col-lg-offset-3">
                                                     <label class="control-label col-xs-4 col-sm-3">Combustible Estimado:</label>
                                                     <div class="col-xs-8 col-sm-9">
-                                                        <input type="text" class="form-control" value="<?php echo $presupuestos['combustible_estimado']; ?>" name="combustible_estimado" id="combustible_estimado">
+                                                        <input type="text" class="form-control" value="<?php echo $dato['combustible_estimado']; ?>" name="combustible_estimado" id="combustible_estimado">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-xs-12 col-lg-6 col-lg-offset-3">
+                                                    <label class="control-label col-xs-4 col-sm-3">Tiempo estimado:</label>
+                                                    <div class="col-xs-8 col-sm-9">
+                                                        <input type="text" class="form-control" value="<?php echo $dato['tiempo_estimado']; ?>" name="tiempo_estimado" id="tiempo_estimado">
                                                     </div>
                                                 </div>
                                             </div>
@@ -77,21 +85,11 @@
                                                 <div class="col-xs-12 col-lg-6 col-lg-offset-3">
                                                     <label class="control-label col-xs-4 col-sm-3">Costo:</label>
                                                     <div class="col-xs-8 col-sm-9">
-                                                        <input type="text" class="form-control" value="<?php echo $presupuestos['costo_real']; ?>" name="costo_real" id="costo_real">
+                                                        <input type="text" class="form-control" value="<?php echo $dato['costo_real']; ?>" name="costo_real" id="costo_real">
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="form-group">
-                                                <div class="col-xs-12 col-lg-6 col-lg-offset-3">
-                                                    <label class="control-label col-xs-4 col-sm-3 aceptado">Aceptado:</label>
-                                                    <div class="col-xs-8 col-sm-9">
-                                                        <select class="form-control" id="aceptado" name="aceptado" required>
-                                                            <option value="No" selected>No</option>
-                                                            <option value="Si">Si</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
+
                                             <tr>
                                                 <td colspan="3" class="text-center">
                                                     <a href="vista_presupuestos.php" class="btn btn-danger">Volver</a>
@@ -100,7 +98,8 @@
                                             </tr>
 										 <?php } ?>
                                         </table>
-                                        <input type="hidden" name="funcion" id="funcion" value="modificar" readonly> 
+                                        <input type="hidden" name="funcion" id="funcion" value="modificar" readonly>
+                                        <input type="hidden" name="aceptado" id="aceptado" value="no" readonly>                                          
                                         <input type="hidden" name="cod" id="cod" value="<?php echo $cod; ?>" readonly>
                                     </form>
                                 </div>
