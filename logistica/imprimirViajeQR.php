@@ -1,12 +1,7 @@
 <?php
-<<<<<<< HEAD
-    require_once($_SERVER['DOCUMENT_ROOT'].'/resources/config.php');
-=======
->>>>>>> a74c5946033b208c90893238d114943dd28f4c4d
     require_once($_SERVER['DOCUMENT_ROOT'].'/resources/db/control.php');
     include($_SERVER['DOCUMENT_ROOT'].'/resources/templates/pdfPageP.php');
     include($_SERVER['DOCUMENT_ROOT'].'/resources/library/qr/qrlib.php');
-    include($_SERVER['DOCUMENT_ROOT'].'/resources/log/creaLog.php');
 
     $idViaje = $_REQUEST['id'];
     $obj = new controlDB();

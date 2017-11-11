@@ -19,14 +19,15 @@
     FROM presupuesto
     WHERE aceptado='no'");
 
-    $asignar = array(); 
-    foreach($datos2 as $v){
-        $asignar[] = $v['idPresupuesto'];
-    }    
+    if($datos2 != null) {
+        $asignar = array(); 
+        foreach($datos2 as $v){
+            $asignar[] = $v['idPresupuesto'];
+        }    
+    }
 
 
     $num_filas = count($obj->consultar("SELECT * FROM presupuesto"));
     $total_paginas = ceil($num_filas/$tamagno_paginas);
     $sql_limite=$obj -> consultar("SELECT * FROM presupuesto");
-
 ?>
