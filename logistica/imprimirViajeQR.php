@@ -1,5 +1,5 @@
 <?php
-
+    require_once($_SERVER['DOCUMENT_ROOT'].'/resources/config.php');
     require_once($_SERVER['DOCUMENT_ROOT'].'/resources/db/control.php');
     include($_SERVER['DOCUMENT_ROOT'].'/resources/templates/pdfPageP.php');
     include($_SERVER['DOCUMENT_ROOT'].'/resources/library/qr/qrlib.php');

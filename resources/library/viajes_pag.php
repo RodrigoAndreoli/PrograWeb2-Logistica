@@ -16,9 +16,9 @@
     ");
 
 
-    $cons = $obj -> consultar("SELECT T.idViaje TViaje
+    $cons = $obj -> consultar("SELECT T.fkViajeT TViaje
         FROM Vehiculo_Chofer_viaje T
-        ORDER BY T.idViaje
+        ORDER BY T.fkViajeT
     ");
 
     $asignar = array(); 

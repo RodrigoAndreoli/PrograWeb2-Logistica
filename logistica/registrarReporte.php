@@ -15,19 +15,20 @@
         $hoy = date("Y-m-d H:i:s");
 
         $obj = new controlDB();
-        $verificacion = $obj -> consultar("SELECT fkViajeT, idChoferT, idAcompanianteT 
+        $verificacion = $obj -> consultar("SELECT fkViajeT, fkChoferT, fkAcompanianteT
             FROM Vehiculo_chofer_viaje 
-            WHERE idViaje = '$idViaje'");
+            WHERE fkViajeT = '$idViaje'");
 
         $asignar = array(); 
         foreach($verificacion as $v){
-            $asignar[] = $v['idViaje'];
+            $asignar[] = $v['fkViajeT'];
         }
-        if(!in_array($v['idViaje'], $asignar)) {
+        if(!in_array($idViaje, $asignar)) {
             header('Location: vista_reportes.php');
-        }
+        }   
+
         foreach($verificacion as $v) {
-            if($idUsuario != $v['idChoferT'] && $idUsuario != $v['idAcompanianteT']) {
+            if($idUsuario != $v['fkChoferT'] && $idUsuario != $v['fkAcompanianteT']) {
                 header('Location: vista_reportes.php');
                 exit();
             }

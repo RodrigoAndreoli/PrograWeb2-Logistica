@@ -11,6 +11,7 @@
     $obj = new controlDB();
     include $LIBRARY_PATH.'/viajes_pag.php';
     $idUsuario = $_SESSION['idUsuario'];
+    
     ?>
 </head>
 
@@ -71,19 +72,19 @@
                                                 <td class="text-center">
                                                     <?php if(!in_array($td['VViaje'], $asignar)) { ?>  
                                                     <a href="asignarViaje.php?id=<?php echo $td['VViaje']?>">
-                                                        <button class="btn btn-info">Asignar</button>
+                                                        <button class="btn btn-success">Asignar</button>
+                                                    </a>
+                                                    <a href="bdViajes.php?id=<?php echo $td['VViaje']?>&funcion=eliminar"> 
+                                                        <button class="btn btn-danger">Eliminar</button>
                                                     </a>
                                                     <br>
+                                                    <?php } ?>  
                                                     
                                                     <a href="imprimirVIajeQR.php?id=<?php echo $td['VViaje']?>">
                                                         <button class="btn btn-info">Ver PDF</button>
                                                     </a>
                                                     
-                                                    <a href="bdViajes.php?id=<?php echo $td['VViaje']?>&funcion=eliminar"> 
-                                                        <button class="btn btn-danger">Eliminar</button>
-                                                    </a>
                                                 </td>
-                                                <?php } ?>  
                                             </tr>
                                             <?php } ?>
                                             <?php } else { }?> 

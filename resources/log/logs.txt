@@ -6524,3 +6524,1753 @@
 11 11 2017 08:11:31 SELECT *
         FROM Viaje
     
+11 11 2017 14:11:09 SELECT V.idViaje VViaje, V.fkPresupuestoV fkPresupuesto, V.fecha Fecha, V.origen Origen, V.destino Destino, V.tipo_carga Carga, V.tiempo_total Tiempo, V.combustible_total Combustible, V.km_total Km
+        FROM Viaje V
+        ORDER BY V.idViaje
+        LIMIT 0, 6
+    
+11 11 2017 14:11:09 SELECT T.idViaje TViaje
+        FROM Vehiculo_Chofer_viaje T
+        ORDER BY T.idViaje
+    
+11 11 2017 14:11:09 SELECT fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT
+                                 FROM Vehiculo_Chofer_viaje
+11 11 2017 14:11:09 SELECT V.fecha fecha, V.origen origen, V.destino destino, V.tipo_carga carga, V.tiempo_total tiempo, V.combustible_total combustible, V.km_total km
+                                 FROM Vehiculo_Chofer_viaje T join viaje V on T.fkViajeT = V.idViaje
+                                 WHERE T.fkAcompanianteT = '2' || T.fkChoferT = '2'
+11 11 2017 14:11:09 SELECT *
+        FROM viaje
+    
+11 11 2017 14:11:09 SELECT *
+        FROM Viaje
+    
+11 11 2017 14:11:40 SELECT V.idViaje VViaje, V.fkPresupuestoV fkPresupuesto, V.fecha Fecha, V.origen Origen, V.destino Destino, V.tipo_carga Carga, V.tiempo_total Tiempo, V.combustible_total Combustible, V.km_total Km
+        FROM Viaje V
+        ORDER BY V.idViaje
+        LIMIT 0, 6
+    
+11 11 2017 14:11:40 SELECT T.idViaje TViaje
+        FROM Vehiculo_Chofer_viaje T
+        ORDER BY T.idViaje
+    
+11 11 2017 14:11:40 SELECT fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT
+                                 FROM Vehiculo_Chofer_viaje
+11 11 2017 14:11:40 SELECT V.fecha fecha, V.origen origen, V.destino destino, V.tipo_carga carga, V.tiempo_total tiempo, V.combustible_total combustible, V.km_total km
+                                 FROM Vehiculo_Chofer_viaje T join viaje V on T.fkViajeT = V.idViaje
+                                 WHERE T.fkAcompanianteT = '2' || T.fkChoferT = '2'
+11 11 2017 14:11:40 SELECT *
+        FROM viaje
+    
+11 11 2017 14:11:40 SELECT *
+        FROM Viaje
+    
+11 11 2017 14:11:48 SELECT V.idViaje VViaje, V.fkPresupuestoV fkPresupuesto, V.fecha Fecha, V.origen Origen, V.destino Destino, V.tipo_carga Carga, V.tiempo_total Tiempo, V.combustible_total Combustible, V.km_total Km
+        FROM Viaje V
+        ORDER BY V.idViaje
+        LIMIT 6, 6
+    
+11 11 2017 14:11:48 SELECT T.idViaje TViaje
+        FROM Vehiculo_Chofer_viaje T
+        ORDER BY T.idViaje
+    
+11 11 2017 14:11:48 SELECT fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT
+                                 FROM Vehiculo_Chofer_viaje
+11 11 2017 14:11:48 SELECT V.fecha fecha, V.origen origen, V.destino destino, V.tipo_carga carga, V.tiempo_total tiempo, V.combustible_total combustible, V.km_total km
+                                 FROM Vehiculo_Chofer_viaje T join viaje V on T.fkViajeT = V.idViaje
+                                 WHERE T.fkAcompanianteT = '2' || T.fkChoferT = '2'
+11 11 2017 14:11:48 SELECT *
+        FROM viaje
+    
+11 11 2017 14:11:48 SELECT *
+        FROM Viaje
+    
+11 11 2017 14:11:53 SELECT V.idViaje VViaje, V.fkPresupuestoV fkPresupuesto, V.fecha Fecha, V.origen Origen, V.destino Destino, V.tipo_carga Carga, V.tiempo_total Tiempo, V.combustible_total Combustible, V.km_total Km
+        FROM Viaje V
+        ORDER BY V.idViaje
+        LIMIT 0, 6
+    
+11 11 2017 14:11:53 SELECT T.idViaje TViaje
+        FROM Vehiculo_Chofer_viaje T
+        ORDER BY T.idViaje
+    
+11 11 2017 14:11:53 SELECT fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT
+                                 FROM Vehiculo_Chofer_viaje
+11 11 2017 14:11:53 SELECT V.fecha fecha, V.origen origen, V.destino destino, V.tipo_carga carga, V.tiempo_total tiempo, V.combustible_total combustible, V.km_total km
+                                 FROM Vehiculo_Chofer_viaje T join viaje V on T.fkViajeT = V.idViaje
+                                 WHERE T.fkAcompanianteT = '2' || T.fkChoferT = '2'
+11 11 2017 14:11:53 SELECT *
+        FROM viaje
+    
+11 11 2017 14:11:53 SELECT *
+        FROM Viaje
+    
+11 11 2017 14:11:57 SELECT idUsuario IdUsuario, nombre Nombre
+        FROM Usuario 
+        WHERE rol = 'Chofer'
+11 11 2017 14:11:57 SELECT idVehiculo IdVehiculo, marca Marca, patente Patente 
+    FROM Vehiculo 
+    WHERE tipo_vehiculo LIKE '%Camion%'
+11 11 2017 14:11:57 SELECT idVehiculo IdVehiculo, marca Marca, patente Patente 
+    FROM Vehiculo 
+    WHERE tipo_vehiculo LIKE '%Acoplado%'
+11 11 2017 14:11:08 INSERT INTO Vehiculo_Chofer_viaje(fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT)
+        VALUES('', '', '', '', '')
+11 11 2017 14:11:08 SELECT V.idViaje VViaje, V.fkPresupuestoV fkPresupuesto, V.fecha Fecha, V.origen Origen, V.destino Destino, V.tipo_carga Carga, V.tiempo_total Tiempo, V.combustible_total Combustible, V.km_total Km
+        FROM Viaje V
+        ORDER BY V.idViaje
+        LIMIT 0, 6
+    
+11 11 2017 14:11:08 SELECT T.idViaje TViaje
+        FROM Vehiculo_Chofer_viaje T
+        ORDER BY T.idViaje
+    
+11 11 2017 14:11:08 SELECT fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT
+                                 FROM Vehiculo_Chofer_viaje
+11 11 2017 14:11:08 SELECT V.fecha fecha, V.origen origen, V.destino destino, V.tipo_carga carga, V.tiempo_total tiempo, V.combustible_total combustible, V.km_total km
+                                 FROM Vehiculo_Chofer_viaje T join viaje V on T.fkViajeT = V.idViaje
+                                 WHERE T.fkAcompanianteT = '2' || T.fkChoferT = '2'
+11 11 2017 14:11:08 SELECT *
+        FROM viaje
+    
+11 11 2017 14:11:08 SELECT *
+        FROM Viaje
+    
+11 11 2017 14:11:53 SELECT V.idViaje VViaje, V.fkPresupuestoV fkPresupuesto, V.fecha Fecha, V.origen Origen, V.destino Destino, V.tipo_carga Carga, V.tiempo_total Tiempo, V.combustible_total Combustible, V.km_total Km
+        FROM Viaje V
+        ORDER BY V.idViaje
+        LIMIT 0, 6
+    
+11 11 2017 14:11:53 SELECT T.idViaje TViaje
+        FROM Vehiculo_Chofer_viaje T
+        ORDER BY T.idViaje
+    
+11 11 2017 14:11:53 SELECT fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT
+                                 FROM Vehiculo_Chofer_viaje
+11 11 2017 14:11:53 SELECT V.fecha fecha, V.origen origen, V.destino destino, V.tipo_carga carga, V.tiempo_total tiempo, V.combustible_total combustible, V.km_total km
+                                 FROM Vehiculo_Chofer_viaje T join viaje V on T.fkViajeT = V.idViaje
+                                 WHERE T.fkAcompanianteT = '2' || T.fkChoferT = '2'
+11 11 2017 14:11:53 SELECT *
+        FROM viaje
+    
+11 11 2017 14:11:53 SELECT *
+        FROM Viaje
+    
+11 11 2017 14:11:46 SELECT *
+            FROM Vehiculo
+            ORDER BY tipo_vehiculo, patente
+            LIMIT 0, 7
+11 11 2017 14:11:46 SELECT *
+            FROM Vehiculo
+11 11 2017 14:11:46 SELECT *
+            FROM Vehiculo
+11 11 2017 14:11:53 SELECT *
+            FROM Vehiculo
+            ORDER BY tipo_vehiculo, patente
+            LIMIT 0, 7
+11 11 2017 14:11:53 SELECT *
+            FROM Vehiculo
+11 11 2017 14:11:53 SELECT *
+            FROM Vehiculo
+11 11 2017 14:11:00 SELECT V.idViaje VViaje, V.fkPresupuestoV fkPresupuesto, V.fecha Fecha, V.origen Origen, V.destino Destino, V.tipo_carga Carga, V.tiempo_total Tiempo, V.combustible_total Combustible, V.km_total Km
+        FROM Viaje V
+        ORDER BY V.idViaje
+        LIMIT 0, 6
+    
+11 11 2017 14:11:00 SELECT T.idViaje TViaje
+        FROM Vehiculo_Chofer_viaje T
+        ORDER BY T.idViaje
+    
+11 11 2017 14:11:00 SELECT fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT
+                                 FROM Vehiculo_Chofer_viaje
+11 11 2017 14:11:00 SELECT V.fecha fecha, V.origen origen, V.destino destino, V.tipo_carga carga, V.tiempo_total tiempo, V.combustible_total combustible, V.km_total km
+                                 FROM Vehiculo_Chofer_viaje T join viaje V on T.fkViajeT = V.idViaje
+                                 WHERE T.fkAcompanianteT = '2' || T.fkChoferT = '2'
+11 11 2017 14:11:00 SELECT *
+        FROM viaje
+    
+11 11 2017 14:11:00 SELECT *
+        FROM Viaje
+    
+11 11 2017 14:11:21 SELECT idUsuario IdUsuario, nombre Nombre
+        FROM Usuario 
+        WHERE rol = 'Chofer'
+11 11 2017 14:11:21 SELECT idVehiculo IdVehiculo, marca Marca, patente Patente 
+    FROM Vehiculo 
+    WHERE tipo_vehiculo LIKE '%Camion%'
+11 11 2017 14:11:21 SELECT idVehiculo IdVehiculo, marca Marca, patente Patente 
+    FROM Vehiculo 
+    WHERE tipo_vehiculo LIKE '%Acoplado%'
+11 11 2017 14:11:25 INSERT INTO Vehiculo_Chofer_viaje(fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT)
+        VALUES('', '', '', '', '')
+11 11 2017 14:11:26 SELECT V.idViaje VViaje, V.fkPresupuestoV fkPresupuesto, V.fecha Fecha, V.origen Origen, V.destino Destino, V.tipo_carga Carga, V.tiempo_total Tiempo, V.combustible_total Combustible, V.km_total Km
+        FROM Viaje V
+        ORDER BY V.idViaje
+        LIMIT 0, 6
+    
+11 11 2017 14:11:26 SELECT T.idViaje TViaje
+        FROM Vehiculo_Chofer_viaje T
+        ORDER BY T.idViaje
+    
+11 11 2017 14:11:26 SELECT fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT
+                                 FROM Vehiculo_Chofer_viaje
+11 11 2017 14:11:26 SELECT V.fecha fecha, V.origen origen, V.destino destino, V.tipo_carga carga, V.tiempo_total tiempo, V.combustible_total combustible, V.km_total km
+                                 FROM Vehiculo_Chofer_viaje T join viaje V on T.fkViajeT = V.idViaje
+                                 WHERE T.fkAcompanianteT = '2' || T.fkChoferT = '2'
+11 11 2017 14:11:26 SELECT *
+        FROM viaje
+    
+11 11 2017 14:11:26 SELECT *
+        FROM Viaje
+    
+11 11 2017 14:11:14 SELECT V.fecha qfecha, V.destino qdestino, V.tipo_carga qcarga, U.nombre qprimer, U2.nombre qsegundo, C.patente qcamion, C.km qkm, A.patente qacoplado
+    FROM Vehiculo_Chofer_viaje T 
+    JOIN Viaje V ON T.fkViajeT = V.idViaje 
+    JOIN Usuario U ON T.fkChoferT = U.idUsuario 
+    JOIN Usuario U2 ON T.fkAcompanianteT = U2.idUsuario 
+    JOIN Vehiculo C ON T.fkCamionT = C.idVehiculo 
+    JOIN Vehiculo A ON T.fkAcopladoT = A.idVehiculo 
+    WHERE T.fkViajeT = '1'
+11 11 2017 14:11:14 SELECT V.fecha qfecha, V.destino qdestino, V.tipo_carga qcarga, U.nombre qprimer, C.patente qcamion, C.km qkm
+        FROM Vehiculo_Chofer_viaje T 
+        JOIN Viaje V ON T.fkVIajeT = V.idViaje 
+        JOIN Usuario U ON T.fkChoferT = U.idUsuario 
+        JOIN Vehiculo C ON T.fkCamionT = C.idVehiculo 
+        WHERE T.fkViajeT = '1'
+11 11 2017 14:11:37 SELECT V.fecha qfecha, V.destino qdestino, V.tipo_carga qcarga, U.nombre qprimer, U2.nombre qsegundo, C.patente qcamion, C.km qkm, A.patente qacoplado
+    FROM Vehiculo_Chofer_viaje T 
+    JOIN Viaje V ON T.fkViajeT = V.idViaje 
+    JOIN Usuario U ON T.fkChoferT = U.idUsuario 
+    JOIN Usuario U2 ON T.fkAcompanianteT = U2.idUsuario 
+    JOIN Vehiculo C ON T.fkCamionT = C.idVehiculo 
+    JOIN Vehiculo A ON T.fkAcopladoT = A.idVehiculo 
+    WHERE T.fkViajeT = '1'
+11 11 2017 14:11:37 SELECT V.fecha qfecha, V.destino qdestino, V.tipo_carga qcarga, U.nombre qprimer, C.patente qcamion, C.km qkm
+        FROM Vehiculo_Chofer_viaje T 
+        JOIN Viaje V ON T.fkVIajeT = V.idViaje 
+        JOIN Usuario U ON T.fkChoferT = U.idUsuario 
+        JOIN Vehiculo C ON T.fkCamionT = C.idVehiculo 
+        WHERE T.fkViajeT = '1'
+11 11 2017 14:11:46 SELECT idUsuario IdUsuario, nombre Nombre
+        FROM Usuario 
+        WHERE rol = 'Chofer'
+11 11 2017 14:11:46 SELECT idVehiculo IdVehiculo, marca Marca, patente Patente 
+    FROM Vehiculo 
+    WHERE tipo_vehiculo LIKE '%Camion%'
+11 11 2017 14:11:46 SELECT idVehiculo IdVehiculo, marca Marca, patente Patente 
+    FROM Vehiculo 
+    WHERE tipo_vehiculo LIKE '%Acoplado%'
+11 11 2017 14:11:47 SELECT V.fecha qfecha, V.destino qdestino, V.tipo_carga qcarga, U.nombre qprimer, U2.nombre qsegundo, C.patente qcamion, C.km qkm, A.patente qacoplado
+    FROM Vehiculo_Chofer_viaje T 
+    JOIN Viaje V ON T.fkViajeT = V.idViaje 
+    JOIN Usuario U ON T.fkChoferT = U.idUsuario 
+    JOIN Usuario U2 ON T.fkAcompanianteT = U2.idUsuario 
+    JOIN Vehiculo C ON T.fkCamionT = C.idVehiculo 
+    JOIN Vehiculo A ON T.fkAcopladoT = A.idVehiculo 
+    WHERE T.fkViajeT = '1'
+11 11 2017 14:11:47 SELECT V.fecha qfecha, V.destino qdestino, V.tipo_carga qcarga, U.nombre qprimer, C.patente qcamion, C.km qkm
+        FROM Vehiculo_Chofer_viaje T 
+        JOIN Viaje V ON T.fkVIajeT = V.idViaje 
+        JOIN Usuario U ON T.fkChoferT = U.idUsuario 
+        JOIN Vehiculo C ON T.fkCamionT = C.idVehiculo 
+        WHERE T.fkViajeT = '1'
+11 11 2017 14:11:47 INSERT INTO Vehiculo_Chofer_viaje(fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT)
+        VALUES('', '', '', '', '')
+11 11 2017 14:11:47 SELECT V.idViaje VViaje, V.fkPresupuestoV fkPresupuesto, V.fecha Fecha, V.origen Origen, V.destino Destino, V.tipo_carga Carga, V.tiempo_total Tiempo, V.combustible_total Combustible, V.km_total Km
+        FROM Viaje V
+        ORDER BY V.idViaje
+        LIMIT 0, 6
+    
+11 11 2017 14:11:47 SELECT T.idViaje TViaje
+        FROM Vehiculo_Chofer_viaje T
+        ORDER BY T.idViaje
+    
+11 11 2017 14:11:47 SELECT fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT
+                                 FROM Vehiculo_Chofer_viaje
+11 11 2017 14:11:47 SELECT V.fecha fecha, V.origen origen, V.destino destino, V.tipo_carga carga, V.tiempo_total tiempo, V.combustible_total combustible, V.km_total km
+                                 FROM Vehiculo_Chofer_viaje T join viaje V on T.fkViajeT = V.idViaje
+                                 WHERE T.fkAcompanianteT = '2' || T.fkChoferT = '2'
+11 11 2017 14:11:47 SELECT *
+        FROM viaje
+    
+11 11 2017 14:11:48 SELECT *
+        FROM Viaje
+    
+11 11 2017 15:11:13 SELECT V.idViaje VViaje, V.fkPresupuestoV fkPresupuesto, V.fecha Fecha, V.origen Origen, V.destino Destino, V.tipo_carga Carga, V.tiempo_total Tiempo, V.combustible_total Combustible, V.km_total Km
+        FROM Viaje V
+        ORDER BY V.idViaje
+        LIMIT 0, 6
+    
+11 11 2017 15:11:13 SELECT T.idViaje TViaje
+        FROM Vehiculo_Chofer_viaje T
+        ORDER BY T.idViaje
+    
+11 11 2017 15:11:13 SELECT fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT
+                                 FROM Vehiculo_Chofer_viaje
+11 11 2017 15:11:13 SELECT V.fecha fecha, V.origen origen, V.destino destino, V.tipo_carga carga, V.tiempo_total tiempo, V.combustible_total combustible, V.km_total km
+                                 FROM Vehiculo_Chofer_viaje T join viaje V on T.fkViajeT = V.idViaje
+                                 WHERE T.fkAcompanianteT = '2' || T.fkChoferT = '2'
+11 11 2017 15:11:13 SELECT *
+        FROM viaje
+    
+11 11 2017 15:11:13 SELECT *
+        FROM Viaje
+    
+11 11 2017 15:11:55 SELECT V.idViaje VViaje, V.fkPresupuestoV fkPresupuesto, V.fecha Fecha, V.origen Origen, V.destino Destino, V.tipo_carga Carga, V.tiempo_total Tiempo, V.combustible_total Combustible, V.km_total Km
+        FROM Viaje V
+        ORDER BY V.idViaje
+        LIMIT 0, 6
+    
+11 11 2017 15:11:55 SELECT T.idViaje TViaje
+        FROM Vehiculo_Chofer_viaje T
+        ORDER BY T.idViaje
+    
+11 11 2017 15:11:55 SELECT fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT
+                                 FROM Vehiculo_Chofer_viaje
+11 11 2017 15:11:55 SELECT V.fecha fecha, V.origen origen, V.destino destino, V.tipo_carga carga, V.tiempo_total tiempo, V.combustible_total combustible, V.km_total km
+                                 FROM Vehiculo_Chofer_viaje T join viaje V on T.fkViajeT = V.idViaje
+                                 WHERE T.fkAcompanianteT = '2' || T.fkChoferT = '2'
+11 11 2017 15:11:55 SELECT *
+        FROM viaje
+    
+11 11 2017 15:11:55 SELECT *
+        FROM Viaje
+    
+11 11 2017 15:11:22 SELECT idUsuario IdUsuario, nombre Nombre
+        FROM Usuario 
+        WHERE rol = 'Chofer'
+11 11 2017 15:11:22 SELECT idVehiculo IdVehiculo, marca Marca, patente Patente 
+    FROM Vehiculo 
+    WHERE tipo_vehiculo LIKE '%Camion%'
+11 11 2017 15:11:22 SELECT idVehiculo IdVehiculo, marca Marca, patente Patente 
+    FROM Vehiculo 
+    WHERE tipo_vehiculo LIKE '%Acoplado%'
+11 11 2017 15:11:12 SELECT idUsuario IdUsuario, nombre Nombre
+        FROM Usuario 
+        WHERE rol = 'Chofer'
+11 11 2017 15:11:12 SELECT idVehiculo IdVehiculo, marca Marca, patente Patente 
+    FROM Vehiculo 
+    WHERE tipo_vehiculo LIKE '%Camion%'
+11 11 2017 15:11:12 SELECT idVehiculo IdVehiculo, marca Marca, patente Patente 
+    FROM Vehiculo 
+    WHERE tipo_vehiculo LIKE '%Acoplado%'
+11 11 2017 15:11:35 SELECT V.idViaje VViaje, V.fkPresupuestoV fkPresupuesto, V.fecha Fecha, V.origen Origen, V.destino Destino, V.tipo_carga Carga, V.tiempo_total Tiempo, V.combustible_total Combustible, V.km_total Km
+        FROM Viaje V
+        ORDER BY V.idViaje
+        LIMIT 0, 6
+    
+11 11 2017 15:11:35 SELECT T.idViaje TViaje
+        FROM Vehiculo_Chofer_viaje T
+        ORDER BY T.idViaje
+    
+11 11 2017 15:11:35 SELECT fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT
+                                 FROM Vehiculo_Chofer_viaje
+11 11 2017 15:11:35 SELECT V.fecha fecha, V.origen origen, V.destino destino, V.tipo_carga carga, V.tiempo_total tiempo, V.combustible_total combustible, V.km_total km
+                                 FROM Vehiculo_Chofer_viaje T join viaje V on T.fkViajeT = V.idViaje
+                                 WHERE T.fkAcompanianteT = '2' || T.fkChoferT = '2'
+11 11 2017 15:11:35 SELECT *
+        FROM viaje
+    
+11 11 2017 15:11:35 SELECT *
+        FROM Viaje
+    
+11 11 2017 15:11:38 SELECT idUsuario IdUsuario, nombre Nombre
+        FROM Usuario 
+        WHERE rol = 'Chofer'
+11 11 2017 15:11:38 SELECT idVehiculo IdVehiculo, marca Marca, patente Patente 
+    FROM Vehiculo 
+    WHERE tipo_vehiculo LIKE '%Camion%'
+11 11 2017 15:11:38 SELECT idVehiculo IdVehiculo, marca Marca, patente Patente 
+    FROM Vehiculo 
+    WHERE tipo_vehiculo LIKE '%Acoplado%'
+11 11 2017 16:11:20 SELECT V.idViaje VViaje, V.fkPresupuestoV fkPresupuesto, V.fecha Fecha, V.origen Origen, V.destino Destino, V.tipo_carga Carga, V.tiempo_total Tiempo, V.combustible_total Combustible, V.km_total Km
+        FROM Viaje V
+        ORDER BY V.idViaje
+        LIMIT 0, 6
+    
+11 11 2017 16:11:20 SELECT T.idViaje TViaje
+        FROM Vehiculo_Chofer_viaje T
+        ORDER BY T.idViaje
+    
+11 11 2017 16:11:20 SELECT fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT
+                                 FROM Vehiculo_Chofer_viaje
+11 11 2017 16:11:20 SELECT V.fecha fecha, V.origen origen, V.destino destino, V.tipo_carga carga, V.tiempo_total tiempo, V.combustible_total combustible, V.km_total km
+                                 FROM Vehiculo_Chofer_viaje T join viaje V on T.fkViajeT = V.idViaje
+                                 WHERE T.fkAcompanianteT = '2' || T.fkChoferT = '2'
+11 11 2017 16:11:20 SELECT *
+        FROM viaje
+    
+11 11 2017 16:11:20 SELECT *
+        FROM Viaje
+    
+11 11 2017 16:11:41 SELECT V.idViaje VViaje, V.fkPresupuestoV fkPresupuesto, V.fecha Fecha, V.origen Origen, V.destino Destino, V.tipo_carga Carga, V.tiempo_total Tiempo, V.combustible_total Combustible, V.km_total Km
+        FROM Viaje V
+        ORDER BY V.idViaje
+        LIMIT 6, 6
+    
+11 11 2017 16:11:41 SELECT T.idViaje TViaje
+        FROM Vehiculo_Chofer_viaje T
+        ORDER BY T.idViaje
+    
+11 11 2017 16:11:41 SELECT fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT
+                                 FROM Vehiculo_Chofer_viaje
+11 11 2017 16:11:41 SELECT V.fecha fecha, V.origen origen, V.destino destino, V.tipo_carga carga, V.tiempo_total tiempo, V.combustible_total combustible, V.km_total km
+                                 FROM Vehiculo_Chofer_viaje T join viaje V on T.fkViajeT = V.idViaje
+                                 WHERE T.fkAcompanianteT = '2' || T.fkChoferT = '2'
+11 11 2017 16:11:41 SELECT *
+        FROM viaje
+    
+11 11 2017 16:11:41 SELECT *
+        FROM Viaje
+    
+11 11 2017 16:11:44 SELECT V.idViaje VViaje, V.fkPresupuestoV fkPresupuesto, V.fecha Fecha, V.origen Origen, V.destino Destino, V.tipo_carga Carga, V.tiempo_total Tiempo, V.combustible_total Combustible, V.km_total Km
+        FROM Viaje V
+        ORDER BY V.idViaje
+        LIMIT 0, 6
+    
+11 11 2017 16:11:44 SELECT T.idViaje TViaje
+        FROM Vehiculo_Chofer_viaje T
+        ORDER BY T.idViaje
+    
+11 11 2017 16:11:44 SELECT fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT
+                                 FROM Vehiculo_Chofer_viaje
+11 11 2017 16:11:44 SELECT V.fecha fecha, V.origen origen, V.destino destino, V.tipo_carga carga, V.tiempo_total tiempo, V.combustible_total combustible, V.km_total km
+                                 FROM Vehiculo_Chofer_viaje T join viaje V on T.fkViajeT = V.idViaje
+                                 WHERE T.fkAcompanianteT = '2' || T.fkChoferT = '2'
+11 11 2017 16:11:44 SELECT *
+        FROM viaje
+    
+11 11 2017 16:11:44 SELECT *
+        FROM Viaje
+    
+11 11 2017 16:11:51 SELECT V.idViaje VViaje, V.fkPresupuestoV fkPresupuesto, V.fecha Fecha, V.origen Origen, V.destino Destino, V.tipo_carga Carga, V.tiempo_total Tiempo, V.combustible_total Combustible, V.km_total Km
+        FROM Viaje V
+        ORDER BY V.idViaje
+        LIMIT 0, 6
+    
+11 11 2017 16:11:51 SELECT T.idViaje TViaje
+        FROM Vehiculo_Chofer_viaje T
+        ORDER BY T.idViaje
+    
+11 11 2017 16:11:51 SELECT fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT
+                                 FROM Vehiculo_Chofer_viaje
+11 11 2017 16:11:51 SELECT V.fecha fecha, V.origen origen, V.destino destino, V.tipo_carga carga, V.tiempo_total tiempo, V.combustible_total combustible, V.km_total km
+                                 FROM Vehiculo_Chofer_viaje T join viaje V on T.fkViajeT = V.idViaje
+                                 WHERE T.fkAcompanianteT = '2' || T.fkChoferT = '2'
+11 11 2017 16:11:51 SELECT *
+        FROM viaje
+    
+11 11 2017 16:11:51 SELECT *
+        FROM Viaje
+    
+11 11 2017 16:11:11 SELECT V.idViaje VViaje, V.fkPresupuestoV fkPresupuesto, V.fecha Fecha, V.origen Origen, V.destino Destino, V.tipo_carga Carga, V.tiempo_total Tiempo, V.combustible_total Combustible, V.km_total Km
+        FROM Viaje V
+        ORDER BY V.idViaje
+        LIMIT 0, 6
+    
+11 11 2017 16:11:11 SELECT T.idViaje TViaje
+        FROM Vehiculo_Chofer_viaje T
+        ORDER BY T.idViaje
+    
+11 11 2017 16:11:11 SELECT fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT
+                                 FROM Vehiculo_Chofer_viaje
+11 11 2017 16:11:11 SELECT V.fecha fecha, V.origen origen, V.destino destino, V.tipo_carga carga, V.tiempo_total tiempo, V.combustible_total combustible, V.km_total km
+                                 FROM Vehiculo_Chofer_viaje T join viaje V on T.fkViajeT = V.idViaje
+                                 WHERE T.fkAcompanianteT = '2' || T.fkChoferT = '2'
+11 11 2017 16:11:11 SELECT *
+        FROM viaje
+    
+11 11 2017 16:11:11 SELECT *
+        FROM Viaje
+    
+11 11 2017 16:11:38 SELECT V.idViaje VViaje, V.fkPresupuestoV fkPresupuesto, V.fecha Fecha, V.origen Origen, V.destino Destino, V.tipo_carga Carga, V.tiempo_total Tiempo, V.combustible_total Combustible, V.km_total Km
+        FROM Viaje V
+        ORDER BY V.idViaje
+        LIMIT 0, 6
+    
+11 11 2017 16:11:38 SELECT T.idViaje TViaje
+        FROM Vehiculo_Chofer_viaje T
+        ORDER BY T.idViaje
+    
+11 11 2017 16:11:38 SELECT fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT
+                                 FROM Vehiculo_Chofer_viaje
+11 11 2017 16:11:38 SELECT V.fecha fecha, V.origen origen, V.destino destino, V.tipo_carga carga, V.tiempo_total tiempo, V.combustible_total combustible, V.km_total km
+                                 FROM Vehiculo_Chofer_viaje T join viaje V on T.fkViajeT = V.idViaje
+                                 WHERE T.fkAcompanianteT = '2' || T.fkChoferT = '2'
+11 11 2017 16:11:38 SELECT *
+        FROM viaje
+    
+11 11 2017 16:11:38 SELECT *
+        FROM Viaje
+    
+11 11 2017 17:11:20 SELECT V.idViaje VViaje, V.fkPresupuestoV fkPresupuesto, V.fecha Fecha, V.origen Origen, V.destino Destino, V.tipo_carga Carga, V.tiempo_total Tiempo, V.combustible_total Combustible, V.km_total Km
+        FROM Viaje V
+        ORDER BY V.idViaje
+        LIMIT 0, 6
+    
+11 11 2017 17:11:20 SELECT T.idViaje TViaje
+        FROM Vehiculo_Chofer_viaje T
+        ORDER BY T.idViaje
+    
+11 11 2017 17:11:20 SELECT fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT
+                                 FROM Vehiculo_Chofer_viaje
+11 11 2017 17:11:20 SELECT V.fecha fecha, V.origen origen, V.destino destino, V.tipo_carga carga, V.tiempo_total tiempo, V.combustible_total combustible, V.km_total km
+                                 FROM Vehiculo_Chofer_viaje T join viaje V on T.fkViajeT = V.idViaje
+                                 WHERE T.fkAcompanianteT = '2' || T.fkChoferT = '2'
+11 11 2017 17:11:20 SELECT *
+        FROM viaje
+    
+11 11 2017 17:11:20 SELECT *
+        FROM Viaje
+    
+11 11 2017 17:11:47 SELECT V.idViaje VViaje, V.fkPresupuestoV fkPresupuesto, V.fecha Fecha, V.origen Origen, V.destino Destino, V.tipo_carga Carga, V.tiempo_total Tiempo, V.combustible_total Combustible, V.km_total Km
+        FROM Viaje V
+        ORDER BY V.idViaje
+        LIMIT 6, 6
+    
+11 11 2017 17:11:47 SELECT T.idViaje TViaje
+        FROM Vehiculo_Chofer_viaje T
+        ORDER BY T.idViaje
+    
+11 11 2017 17:11:47 SELECT fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT
+                                 FROM Vehiculo_Chofer_viaje
+11 11 2017 17:11:47 SELECT V.fecha fecha, V.origen origen, V.destino destino, V.tipo_carga carga, V.tiempo_total tiempo, V.combustible_total combustible, V.km_total km
+                                 FROM Vehiculo_Chofer_viaje T join viaje V on T.fkViajeT = V.idViaje
+                                 WHERE T.fkAcompanianteT = '2' || T.fkChoferT = '2'
+11 11 2017 17:11:47 SELECT *
+        FROM viaje
+    
+11 11 2017 17:11:47 SELECT *
+        FROM Viaje
+    
+11 11 2017 17:11:49 SELECT V.idViaje VViaje, V.fkPresupuestoV fkPresupuesto, V.fecha Fecha, V.origen Origen, V.destino Destino, V.tipo_carga Carga, V.tiempo_total Tiempo, V.combustible_total Combustible, V.km_total Km
+        FROM Viaje V
+        ORDER BY V.idViaje
+        LIMIT 0, 6
+    
+11 11 2017 17:11:49 SELECT T.idViaje TViaje
+        FROM Vehiculo_Chofer_viaje T
+        ORDER BY T.idViaje
+    
+11 11 2017 17:11:49 SELECT fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT
+                                 FROM Vehiculo_Chofer_viaje
+11 11 2017 17:11:49 SELECT V.fecha fecha, V.origen origen, V.destino destino, V.tipo_carga carga, V.tiempo_total tiempo, V.combustible_total combustible, V.km_total km
+                                 FROM Vehiculo_Chofer_viaje T join viaje V on T.fkViajeT = V.idViaje
+                                 WHERE T.fkAcompanianteT = '2' || T.fkChoferT = '2'
+11 11 2017 17:11:49 SELECT *
+        FROM viaje
+    
+11 11 2017 17:11:49 SELECT *
+        FROM Viaje
+    
+11 11 2017 17:11:35 SELECT V.idViaje VViaje, V.fkPresupuestoV fkPresupuesto, V.fecha Fecha, V.origen Origen, V.destino Destino, V.tipo_carga Carga, V.tiempo_total Tiempo, V.combustible_total Combustible, V.km_total Km
+        FROM Viaje V
+        ORDER BY V.idViaje
+        LIMIT 0, 6
+    
+11 11 2017 17:11:35 SELECT T.idViaje TViaje
+        FROM Vehiculo_Chofer_viaje T
+        ORDER BY T.idViaje
+    
+11 11 2017 17:11:35 SELECT fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT
+                                 FROM Vehiculo_Chofer_viaje
+11 11 2017 17:11:35 SELECT V.fecha fecha, V.origen origen, V.destino destino, V.tipo_carga carga, V.tiempo_total tiempo, V.combustible_total combustible, V.km_total km
+                                 FROM Vehiculo_Chofer_viaje T join viaje V on T.fkViajeT = V.idViaje
+                                 WHERE T.fkAcompanianteT = '2' || T.fkChoferT = '2'
+11 11 2017 17:11:35 SELECT *
+        FROM viaje
+    
+11 11 2017 17:11:35 SELECT *
+        FROM Viaje
+    
+11 11 2017 17:11:39 SELECT V.idViaje VViaje, V.fkPresupuestoV fkPresupuesto, V.fecha Fecha, V.origen Origen, V.destino Destino, V.tipo_carga Carga, V.tiempo_total Tiempo, V.combustible_total Combustible, V.km_total Km
+        FROM Viaje V
+        ORDER BY V.idViaje
+        LIMIT 6, 6
+    
+11 11 2017 17:11:39 SELECT T.idViaje TViaje
+        FROM Vehiculo_Chofer_viaje T
+        ORDER BY T.idViaje
+    
+11 11 2017 17:11:39 SELECT fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT
+                                 FROM Vehiculo_Chofer_viaje
+11 11 2017 17:11:39 SELECT V.fecha fecha, V.origen origen, V.destino destino, V.tipo_carga carga, V.tiempo_total tiempo, V.combustible_total combustible, V.km_total km
+                                 FROM Vehiculo_Chofer_viaje T join viaje V on T.fkViajeT = V.idViaje
+                                 WHERE T.fkAcompanianteT = '2' || T.fkChoferT = '2'
+11 11 2017 17:11:39 SELECT *
+        FROM viaje
+    
+11 11 2017 17:11:39 SELECT *
+        FROM Viaje
+    
+11 11 2017 17:11:45 SELECT V.idViaje VViaje, V.fkPresupuestoV fkPresupuesto, V.fecha Fecha, V.origen Origen, V.destino Destino, V.tipo_carga Carga, V.tiempo_total Tiempo, V.combustible_total Combustible, V.km_total Km
+        FROM Viaje V
+        ORDER BY V.idViaje
+        LIMIT 0, 6
+    
+11 11 2017 17:11:45 SELECT T.idViaje TViaje
+        FROM Vehiculo_Chofer_viaje T
+        ORDER BY T.idViaje
+    
+11 11 2017 17:11:45 SELECT fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT
+                                 FROM Vehiculo_Chofer_viaje
+11 11 2017 17:11:45 SELECT V.fecha fecha, V.origen origen, V.destino destino, V.tipo_carga carga, V.tiempo_total tiempo, V.combustible_total combustible, V.km_total km
+                                 FROM Vehiculo_Chofer_viaje T join viaje V on T.fkViajeT = V.idViaje
+                                 WHERE T.fkAcompanianteT = '2' || T.fkChoferT = '2'
+11 11 2017 17:11:45 SELECT *
+        FROM viaje
+    
+11 11 2017 17:11:45 SELECT *
+        FROM Viaje
+    
+11 11 2017 17:11:11 SELECT V.idViaje VViaje, V.fkPresupuestoV fkPresupuesto, V.fecha Fecha, V.origen Origen, V.destino Destino, V.tipo_carga Carga, V.tiempo_total Tiempo, V.combustible_total Combustible, V.km_total Km
+        FROM Viaje V
+        ORDER BY V.idViaje
+        LIMIT 0, 6
+    
+11 11 2017 17:11:11 SELECT T.idViaje TViaje
+        FROM Vehiculo_Chofer_viaje T
+        ORDER BY T.idViaje
+    
+11 11 2017 17:11:11 SELECT fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT
+                                 FROM Vehiculo_Chofer_viaje
+11 11 2017 17:11:11 SELECT V.fecha fecha, V.origen origen, V.destino destino, V.tipo_carga carga, V.tiempo_total tiempo, V.combustible_total combustible, V.km_total km
+                                 FROM Vehiculo_Chofer_viaje T join viaje V on T.fkViajeT = V.idViaje
+                                 WHERE T.fkAcompanianteT = '2' || T.fkChoferT = '2'
+11 11 2017 17:11:11 SELECT *
+        FROM viaje
+    
+11 11 2017 17:11:11 SELECT *
+        FROM Viaje
+    
+11 11 2017 17:11:15 SELECT V.idViaje VViaje, V.fkPresupuestoV fkPresupuesto, V.fecha Fecha, V.origen Origen, V.destino Destino, V.tipo_carga Carga, V.tiempo_total Tiempo, V.combustible_total Combustible, V.km_total Km
+        FROM Viaje V
+        ORDER BY V.idViaje
+        LIMIT 0, 6
+    
+11 11 2017 17:11:15 SELECT T.idViaje TViaje
+        FROM Vehiculo_Chofer_viaje T
+        ORDER BY T.idViaje
+    
+11 11 2017 17:11:15 SELECT fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT
+                                 FROM Vehiculo_Chofer_viaje
+11 11 2017 17:11:15 SELECT V.fecha fecha, V.origen origen, V.destino destino, V.tipo_carga carga, V.tiempo_total tiempo, V.combustible_total combustible, V.km_total km
+                                 FROM Vehiculo_Chofer_viaje T join viaje V on T.fkViajeT = V.idViaje
+                                 WHERE T.fkAcompanianteT = '2' || T.fkChoferT = '2'
+11 11 2017 17:11:15 SELECT *
+        FROM viaje
+    
+11 11 2017 17:11:15 SELECT *
+        FROM Viaje
+    
+11 11 2017 17:11:28 SELECT V.idViaje VViaje, V.fkPresupuestoV fkPresupuesto, V.fecha Fecha, V.origen Origen, V.destino Destino, V.tipo_carga Carga, V.tiempo_total Tiempo, V.combustible_total Combustible, V.km_total Km
+        FROM Viaje V
+        ORDER BY V.idViaje
+        LIMIT 0, 6
+    
+11 11 2017 17:11:28 SELECT T.idViaje TViaje
+        FROM Vehiculo_Chofer_viaje T
+        ORDER BY T.idViaje
+    
+11 11 2017 17:11:28 SELECT fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT
+                                 FROM Vehiculo_Chofer_viaje
+11 11 2017 17:11:28 SELECT V.fecha fecha, V.origen origen, V.destino destino, V.tipo_carga carga, V.tiempo_total tiempo, V.combustible_total combustible, V.km_total km
+                                 FROM Vehiculo_Chofer_viaje T join viaje V on T.fkViajeT = V.idViaje
+                                 WHERE T.fkAcompanianteT = '2' || T.fkChoferT = '2'
+11 11 2017 17:11:28 SELECT *
+        FROM viaje
+    
+11 11 2017 17:11:28 SELECT *
+        FROM Viaje
+    
+11 11 2017 17:11:32 SELECT V.idViaje VViaje, V.fkPresupuestoV fkPresupuesto, V.fecha Fecha, V.origen Origen, V.destino Destino, V.tipo_carga Carga, V.tiempo_total Tiempo, V.combustible_total Combustible, V.km_total Km
+        FROM Viaje V
+        ORDER BY V.idViaje
+        LIMIT 6, 6
+    
+11 11 2017 17:11:32 SELECT T.idViaje TViaje
+        FROM Vehiculo_Chofer_viaje T
+        ORDER BY T.idViaje
+    
+11 11 2017 17:11:32 SELECT fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT
+                                 FROM Vehiculo_Chofer_viaje
+11 11 2017 17:11:32 SELECT V.fecha fecha, V.origen origen, V.destino destino, V.tipo_carga carga, V.tiempo_total tiempo, V.combustible_total combustible, V.km_total km
+                                 FROM Vehiculo_Chofer_viaje T join viaje V on T.fkViajeT = V.idViaje
+                                 WHERE T.fkAcompanianteT = '2' || T.fkChoferT = '2'
+11 11 2017 17:11:32 SELECT *
+        FROM viaje
+    
+11 11 2017 17:11:32 SELECT *
+        FROM Viaje
+    
+11 11 2017 17:11:34 SELECT V.idViaje VViaje, V.fkPresupuestoV fkPresupuesto, V.fecha Fecha, V.origen Origen, V.destino Destino, V.tipo_carga Carga, V.tiempo_total Tiempo, V.combustible_total Combustible, V.km_total Km
+        FROM Viaje V
+        ORDER BY V.idViaje
+        LIMIT 0, 6
+    
+11 11 2017 17:11:34 SELECT T.idViaje TViaje
+        FROM Vehiculo_Chofer_viaje T
+        ORDER BY T.idViaje
+    
+11 11 2017 17:11:34 SELECT fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT
+                                 FROM Vehiculo_Chofer_viaje
+11 11 2017 17:11:34 SELECT V.fecha fecha, V.origen origen, V.destino destino, V.tipo_carga carga, V.tiempo_total tiempo, V.combustible_total combustible, V.km_total km
+                                 FROM Vehiculo_Chofer_viaje T join viaje V on T.fkViajeT = V.idViaje
+                                 WHERE T.fkAcompanianteT = '2' || T.fkChoferT = '2'
+11 11 2017 17:11:34 SELECT *
+        FROM viaje
+    
+11 11 2017 17:11:34 SELECT *
+        FROM Viaje
+    
+11 11 2017 17:11:24 SELECT V.idViaje VViaje, V.fkPresupuestoV fkPresupuesto, V.fecha Fecha, V.origen Origen, V.destino Destino, V.tipo_carga Carga, V.tiempo_total Tiempo, V.combustible_total Combustible, V.km_total Km
+        FROM Viaje V
+        ORDER BY V.idViaje
+        LIMIT 0, 6
+    
+11 11 2017 17:11:24 SELECT T.fkViajeT TViaje
+        FROM Vehiculo_Chofer_viaje T
+        ORDER BY T.fkViajeT
+    
+11 11 2017 17:11:24 SELECT fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT
+                                 FROM Vehiculo_Chofer_viaje
+11 11 2017 17:11:24 SELECT V.fecha fecha, V.origen origen, V.destino destino, V.tipo_carga carga, V.tiempo_total tiempo, V.combustible_total combustible, V.km_total km
+                                 FROM Vehiculo_Chofer_viaje T join viaje V on T.fkViajeT = V.idViaje
+                                 WHERE T.fkAcompanianteT = '2' || T.fkChoferT = '2'
+11 11 2017 17:11:24 SELECT *
+        FROM viaje
+    
+11 11 2017 17:11:24 SELECT *
+        FROM Viaje
+    
+11 11 2017 17:11:45 SELECT V.idViaje VViaje, V.fkPresupuestoV fkPresupuesto, V.fecha Fecha, V.origen Origen, V.destino Destino, V.tipo_carga Carga, V.tiempo_total Tiempo, V.combustible_total Combustible, V.km_total Km
+        FROM Viaje V
+        ORDER BY V.idViaje
+        LIMIT 0, 6
+    
+11 11 2017 17:11:45 SELECT T.Viaje TViaje
+        FROM Vehiculo_Chofer_viaje T
+        ORDER BY T.idViaje
+    
+11 11 2017 17:11:45 SELECT fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT
+                                 FROM Vehiculo_Chofer_viaje
+11 11 2017 17:11:45 SELECT V.fecha fecha, V.origen origen, V.destino destino, V.tipo_carga carga, V.tiempo_total tiempo, V.combustible_total combustible, V.km_total km
+                                 FROM Vehiculo_Chofer_viaje T join viaje V on T.fkViajeT = V.idViaje
+                                 WHERE T.fkAcompanianteT = '2' || T.fkChoferT = '2'
+11 11 2017 17:11:45 SELECT *
+        FROM viaje
+    
+11 11 2017 17:11:45 SELECT *
+        FROM Viaje
+    
+11 11 2017 17:11:56 SELECT V.idViaje VViaje, V.fkPresupuestoV fkPresupuesto, V.fecha Fecha, V.origen Origen, V.destino Destino, V.tipo_carga Carga, V.tiempo_total Tiempo, V.combustible_total Combustible, V.km_total Km
+        FROM Viaje V
+        ORDER BY V.idViaje
+        LIMIT 0, 6
+    
+11 11 2017 17:11:56 SELECT T.fkViajeT TViaje
+        FROM Vehiculo_Chofer_viaje T
+        ORDER BY T.fkViajeT
+    
+11 11 2017 17:11:56 SELECT fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT
+                                 FROM Vehiculo_Chofer_viaje
+11 11 2017 17:11:56 SELECT V.fecha fecha, V.origen origen, V.destino destino, V.tipo_carga carga, V.tiempo_total tiempo, V.combustible_total combustible, V.km_total km
+                                 FROM Vehiculo_Chofer_viaje T join viaje V on T.fkViajeT = V.idViaje
+                                 WHERE T.fkAcompanianteT = '2' || T.fkChoferT = '2'
+11 11 2017 17:11:56 SELECT *
+        FROM viaje
+    
+11 11 2017 17:11:56 SELECT *
+        FROM Viaje
+    
+11 11 2017 17:11:05 SELECT V.idViaje VViaje, V.fkPresupuestoV fkPresupuesto, V.fecha Fecha, V.origen Origen, V.destino Destino, V.tipo_carga Carga, V.tiempo_total Tiempo, V.combustible_total Combustible, V.km_total Km
+        FROM Viaje V
+        ORDER BY V.idViaje
+        LIMIT 6, 6
+    
+11 11 2017 17:11:05 SELECT T.fkViajeT TViaje
+        FROM Vehiculo_Chofer_viaje T
+        ORDER BY T.fkViajeT
+    
+11 11 2017 17:11:05 SELECT fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT
+                                 FROM Vehiculo_Chofer_viaje
+11 11 2017 17:11:05 SELECT V.fecha fecha, V.origen origen, V.destino destino, V.tipo_carga carga, V.tiempo_total tiempo, V.combustible_total combustible, V.km_total km
+                                 FROM Vehiculo_Chofer_viaje T join viaje V on T.fkViajeT = V.idViaje
+                                 WHERE T.fkAcompanianteT = '2' || T.fkChoferT = '2'
+11 11 2017 17:11:05 SELECT *
+        FROM viaje
+    
+11 11 2017 17:11:05 SELECT *
+        FROM Viaje
+    
+11 11 2017 17:11:10 SELECT idUsuario IdUsuario, nombre Nombre
+        FROM Usuario 
+        WHERE rol = 'Chofer'
+11 11 2017 17:11:10 SELECT idVehiculo IdVehiculo, marca Marca, patente Patente 
+    FROM Vehiculo 
+    WHERE tipo_vehiculo LIKE '%Camion%'
+11 11 2017 17:11:10 SELECT idVehiculo IdVehiculo, marca Marca, patente Patente 
+    FROM Vehiculo 
+    WHERE tipo_vehiculo LIKE '%Acoplado%'
+11 11 2017 17:11:37 SELECT idUsuario IdUsuario, nombre Nombre
+        FROM Usuario 
+        WHERE rol = 'Chofer'
+11 11 2017 17:11:37 SELECT idVehiculo IdVehiculo, marca Marca, patente Patente 
+    FROM Vehiculo 
+    WHERE tipo_vehiculo LIKE '%Camion%'
+11 11 2017 17:11:37 SELECT idVehiculo IdVehiculo, marca Marca, patente Patente 
+    FROM Vehiculo 
+    WHERE tipo_vehiculo LIKE '%Acoplado%'
+11 11 2017 17:11:42 INSERT INTO Vehiculo_Chofer_viaje(fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT)
+        VALUES('', '', '', '', '')
+11 11 2017 17:11:42 SELECT V.idViaje VViaje, V.fkPresupuestoV fkPresupuesto, V.fecha Fecha, V.origen Origen, V.destino Destino, V.tipo_carga Carga, V.tiempo_total Tiempo, V.combustible_total Combustible, V.km_total Km
+        FROM Viaje V
+        ORDER BY V.idViaje
+        LIMIT 0, 6
+    
+11 11 2017 17:11:42 SELECT T.fkViajeT TViaje
+        FROM Vehiculo_Chofer_viaje T
+        ORDER BY T.fkViajeT
+    
+11 11 2017 17:11:42 SELECT fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT
+                                 FROM Vehiculo_Chofer_viaje
+11 11 2017 17:11:42 SELECT V.fecha fecha, V.origen origen, V.destino destino, V.tipo_carga carga, V.tiempo_total tiempo, V.combustible_total combustible, V.km_total km
+                                 FROM Vehiculo_Chofer_viaje T join viaje V on T.fkViajeT = V.idViaje
+                                 WHERE T.fkAcompanianteT = '2' || T.fkChoferT = '2'
+11 11 2017 17:11:42 SELECT *
+        FROM viaje
+    
+11 11 2017 17:11:42 SELECT *
+        FROM Viaje
+    
+11 11 2017 17:11:42 SELECT V.fecha qfecha, V.destino qdestino, V.tipo_carga qcarga, U.nombre qprimer, U2.nombre qsegundo, C.patente qcamion, C.km qkm, A.patente qacoplado
+    FROM Vehiculo_Chofer_viaje T 
+    JOIN Viaje V ON T.fkViajeT = V.idViaje 
+    JOIN Usuario U ON T.fkChoferT = U.idUsuario 
+    JOIN Usuario U2 ON T.fkAcompanianteT = U2.idUsuario 
+    JOIN Vehiculo C ON T.fkCamionT = C.idVehiculo 
+    JOIN Vehiculo A ON T.fkAcopladoT = A.idVehiculo 
+    WHERE T.fkViajeT = '9'
+11 11 2017 17:11:42 SELECT V.fecha qfecha, V.destino qdestino, V.tipo_carga qcarga, U.nombre qprimer, C.patente qcamion, C.km qkm
+        FROM Vehiculo_Chofer_viaje T 
+        JOIN Viaje V ON T.fkVIajeT = V.idViaje 
+        JOIN Usuario U ON T.fkChoferT = U.idUsuario 
+        JOIN Vehiculo C ON T.fkCamionT = C.idVehiculo 
+        WHERE T.fkViajeT = '9'
+11 11 2017 17:11:53 SELECT idUsuario IdUsuario, nombre Nombre
+        FROM Usuario 
+        WHERE rol = 'Chofer'
+11 11 2017 17:11:53 SELECT idVehiculo IdVehiculo, marca Marca, patente Patente 
+    FROM Vehiculo 
+    WHERE tipo_vehiculo LIKE '%Camion%'
+11 11 2017 17:11:53 SELECT idVehiculo IdVehiculo, marca Marca, patente Patente 
+    FROM Vehiculo 
+    WHERE tipo_vehiculo LIKE '%Acoplado%'
+11 11 2017 17:11:57 SELECT idUsuario IdUsuario, nombre Nombre
+        FROM Usuario 
+        WHERE rol = 'Chofer'
+11 11 2017 17:11:57 SELECT idVehiculo IdVehiculo, marca Marca, patente Patente 
+    FROM Vehiculo 
+    WHERE tipo_vehiculo LIKE '%Camion%'
+11 11 2017 17:11:57 SELECT idVehiculo IdVehiculo, marca Marca, patente Patente 
+    FROM Vehiculo 
+    WHERE tipo_vehiculo LIKE '%Acoplado%'
+11 11 2017 17:11:16 SELECT fkViajeT, idChoferT, idAcompanianteT 
+            FROM Vehiculo_chofer_viaje 
+            WHERE idViaje = '2'
+11 11 2017 17:11:16 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 17:11:16 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '1'
+            OR T.fkAcompanianteT = '1'
+        ORDER BY Viaje
+11 11 2017 17:11:21 SELECT V.idViaje VViaje, V.fkPresupuestoV fkPresupuesto, V.fecha Fecha, V.origen Origen, V.destino Destino, V.tipo_carga Carga, V.tiempo_total Tiempo, V.combustible_total Combustible, V.km_total Km
+        FROM Viaje V
+        ORDER BY V.idViaje
+        LIMIT 0, 6
+    
+11 11 2017 17:11:21 SELECT T.fkViajeT TViaje
+        FROM Vehiculo_Chofer_viaje T
+        ORDER BY T.fkViajeT
+    
+11 11 2017 17:11:21 SELECT fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT
+                                 FROM Vehiculo_Chofer_viaje
+11 11 2017 17:11:21 SELECT V.fecha fecha, V.origen origen, V.destino destino, V.tipo_carga carga, V.tiempo_total tiempo, V.combustible_total combustible, V.km_total km
+                                 FROM Vehiculo_Chofer_viaje T join viaje V on T.fkViajeT = V.idViaje
+                                 WHERE T.fkAcompanianteT = '1' || T.fkChoferT = '1'
+11 11 2017 17:11:21 SELECT *
+        FROM viaje
+    
+11 11 2017 17:11:21 SELECT *
+        FROM Viaje
+    
+11 11 2017 17:11:28 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 17:11:28 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '1'
+            OR T.fkAcompanianteT = '1'
+        ORDER BY Viaje
+11 11 2017 17:11:30 SELECT V.idViaje VViaje, V.fkPresupuestoV fkPresupuesto, V.fecha Fecha, V.origen Origen, V.destino Destino, V.tipo_carga Carga, V.tiempo_total Tiempo, V.combustible_total Combustible, V.km_total Km
+        FROM Viaje V
+        ORDER BY V.idViaje
+        LIMIT 0, 6
+    
+11 11 2017 17:11:30 SELECT T.fkViajeT TViaje
+        FROM Vehiculo_Chofer_viaje T
+        ORDER BY T.fkViajeT
+    
+11 11 2017 17:11:30 SELECT fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT
+                                 FROM Vehiculo_Chofer_viaje
+11 11 2017 17:11:30 SELECT V.fecha fecha, V.origen origen, V.destino destino, V.tipo_carga carga, V.tiempo_total tiempo, V.combustible_total combustible, V.km_total km
+                                 FROM Vehiculo_Chofer_viaje T join viaje V on T.fkViajeT = V.idViaje
+                                 WHERE T.fkAcompanianteT = '1' || T.fkChoferT = '1'
+11 11 2017 17:11:30 SELECT *
+        FROM viaje
+    
+11 11 2017 17:11:30 SELECT *
+        FROM Viaje
+    
+11 11 2017 17:11:12 SELECT V.idViaje VViaje, V.fkPresupuestoV fkPresupuesto, V.fecha Fecha, V.origen Origen, V.destino Destino, V.tipo_carga Carga, V.tiempo_total Tiempo, V.combustible_total Combustible, V.km_total Km
+        FROM Viaje V
+        ORDER BY V.idViaje
+        LIMIT 0, 6
+    
+11 11 2017 17:11:12 SELECT T.fkViajeT TViaje
+        FROM Vehiculo_Chofer_viaje T
+        ORDER BY T.fkViajeT
+    
+11 11 2017 17:11:12 SELECT fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT
+                                 FROM Vehiculo_Chofer_viaje
+11 11 2017 17:11:12 SELECT V.fecha fecha, V.origen origen, V.destino destino, V.tipo_carga carga, V.tiempo_total tiempo, V.combustible_total combustible, V.km_total km
+                                 FROM Vehiculo_Chofer_viaje T join viaje V on T.fkViajeT = V.idViaje
+                                 WHERE T.fkAcompanianteT = '2' || T.fkChoferT = '2'
+11 11 2017 17:11:12 SELECT *
+        FROM viaje
+    
+11 11 2017 17:11:12 SELECT *
+        FROM Viaje
+    
+11 11 2017 17:11:58 SELECT V.fecha qfecha, V.destino qdestino, V.tipo_carga qcarga, U.nombre qprimer, U2.nombre qsegundo, C.patente qcamion, C.km qkm, A.patente qacoplado
+    FROM Vehiculo_Chofer_viaje T 
+    JOIN Viaje V ON T.fkViajeT = V.idViaje 
+    JOIN Usuario U ON T.fkChoferT = U.idUsuario 
+    JOIN Usuario U2 ON T.fkAcompanianteT = U2.idUsuario 
+    JOIN Vehiculo C ON T.fkCamionT = C.idVehiculo 
+    JOIN Vehiculo A ON T.fkAcopladoT = A.idVehiculo 
+    WHERE T.fkViajeT = '9'
+11 11 2017 17:11:58 SELECT V.fecha qfecha, V.destino qdestino, V.tipo_carga qcarga, U.nombre qprimer, C.patente qcamion, C.km qkm
+        FROM Vehiculo_Chofer_viaje T 
+        JOIN Viaje V ON T.fkVIajeT = V.idViaje 
+        JOIN Usuario U ON T.fkChoferT = U.idUsuario 
+        JOIN Vehiculo C ON T.fkCamionT = C.idVehiculo 
+        WHERE T.fkViajeT = '9'
+11 11 2017 17:11:05 SELECT idUsuario IdUsuario, nombre Nombre
+        FROM Usuario 
+        WHERE rol = 'Chofer'
+11 11 2017 17:11:05 SELECT idVehiculo IdVehiculo, marca Marca, patente Patente 
+    FROM Vehiculo 
+    WHERE tipo_vehiculo LIKE '%Camion%'
+11 11 2017 17:11:05 SELECT idVehiculo IdVehiculo, marca Marca, patente Patente 
+    FROM Vehiculo 
+    WHERE tipo_vehiculo LIKE '%Acoplado%'
+11 11 2017 17:11:07 INSERT INTO Vehiculo_Chofer_viaje(fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT)
+        VALUES('', '', '', '', '')
+11 11 2017 17:11:07 SELECT V.fecha qfecha, V.destino qdestino, V.tipo_carga qcarga, U.nombre qprimer, U2.nombre qsegundo, C.patente qcamion, C.km qkm, A.patente qacoplado
+    FROM Vehiculo_Chofer_viaje T 
+    JOIN Viaje V ON T.fkViajeT = V.idViaje 
+    JOIN Usuario U ON T.fkChoferT = U.idUsuario 
+    JOIN Usuario U2 ON T.fkAcompanianteT = U2.idUsuario 
+    JOIN Vehiculo C ON T.fkCamionT = C.idVehiculo 
+    JOIN Vehiculo A ON T.fkAcopladoT = A.idVehiculo 
+    WHERE T.fkViajeT = '5'
+11 11 2017 17:11:07 SELECT V.fecha qfecha, V.destino qdestino, V.tipo_carga qcarga, U.nombre qprimer, C.patente qcamion, C.km qkm
+        FROM Vehiculo_Chofer_viaje T 
+        JOIN Viaje V ON T.fkVIajeT = V.idViaje 
+        JOIN Usuario U ON T.fkChoferT = U.idUsuario 
+        JOIN Vehiculo C ON T.fkCamionT = C.idVehiculo 
+        WHERE T.fkViajeT = '5'
+11 11 2017 17:11:07 SELECT V.idViaje VViaje, V.fkPresupuestoV fkPresupuesto, V.fecha Fecha, V.origen Origen, V.destino Destino, V.tipo_carga Carga, V.tiempo_total Tiempo, V.combustible_total Combustible, V.km_total Km
+        FROM Viaje V
+        ORDER BY V.idViaje
+        LIMIT 0, 6
+    
+11 11 2017 17:11:07 SELECT T.fkViajeT TViaje
+        FROM Vehiculo_Chofer_viaje T
+        ORDER BY T.fkViajeT
+    
+11 11 2017 17:11:07 SELECT fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT
+                                 FROM Vehiculo_Chofer_viaje
+11 11 2017 17:11:07 SELECT V.fecha fecha, V.origen origen, V.destino destino, V.tipo_carga carga, V.tiempo_total tiempo, V.combustible_total combustible, V.km_total km
+                                 FROM Vehiculo_Chofer_viaje T join viaje V on T.fkViajeT = V.idViaje
+                                 WHERE T.fkAcompanianteT = '2' || T.fkChoferT = '2'
+11 11 2017 17:11:07 SELECT *
+        FROM viaje
+    
+11 11 2017 17:11:07 SELECT *
+        FROM Viaje
+    
+11 11 2017 17:11:18 SELECT V.fecha qfecha, V.destino qdestino, V.tipo_carga qcarga, U.nombre qprimer, U2.nombre qsegundo, C.patente qcamion, C.km qkm, A.patente qacoplado
+    FROM Vehiculo_Chofer_viaje T 
+    JOIN Viaje V ON T.fkViajeT = V.idViaje 
+    JOIN Usuario U ON T.fkChoferT = U.idUsuario 
+    JOIN Usuario U2 ON T.fkAcompanianteT = U2.idUsuario 
+    JOIN Vehiculo C ON T.fkCamionT = C.idVehiculo 
+    JOIN Vehiculo A ON T.fkAcopladoT = A.idVehiculo 
+    WHERE T.fkViajeT = '5'
+11 11 2017 17:11:18 SELECT V.fecha qfecha, V.destino qdestino, V.tipo_carga qcarga, U.nombre qprimer, C.patente qcamion, C.km qkm
+        FROM Vehiculo_Chofer_viaje T 
+        JOIN Viaje V ON T.fkVIajeT = V.idViaje 
+        JOIN Usuario U ON T.fkChoferT = U.idUsuario 
+        JOIN Vehiculo C ON T.fkCamionT = C.idVehiculo 
+        WHERE T.fkViajeT = '5'
+11 11 2017 17:11:14 SELECT V.fecha qfecha, V.destino qdestino, V.tipo_carga qcarga, U.nombre qprimer, U2.nombre qsegundo, C.patente qcamion, C.km qkm, A.patente qacoplado
+    FROM Vehiculo_Chofer_viaje T 
+    JOIN Viaje V ON T.fkViajeT = V.idViaje 
+    JOIN Usuario U ON T.fkChoferT = U.idUsuario 
+    JOIN Usuario U2 ON T.fkAcompanianteT = U2.idUsuario 
+    JOIN Vehiculo C ON T.fkCamionT = C.idVehiculo 
+    JOIN Vehiculo A ON T.fkAcopladoT = A.idVehiculo 
+    WHERE T.fkViajeT = '5'
+11 11 2017 17:11:14 SELECT V.fecha qfecha, V.destino qdestino, V.tipo_carga qcarga, U.nombre qprimer, C.patente qcamion, C.km qkm
+        FROM Vehiculo_chofer_viaje T 
+        JOIN Viaje V ON T.fkVIajeT = V.idViaje 
+        JOIN Usuario U ON T.fkChoferT = U.idUsuario 
+        JOIN Vehiculo C ON T.fkCamionT = C.idVehiculo 
+        WHERE T.fkViajeT = '5'
+11 11 2017 17:11:03 SELECT V.fecha qfecha, V.destino qdestino, V.tipo_carga qcarga, U.nombre qprimer, U2.nombre qsegundo, C.patente qcamion, C.km qkm, A.patente qacoplado
+    FROM Vehiculo_Chofer_viaje T 
+    JOIN Viaje V ON T.fkViajeT = V.idViaje 
+    JOIN Usuario U ON T.fkChoferT = U.idUsuario 
+    JOIN Usuario U2 ON T.fkAcompanianteT = U2.idUsuario 
+    JOIN Vehiculo C ON T.fkCamionT = C.idVehiculo 
+    JOIN Vehiculo A ON T.fkAcopladoT = A.idVehiculo 
+    WHERE T.fkViajeT = '5'
+11 11 2017 17:11:03 SELECT V.fecha qfecha, V.destino qdestino, V.tipo_carga qcarga, U.nombre qprimer, C.patente qcamion, C.km qkm
+        FROM Vehiculo_chofer_viaje T 
+        JOIN Viaje V ON T.fkVIajeT = V.idViaje 
+        JOIN Usuario U ON T.fkChoferT = U.idUsuario 
+        JOIN Vehiculo C ON T.fkCamionT = C.idVehiculo 
+        WHERE T.fkViajeT = '5'
+11 11 2017 17:11:40 SELECT V.fecha qfecha, V.destino qdestino, V.tipo_carga qcarga, U.nombre qprimer, U2.nombre qsegundo, C.patente qcamion, C.km qkm, A.patente qacoplado
+    FROM Vehiculo_Chofer_viaje T 
+    JOIN Viaje V ON T.fkViajeT = V.idViaje 
+    JOIN Usuario U ON T.fkChoferT = U.idUsuario 
+    JOIN Usuario U2 ON T.fkAcompanianteT = U2.idUsuario 
+    JOIN Vehiculo C ON T.fkCamionT = C.idVehiculo 
+    JOIN Vehiculo A ON T.fkAcopladoT = A.idVehiculo 
+    WHERE T.fkViajeT = '1'
+11 11 2017 17:11:40 SELECT V.fecha qfecha, V.destino qdestino, V.tipo_carga qcarga, U.nombre qprimer, C.patente qcamion, C.km qkm
+        FROM Vehiculo_Chofer_viaje T 
+        JOIN Viaje V ON T.fkVIajeT = V.idViaje 
+        JOIN Usuario U ON T.fkChoferT = U.idUsuario 
+        JOIN Vehiculo C ON T.fkCamionT = C.idVehiculo 
+        WHERE T.fkViajeT = '1'
+11 11 2017 17:11:44 SELECT V.idViaje VViaje, V.fkPresupuestoV fkPresupuesto, V.fecha Fecha, V.origen Origen, V.destino Destino, V.tipo_carga Carga, V.tiempo_total Tiempo, V.combustible_total Combustible, V.km_total Km
+        FROM Viaje V
+        ORDER BY V.idViaje
+        LIMIT 0, 6
+    
+11 11 2017 17:11:44 SELECT T.fkViajeT TViaje
+        FROM Vehiculo_Chofer_viaje T
+        ORDER BY T.fkViajeT
+    
+11 11 2017 17:11:44 SELECT fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT
+                                 FROM Vehiculo_Chofer_viaje
+11 11 2017 17:11:44 SELECT V.fecha fecha, V.origen origen, V.destino destino, V.tipo_carga carga, V.tiempo_total tiempo, V.combustible_total combustible, V.km_total km
+                                 FROM Vehiculo_Chofer_viaje T join viaje V on T.fkViajeT = V.idViaje
+                                 WHERE T.fkAcompanianteT = '2' || T.fkChoferT = '2'
+11 11 2017 17:11:44 SELECT *
+        FROM viaje
+    
+11 11 2017 17:11:44 SELECT *
+        FROM Viaje
+    
+11 11 2017 17:11:27 SELECT fkViajeT, idChoferT, idAcompanianteT 
+            FROM Vehiculo_chofer_viaje 
+            WHERE idViaje = '1'
+11 11 2017 17:11:27 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 17:11:27 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '1'
+            OR T.fkAcompanianteT = '1'
+        ORDER BY Viaje
+11 11 2017 17:11:33 SELECT *
+            FROM Reporte
+            WHERE fkViajeR LIKE '%3%'
+            ORDER BY tiempo
+            
+11 11 2017 17:11:33 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 17:11:33 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '1'
+            OR T.fkAcompanianteT = '1'
+        ORDER BY Viaje
+11 11 2017 17:11:03 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 17:11:03 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '1'
+            OR T.fkAcompanianteT = '1'
+        ORDER BY Viaje
+11 11 2017 17:11:08 SELECT fkViajeT, idChoferT, idAcompanianteT 
+            FROM Vehiculo_chofer_viaje 
+            WHERE idViaje = '1'
+11 11 2017 17:11:08 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 17:11:08 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '1'
+            OR T.fkAcompanianteT = '1'
+        ORDER BY Viaje
+11 11 2017 17:11:52 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 17:11:52 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '1'
+            OR T.fkAcompanianteT = '1'
+        ORDER BY Viaje
+11 11 2017 17:11:54 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 17:11:54 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '1'
+            OR T.fkAcompanianteT = '1'
+        ORDER BY Viaje
+11 11 2017 17:11:02 SELECT fkViajeT, idChoferT, idAcompanianteT 
+            FROM Vehiculo_chofer_viaje 
+            WHERE idViaje = '1'
+11 11 2017 17:11:02 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 17:11:02 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '1'
+            OR T.fkAcompanianteT = '1'
+        ORDER BY Viaje
+11 11 2017 17:11:49 SELECT fkViajeT, idChoferT, idAcompanianteT 
+            FROM Vehiculo_chofer_viaje 
+            WHERE idViaje = '1'
+11 11 2017 17:11:49 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 17:11:49 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '1'
+            OR T.fkAcompanianteT = '1'
+        ORDER BY Viaje
+11 11 2017 17:11:22 SELECT fkViajeT, idChoferT, idAcompanianteT 
+            FROM Vehiculo_chofer_viaje 
+            WHERE fkViajeT = '1'
+11 11 2017 17:11:22 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 17:11:22 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '1'
+            OR T.fkAcompanianteT = '1'
+        ORDER BY Viaje
+11 11 2017 17:11:07 SELECT fkViajeT, idChoferT, idAcompanianteT 
+            FROM Vehiculo_chofer_viaje 
+            WHERE fkViajeT = '1'
+11 11 2017 18:11:23 SELECT fkViajeT, idChoferT, idAcompanianteT 
+            FROM Vehiculo_chofer_viaje 
+            WHERE fkViajeT = '1'
+11 11 2017 18:11:23 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 18:11:23 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '1'
+            OR T.fkAcompanianteT = '1'
+        ORDER BY Viaje
+11 11 2017 18:11:57 SELECT fkViajeT, idChoferT, idAcompanianteT 
+            FROM Vehiculo_chofer_viaje 
+            WHERE fkViajeT = '1'
+11 11 2017 18:11:57 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 18:11:57 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '1'
+            OR T.fkAcompanianteT = '1'
+        ORDER BY Viaje
+11 11 2017 18:11:09 SELECT fkViajeT, idChoferT, idAcompanianteT 
+            FROM Vehiculo_chofer_viaje 
+            WHERE fkViajeT = '1'
+11 11 2017 18:11:18 SELECT fkViajeT, idChoferT, idAcompanianteT 
+            FROM Vehiculo_chofer_viaje 
+            WHERE fkViajeT = '3'
+11 11 2017 18:11:51 SELECT fkViajeT, idChoferT, idAcompanianteT 
+            FROM Vehiculo_chofer_viaje 
+            WHERE fkViajeT = '3'
+11 11 2017 18:11:01 SELECT fkViajeT, idChoferT, idAcompanianteT 
+            FROM Vehiculo_chofer_viaje 
+            WHERE fkViajeT = '3'
+11 11 2017 18:11:12 SELECT fkViajeT, idChoferT, idAcompanianteT 
+            FROM Vehiculo_chofer_viaje 
+            WHERE fkViajeT = '3'
+11 11 2017 18:11:08 SELECT fkViajeT, idChoferT, idAcompanianteT 
+            FROM Vehiculo_chofer_viaje 
+            WHERE fkViajeT = '3'
+11 11 2017 18:11:21 SELECT fkViajeT, idChoferT, idAcompanianteT 
+            FROM Vehiculo_chofer_viaje 
+            WHERE fkViajeT = '3'
+11 11 2017 18:11:59 SELECT fkViajeT, idChoferT, idAcompanianteT 
+            FROM Vehiculo_chofer_viaje 
+11 11 2017 18:11:13 SELECT fkViajeT, idChoferT, idAcompanianteT 
+            FROM vehiculo_chofer_viaje 
+11 11 2017 18:11:24 SELECT *
+            FROM vehiculo_chofer_viaje 
+11 11 2017 18:11:40 SELECT fkViajeT, idChoferT
+            FROM Vehiculo_chofer_viaje 
+            WHERE fkViajeT = '3'
+11 11 2017 18:11:45 SELECT fkViajeT
+            FROM Vehiculo_chofer_viaje 
+            WHERE fkViajeT = '3'
+11 11 2017 18:11:06 SELECT T.fkViajeT, T.fkChoferT, T.fkAcompanianteT
+            FROM Vehiculo_chofer_viaje T
+            WHERE fkViajeT = '3'
+11 11 2017 18:11:33 SELECT T.fkViajeT, T.fkChoferT, T.fkAcompanianteT
+            FROM Vehiculo_chofer_viaje T
+            WHERE fkViajeT = '3'
+11 11 2017 18:11:13 SELECT T.fkViajeT, T.fkChoferT, T.fkAcompanianteT
+            FROM Vehiculo_chofer_viaje T
+            WHERE fkViajeT = '3'
+11 11 2017 18:11:13 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 18:11:13 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '1'
+            OR T.fkAcompanianteT = '1'
+        ORDER BY Viaje
+11 11 2017 18:11:44 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 18:11:44 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '1'
+            OR T.fkAcompanianteT = '1'
+        ORDER BY Viaje
+11 11 2017 18:11:49 SELECT T.fkViajeT, T.fkChoferT, T.fkAcompanianteT
+            FROM Vehiculo_chofer_viaje T
+            WHERE fkViajeT = '3'
+11 11 2017 18:11:49 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 18:11:49 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '1'
+            OR T.fkAcompanianteT = '1'
+        ORDER BY Viaje
+11 11 2017 18:11:02 SELECT T.fkViajeT, T.fkChoferT, T.fkAcompanianteT
+            FROM Vehiculo_chofer_viaje T
+            WHERE fkViajeT = '3'
+11 11 2017 18:11:02 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 18:11:02 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '1'
+            OR T.fkAcompanianteT = '1'
+        ORDER BY Viaje
+11 11 2017 18:11:21 SELECT T.fkViajeT, T.fkChoferT, T.fkAcompanianteT
+            FROM Vehiculo_chofer_viaje T
+            WHERE fkViajeT = ''
+11 11 2017 18:11:21 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 18:11:21 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '1'
+            OR T.fkAcompanianteT = '1'
+        ORDER BY Viaje
+11 11 2017 18:11:28 SELECT T.fkViajeT, T.fkChoferT, T.fkAcompanianteT
+            FROM Vehiculo_chofer_viaje T
+            WHERE fkViajeT = '3'
+11 11 2017 18:11:28 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 18:11:28 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '1'
+            OR T.fkAcompanianteT = '1'
+        ORDER BY Viaje
+11 11 2017 18:11:48 SELECT T.fkViajeT, T.fkChoferT, T.fkAcompanianteT
+            FROM Vehiculo_chofer_viaje T
+            WHERE fkViajeT = '3'
+11 11 2017 18:11:48 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 18:11:48 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '1'
+            OR T.fkAcompanianteT = '1'
+        ORDER BY Viaje
+11 11 2017 18:11:13 SELECT T.fkViajeT, T.fkChoferT, T.fkAcompanianteT
+            FROM Vehiculo_chofer_viaje T
+            WHERE fkViajeT = '3'
+11 11 2017 18:11:13 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 18:11:13 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '1'
+            OR T.fkAcompanianteT = '1'
+        ORDER BY Viaje
+11 11 2017 18:11:40 SELECT T.fkViajeT, T.fkChoferT, T.fkAcompanianteT
+            FROM Vehiculo_chofer_viaje T
+            WHERE fkViajeT = '3'
+11 11 2017 18:11:52 SELECT T.fkViajeT, T.fkChoferT, T.fkAcompanianteT
+            FROM Vehiculo_chofer_viaje T
+            WHERE fkViajeT = '1'
+11 11 2017 18:11:31 SELECT T.fkViajeT, T.fkChoferT, T.fkAcompanianteT
+            FROM Vehiculo_chofer_viaje T
+            WHERE fkViajeT = '3'
+11 11 2017 18:11:31 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 18:11:31 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '1'
+            OR T.fkAcompanianteT = '1'
+        ORDER BY Viaje
+11 11 2017 18:11:52 SELECT fkViajeT, fkChoferT, fkAcompanianteT
+            FROM Vehiculo_chofer_viaje 
+            WHERE fkViajeT = '3'
+11 11 2017 18:11:14 SELECT fkViajeT, fkChoferT, fkAcompanianteT
+            FROM Vehiculo_chofer_viaje 
+            WHERE fkViajeT = '1'
+11 11 2017 18:11:27 SELECT fkViajeT, fkChoferT, fkAcompanianteT
+            FROM Vehiculo_chofer_viaje 
+            WHERE fkViajeT = '1'
+11 11 2017 18:11:28 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 18:11:28 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '6'
+            OR T.fkAcompanianteT = '6'
+        ORDER BY Viaje
+11 11 2017 18:11:38 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 18:11:38 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '2'
+            OR T.fkAcompanianteT = '2'
+        ORDER BY Viaje
+11 11 2017 18:11:47 SELECT *
+            FROM Reporte
+            WHERE fkViajeR LIKE '%3%'
+            ORDER BY tiempo
+            
+11 11 2017 18:11:48 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 18:11:48 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '2'
+            OR T.fkAcompanianteT = '2'
+        ORDER BY Viaje
+11 11 2017 18:11:57 SELECT *
+            FROM Cliente
+            ORDER BY cuit
+            LIMIT 0, 6
+11 11 2017 18:11:57 SELECT *
+            FROM Cliente
+11 11 2017 18:11:57 SELECT *
+            FROM Cliente
+11 11 2017 18:11:05 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 18:11:05 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 18:11:05 SELECT * FROM presupuesto
+11 11 2017 18:11:05 SELECT * FROM presupuesto
+11 11 2017 18:11:17 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 6, 6
+11 11 2017 18:11:17 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 18:11:17 SELECT * FROM presupuesto
+11 11 2017 18:11:17 SELECT * FROM presupuesto
+11 11 2017 18:11:20 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 18:11:20 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 18:11:20 SELECT * FROM presupuesto
+11 11 2017 18:11:20 SELECT * FROM presupuesto
+11 11 2017 18:11:39 SELECT c.idCliente AS fkClienteP, c.razon FROM cliente c
+11 11 2017 18:11:39 SELECT idViaje FROM viaje
+11 11 2017 18:11:39 SELECT idUsuario,nombre FROM usuario WHERE idUsuario = '2' 
+11 11 2017 18:11:50 INSERT INTO Presupuesto(fkClienteP, fkAdministradorP, tiempo_estimado, km_estimado, combustible_estimado, costo_real, aceptado)
+       VALUES('2', '2', '12:00:00', '1', '1', '1', 'no')
+11 11 2017 18:11:51 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 18:11:51 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 18:11:51 SELECT * FROM presupuesto
+11 11 2017 18:11:51 SELECT * FROM presupuesto
+11 11 2017 18:11:00 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 18:11:00 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 18:11:00 SELECT * FROM presupuesto
+11 11 2017 18:11:00 SELECT * FROM presupuesto
+11 11 2017 18:11:09 DELETE
+            FROM Presupuesto 
+            WHERE idPresupuesto='14'
+11 11 2017 18:11:09 
+	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
+    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
+    ORDER BY u.nombre LIMIT 0, 6
+11 11 2017 18:11:09 
+    SELECT idPresupuesto
+    FROM presupuesto
+    WHERE aceptado='no'
+11 11 2017 18:11:09 SELECT * FROM presupuesto
+11 11 2017 18:11:09 SELECT * FROM presupuesto
+11 11 2017 18:11:19 SELECT V.idViaje VViaje, V.fkPresupuestoV fkPresupuesto, V.fecha Fecha, V.origen Origen, V.destino Destino, V.tipo_carga Carga, V.tiempo_total Tiempo, V.combustible_total Combustible, V.km_total Km
+        FROM Viaje V
+        ORDER BY V.idViaje
+        LIMIT 0, 6
+    
+11 11 2017 18:11:19 SELECT T.fkViajeT TViaje
+        FROM Vehiculo_Chofer_viaje T
+        ORDER BY T.fkViajeT
+    
+11 11 2017 18:11:19 SELECT fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT
+                                 FROM Vehiculo_Chofer_viaje
+11 11 2017 18:11:19 SELECT V.fecha fecha, V.origen origen, V.destino destino, V.tipo_carga carga, V.tiempo_total tiempo, V.combustible_total combustible, V.km_total km
+                                 FROM Vehiculo_Chofer_viaje T join viaje V on T.fkViajeT = V.idViaje
+                                 WHERE T.fkAcompanianteT = '2' || T.fkChoferT = '2'
+11 11 2017 18:11:19 SELECT *
+        FROM viaje
+    
+11 11 2017 18:11:19 SELECT *
+        FROM Viaje
+    
+11 11 2017 18:11:24 SELECT idUsuario IdUsuario, nombre Nombre
+        FROM Usuario 
+        WHERE rol = 'Chofer'
+11 11 2017 18:11:24 SELECT idVehiculo IdVehiculo, marca Marca, patente Patente 
+    FROM Vehiculo 
+    WHERE tipo_vehiculo LIKE '%Camion%'
+11 11 2017 18:11:24 SELECT idVehiculo IdVehiculo, marca Marca, patente Patente 
+    FROM Vehiculo 
+    WHERE tipo_vehiculo LIKE '%Acoplado%'
+11 11 2017 18:11:28 INSERT INTO Vehiculo_Chofer_viaje(fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT)
+        VALUES('', '', '', '', '')
+11 11 2017 18:11:28 SELECT V.idViaje VViaje, V.fkPresupuestoV fkPresupuesto, V.fecha Fecha, V.origen Origen, V.destino Destino, V.tipo_carga Carga, V.tiempo_total Tiempo, V.combustible_total Combustible, V.km_total Km
+        FROM Viaje V
+        ORDER BY V.idViaje
+        LIMIT 0, 6
+    
+11 11 2017 18:11:28 SELECT T.fkViajeT TViaje
+        FROM Vehiculo_Chofer_viaje T
+        ORDER BY T.fkViajeT
+    
+11 11 2017 18:11:28 SELECT fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT
+                                 FROM Vehiculo_Chofer_viaje
+11 11 2017 18:11:28 SELECT V.fecha fecha, V.origen origen, V.destino destino, V.tipo_carga carga, V.tiempo_total tiempo, V.combustible_total combustible, V.km_total km
+                                 FROM Vehiculo_Chofer_viaje T join viaje V on T.fkViajeT = V.idViaje
+                                 WHERE T.fkAcompanianteT = '2' || T.fkChoferT = '2'
+11 11 2017 18:11:28 SELECT *
+        FROM viaje
+    
+11 11 2017 18:11:28 SELECT *
+        FROM Viaje
+    
+11 11 2017 18:11:28 SELECT V.fecha qfecha, V.destino qdestino, V.tipo_carga qcarga, U.nombre qprimer, U2.nombre qsegundo, C.patente qcamion, C.km qkm, A.patente qacoplado
+    FROM Vehiculo_Chofer_viaje T 
+    JOIN Viaje V ON T.fkViajeT = V.idViaje 
+    JOIN Usuario U ON T.fkChoferT = U.idUsuario 
+    JOIN Usuario U2 ON T.fkAcompanianteT = U2.idUsuario 
+    JOIN Vehiculo C ON T.fkCamionT = C.idVehiculo 
+    JOIN Vehiculo A ON T.fkAcopladoT = A.idVehiculo 
+    WHERE T.fkViajeT = '5'
+11 11 2017 18:11:28 SELECT V.fecha qfecha, V.destino qdestino, V.tipo_carga qcarga, U.nombre qprimer, C.patente qcamion, C.km qkm
+        FROM Vehiculo_Chofer_viaje T 
+        JOIN Viaje V ON T.fkVIajeT = V.idViaje 
+        JOIN Usuario U ON T.fkChoferT = U.idUsuario 
+        JOIN Vehiculo C ON T.fkCamionT = C.idVehiculo 
+        WHERE T.fkViajeT = '5'
+11 11 2017 19:11:48 SELECT fkViajeT, fkChoferT, fkAcompanianteT
+            FROM Vehiculo_chofer_viaje 
+            WHERE fkViajeT = '1'
+11 11 2017 19:11:48 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 19:11:48 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '2'
+            OR T.fkAcompanianteT = '2'
+        ORDER BY Viaje
+11 11 2017 19:11:21 SELECT fkViajeT, fkChoferT, fkAcompanianteT
+            FROM Vehiculo_chofer_viaje 
+            WHERE fkViajeT = '3'
+11 11 2017 19:11:25 SELECT fkViajeT, fkChoferT, fkAcompanianteT
+            FROM Vehiculo_chofer_viaje 
+            WHERE fkViajeT = '1'
+11 11 2017 19:11:25 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 19:11:25 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '2'
+            OR T.fkAcompanianteT = '2'
+        ORDER BY Viaje
+11 11 2017 19:11:39 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 19:11:39 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '2'
+            OR T.fkAcompanianteT = '2'
+        ORDER BY Viaje
+11 11 2017 19:11:42 SELECT fkViajeT, fkChoferT, fkAcompanianteT
+            FROM Vehiculo_chofer_viaje 
+            WHERE fkViajeT = '1'
+11 11 2017 19:11:42 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 19:11:42 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '1'
+            OR T.fkAcompanianteT = '1'
+        ORDER BY Viaje
+11 11 2017 19:11:57 SELECT fkViajeT, fkChoferT, fkAcompanianteT
+            FROM Vehiculo_chofer_viaje 
+            WHERE fkViajeT = '2'
+11 11 2017 19:11:57 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 19:11:57 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '1'
+            OR T.fkAcompanianteT = '1'
+        ORDER BY Viaje
+11 11 2017 19:11:54 SELECT fkViajeT, fkChoferT, fkAcompanianteT
+            FROM Vehiculo_chofer_viaje 
+            WHERE fkViajeT = '5'
+11 11 2017 19:11:15 SELECT fkViajeT, fkChoferT, fkAcompanianteT
+            FROM Vehiculo_chofer_viaje 
+            WHERE fkViajeT = '1'
+11 11 2017 19:11:15 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 19:11:15 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '1'
+            OR T.fkAcompanianteT = '1'
+        ORDER BY Viaje
+11 11 2017 19:11:37 SELECT fkViajeT, fkChoferT, fkAcompanianteT
+            FROM Vehiculo_chofer_viaje 
+            WHERE fkViajeT = '1'
+11 11 2017 19:11:37 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 19:11:37 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '1'
+            OR T.fkAcompanianteT = '1'
+        ORDER BY Viaje
+11 11 2017 19:11:49 SELECT fkViajeT, fkChoferT, fkAcompanianteT
+            FROM Vehiculo_chofer_viaje 
+            WHERE fkViajeT = '3'
+11 11 2017 19:11:49 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 19:11:49 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '1'
+            OR T.fkAcompanianteT = '1'
+        ORDER BY Viaje
+11 11 2017 19:11:16 SELECT fkViajeT, fkChoferT, fkAcompanianteT
+            FROM Vehiculo_chofer_viaje 
+            WHERE fkViajeT = '3'
+11 11 2017 19:11:16 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 19:11:16 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '1'
+            OR T.fkAcompanianteT = '1'
+        ORDER BY Viaje
+11 11 2017 19:11:30 SELECT fkViajeT, fkChoferT, fkAcompanianteT
+            FROM Vehiculo_chofer_viaje 
+            WHERE fkViajeT = '3'
+11 11 2017 19:11:33 SELECT fkViajeT, fkChoferT, fkAcompanianteT
+            FROM Vehiculo_chofer_viaje 
+            WHERE fkViajeT = '5'
+11 11 2017 19:11:11 SELECT fkViajeT, fkChoferT, fkAcompanianteT
+            FROM Vehiculo_chofer_viaje 
+            WHERE fkViajeT = '5'
+11 11 2017 19:11:11 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 19:11:11 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '1'
+            OR T.fkAcompanianteT = '1'
+        ORDER BY Viaje
+11 11 2017 19:11:57 SELECT fkViajeT, fkChoferT, fkAcompanianteT
+            FROM Vehiculo_chofer_viaje 
+            WHERE fkViajeT = '2'
+11 11 2017 19:11:57 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 19:11:57 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '2'
+            OR T.fkAcompanianteT = '2'
+        ORDER BY Viaje
+11 11 2017 20:11:07 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 20:11:07 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '2'
+            OR T.fkAcompanianteT = '2'
+        ORDER BY Viaje
