@@ -75,6 +75,7 @@
                                 </form>
                             </div>
                             <br>
+                            <?php if(!empty($buscar)) { ?>
                             <div class="table-responsive container-fluid">
                                 <table class="table table-condensed table-bordered table-hover">
                                     <thead>
@@ -101,6 +102,7 @@
                                     </tbody>
                                 </table>
                             </div>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
