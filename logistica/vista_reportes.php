@@ -59,7 +59,7 @@
                                                         <?php }
                                                         } ?>
                                                 </select>
-                                                <input type="submit" value="fkViajeR" class="btn btn-info">
+                                                <input type="submit" value="Buscar" class="btn btn-info">
                                             </div>
                                         </div>
                                     </form>
@@ -73,11 +73,16 @@
                                                 <th class="text-center">fkViajeR</th>
 -->
                                                 <th class="text-center">Tiempo</th>
+                                                <th class="text-center">Coordenadas</th>
+<!--
                                                 <th class="text-center">Latitud</th>
                                                 <th class="text-center">Longitud</th>
+-->
                                                 <th class="text-center">Motivo</th>
                                                 <th class="text-center">Descripci&oacute;n</th>
+<!--
                                                 <th class="text-center">Operaci&oacute;n</th>
+-->
                                             </thead>
                                             <?php if(isset($datos)) {
                                                 foreach($datos as $td) { ?>
@@ -94,17 +99,30 @@
                                                         <?php echo $td['tiempo']; ?>
                                                     </td>
                                                     <td>
+                                                        <a href="https://www.google.com/maps/?q=<?php echo ($td['longitud'].','.$td['latitud']); ?>" target="_blank">
+                                                            <?php 
+                                                                echo ('('.substr($td['longitud'],0,6).' ; '.substr($td['latitud'],0,6).')'); 
+                                                            ?>
+                                                            <?php 
+                                                                //echo ('('.substr($td['longitud'],1,5).' S;'.substr($td['latitud'],1,5).' O)'); 
+                                                            ?>
+                                                        </a>
+                                                    </td>
+<!--
+                                                    <td>
                                                         <?php echo $td['latitud']; ?>
                                                     </td>
                                                     <td>
                                                         <?php echo $td['longitud']; ?>
                                                     </td>
+-->
                                                     <td>
                                                         <?php echo $td['motivo']; ?>
                                                     </td>
                                                     <td>
                                                         <?php echo $td['descripcion']; ?>
                                                     </td>
+<!--
                                                     <td class="text-center">
                                                         <a href="#<?php echo " ";?>">
                                                             <button class="btn btn-info">Editar</button>
@@ -113,6 +131,7 @@
                                                             <button class="btn btn-danger">Eliminar</button>
                                                         </a>
                                                     </td>
+-->
                                                 </tr>
                                             <?php }} ?>
                                         </table>
@@ -120,23 +139,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col">
-                                <?php
-                                /*
-                                for($i = 1; $i <= $total_paginas; $i++){
-                                    echo "<ul class='pagination'>
-                                    <li><a href='?pagina=".$i."'>".$i."</a></li>
-                                    </ul>";}
-                                */
-                                ?>
-                            </div>
-                        </div>
+                        <?php if($_SESSION['rol'] == 'Chofer') { ?>
                         <div class="row">
                             <div class="col">
                                 <a href="registrarReporte.php" class="btn btn-primary">Nuevo Reporte</a>
                             </div>
                         </div>
+                        <?php } ?>
                         <div class="row">
                             <a href="#" target="_blank">
                                 <button class="btn btn-link" target="_blank">Exportar a PDF</button>

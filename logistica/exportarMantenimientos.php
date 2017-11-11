@@ -1,8 +1,9 @@
 <?php
-
     require_once($_SERVER['DOCUMENT_ROOT'].'/resources/db/control.php');
     include($_SERVER['DOCUMENT_ROOT'].'/resources/templates/pdfPageL.php');
-   
+    include($_SERVER['DOCUMENT_ROOT'].'/resources/log/creaLog.php');
+
+
     $obj = new controlDB();
     $datos=$obj->consultar("SELECT U.nombre Mecanico, V.patente Patente, V.km Km, M.fecha_entrada Ingreso, M.fecha_salida Salida, M.repuestos Repuestos, M.externo Externo, M.costo Costo
         FROM Mantenimiento M 

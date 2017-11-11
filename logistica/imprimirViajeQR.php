@@ -1,8 +1,8 @@
 <?php
-
     require_once($_SERVER['DOCUMENT_ROOT'].'/resources/db/control.php');
     include($_SERVER['DOCUMENT_ROOT'].'/resources/templates/pdfPageP.php');
     include($_SERVER['DOCUMENT_ROOT'].'/resources/library/qr/qrlib.php');
+    include($_SERVER['DOCUMENT_ROOT'].'/resources/log/creaLog.php');
 
     $idViaje = $_REQUEST['id'];
     $obj = new controlDB();

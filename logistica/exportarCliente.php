@@ -1,7 +1,9 @@
 <?php
     require_once($_SERVER['DOCUMENT_ROOT'].'/resources/db/control.php');
     include($_SERVER['DOCUMENT_ROOT'].'/resources/templates/pdfPageL.php');
+    include($_SERVER['DOCUMENT_ROOT'].'/resources/log/creaLog.php');
    
+
     $obj = new controlDB();
     $datos = $obj -> consultar("SELECT * 
         FROM Cliente");

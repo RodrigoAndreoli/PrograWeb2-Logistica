@@ -1,9 +1,10 @@
 <?php
     require_once($_SERVER['DOCUMENT_ROOT'].'/resources/db/control.php');
     include($_SERVER['DOCUMENT_ROOT'].'/resources/templates/pdfPageP.php');
+    include($_SERVER['DOCUMENT_ROOT'].'/resources/log/creaLog.php');
    
     $obj = new controlDB();
-    $datos=$obj->consultar("SELECT * 
+    $datos=$obj -> consultar("SELECT * 
         FROM Usuario
         ORDER BY rol");
     

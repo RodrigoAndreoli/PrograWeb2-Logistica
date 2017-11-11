@@ -26,10 +26,8 @@
         /*----------------------CONSULTAR-------------------------*/
          //$sql va ser el select, los select
         function consultar($sql){
-            
-			
-			$log = new creaLog();
-			$log->escribir($sql);//conexion,consulta
+//			$log = new creaLog();
+//			$log->escribir($sql);//conexion,consulta
             $result=mysqli_query($this->con,$sql);
             //array vacio
             $data=null;
