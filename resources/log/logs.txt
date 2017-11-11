@@ -6524,6 +6524,7 @@
 11 11 2017 08:11:31 SELECT *
         FROM Viaje
     
+<<<<<<< HEAD
 11 11 2017 14:11:09 SELECT V.idViaje VViaje, V.fkPresupuestoV fkPresupuesto, V.fecha Fecha, V.origen Origen, V.destino Destino, V.tipo_carga Carga, V.tiempo_total Tiempo, V.combustible_total Combustible, V.km_total Km
         FROM Viaje V
         ORDER BY V.idViaje
@@ -7609,10 +7610,76 @@
             OR T.fkAcompanianteT = '1'
         ORDER BY Viaje
 11 11 2017 17:11:33 SELECT *
+=======
+11 11 2017 13:11:33 SELECT *
+            FROM Usuario
+            ORDER BY nombre
+            LIMIT 0, 6
+11 11 2017 13:11:33 SELECT *
+            FROM Usuario
+11 11 2017 13:11:33 SELECT *
+            FROM Usuario
+11 11 2017 13:11:36 SELECT *
+            FROM Usuario
+            ORDER BY nombre
+            LIMIT 6, 6
+11 11 2017 13:11:36 SELECT *
+            FROM Usuario
+11 11 2017 13:11:36 SELECT *
+            FROM Usuario
+11 11 2017 13:11:37 SELECT *
+            FROM Usuario
+            ORDER BY nombre
+            LIMIT 12, 6
+11 11 2017 13:11:37 SELECT *
+            FROM Usuario
+11 11 2017 13:11:37 SELECT *
+            FROM Usuario
+11 11 2017 13:11:39 SELECT *
+            FROM Usuario
+            ORDER BY nombre
+            LIMIT 0, 6
+11 11 2017 13:11:39 SELECT *
+            FROM Usuario
+11 11 2017 13:11:39 SELECT *
+            FROM Usuario
+11 11 2017 13:11:42 SELECT *
+            FROM Usuario
+            ORDER BY nombre
+            LIMIT 6, 6
+11 11 2017 13:11:43 SELECT *
+            FROM Usuario
+11 11 2017 13:11:43 SELECT *
+            FROM Usuario
+11 11 2017 13:11:45 SELECT *
+            FROM Usuario
+            ORDER BY nombre
+            LIMIT 0, 6
+11 11 2017 13:11:45 SELECT *
+            FROM Usuario
+11 11 2017 13:11:45 SELECT *
+            FROM Usuario
+11 11 2017 17:11:45 SELECT * 
+        FROM Usuario
+        ORDER BY rol
+11 11 2017 13:11:25 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 13:11:25 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
+        WHERE T.fkChoferT = '2'
+            OR T.fkAcompanianteT = '2'
+        ORDER BY Viaje
+11 11 2017 13:11:30 SELECT *
+>>>>>>> a74c5946033b208c90893238d114943dd28f4c4d
             FROM Reporte
             WHERE fkViajeR LIKE '%3%'
             ORDER BY tiempo
             
+<<<<<<< HEAD
 11 11 2017 17:11:33 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
         FROM Reporte R
         JOIN Viaje V ON R.fkViajeR = V.idViaje
@@ -7937,17 +8004,29 @@
         JOIN Viaje V ON R.fkViajeR = V.idViaje
         ORDER BY Viaje
 11 11 2017 18:11:38 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+=======
+11 11 2017 13:11:30 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 13:11:30 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+>>>>>>> a74c5946033b208c90893238d114943dd28f4c4d
         FROM Reporte R
         JOIN Viaje V ON R.fkViajeR = V.idViaje
         JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
         WHERE T.fkChoferT = '2'
             OR T.fkAcompanianteT = '2'
         ORDER BY Viaje
+<<<<<<< HEAD
 11 11 2017 18:11:47 SELECT *
+=======
+11 11 2017 13:11:30 SELECT *
+>>>>>>> a74c5946033b208c90893238d114943dd28f4c4d
             FROM Reporte
             WHERE fkViajeR LIKE '%3%'
             ORDER BY tiempo
             
+<<<<<<< HEAD
 11 11 2017 18:11:48 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
         FROM Reporte R
         JOIN Viaje V ON R.fkViajeR = V.idViaje
@@ -8136,12 +8215,20 @@
         JOIN Viaje V ON R.fkViajeR = V.idViaje
         ORDER BY Viaje
 11 11 2017 19:11:39 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+=======
+11 11 2017 13:11:30 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 13:11:30 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+>>>>>>> a74c5946033b208c90893238d114943dd28f4c4d
         FROM Reporte R
         JOIN Viaje V ON R.fkViajeR = V.idViaje
         JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
         WHERE T.fkChoferT = '2'
             OR T.fkAcompanianteT = '2'
         ORDER BY Viaje
+<<<<<<< HEAD
 11 11 2017 19:11:42 SELECT fkViajeT, fkChoferT, fkAcompanianteT
             FROM Vehiculo_chofer_viaje 
             WHERE fkViajeT = '1'
@@ -8257,17 +8344,42 @@
         JOIN Viaje V ON R.fkViajeR = V.idViaje
         ORDER BY Viaje
 11 11 2017 19:11:57 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+=======
+11 11 2017 13:11:07 SELECT *
+            FROM Reporte
+            WHERE fkViajeR LIKE '%3%'
+            ORDER BY tiempo
+            
+11 11 2017 13:11:07 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 13:11:07 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+>>>>>>> a74c5946033b208c90893238d114943dd28f4c4d
         FROM Reporte R
         JOIN Viaje V ON R.fkViajeR = V.idViaje
         JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
         WHERE T.fkChoferT = '2'
             OR T.fkAcompanianteT = '2'
         ORDER BY Viaje
+<<<<<<< HEAD
 11 11 2017 20:11:07 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
         FROM Reporte R
         JOIN Viaje V ON R.fkViajeR = V.idViaje
         ORDER BY Viaje
 11 11 2017 20:11:07 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+=======
+11 11 2017 13:11:59 SELECT *
+            FROM Reporte
+            WHERE fkViajeR LIKE '%3%'
+            ORDER BY tiempo
+            
+11 11 2017 13:11:59 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+        FROM Reporte R
+        JOIN Viaje V ON R.fkViajeR = V.idViaje
+        ORDER BY Viaje
+11 11 2017 13:11:59 SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha
+>>>>>>> a74c5946033b208c90893238d114943dd28f4c4d
         FROM Reporte R
         JOIN Viaje V ON R.fkViajeR = V.idViaje
         JOIN Vehiculo_chofer_viaje T ON V.idViaje = T.fkViajeT
