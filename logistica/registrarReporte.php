@@ -55,7 +55,7 @@
             document.getElementById("latitud").setAttribute("value",longitud);
 
             var centro = new google.maps.LatLng(latitud,longitud); 
-            var propiedades = { zoom: 15, center: centro, mapTypeId: google.maps.MapTypeId.ROADMAP }; 
+            var propiedades = { zoom: 15, center: centro, mapTypeId: google.maps.MapTypeId.ROADMAP, disableDefaultUI: true, fullscreenControl: true, zoomControl: true }; 
             var map = new google.maps.Map(contenedor, propiedades); 
             var marcador = new google.maps.Marker({ position: centro, map: map, title: "Tu posicion actual" }); 
         } 

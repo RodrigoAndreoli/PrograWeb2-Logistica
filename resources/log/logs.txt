@@ -8386,3 +8386,8 @@
         WHERE T.fkChoferT = '2'
             OR T.fkAcompanianteT = '2'
         ORDER BY Viaje
+11 11 2017 20:11:13 INSERT INTO Viaje(fkPresupuestoV, fecha, origen, destino, tipo_carga)
+        VALUES('8', '2017-11-11 09:00:00', 'Buenos Aires', 'Bariloche', 'Peligrosa')
+11 11 2017 20:11:13 UPDATE presupuesto
+            SET aceptado = 'si'
+            WHERE idPresupuesto = '8'

@@ -7,8 +7,9 @@
     if(empty($buscar)){
         $buscar="";
     } else {
-        $datos = $obj -> consultar("SELECT *
-            FROM Reporte
+        $datos = $obj -> consultar("SELECT U.nombre Nombre, R.tiempo Tiempo, R.longitud Longitud, R.latitud Latitud, R.motivo Motivo, R.descripcion Descripcion, R.km Kilometros, R.combustible Combustible
+            FROM Reporte R
+            JOIN Usuario U ON R.fkChoferR = U.idUsuario
             WHERE fkViajeR LIKE '%".$buscar."%'
             ORDER BY tiempo");
         $titulo = $obj -> consultar("SELECT DISTINCT R.fkViajeR Viaje, V.origen Origen, V.destino Destino, V.fecha Fecha

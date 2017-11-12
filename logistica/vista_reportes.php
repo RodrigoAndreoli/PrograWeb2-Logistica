@@ -72,7 +72,7 @@
                                         <table class="table table-striped table-bordered table-condensed table-hover">
                                             <thead>
                                                 <tr style="background-color:#2C3E50; color:white;">
-                                                    <th colspan="4" class="text-center">
+                                                    <th colspan="8" class="text-center">
                                                     Viaje <?php foreach($titulo as $t) {
                                                                echo ($t['Viaje'].': '.$t['Fecha'].'<br>Desde: '.$t['Origen'].'<br>Hasta: '.$t['Destino']);
                                                            } ?>
@@ -83,7 +83,8 @@
                                                     <th class="text-center">idReporte</th>
                                                     <th class="text-center">fkViajeR</th>
 -->
-
+                                                    <th class="text-center">Nro.</th>
+                                                    <th class="text-center">Chofer</th>
                                                     <th class="text-center">Tiempo</th>
                                                     <th class="text-center">Coordenadas</th>
 <!--
@@ -92,13 +93,17 @@
 -->
                                                     <th class="text-center">Motivo</th>
                                                     <th class="text-center">Descripci&oacute;n</th>
+                                                    <th class="text-center">Kilometros</th>
+                                                    <th class="text-center">Combustible</th>
 <!--
                                                     <th class="text-center">Operaci&oacute;n</th>
 -->
                                                 </tr>
                                             </thead>
                                             <?php if(isset($datos)) {
-                                                foreach($datos as $td) { ?>
+                                                $x = 0;
+                                                foreach($datos as $td) {
+                                                    $x++; ?>
                                                 <tr>
 <!--
                                                     <td>
@@ -109,12 +114,18 @@
                                                     </td>
 -->
                                                     <td>
-                                                        <?php echo $td['tiempo']; ?>
+                                                        <?php echo $x; ?>
+                                                    </td>
+                                                    <td>
+                                                        <?php echo $td['Nombre']; ?>
+                                                    </td>
+                                                    <td>
+                                                        <?php echo $td['Tiempo']; ?>
                                                     </td>
                                                     <td>
                                                         <a href="https://www.google.com/maps/?q=<?php echo ($td['longitud'].','.$td['latitud']); ?>" target="_blank">
                                                             <?php 
-                                                                echo ('('.substr($td['longitud'],0,6).' ; '.substr($td['latitud'],0,6).')'); 
+                                                                echo ('('.substr($td['Longitud'],0,6).' ; '.substr($td['Latitud'],0,6).')'); 
                                                             ?>
                                                             <?php 
                                                                 //echo ('('.substr($td['longitud'],1,5).' S;'.substr($td['latitud'],1,5).' O)'); 
@@ -123,17 +134,23 @@
                                                     </td>
 <!--
                                                     <td>
-                                                        <?php echo $td['latitud']; ?>
+                                                        <?php echo $td['Latitud']; ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $td['longitud']; ?>
+                                                        <?php echo $td['Longitud']; ?>
                                                     </td>
 -->
                                                     <td>
-                                                        <?php echo $td['motivo']; ?>
+                                                        <?php echo $td['Motivo']; ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $td['descripcion']; ?>
+                                                        <?php echo $td['Descripcion']; ?>
+                                                    </td>
+                                                    <td>
+                                                        <?php echo $td['Kilometros']; ?>
+                                                    </td>
+                                                    <td>
+                                                        <?php echo ('$ '.$td['Combustible']); ?>
                                                     </td>
 <!--
                                                     <td class="text-center">
@@ -146,57 +163,51 @@
                                                     </td>
 -->
                                                 </tr>
-                                                    
                                             <?php }} ?>
                                         </table>
                                     </div>
                                 </div>
-                                
                                 <div class="row">
-                                <div id="map" style="height: 400px;" class="col-md-6 col-md-offset-3"></div>
-                                <script>
-                                    var locations = [
-                                        ['Bondi Beach', -33.890542, 151.274856, 4],
-                                        ['Coogee Beach', -33.923036, 151.259052, 5],
-                                        ['Cronulla Beach', -34.028249, 151.157507, 3],
-                                        ['Manly Beach', -33.80010128657071, 151.28747820854187, 2],
-                                        ['Maroubra Beach', -33.950198, 151.259302, 1]
-                                    ];
-                                    var map = new google.maps.Map(document.getElementById('map'), {
-                                    zoom: 10,
-                                    center: new google.maps.LatLng(-33.92, 151.25),
-                                    mapTypeId: google.maps.MapTypeId.ROADMAP
-                                    });
-                                    var infowindow = new google.maps.InfoWindow();
-                                    var marker, i;
-                                    for (i = 0; i < locations.length; i++) {  
-                                        marker = new google.maps.Marker({
-                                            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-                                            map: map
+                                    <div id="map" style="height: 400px;" class="col-md-6 col-md-offset-3"></div>
+                                    <script>
+                                        var locations = [
+                                            <?php
+                                                $y = 0;
+                                                foreach($datos as $td) {
+                                                    $y++;
+                                                    echo('["Nro. '.$y.'", '.$td['Longitud'].', '.$td['Latitud'].', '.$y.'],');
+                                                } ?>
+                                        ];
+                                        var map = new google.maps.Map(document.getElementById('map'), {
+                                        zoom: 5,
+                                        center: new google.maps.LatLng(-35.095385, -65.104140),
+                                        mapTypeId: google.maps.MapTypeId.ROADMAP,
+                                        disableDefaultUI: true,
+                                        fullscreenControl: true,
+                                        zoomControl: true
                                         });
-                                        google.maps.event.addListener(marker, 'click', (function(marker, i) {
-                                            return function() {
-                                                infowindow.setContent(locations[i][0]);
-                                                infowindow.open(map, marker);
-                                            }
-                                        })(marker, i));
-                                    }
-                                </script>
-                                    </div>
-                                
+                                        var infowindow = new google.maps.InfoWindow();
+                                        var marker, i;
+                                        for (i = 0; i < locations.length; i++) {  
+                                            marker = new google.maps.Marker({
+                                                position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                                                map: map
+                                            });
+                                            google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                                                return function() {
+                                                    infowindow.setContent(locations[i][0]);
+                                                    infowindow.open(map, marker);
+                                                }
+                                            })(marker, i));
+                                        }
+                                    </script>
+                                </div>
                                 <?php } ?>
                             </div>
                         </div>
-                        <?php if($_SESSION['rol'] == 'Chofer') { ?>
+                        <?php if(isset($datos)) { ?>
                         <div class="row">
-                            <div class="col">
-                                <a href="registrarReporte.php" class="btn btn-primary">Nuevo Reporte</a>
-                            </div>
-                        </div>
-                        <?php }
-                            if(isset($datos)) { ?>
-                        <div class="row">
-                            <a href="#" target="_blank">
+                            <a href="exportarReporte.php?id=<?php echo $buscar; ?>" target="_blank">
                                 <button class="btn btn-link" target="_blank">Exportar a PDF</button>
                             </a>
                         </div>
