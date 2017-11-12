@@ -63,4 +63,5 @@
     $obj -> insertar($sql);
     header("Location: vista_usuarios.php");
 
+
 ?>

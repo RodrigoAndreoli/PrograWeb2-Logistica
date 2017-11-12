@@ -43,7 +43,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col">
-                                    <form action="bdUser.php" method="post" class="form-horizontal" onsubmit="return validar();>
+                                    <form action="bdUser.php" method="post" class="form-horizontal" onsubmit="return validar();">
                                         <table class="table table-striped  table-condensed table-hover">
                                             <?php foreach($user as $users){ ?>
                                             <div class="form-group">
