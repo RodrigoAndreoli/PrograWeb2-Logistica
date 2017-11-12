@@ -158,7 +158,7 @@ INSERT INTO Vehiculo (tipo_vehiculo, patente, marca, modelo, anio, nro_chasis, n
 
 INSERT INTO Mantenimiento (fkVehiculoM, fkMecanicoM, fecha_entrada, fecha_salida, costo, externo, cambio_aceite, filtro_aire, direccion, repuestos) VALUES
 (1, 3, '2017-01-15', '2017-06-15', '80000.00', 'No', 'Si', 'Si', 'Si', 'Faro de Giro, paragolpes, amortiguador'),
-(1, 3, '2017-08-11', '2017-08-15', '1000.00', 'No', 'Si', 'Si', 'no', 'Cubiertas, electroinyector'),
+(1, 3, '2017-08-11', '2017-08-15', '1000.00', 'No', 'Si', 'Si', 'si', 'Cubiertas, electroinyector'),
 (4, 8, '2017-07-10', '2017-07-15', '8000.00', 'Si', 'No', 'No', 'No', 'Juego de Espejos, burro de arranque.'),
 (6, 8, '2016-04-15', '2016-07-15', '16000.00', 'Si', 'Si', 'No', 'No', 'Embrague ventilador'),
 (2, 12, '2016-04-15', '2016-07-16', '80000.00', 'No', 'No', 'No', 'No', 'Eje Acople, corona');
