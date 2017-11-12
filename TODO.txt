@@ -18,20 +18,19 @@
 
 + Revisar los permisos de accesos segun correspondan
 
++ Revisar los select, insert, delete y updates, tira warnings por campos que no se graban ( usuario ya esta hecho)
+
++ Me falta seguir modificando todos los abm con sus validaciones y ajustarlos.
+
+############### HECHO ###############
+
++ Tira error generar pdf en vista viajes
+
 + Ejecutar el login con redireccion cuando se entra por QR
 
 + HACER vista_reportes.php
     El admin tiene que poder ver en un select todos los viajes y los reportes asociados.
     El chofer tiene que poder ver en un select todos SUS viajes y los reportes asociados.
-
-+ Revisar los select, insert, delete y updates, tira warnings por campos que no se graban ( usuario ya esta hecho)
-
-+ Me falta seguir modificando todos los abm con sus validaciones y ajustarlos.
-
-+ Tira error generar pdf en vista viajes
-
-
-############### HECHO ###############
 	
 + Arreglar PDF Presupuestos
 
