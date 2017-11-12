@@ -1,9 +1,9 @@
 <?php
     require_once($_SERVER['DOCUMENT_ROOT'].'/resources/db/conexion.php');
     
-    $sql="SELECT COUNT(*) Reparaciones, SUM(km_unidad) Kilometros 
-        FROM Mantenimiento 
-        GROUP BY idVehiculo";
+    $sql="SELECT COUNT(*) Reparaciones, SUM(v.km) Kilometros 
+    FROM Mantenimiento m join Vehiculo v on v.idVehiculo=m.fkVehiculoM
+    GROUP BY v.idVehiculo;";
 
     $resultado=$conexion->query($sql);
    // print_r($resultado);

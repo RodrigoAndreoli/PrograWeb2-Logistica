@@ -1,9 +1,9 @@
 <?php
     require_once($_SERVER['DOCUMENT_ROOT'].'/resources/db/conexion.php');
     
-    $sql="SELECT M.idVehiculo IdVehiculo, V.patente Patente, SUM(M.costo) Costo
+    $sql="SELECT M.fkVehiculoM IdVehiculo, V.patente Patente, SUM(M.costo) Costo
             FROM Mantenimiento M
-            JOIN Vehiculo V ON V.idVehiculo = M.idVehiculo
+            JOIN Vehiculo V ON V.idVehiculo = M.fkVehiculoM
             GROUP BY IdVehiculo";
 
     $resultado=$conexion->query($sql);

@@ -1,10 +1,10 @@
 <?php
     require_once($_SERVER['DOCUMENT_ROOT'].'/resources/db/conexion.php');
     
-    $sql="SELECT SUM(DATEDIFF(M.fecha_salida, M.fecha_entrada)) Dias, M.idVehiculo IdVehiculo, V.patente Patente
+    $sql="SELECT SUM(DATEDIFF(M.fecha_salida, M.fecha_entrada)) Dias, M.fkVehiculoM IdVehiculo, V.patente Patente
         FROM Mantenimiento M
-        JOIN Vehiculo V ON V.idVehiculo = M.idVehiculo
-        GROUP BY IdVehiculo 
+        JOIN Vehiculo V ON V.idVehiculo = M.fkVehiculoM
+        GROUP BY m.fkVehiculoM
         ORDER BY Dias";
 
     $resultado=$conexion->query($sql);
