@@ -2,12 +2,14 @@
 <html lang="es">
 
 <head>
-    <title>Usuarios</title>
+    <title>Reportes</title>
     <?php 
         require_once($_SERVER['DOCUMENT_ROOT'].'/resources/config.php');
         $miSession = new Sesion();
         $miSession -> iniciarSesion();
-//      $miSession -> permisos();
+        if($_SESSION['rol']=='Mecanico'){
+            $miSession -> permisos();
+        }  
         $obj = new controlDB();
         include $LIBRARY_PATH.'/reportes_pag.php';
     ?>
