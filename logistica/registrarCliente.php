@@ -37,44 +37,55 @@
                             </div>
                             <form action="bdCliente.php" method="post" name="form" id="form" onsubmit="return validar()">
                                 <table class="table">
-                                    <div class="col-xs-6">
-                                        <div class="form-group">
-                                            <label for="cuit">Cuit:</label>
-                                            <input type="text" class="form-control" name="cuit" id="cuit" placeholder="Cuit...">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="razon">Raz&oacute;n Social:</label>
-                                            <input type="text" class="form-control" name="razon" id="razon" placeholder="Raz&oacute;n social...">
-                                        </div>
+                                    <div class="col-xs-12">
+										<div class="col-xs-2">
+											<div class="form-group">
+												<label for="cuit">Cuit:</label>
+												<input type="text" class="form-control" name="cuit" id="cuit" placeholder="Cuit...">
+											</div>
+										</div>
+										<div class="col-xs-8">
+											<div class="form-group">
+												<label for="razon">Raz&oacute;n Social:</label>
+												<input type="text" class="form-control" name="razon" id="razon" placeholder="Raz&oacute;n social...">
+											</div>
+										</div>
+										<div class="col-xs-2">
+											<div class="form-group">
+												<label for="">Tel&eacute;fono:</label>
+												<input type="text" class="form-control" name="telefono" id="telefono" placeholder="Tel&eacute;fono...">
+											</div>
+										</div>
+									
+									</div>
+                                   
+                                    <div class="col-xs-12">
+										<div class="col-xs-4">
+											<div class="form-group">
+												<label for="">Calle:</label>
+												<input type="text" class="form-control" name="dom_calle" id="dom_calle" placeholder="Calle...">
+											</div>
+										</div>
+										<div class="col-xs-3">
+											<div class="form-group">
+												<label for="">N&uacute;mero:</label>
+												<input type="text" class="form-control" name="dom_numero" id="dom_numero" placeholder="N&uacute;mero...">
+											</div>
+										</div>
+										<div class="col-xs-3">
+											<div class="form-group">
+												<label for="">Piso:</label>
+												<input type="text" class="form-control" name="dom_piso" id="dom_piso" placeholder="Piso..." onblur="return validar()">
+											</div>
+										</div>
+										<div class="col-xs-2">
+											<div class="form-group">
+												<label for="">C&oacute;d. postal:</label>
+												<input type="text" class="form-control" name="dom_cp" id="dom_cp" placeholder="C&oacute;d. postal...">
+											</div>
+										</div>
                                     </div>
-                                    <div class="col-xs-6">
-                                        <div class="form-group">
-                                            <label for="">Tel&eacute;fono:</label>
-                                            <input type="text" class="form-control" name="telefono" id="telefono" placeholder="Tel&eacute;fono...">
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6">
-                                        <div class="form-group">
-                                            <label for="">C&oacute;d. postal:</label>
-                                            <input type="text" class="form-control" name="dom_cp" id="dom_cp" placeholder="C&oacute;d. postal...">
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6">
-                                        <div class="form-group">
-                                            <label for="">Calle:</label>
-                                            <input type="text" class="form-control" name="dom_calle" id="dom_calle" placeholder="Calle...">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="">N&uacute;mero:</label>
-                                            <input type="text" class="form-control" name="dom_numero" id="dom_numero" placeholder="N&uacute;mero...">
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6">
-                                        <div class="form-group">
-                                            <label for="">Piso:</label>
-                                            <input type="text" class="form-control" name="dom_piso" id="dom_piso" placeholder="Piso..." onblur="return validar()">
-                                        </div>
-                                    </div>
+									
                                     <div id="mensaje" class="alert alert-danger alert-dismissable" style="clear: both; display: none;"></div>
                                     <div class="form-group">
                                         <a href="vista_clientes.php" class="btn btn-danger btn-lg">Volver</a>

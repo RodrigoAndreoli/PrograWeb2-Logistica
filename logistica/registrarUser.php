@@ -63,24 +63,29 @@
                                         <input type="text" class="form-control" name="nombre" id="nombre"  placeholder="Nombre..." tabindex="4">
                                     </div>
                                 </div>
-                                <div class="col-xs-6">
-                                    <div class="form-group">
-                                        <label for="">Fecha de nacimiento:</label>
-                                        <input type="date" class="form-control" name="fecha_nacimiento" id="fecha_nacimiento"  placeholder="2017-07-28" tabindex="5" onblur="return validar()">
-                                    </div>
-                                </div>
-                                <div class="col-xs-6" style="display:none" id="mostrarLicencia">
-                                    <div class="form-group">
-                                        <label for="">Tipo de Licencia:</label>
-                                        <select class="form-control" id="tipo_licencia" name="tipo_licencia" tabindex="6">
-                                            <option value="" selected disabled></option>
-                                            <option value="C">C</option>
-                                            <option value="D1">D1</option>
-                                            <option value="E1">E1</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div id="mensaje" class="alert alert-danger alert-dismissable" style="clear: both; display: none;"></div>
+                                <div class="col-lg-12" style="padding:0";>
+									<div class="col-xs-6">
+										<div class="form-group">
+											<label for="">Fecha de nacimiento:</label>
+											<input type="date" class="form-control" name="fecha_nacimiento" id="fecha_nacimiento"  placeholder="2017-07-28" tabindex="5" onblur="return validar()">
+										</div>
+									</div>
+									
+									<div class="col-xs-6 text-center" style="display:none" id="mostrarLicencia">
+										<div class="form-group">
+											<label for="">Tipo de Licencia:</label>
+											<select class="form-control" id="tipo_licencia" name="tipo_licencia" tabindex="6">
+												<option value="" selected disabled></option>
+												<option value="C">C</option>
+												<option value="D1">D1</option>
+												<option value="E1">E1</option>
+											</select>
+										</div>
+									</div>
+								</div>	
+                                <div class="form-group">
+								<div id="mensaje" class="alert alert-danger alert-dismissable" style="clear: both; display: none;"></div>
+								</div>
                                 <div class="form-group">
                                     <a href="vista_usuarios.php" class="btn btn-danger btn-lg">Volver</a>
                                     <button type="submit" class="btn btn-primary btn-lg">Crear</button>

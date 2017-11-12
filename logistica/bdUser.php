@@ -61,6 +61,6 @@
     //Instancia de control
     $obj = new controlDB();
     $obj -> insertar($sql);
-    header("Location: vista_usuarios.php");
+    //header("Location: vista_usuarios.php");
 
 ?>

@@ -61,10 +61,7 @@
                                                     <label for="nombre">Tiempo</label>
                                                     <input type="text" class="form-control" name="tiempo_estimado" id="tiempo_estimado" onblur="return validar()" placeholder="00:00:00">
                                                 </div>
-                                                <div class="form-group">
-                                                    <label for="doc">km previstos</label>
-                                                    <input type="number" class="form-control" name="km_estimado" id="km_estimado" onblur="return validar()" placeholder="Km">
-                                                </div>
+                                                
                                             </div>
                                      
                                             <div class="col-xs-6">
@@ -78,7 +75,18 @@
                                                     <label for="">Combustible previsto</label>
                                                     <input type="number" class="form-control" name="combustible_estimado" id="combustible_estimado" onblur="return validar()" placeholder="combustible...">
                                                 </div>
+												
                                             </div>
+											<div class="col-xs-12" >
+												<div class="col-xs-3"></div>
+												<div class="col-xs-6">
+													<div class="form-group">
+														<label for="doc">km previstos</label>
+														<input type="number" class="form-control" name="km_estimado" id="km_estimado" onblur="return validar()" placeholder="Km">
+													</div>
+												</div>
+												<div class="col-xs-3"></div>
+											</div>
 
                                             <div id="mensaje" class="alert alert-danger alert-dismissable" style="clear: both; display: none;"></div>
                                             <div class="form-group">

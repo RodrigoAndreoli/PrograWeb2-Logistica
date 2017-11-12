@@ -16,6 +16,7 @@
             FROM Usuario 
             WHERE idUsuario = '$cod'");
     ?>
+	<script type="text/javascript" src="/resources/js/validUser.js"></script>
 </head>
 
 <body>
@@ -42,7 +43,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col">
-                                    <form action="bdUser.php" method="post" class="form-horizontal">
+                                    <form action="bdUser.php" method="post" class="form-horizontal" onsubmit="return validar();>
                                         <table class="table table-striped  table-condensed table-hover">
                                             <?php foreach($user as $users){ ?>
                                             <div class="form-group">
@@ -67,7 +68,7 @@
                                                         <label for="sel1 ">Rol:</label>
                                                     </div>
                                                     <div class="col-xs-8 col-sm-9">
-                                                        <select class="form-control" id="sel1" name="rol">
+                                                        <select class="form-control" id="rol" name="rol" onblur="mostrarLic();">
                                                             <option value="<?php echo $users['rol']; ?>" selected disabled><?php echo $users['rol']; ?></option>
                                                             <option value="Chofer">Chofer</option>
                                                             <option value="Administrador">Administrador</option>
@@ -93,7 +94,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-											<div class="form-group" id="tp_licencia_mostrar">
+											<div class="form-group" id="mostrarLicencia" style="display:none">
                                                 <div class="col-xs-12 col-lg-6 col-lg-offset-3">
                                                     <div class="control-label col-xs-4 col-sm-3">
                                                         <label for="sel2 ">Tipo Licencia:</label>
@@ -119,6 +120,7 @@
                                         <input type="hidden" name="funcion" id="funcion" value="modificar" readonly> 
                                         <input type="hidden" name="cod" id="cod" value="<?php echo $cod; ?>" readonly>
                                     </form>
+									<div id="mensaje" class="alert alert-danger alert-dismissable" style="clear: both; display: none;"></div>
                                 </div>
                             </div>
                         </div>
