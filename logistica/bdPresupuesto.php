@@ -37,8 +37,8 @@
             FROM Presupuesto 
             WHERE idPresupuesto='$id'";
     } else {
-       $sql = "INSERT INTO Presupuesto(fkClienteP, fkAdministradorP, tiempo_estimado, km_estimado, combustible_estimado, costo_real, aceptado)
-        VALUES('$fkClienteP', '$fkAdministradorP', '$tiempo_estimado', '$km_estimado', '$combustible_estimado', '$costo_real', '$aceptado')";
+       $sql = "INSERT INTO Presupuesto(fkClienteP, tiempo_estimado, km_estimado, combustible_estimado, costo_real, aceptado)
+        VALUES('$fkClienteP',  '$tiempo_estimado', '$km_estimado', '$combustible_estimado', '$costo_real', '$aceptado')";
     }  
 	
 	// escribe en el log
