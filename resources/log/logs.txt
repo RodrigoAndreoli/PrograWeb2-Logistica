@@ -8386,8 +8386,23 @@
         WHERE T.fkChoferT = '2'
             OR T.fkAcompanianteT = '2'
         ORDER BY Viaje
+<<<<<<< HEAD
 11 11 2017 20:11:13 INSERT INTO Viaje(fkPresupuestoV, fecha, origen, destino, tipo_carga)
         VALUES('8', '2017-11-11 09:00:00', 'Buenos Aires', 'Bariloche', 'Peligrosa')
 11 11 2017 20:11:13 UPDATE presupuesto
             SET aceptado = 'si'
             WHERE idPresupuesto = '8'
+=======
+11 11 2017 20:11:56 INSERT INTO Viaje(fkPresupuestoV, fecha, origen, destino, tipo_carga)
+        VALUES('', '1991-12-12 12:12:12', 'a', 'b', '')
+11 11 2017 20:11:56 UPDATE presupuesto
+            SET aceptado = 'si'
+            WHERE idPresupuesto = ''
+11 11 2017 20:11:14 INSERT INTO Presupuesto(fkClienteP, fkAdministradorP, tiempo_estimado, km_estimado, combustible_estimado, costo_real, aceptado)
+       VALUES('6', '2', '12:00:00', '1', '1', '1', 'no')
+11 11 2017 20:11:44 INSERT INTO Viaje(fkPresupuestoV, fecha, origen, destino, tipo_carga)
+        VALUES('15', '1991-12-12 12:12:12', 'a', 'b', 'c')
+11 11 2017 20:11:44 UPDATE presupuesto
+            SET aceptado = 'si'
+            WHERE idPresupuesto = '15'
+>>>>>>> 65ece16d30f5c48872bbb0674f77174a87042cd4

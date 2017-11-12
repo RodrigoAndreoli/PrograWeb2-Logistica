@@ -60,7 +60,8 @@
                                                 <td>$<?php echo $td['costo_real']; ?></td>
                                                 <td><?php echo $td['tiempo_estimado']; ?></td>
                                                 <td><?php echo $td['combustible_estimado']; ?></td>
-                                                <td><?php echo $td['km_estimado']; ?></td>                                              
+                                                <td><?php echo $td['km_estimado']; ?></td>              
+                                                <?php if($datos2!=null) { ?>
                                                 <td class="text-center">
                                                     <?php if(in_array($td['idPresupuesto'], $asignar)) { ?> 
                                                     <a href="editarPresupuesto.php?id=<?php echo $td["idPresupuesto"]?>"> 
@@ -75,6 +76,7 @@
                                                     </a>
                                                     <?php }else { ?> (^_^)/ <?php }?>
                                                 </td>
+                                                <?php } ?>
                                             </tr>
                                             <?php } ?>
                                         </table>    
