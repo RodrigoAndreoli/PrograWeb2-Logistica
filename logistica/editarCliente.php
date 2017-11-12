@@ -16,6 +16,7 @@
             FROM Cliente 
             WHERE idCliente = '$cod'");
     ?>
+    <script type="text/javascript" src="/resources/js/validCliente.js"></script>
 </head>
 
 <body>
@@ -42,7 +43,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col">
-                                    <form action="bdCliente.php" method="post" class="form-horizontal">
+                                    <form action="bdCliente.php" method="post" class="form-horizontal" onsubmit="return validar()" id="form">
                                         <table class="table table-striped  table-condensed table-hover">
                                             <?php foreach($cliente as $clientes){ ?>
                                             <input type="hidden" class="form-control"  placeholder="<?php echo $clientes['idCliente']; ?>" name="idCliente" id="idCliente" readonly> 
@@ -102,6 +103,7 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div id="mensaje" class="alert alert-danger alert-dismissable" style="clear: both; display: none;"></div>
                                             <tr>
                                                 <td colspan="3" class="text-center">
                                                     <a href="vista_clientes.php" class="btn btn-danger">Volver</a>

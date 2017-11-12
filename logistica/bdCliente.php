@@ -24,11 +24,11 @@
         $sql = "UPDATE Cliente
             SET cuit = '$cuit',
                 razon = '$razon',
-                telefono = '$telefono'
+                telefono = '$telefono',
                 dom_cp = '$dom_cp',
                 dom_calle = '$dom_calle',
                 dom_numero = '$dom_numero',
-                dom_piso = '$dom_piso',
+                dom_piso = '$dom_piso'
             WHERE idCliente = '$cod'";
     }
         
