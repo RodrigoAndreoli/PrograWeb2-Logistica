@@ -8,10 +8,13 @@
     $miSession = new Sesion();
     $miSession -> iniciarSesion();
         //$miSession -> permisos();
-    $obj = new controlDB();
-    include $LIBRARY_PATH.'/viajes_pag.php';
+      $obj = new controlDB();
+    if($_SESSION['rol'] == 'Administrador' || $_SESSION["rol"] == 'Supervisor'){
+        include $LIBRARY_PATH.'/viajes_pag.php';
+    }else{
+        include $LIBRARY_PATH.'/viajesChofer_pag.php';
+    }
     $idUsuario = $_SESSION['idUsuario'];
-    
     ?>
 </head>
 
@@ -86,7 +89,18 @@
                                                     
                                                 </td>
                                             </tr>
-                                            <?php }}} ?>
+                                            <?php }}}else{ ?>
+                                            <?php foreach($datos4 as $td){ ?>
+                                            <tr>
+                                                <td><?php echo $td['fecha']; ?></td>
+                                                <td><?php echo $td['origen']; ?></td>
+                                                <td><?php echo $td['destino']; ?></td>
+                                                <td><?php echo $td['carga']; ?></td>
+                                                <td><?php echo ($td['tiempo'].'h'); ?></td>
+                                                <td><?php echo ('$ '.$td['combustible']); ?></td>
+                                                <td><?php echo $td['km']; ?></td>
+                                            </tr>
+                                            <?php }} ?>
                                         </table>    
                                     </div>    
                                 </div>
@@ -103,9 +117,11 @@
                             </div>
                         </div>
                         <div class="row">
+                            <?php if($_SESSION['rol'] == 'Administrador' || $_SESSION["rol"] == 'Supervisor') {?>  
                             <a href="exportarViaje.php" target="_blank">
                                 <button class="btn btn-link">Exportar a PDF</button>
                             </a>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
