@@ -22,6 +22,8 @@
 
 + Me falta seguir modificando todos los abm con sus validaciones y ajustarlos.
 
++ HABRIA QUE VER SI AL REGISTRAR UN REPORTE, SU DIFERENCIA DE TIEMPO Y KILOMETROS CON EL ANTERIOR REPORTE, Y EL COMBUSTIBLE CARGADO DEBERIAN SUMARSE PARA UPDATEAR LA TABLA DE VIAJES EN TIEMPO_TOTAL, COMBUSTIBLE_TOTAL Y KM_TOTAL
+
 ############### HECHO ###############
 
 + Tira error generar pdf en vista viajes
