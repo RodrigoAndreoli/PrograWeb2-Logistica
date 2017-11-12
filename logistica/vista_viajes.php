@@ -45,13 +45,13 @@
                                         <table class="table table-striped table-bordered table-condensed table-hover">
                                             <thead>
                                                 <!-- <th  class="text-center">idViaje</th> -->
-                                                <th  class="text-center">Fecha de Partida</th>
+                                                <th  class="text-center">Fecha y Hora de Salida</th>
                                                 <th  class="text-center">Origen</th>
                                                 <th  class="text-center">Destino</th>
                                                 <th  class="text-center">Tipo de Carga</th>
-                                                <th  class="text-center">Tiempo</th>
-                                                <th  class="text-center">Combustible</th>
-                                                <th  class="text-center">Km estimado</th>
+                                                <th  class="text-center">Ida y Vuelta</th>
+                                                <th  class="text-center">Combustible Total</th>
+                                                <th  class="text-center">Kilometraje Total</th>
                                                 <?php if($_SESSION['rol'] == 'Administrador' || $_SESSION["rol"] == 'Supervisor') {?>   
                                                 <th  class="text-center">Operacion</th>
                                                 <?php } ?>
@@ -65,8 +65,8 @@
                                                 <td><?php echo $td['Origen']; ?></td>
                                                 <td><?php echo $td['Destino']; ?></td>
                                                 <td><?php echo $td['Carga']; ?></td>
-                                                <td><?php echo $td['Tiempo']; ?></td>
-                                                <td><?php echo $td['Combustible']; ?></td>
+                                                <td><?php echo ($td['Tiempo'].'h'); ?></td>
+                                                <td><?php echo ('$ '.$td['Combustible']); ?></td>
                                                 <td><?php echo $td['Km']; ?></td>
 
                                                 <td class="text-center">
@@ -74,37 +74,19 @@
                                                     <a href="asignarViaje.php?id=<?php echo $td['VViaje']?>">
                                                         <button class="btn btn-success">Asignar</button>
                                                     </a>
-                                                    <a href="bdViajes.php?id=<?php echo $td['VViaje']?>&funcion=eliminar"> 
+                                                    <a href="bdViajes.php?id=<?php echo $td['VViaje']?>&funcion=eliminar&presupuesto=<?php echo $td['fkPresupuesto']?>"> 
                                                         <button class="btn btn-danger">Eliminar</button>
                                                     </a>
                                                     <br>
-                                                    <?php } ?>  
+                                                    <?php } else { ?>  
                                                     
-                                                    <a href="imprimirVIajeQR.php?id=<?php echo $td['VViaje']?>">
+                                                    <a href="imprimirViajeQR.php?id=<?php echo $td['VViaje']?>" target="_blank">
                                                         <button class="btn btn-info">Ver PDF</button>
                                                     </a>
                                                     
                                                 </td>
                                             </tr>
-                                            <?php } ?>
-                                            <?php } else { }?> 
-
-                                            
-                                            <?php if(in_array($idUsuario, $asignarChofer) ||
-                                            in_array($idUsuario, $asignarAcompaniante) ) {?>
-                                            <?php foreach($datos3 as $td2){ ?>
-                                            <tr>
-                                                <!-- <td><?php echo $td['VViaje']; ?></td> -->
-                                                <td><?php echo $td2['fecha']; ?></td>
-                                                <td><?php echo $td2['origen']; ?></td>
-                                                <td><?php echo $td2['destino']; ?></td>
-                                                <td><?php echo $td2['carga']; ?></td>
-                                                <td><?php echo $td2['tiempo']; ?></td>
-                                                <td><?php echo $td2['combustible']; ?></td>
-                                                <td><?php echo $td2['km']; ?></td>
-                                            </tr>
-                                            <?php } ?>
-                                            <?php } ?> 
+                                            <?php }}} ?>
                                         </table>    
                                     </div>    
                                 </div>
@@ -119,13 +101,6 @@
                                 </ul>";}
                                 ?>   
                             </div>
-                        </div>
-                        <div class="row">
-                            <?php if($_SESSION['rol'] == 'Administrador' || $_SESSION["rol"] == 'Supervisor') {?>   
-                            <div class="col">
-                                <a href="registrarViaje.php" class="btn btn-primary">Nuevo viaje</a>
-                            </div>
-                            <?php } ?>
                         </div>
                         <div class="row">
                             <a href="exportarViaje.php" target="_blank">

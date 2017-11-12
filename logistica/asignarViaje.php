@@ -58,31 +58,31 @@
                                                         </tr>
                                                         <tr>
                                                             <td>
-                                                                <select name="chofer1" class="form-control" id="sel1"><?php foreach($datos as $td){ ?>
+                                                                <select name="fkChoferT" class="form-control" id="fkChoferT"><?php foreach($datos as $td){ ?>
 													               <option value="<?php echo $td['IdUsuario'];?>"><?php echo $td['IdUsuario']." - ".$td['Nombre'];?> </option>
 												                <?php } ?>
 												            </td>
 												            <td>
-                                                                <select name="vehiculo1" class="form-control" id="sel1"><?php foreach($datos2 as $td2){ ?>
+                                                                <select name="fkCamionT" class="form-control" id="fkCamionT"><?php foreach($datos2 as $td2){ ?>
 													               <option value="<?php echo $td2['IdVehiculo'];?>"><?php echo $td2['Patente']." - ".$td2['Marca'];?></option> 
 												                <?php } ?>
 												            </td>
 												        </tr>
                                                         <tr>
                                                             <td>
-                                                                <select name="Chofer2" class="form-control" id="sel1"><option value="0">N/A</option><?php foreach($datos as $td){ ?>
+                                                                <select name="fkAcompanianteT" class="form-control" id="fkAcompanianteT"><option value="0">N/A</option><?php foreach($datos as $td){ ?>
 													               <option value="<?php echo $td['IdUsuario'];?>"><?php echo $td['IdUsuario']." - ".$td['Nombre'];?> </option>
                                                                 <?php } ?>
                                                             </td>
                                                             <td>
-                                                                <select name="vehiculo2" class="form-control" id="sel1"><option value="0">N/A</option><?php foreach($datos3 as $td3){ ?>
+                                                                <select name="fkAcopladoT" class="form-control" id="fkAcopladoT"><option value="0">N/A</option><?php foreach($datos3 as $td3){ ?>
                                                                     <option value="<?php echo $td3['IdVehiculo'];?>"><?php echo $td3['Patente']." - ".$td3['Marca'];?></option> 
                                                                 <?php } ?>
                                                             </td>
                                                         </tr>
                                                     </table> 
-                                                    <input type="hidden" name="id" value="<?php echo $id; ?>">
-                                                    <input type="hidden" name="funcion" value="asignar">
+                                                    <input type="hidden" name="fkViajeT" id="fkViajeT" value="<?php echo $id; ?>" readonly>
+                                                    <input type="hidden" name="funcion" id="funcion" value="asignar" readonly>
                                                     <div class="col"> 
                                                         <button type="submit" class="btn btn-primary">Guardar</button>
                                                     </div>

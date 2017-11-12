@@ -49,13 +49,13 @@
                                                         if($_SESSION['rol'] == 'Administrador' || $_SESSION["rol"] == 'Supervisor') {
                                                             foreach($selectAdmin as $s){ ?>
                                                                 <option value="<?php echo $s['Viaje']; ?>">
-                                                                    <?php echo ($s['Viaje'].': '.$s['Fecha'].', '.$s['Origen'].'~'.$s['Destino']); ?>
+                                                                    <?php echo ($s['Viaje'].': '.$s['Fecha'].', '.$s['Origen'].' ~ '.$s['Destino']); ?>
                                                                 </option>
                                                             <?php }
                                                         } else if($_SESSION['rol'] == 'Chofer') {
                                                             foreach($selectChofer as $s){ ?>
                                                                 <option value="<?php echo $s['Viaje']; ?>">
-                                                                    <?php echo ($s['Viaje'].': '.$s['Fecha'].', '.$s['Origen'].'~'.$s['Destino']); ?>
+                                                                    <?php echo ($s['Viaje'].': '.$s['Fecha'].', '.$s['Origen'].' ~ '.$s['Destino']); ?>
                                                                 </option>
                                                         <?php }
                                                         } ?>
@@ -206,11 +206,12 @@
                             </div>
                         </div>
                         <?php if(isset($datos)) { ?>
-                        <div class="row">
-                            <a href="exportarReporte.php?id=<?php echo $buscar; ?>" target="_blank">
-                                <button class="btn btn-link" target="_blank">Exportar a PDF</button>
-                            </a>
-                        </div>
+                            <br>
+                            <div class="row">
+                                <a href="exportarReporte.php?id=<?php echo $buscar; ?>" target="_blank">
+                                    <button class="btn btn-primary" target="_blank">Exportar a PDF</button>
+                                </a>
+                            </div>
                         <?php } ?>
                     </div>
                 </div>

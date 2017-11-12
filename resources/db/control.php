@@ -32,8 +32,10 @@
             //array vacio
             $data=null;
             //capturar la info,fecth captura datos fila por fila y almacena con el indice de la tabla, el nombre, fethc row no trae el nombre del campo
-            while($fila=mysqli_fetch_array($result)){
-                $data[]=$fila;
+            if($result){
+                while($fila=mysqli_fetch_array($result)){
+                    $data[]=$fila;
+                }
             }
             return $data;
         }

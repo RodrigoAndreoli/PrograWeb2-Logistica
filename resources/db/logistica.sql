@@ -62,7 +62,6 @@ CREATE TABLE Mantenimiento(
 CREATE TABLE Presupuesto(
 	idPresupuesto int(11) NOT NULL AUTO_INCREMENT,
     fkClienteP int(11) NOT NULL,
-    fkAdministradorP int(11) NOT NULL,
     tiempo_estimado time NOT NULL,
     km_estimado int(11) NOT NULL,
     combustible_estimado decimal(11,2) NOT NULL,
@@ -70,9 +69,7 @@ CREATE TABLE Presupuesto(
     aceptado enum('Si', 'No') NOT NULL DEFAULT 'No',
     PRIMARY KEY (idPresupuesto),
     CONSTRAINT fk_clip FOREIGN KEY (fkClienteP)
-		REFERENCES Cliente (idCliente),
-	CONSTRAINT fk_admp FOREIGN KEY (fkAdministradorP)
-		REFERENCES Usuario (idUsuario)
+		REFERENCES Cliente (idCliente)
 );
 
 CREATE TABLE Viaje(
@@ -114,8 +111,8 @@ CREATE TABLE Reporte(
     fkViajeR int(11) NOT NULL,
     fkChoferR int(11) NOT NULL,
     tiempo datetime NOT NULL,
-    latitud varchar(45) COLLATE utf8_spanish_ci NOT NULL,
     longitud varchar(45) COLLATE utf8_spanish_ci NOT NULL,
+    latitud varchar(45) COLLATE utf8_spanish_ci NOT NULL,
     motivo enum('Parada Tecnica', 'Desvio', 'Accidente') NOT NULL DEFAULT 'Parada Tecnica',
     km int(11) NOT NULL,
     combustible decimal(11,2),
@@ -166,37 +163,42 @@ INSERT INTO Mantenimiento (fkVehiculoM, fkMecanicoM, fecha_entrada, fecha_salida
 (6, 8, '2016-04-15', '2016-07-15', '16000.00', 'Si', 'Si', 'No', 'No', 'Embrague ventilador'),
 (2, 12, '2016-04-15', '2016-07-16', '80000.00', 'No', 'No', 'No', 'No', 'Eje Acople, corona');
 
-INSERT INTO Presupuesto (fkClienteP, fkAdministradorP, tiempo_estimado, km_estimado, combustible_estimado, costo_real, aceptado) VALUES
-(1, 3, '02:00:00', 135, 230.00, '1300.00', 'Si'),
-(2, 1, '05:00:00', 435, 900.00, '2700.00', 'Si'),
-(6, 1, '23:00:00', 1600, 2700.00, '4000.00', 'Si'),
-(6, 1, '23:00:00', 1600, 2700.00, '4000.00', 'Si'),
-(6, 1, '23:00:00', 1600, 2700.00, '4000.00', 'Si'),
-(3, 1, '06:00:00', 560, 400.00, '1000.00', 'Si'),
-(4, 1, '06:00:00', 560, 400.00, '1000.00', 'Si'),
-(5, 1, '00:30:00', 82, 20.00, '500.00', 'No'),
-(2, 2, '44:00:00', 2900, 5000.00, '6900.00', 'Si');
+INSERT INTO Presupuesto (fkClienteP, tiempo_estimado, km_estimado, combustible_estimado, costo_real, aceptado) VALUES
+(1, '02:00:00', 135, 230.00, '1300.00', 'Si'),
+(2, '05:00:00', 435, 900.00, '2700.00', 'Si'),
+(6, '23:00:00', 1600, 2700.00, '4000.00', 'Si'),
+(6, '23:00:00', 1600, 2700.00, '4000.00', 'Si'),
+(6, '23:00:00', 1600, 2700.00, '4000.00', 'Si'),
+(3, '06:00:00', 560, 400.00, '1000.00', 'Si'),
+(4, '06:00:00', 560, 400.00, '1000.00', 'Si'),
+(5, '00:30:00', 82, 20.00, '500.00', 'No'),
+(5, '01:30:00', 150, 100.00, '550.00', 'No'),
+(2, '44:00:00', 2900, 5000.00, '6900.00', 'Si');
 
 INSERT INTO Viaje (fkPresupuestoV, fecha, origen, destino, tipo_carga, tiempo_total, combustible_total, km_total) VALUES
-(1, '2017-11-22 10:00:00', 'Logistica S.A.', 'Lujan Bs As', 'Sustancias y objetos peligrosos varios', '01:45:30', 230.00, 135),
+(1, '2017-11-22 10:00:00', 'Logistica S.A.', 'Lujan Bs As', 'Sustancias y objetos peligrosos varios', '02:45:30', 230.00, 135),
 (2, '2017-10-24 09:00:00', 'Logistica S.A.', 'Cordoba', 'Mudanza', '05:35:00', 900.00, 900),
 (3, '2017-10-07 05:00:00', 'Logistica S.A.', 'Bariloche', 'Chocolates', '25:00:00', 2700.00, 1600),
 (4, '2017-11-07 05:00:00', 'Logistica S.A.', 'Bariloche', 'Chocolates', '23:55:00', 2700.00, 1600),
 (5, '2017-12-09 05:00:00', 'Logistica S.A.', 'Bariloche', 'Chocolates', '29:50:50', 2900.00, 1600),
 (6, '2017-11-10 08:00:00', 'Cordoba', 'Logistica S.A.', 'Refrigerados y congelados', '05:55:50', 400.00, 560),
 (7, '2018-01-08 14:00:00', 'Cordoba', 'Logistica S.A.', 'Refrigerados y congelados', '07:45:30', 460.00, 560),
-(9, '2017-12-20 21:00:00', 'Logistica S.A.', 'Rio Grande', 'Material radiactivo', '47:00:00', 5300.00, 5100);
+(10, '2017-12-20 21:00:00', 'Logistica S.A.', 'Rio Grande', 'Material radiactivo', '47:00:00', 5300.00, 5100);
 
 INSERT INTO Vehiculo_chofer_viaje (fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT) VALUES
+(1, 11, NULL, 3, 4),
 (2, 11, NULL, 5, NULL),
-(3, 1, 6, 1, 2),
+(3, 1, 5, 1, 2),
 (4, 1, 6, 3, 4),
-(6, 2, 6, 6, NULL);
+(6, 2, 5, 6, NULL);
 
-INSERT INTO Reporte (fkViajeR, fkChoferR, tiempo, latitud, longitud, motivo, km, combustible, descripcion) VALUES
-(2, 11, '2017-10-24 09:00:00', '-58.6581128', '-34.6380318', 'Parada Tecnica', 0, 0.00, 'Saliendo de la Central'),
-(2, 11, '2017-10-24 14:35:00', '-59.111061', '-34.570730', 'Parada Tecnica', 435, 0.00, 'Realizando la entrega'),
-(2, 11, '2017-10-24 20:00:00', '-58.6581128', '-34.6380318', 'Parada Tecnica', 900, 0.00, 'Llegando a la Central'),
-(3, 1, '2017-10-07 05:00:00', '-58.6581128', '-34.6380318', 'Parada Tecnica', 79306, 0.00, 'Saliendo de la Central'),
-(3, 6, '2017-10-07 12:00:00', '-64.287881', '-36.608621', 'Parada Tecnica', 79851, 900.00, 'Carga de combustible'),
-(4, 6, '2017-11-07 05:00:00', '-58.6581128', '-34.6380318','Parada Tecnica', 98788, 0.00, 'Saliendo de la Central');
+INSERT INTO Reporte (fkViajeR, fkChoferR, tiempo, longitud, latitud, motivo, km, combustible, descripcion) VALUES
+(1, 11, '2017-10-24 09:00:00', '-34.670322', '-58.563908', 'Parada Tecnica', 0, 0.00, 'Saliendo de la Central'),
+(1, 11, '2017-10-24 10:27:46', '-34.570730', '-59.111061', 'Parada Tecnica', 435, 0.00, 'Realizando la entrega'),
+(1, 11, '2017-10-24 11:45:30', '-34.670322', '-58.563908', 'Parada Tecnica', 900, 0.00, 'Llegando a la Central'),
+(3, 1, '2017-10-07 05:00:04', '-34.670322', '-58.563908', 'Parada Tecnica', 79306, 0.00, 'Saliendo de la Central'),
+(3, 5, '2017-10-07 12:45:10', '-36.608621', '-64.287881', 'Parada Tecnica', 79851, 900.00, 'Carga de combustible'),
+(3, 5, '2017-10-07 16:49:25', '-37.772100', '-67.710509', 'Accidente', 80232, 0.00, 'Rueda pinchada'),
+(3, 1, '2017-10-07 23:43:43', '-38.942335', '-68.011294', 'Parada Tecnica', 80654, 900.00, 'Descanso por la noche'),
+(4, 6, '2017-11-07 05:00:10', '-34.670322', '-58.563908', 'Parada Tecnica', 98788, 0.00, 'Saliendo de la Central'),
+(4, 6, '2017-11-07 12:41:00', '-35.842835', '-61.892379', 'Desvio', 98788, 0.00, 'Demorado por Desvio');

@@ -43,38 +43,35 @@
                                     <div class="table-responsive">
                                         <table class="table table-striped table-bordered table-condensed table-hover">
                                             <thead>
-                                                <th  class="text-center">Supervisor</th>
                                                 <th  class="text-center">Cliente</th>
-                                                <th  class="text-center">Aceptado</th>
-                                                <th  class="text-center">Costo</th>
-                                                <th  class="text-center">Tiempo estimado</th>
-                                                <th  class="text-center">Combustible estimado</th>
-                                                <th  class="text-center">Kilometros estimados</th>
-                                                <th  class="text-center">Operacion</th>
+                                                <th  class="text-center">Costo Presupuestado</th>
+                                                <th  class="text-center">Tiempo Estimado</th>
+                                                <th  class="text-center">Combustible Estimado</th>
+                                                <th  class="text-center">Kilometraje Estimado</th>
+                                                <th  class="text-center">Estado</th>
                                             </thead>
                                             <?php foreach($datos as $td){ ?>
                                             <tr>
-                                                <td><?php echo utf8_decode(ucwords(strtolower($td['nombre']))); ?></td>
-                                                <td><?php echo utf8_decode(ucwords(strtolower($td['razon']))); ?></td>
-                                                <td><?php echo ucwords(strtolower($td['aceptado'])); ?></td>
-                                                <td>$<?php echo $td['costo_real']; ?></td>
+                                                <td><?php echo ($td['razon']); ?></td>
+                                                <td><?php echo ('$ '.$td['costo_real']); ?></td>
                                                 <td><?php echo $td['tiempo_estimado']; ?></td>
-                                                <td><?php echo $td['combustible_estimado']; ?></td>
+                                                <td><?php echo ('$ '.$td['combustible_estimado']); ?></td>
                                                 <td><?php echo $td['km_estimado']; ?></td>              
                                                 <?php if($datos2!=null) { ?>
                                                 <td class="text-center">
-                                                    <?php if(in_array($td['idPresupuesto'], $asignar)) { ?> 
-                                                    <a href="editarPresupuesto.php?id=<?php echo $td["idPresupuesto"]?>"> 
-                                                        <button class="btn btn-info">Editar</button>
-                                                    </a>
-                                                     <a href="bdPresupuesto.php?id=<?php echo $td["idPresupuesto"]?>&funcion=eliminar"> 
-                                                        <button class="btn btn-danger">Eliminar</button>
-                                                    </a>
-                                                    
-                                                     <a href="confirmarPresupuesto.php?id=<?php echo $td["idPresupuesto"]?>"> 
+                                                    <?php if(in_array($td['idPresupuesto'], $asignar)) { ?>
+                                                    <a href="confirmarPresupuesto.php?id=<?php echo $td["idPresupuesto"]?>"> 
                                                         <button class="btn btn-success">Confirmar</button>
                                                     </a>
-                                                    <?php }else { ?> (^_^)/ <?php }?>
+                                                    <a href="editarPresupuesto.php?id=<?php echo $td["idPresupuesto"]?>"> 
+                                                        <button class="btn btn-primary">Editar</button>
+                                                    </a>
+                                                    <a href="bdPresupuesto.php?id=<?php echo $td["idPresupuesto"]?>&funcion=eliminar"> 
+                                                        <button class="btn btn-danger">Eliminar</button>
+                                                    </a>
+                                                    <?php } else { ?>
+                                                            Aceptado
+                                                    <?php } ?>
                                                 </td>
                                                 <?php } ?>
                                             </tr>

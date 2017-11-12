@@ -13,11 +13,11 @@
 
     $datos2 = $obj -> consultar("SELECT idVehiculo IdVehiculo, marca Marca, patente Patente 
     FROM Vehiculo 
-    WHERE tipo_vehiculo LIKE '%Camion%'");
+    WHERE tipo_vehiculo = 'Camion'");
 
     $datos3 = $obj -> consultar("SELECT idVehiculo IdVehiculo, marca Marca, patente Patente 
     FROM Vehiculo 
-    WHERE tipo_vehiculo LIKE '%Acoplado%'");
+    WHERE tipo_vehiculo = 'Acoplado'");
 
 
     /*$num_filas = count($obj->consultar("SELECT *

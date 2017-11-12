@@ -25,19 +25,19 @@
     //Longitud, alto, titulo, border, salto, alineado
     $pdf->Cell(50,8,'Cliente',1,0,'C',1);
     $pdf->Cell(30,8,'Aceptado',1,0,'C',1);
+    $pdf->Cell(50,8,'Costo Presupuestado',1,0,'C',1);
     $pdf->Cell(40,8,'Tiempo Estimado',1,0,'C',1);
     $pdf->Cell(50,8,'Kilometraje Estimado',1,0,'C',1);
-    $pdf->Cell(50,8,'Combustible Estimado',1,0,'C',1);
-    $pdf->Cell(50,8,'Costo Presupuestado',1,1,'C',1);
+    $pdf->Cell(50,8,'Combustible Estimado',1,1,'C',1);
     $pdf->SetFont('Arial','',10);
     foreach($datos as $a) {
         $pdf->Cell(3);
         $pdf->Cell(50,8,utf8_decode(ucwords($a['Razon'])),1,0,'C');
         $pdf->Cell(30,8,$a['Aceptado'],1,0,'C');
+        $pdf->Cell(50,8,'$ '.$a['Costo'],1,0,'C');
         $pdf->Cell(40,8,$a['Tiempo'],1,0,'C');
         $pdf->Cell(50,8,$a['Km'],1,0,'C');
-        $pdf->Cell(50,8,'$'.$a['Nafta'],1,0,'C');
-        $pdf->Cell(50,8,'$'.$a['Costo'],1,1,'C');
+        $pdf->Cell(50,8,'$ '.$a['Nafta'],1,1,'C');
     }
     $pdf->Output('I','Logistica.pdf');
 

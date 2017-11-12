@@ -9,15 +9,14 @@
 
     $empezar_desde = ($pag-1) * $tamagno_paginas;
     
-    $datos = $obj -> consultar("
-	SELECT c.razon, u.nombre, p.idPresupuesto,p.aceptado,p.tiempo_estimado,p.km_estimado,p.combustible_estimado,p.costo_real
-    FROM presupuesto p JOIN cliente c on c.idCliente=p.fkClienteP JOIN usuario u on u.idUsuario=p.fkAdministradorP 
-    ORDER BY u.nombre LIMIT $empezar_desde, $tamagno_paginas");
+    $datos = $obj -> consultar("SELECT C.razon, P.idPresupuesto, P.aceptado, P.tiempo_estimado, P.km_estimado, P.combustible_estimado, P.costo_real
+        FROM Presupuesto P 
+        JOIN Cliente C ON P.fkClienteP = C.idCliente
+        ORDER BY C.razon LIMIT $empezar_desde, $tamagno_paginas");
 
-    $datos2 = $obj -> consultar("
-    SELECT idPresupuesto
-    FROM presupuesto
-    WHERE aceptado='no'");
+    $datos2 = $obj -> consultar("SELECT idPresupuesto
+        FROM Presupuesto
+        WHERE aceptado = 'no'");
 
     if($datos2 != null) {
         $asignar = array(); 
@@ -26,8 +25,9 @@
         }    
     }
 
-
-    $num_filas = count($obj->consultar("SELECT * FROM presupuesto"));
+    $num_filas = count($obj->consultar("SELECT *
+        FROM Presupuesto"));
     $total_paginas = ceil($num_filas/$tamagno_paginas);
-    $sql_limite=$obj -> consultar("SELECT * FROM presupuesto");
+    $sql_limite=$obj -> consultar("SELECT * 
+    FROM Presupuesto");
 ?>

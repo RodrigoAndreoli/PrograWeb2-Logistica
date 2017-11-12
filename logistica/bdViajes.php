@@ -5,6 +5,7 @@
     //Capturas los input hidden, request captura tanto get como post
     $funcion = $_REQUEST['funcion'];
     $id = $_REQUEST['id'];
+    
 	
     if($funcion!="eliminar"){
         $fkPresupuestoV = $_POST['fkPresupuestoV'];
@@ -17,23 +18,19 @@
 	
     $obj = new controlDB();
     
-    if($funcion == "modificar"){
-        $sql = "UPDATE Viaje
-            SET fkPresupuestoV = '$fkPresupuestoV',
-                fecha = '$fecha',
-                origen = '$origen',
-                destino = '$destino',
-                tipo_carga = '$tipo_carga'
-            WHERE idViaje = '$cod'";
-    }else if($funcion == "eliminar"){
+    if($funcion == "eliminar"){
+        $idPresupuesto = $_REQUEST['presupuesto'];
         $sql = "DELETE
             FROM Viaje 
             WHERE idViaje='$id'";
-    }else{
+        $sql2 = "UPDATE Presupuesto
+            SET aceptado = 'No'
+            WHERE idPresupuesto = '$idPresupuesto'";
+    } else {
         $sql = "INSERT INTO Viaje(fkPresupuestoV, fecha, origen, destino, tipo_carga)
-        VALUES('$fkPresupuestoV', '$fecha', '$origen', '$destino', '$tipo_carga')"; 
-        $sql2 = "UPDATE presupuesto
-            SET aceptado = 'si'
+            VALUES('$fkPresupuestoV', '$fecha', '$origen', '$destino', '$tipo_carga')"; 
+        $sql2 = "UPDATE Presupuesto
+            SET aceptado = 'Si'
             WHERE idPresupuesto = '$fkPresupuestoV'";
                  
     }

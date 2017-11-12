@@ -13,9 +13,20 @@
 		$fkAcompanianteT = $_POST['fkAcompanianteT'];
 		$fkCamionT = $_POST['fkCamionT'];
 		$fkAcopladoT = $_POST['fkAcopladoT'];
-		
         $sql= "INSERT INTO Vehiculo_Chofer_viaje(fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT)
-        VALUES('$fkViajeT', '$fkChoferT', '$fkAcompanianteT', '$fkCamionT', '$fkAcopladoT')";
+            VALUES('$fkViajeT', '$fkChoferT', '$fkAcompanianteT', '$fkCamionT', '$fkAcopladoT')";
+        if($fkAcompanianteT == '0') {
+            $sql= "INSERT INTO Vehiculo_Chofer_viaje(fkViajeT, fkChoferT, fkCamionT, fkAcopladoT)
+                VALUES('$fkViajeT', '$fkChoferT', '$fkCamionT', '$fkAcopladoT')";
+        }
+        if($fkAcopladoT == '0') {
+            $sql= "INSERT INTO Vehiculo_Chofer_viaje(fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT)
+                VALUES('$fkViajeT', '$fkChoferT', '$fkAcompanianteT', '$fkCamionT')";
+        }
+        if($fkAcompanianteT == '0' && $fkAcopladoT == '0') {
+            $sql= "INSERT INTO Vehiculo_Chofer_viaje(fkViajeT, fkChoferT, fkCamionT)
+                VALUES('$fkViajeT', '$fkChoferT', '$fkCamionT')";
+        }
      }
 	
 	// escribe en el log

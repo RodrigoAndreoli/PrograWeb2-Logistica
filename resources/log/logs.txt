@@ -8406,3 +8406,53 @@
             SET aceptado = 'si'
             WHERE idPresupuesto = '15'
 >>>>>>> 65ece16d30f5c48872bbb0674f77174a87042cd4
+12 11 2017 02:11:00 UPDATE presupuesto 
+            SET tiempo_estimado = '01:30:00',
+                km_estimado = '150',
+                combustible_estimado = '100.00',
+                costo_real = '560.00',
+                aceptado = 'no'
+            WHERE idPresupuesto = '9'
+12 11 2017 02:11:32 INSERT INTO Viaje(fkPresupuestoV, fecha, origen, destino, tipo_carga)
+        VALUES('9', '2017-11-12 02:37:50', 'Aca', 'Alla', 'Mierda')
+12 11 2017 02:11:32 UPDATE presupuesto
+            SET aceptado = 'si'
+            WHERE idPresupuesto = '9'
+12 11 2017 03:11:19 INSERT INTO Vehiculo_Chofer_viaje(fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT)
+        VALUES('', '', '', '', '')
+12 11 2017 03:11:48 INSERT INTO Vehiculo_Chofer_viaje(fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT)
+        VALUES('', '1', '0', '1', '0')
+12 11 2017 03:11:41 INSERT INTO Vehiculo_Chofer_viaje(fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT)
+        VALUES('5', '1', '0', '1', '0')
+12 11 2017 03:11:16 INSERT INTO Vehiculo_Chofer_viaje(fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT)
+        VALUES('5', '1', '0', '1', '0')
+12 11 2017 03:11:36 INSERT INTO Vehiculo_Chofer_viaje(fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT)
+        VALUES('5', '1', 'NULL', '1', '0')
+12 11 2017 03:11:53 INSERT INTO Vehiculo_Chofer_viaje(fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT)
+        VALUES('5', '1', '', '1', '')
+12 11 2017 03:11:55 INSERT INTO Vehiculo_Chofer_viaje(fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT)
+                VALUES('5', '1', , '1', )
+12 11 2017 03:11:06 INSERT INTO Vehiculo_Chofer_viaje(fkViajeT, fkChoferT, fkCamionT)
+                VALUES('5', '1', '1')
+12 11 2017 03:11:31 INSERT INTO Vehiculo_Chofer_viaje(fkViajeT, fkChoferT, fkCamionT, fkAcopladoT)
+                VALUES('5', '1', '1', '2')
+12 11 2017 03:11:46 INSERT INTO Vehiculo_Chofer_viaje(fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT)
+                VALUES('5', '1', '5', '1')
+12 11 2017 03:11:00 INSERT INTO Vehiculo_Chofer_viaje(fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT)
+                VALUES('5', '1', '5', '1')
+12 11 2017 03:11:14 DELETE
+            FROM Viaje 
+            WHERE idViaje='5'
+12 11 2017 03:11:14 
+12 11 2017 04:11:48 DELETE
+            FROM Viaje 
+            WHERE idViaje='7'
+12 11 2017 04:11:48 UPDATE Presupuesto
+            SET aceptado = 'No'
+            WHERE idPresupuesto = ''
+12 11 2017 04:11:24 DELETE
+            FROM Viaje 
+            WHERE idViaje='8'
+12 11 2017 04:11:24 UPDATE Presupuesto
+            SET aceptado = 'No'
+            WHERE idPresupuesto = '10'
