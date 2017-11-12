@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-    <title>Usuarios</title>
+    <title>Vehiculos</title>
     <?php 
         require_once($_SERVER['DOCUMENT_ROOT'].'/resources/config.php');
         $miSession = new Sesion();
