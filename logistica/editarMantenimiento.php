@@ -10,12 +10,15 @@
         if($_SESSION['rol']=='Chofer'){
                 $miSession -> permisos();
         } 
-        $cod = $_GET['id'];
+        $cod = $_REQUEST['id'];
         $obj = new controlDB();
         $mantenimientos = $obj -> consultar("SELECT * 
             FROM Mantenimiento 
             WHERE idMantenimiento = '$cod'");
     ?>
+	
+	<script type="text/javascript" src="/resources/js/validMantenimiento.js"></script>
+
 </head>
 
 <body>
@@ -42,10 +45,10 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col">
-                                    <form action="bdMantenimiento.php" method="post" class="form-horizontal">
+                                    <form action="bdMantenimiento.php" method="post" class="form-horizontal" onsubmit="return validar();">
                                         <table class="table table-striped  table-condensed table-hover">
                                             <?php foreach($mantenimientos as $mant){ ?>
-                                            <input type="hidden" value="<?php echo $mant['idVehiculo']; ?>" name="fkVehiculoM" id="fkVehiculoM" readonly>
+                                            <input type="hidden" value="<?php echo $mant['fkVehiculoM']; ?>" name="fkVehiculoM" id="fkVehiculoM" readonly>
                                             <input type="hidden" value="<?php echo $mant['idMecanico']; ?>" name="fkMecanicoM" id="fkMecanicoM" readonly>
                                             <div class="form-group">
                                                 <div class="col-xs-12 col-lg-6 col-lg-offset-3">
@@ -124,7 +127,8 @@
                                                 </div>
                                             </div> 
                                             <tr>
-                                                <td colspan="3" class="text-center">
+                                                <div id="mensaje" class="alert alert-danger alert-dismissable" style="clear: both; display: none;"></div>
+												<td colspan="3" class="text-center">
                                                     <a href="vista_mantenimientos.php" class="btn btn-danger">Volver</a>
                                                     <input type="submit" value="Modificar" class="btn btn-primary">
                                                 </td>

@@ -1,9 +1,8 @@
+
 function validar() {
-    var idVehiculo = document.getElementById('idVehiculo').value;
-    var tipo_vehiculo = document.getElementById('tipo_vehiculo').value;
+    
     var fecha_entrada = document.getElementById('fecha_entrada').value;
     var fecha_salida = document.getElementById('fecha_salida').value;
-    var km_unidad = document.getElementById('km_unidad').value;
     var costo = document.getElementById('costo').value;
     var repuestos = document.getElementById('repuestos').value;
     var externo = document.getElementById('externo').value;
@@ -19,25 +18,7 @@ function validar() {
     var mensaje = "";
     var error = 0;
 
-    if (idVehiculo == "") {
-        mensaje += "<p>Campo 'Vehiculo' vac&iacute;o.</p>";
-        error++;
-    } else {
-        if (!(regexnum).test(idVehiculo)) {
-            mensaje += "<p>Campo 'Vehiculo' inv&aacute;lido.</p>";
-            error++;
-        }
-    }
-    
-    if (tipo_vehiculo == "") {
-        mensaje += "<p>Campo 'Tipo Vehiculo' vac&iacute;o.</p>";
-        error++;
-    } else {
-        if (!(regexstr).test(tipo_vehiculo)) {
-            mensaje += "<p>Campo 'Tipo Vehiculo' inv&aacute;lido.</p>";
-            error++;
-        }
-    }
+   
 
     if (fecha_entrada == "") {
         mensaje += "<p>Campo 'Fecha Entrada' vac&iacute;o.</p>";
@@ -59,15 +40,7 @@ function validar() {
         }
     }
 
-    if (km_unidad == "") {
-        mensaje += "<p>Campo 'Km' vac&iacute;o.</p>";
-        error++;
-    } else {
-        if (!(regexnum).test(km_unidad)) {
-            mensaje += "<p>Campo 'Km' inv&aacute;lido.</p>";
-            error++;
-        }
-    }
+    
 
     if (costo == "") {
         mensaje += "<p>Campo 'Costo' vac&iacute;o.</p>";

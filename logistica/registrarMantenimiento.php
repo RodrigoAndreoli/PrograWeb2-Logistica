@@ -13,7 +13,7 @@
     
         $obj = new controlDB();
         
-        $vehiculos = $obj -> consultar("SELECT idVehiculo, patente 
+        $vehiculos = $obj -> consultar("SELECT idVehiculo, patente , tipo_vehiculo , marca , km 
             FROM Vehiculo");
         
         $mecanicos = $obj -> consultar("SELECT M.fkMecanicoM 
@@ -47,27 +47,30 @@
                                     <h3>Registrar nuevo mantenimiento</h3>
                                 </div>
                             </div>
-                            <form action="bdMantenimiento.php" method="post" name="form" id="form" onsubmit="return validar()">
-                                <table class="table">
-                                    <div class="col-xs-6">
-                                        <div class="form-group">
-                                            <label for="nombre">Vehiculo:</label>
-                                            <select class="form-control" name="idVehiculo" id="idVehiculo">
-                                                <?php foreach($vehiculos as $vehiculo){ ?>
-                                                    <option value="<?php echo $vehiculo['idVehiculo']?>"><?php echo $vehiculo['patente']?></option>
-                                                <?php } ?>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <?php foreach($mecanicos as $m){ ?>
+                            
+							<form action="bdMantenimiento.php" method="post" name="form" id="form" onsubmit="return validar()">
+									<?php foreach($mecanicos as $m){ ?>
                                         <input type="hidden" id="fkMecanicoM" name="fkMecanicoM" value="<?php echo $m['fkMecanicoM']?>" readonly>
                                     <?php } ?>
+								<table class="table">
+                                    <div class="col-xs-12" style="padding:0;">
+										<div class="col-xs-6">
+											<div class="form-group">
+												<label for="nombre">Patente Vehiculo:</label>
+												<select class="form-control" name="fkVehiculoM" id="fkVehiculoM">
+													<?php foreach($vehiculos as $vehiculo){ ?>
+														<option value="<?php echo $vehiculo['idVehiculo']?>"><?php echo $vehiculo['patente']?></option>
+													<?php } ?>
+												</select>
+											</div>
+										</div>
+									</div>
                                     <div class="col-xs-6">
                                         <div class="form-group">
                                             <label for="">Fecha de Entrada:</label>
                                             <input type="date" class="form-control" name="fecha_entrada" id="fecha_entrada" placeholder="2000-12-31">
                                         </div>
-                                        <div class="form-group">
+										<div class="form-group">
                                             <label for="">Fecha de Salida:</label>
                                             <input type="date" class="form-control" name="fecha_salida" id="fecha_salida" placeholder="2000-12-31">
                                         </div>
@@ -128,13 +131,11 @@
                                             <input type="text" class="form-control" name="repuestos" id="repuestos" placeholder="repuestos..." onblur="return validar()">
                                         </div>
                                     </div>
-                                    <div class="col-xs-6">
-                                        <div class="form-group">
-                                        <a href="vista_mantenimientos.php" class="btn btn-danger btn-lg">Volver</a>
-                                        <button type="submit" class="btn btn-primary btn-lg">Crear</button>
-                                    </div>
-                                    </div>
                                     <div id="mensaje" class="alert alert-danger alert-dismissable" style="clear: both; display: none;"></div>
+                                    <div class="form-group">
+										<a href="vista_mantenimientos.php" class="btn btn-danger btn-lg">Volver</a>
+										<button type="submit" class="btn btn-primary btn-lg">Crear</button>
+									</div>
                                 </table>
                                 <input type="hidden" name="funcion" id="funcion" value="insertar" readonly>
                             </form>
