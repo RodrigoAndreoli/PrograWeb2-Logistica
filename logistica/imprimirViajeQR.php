@@ -1,5 +1,16 @@
 <?php
-    require_once($_SERVER['DOCUMENT_ROOT'].'/resources/db/control.php');
+    
+	require_once($_SERVER['DOCUMENT_ROOT'].'/resources/config.php');
+        $miSession = new Sesion();
+        $miSession -> iniciarSesion();
+        echo $_SESSION['rol'];
+		
+		if($_SESSION['rol']=='Mecanico'){
+                $miSession -> permisos();
+            } 
+	
+	
+	require_once($_SERVER['DOCUMENT_ROOT'].'/resources/db/control.php');
     include($_SERVER['DOCUMENT_ROOT'].'/resources/templates/pdfPageP.php');
     include($_SERVER['DOCUMENT_ROOT'].'/resources/library/qr/qrlib.php');
 
