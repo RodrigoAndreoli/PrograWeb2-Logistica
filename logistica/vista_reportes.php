@@ -125,7 +125,7 @@
                                                         <?php echo $td['Tiempo']; ?>
                                                     </td>
                                                     <td>
-                                                        <a href="https://www.google.com/maps/?q=<?php echo ($td['longitud'].','.$td['latitud']); ?>" target="_blank">
+                                                        <a href="https://www.google.com/maps/?q=<?php echo $td['Longitud'].','.$td['Latitud']; ?>" target="_blank">
                                                             <?php 
                                                                 echo ('('.substr($td['Longitud'],0,6).' ; '.substr($td['Latitud'],0,6).')'); 
                                                             ?>
@@ -215,6 +215,7 @@
                                 </a>
                             </div>
                         <?php } ?>
+                        <br>
                     </div>
                 </div>
             </div>
