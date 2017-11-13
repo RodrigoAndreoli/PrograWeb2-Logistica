@@ -17,9 +17,11 @@
             WHERE idUsuario = '$cod'");
     ?>
 	<script type="text/javascript" src="/resources/js/validUser.js"></script>
+
 </head>
 
 <body>
+    
     <!-- HEADER -->
     <?php
         require_once($_SERVER['DOCUMENT_ROOT'].'/resources/templates/header.php');
@@ -46,9 +48,10 @@
                                     <form action="bdUser.php" method="post" class="form-horizontal" onsubmit="return validar();">
                                         <table class="table table-striped  table-condensed table-hover">
                                             <?php foreach($user as $users){ ?>
+                                            
                                             <div class="form-group">
                                                 <div class="col-xs-12 col-lg-6 col-lg-offset-3">
-                                                    <label class="control-label col-xs-4 col-sm-3">Nro documento:</label>
+                                                    <label class="control-label col-xs-4 col-sm-3">Nro. de documento:</label>
                                                     <div class="col-xs-8 col-sm-9">
                                                         <input type="text" class="form-control"  value="<?php echo $users['num_doc']; ?>" name="num_doc" id="num_doc">
                                                     </div>
@@ -69,11 +72,13 @@
                                                     </div>
                                                     <div class="col-xs-8 col-sm-9">
                                                         <select class="form-control" id="rol" name="rol" onblur="mostrarLic();">
-                                                            <option value="<?php echo $users['rol']; ?>" selected disabled><?php echo $users['rol']; ?></option>
-                                                            <option value="Chofer">Chofer</option>
-                                                            <option value="Administrador">Administrador</option>
                                                             <option value="Supervisor">Supervisor</option>
+                                                            <option value="Administrador">Administrador</option>
+                                                            <option value="Chofer">Chofer</option>
                                                             <option value="Mecanico">Mecanico</option>
+                                                            <script>
+                                                                document.getElementById("rol").value = '<?php echo $users['rol']; ?>';
+                                                            </script>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -100,11 +105,13 @@
                                                         <label for="sel2 ">Tipo Licencia:</label>
                                                     </div>
                                                     <div class="col-xs-8 col-sm-9">
-                                                        <select class="form-control" id="tipo_licencia" name="tp_licencia">
-                                                            <option value="<?php echo $users['tipo_licencia']; ?>" selected disabled><?php echo $users['tipo_licencia']; ?></option>
+                                                        <select class="form-control" id="tipo_licencia" name="tipo_licencia">
                                                             <option value="C">C</option>
                                                             <option value="D1">D1</option>
                                                             <option value="E1">E1</option>
+                                                            <script>
+                                                                document.getElementById("tipo_licencia").value = '<?php echo $users['tipo_licencia']; ?>';
+                                                            </script>
                                                         </select>
                                                     </div>
                                                 </div>

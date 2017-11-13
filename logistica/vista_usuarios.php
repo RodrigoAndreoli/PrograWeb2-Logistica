@@ -52,7 +52,11 @@
                                             <?php if($datos) foreach($datos as $td){ ?>
                                             <tr>
                                                 <td><?php echo $td['num_doc']; ?></td>
-                                                <td><?php echo $td['rol']; ?></td>
+                                                <?php if($td['rol'] == 'Chofer') { ?>
+                                                    <td><?php echo ($td['rol'].' ('.$td['tipo_licencia'].')'); ?></td>
+                                                <?php } else { ?>
+                                                    <td><?php echo $td['rol']; ?></td>
+                                                <?php } ?>
                                                 <td><?php echo $td['nombre']; ?></td>
                                                 <td><?php echo $td['fecha_nacimiento']; ?></td>
                                                 <td class="text-center">
