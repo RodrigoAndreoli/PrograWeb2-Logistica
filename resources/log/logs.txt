@@ -8547,3 +8547,25 @@
                 nro_motor = '123345',
                 km = '6977'
             WHERE idVehiculo = '4'
+13 11 2017 19:11:38 UPDATE Usuario 
+            SET num_doc = '3',
+                pass = '81dc9bdb52d04dc20036dbd8313ed055',
+                rol = 'Administrador',
+                nombre = 'Daniel Solis',
+                fecha_nacimiento = '1990-03-02',
+                tipo_licencia = ''
+            WHERE idUsuario = '4'
+13 11 2017 19:11:17 DELETE
+            FROM Usuario 
+            WHERE idUsuario='4'
+13 11 2017 19:11:59 INSERT INTO Usuario(num_doc, pass, rol, nombre, fecha_nacimiento, tipo_licencia)
+       VALUES('3245234543', 'de26f77dfb26462d0b5283d532c825d8', 'Administrador', 'dfgsdfgsdfgsdf', '2017-11-18', '')
+13 11 2017 19:11:18 INSERT INTO Presupuesto(fkClienteP, tiempo_estimado, km_estimado, combustible_estimado, costo_real, aceptado)
+        VALUES('4',  '23:00:00', '23423423', '43432', '4444', 'No')
+13 11 2017 19:11:11 INSERT INTO Viaje(fkPresupuestoV, fecha, origen, destino, tipo_carga)
+            VALUES('11', '2017-11-11 09:00:00', 'pal', 'bs', 'bsdfghdsfg')
+13 11 2017 19:11:11 UPDATE Presupuesto
+            SET aceptado = 'Si'
+            WHERE idPresupuesto = '11'
+13 11 2017 20:11:37 INSERT INTO Reporte(fkViajeR, fkChoferR, tiempo, latitud, longitud, motivo, km, combustible, descripcion)
+        VALUES ('1', '11', '2017-11-13 20:01:54', '-58.5642313', '-34.6701669', 'Parada Tecnica', '999990', '1523', '')

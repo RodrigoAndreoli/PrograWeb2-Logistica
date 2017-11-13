@@ -14,15 +14,19 @@
 
 ############### A HACER ###############
 
-+ Revisar la permision de nulls en la base de datos y validaciones JS
+CALENDARIO SERVICE
+PERMISO MANTENIMIENTO DE ADMIN
+VISTAS CHOFER RESPONSIVE
+SACAR LOS BOTONES/LINK QUE NO SE USAN
+ORGANIZAR LAS TABLAS PARA QUE APAREZCAN LOS "A ASIGNAR" PRIMERO
+NO PERMITIR MODIFICAR O ELIMINAR EL SUPERVISOR 2
+NRO DOCUMENTO TIENE QUE SER UNIQUE
+PATENTE TIENE QUE SER UNIQUE
+VER LOS DATETIME Y TIME
 
-+ Revisar los permisos de accesos segun correspondan
+KM TOTAL Y TIEMPO TOTAL = DIFERENCIA ENTRE PRIMER REPORTE(HORA Y KM) Y ULTIMO REPORTE (HORA Y KM)
+COMBUSTIBLE TOTAL = SUMA DE TODOS LOS REPORTES(COMBUSTIBLE)
 
-+ Revisar los select, insert, delete y updates, tira warnings por campos que no se graban ( usuario ya esta hecho)
-
-+ Me falta seguir modificando todos los abm con sus validaciones y ajustarlos.
-
-+ HABRIA QUE VER SI AL REGISTRAR UN REPORTE, SU DIFERENCIA DE TIEMPO Y KILOMETROS CON EL ANTERIOR REPORTE, Y EL COMBUSTIBLE CARGADO DEBERIAN SUMARSE PARA UPDATEAR LA TABLA DE VIAJES EN TIEMPO_TOTAL, COMBUSTIBLE_TOTAL Y KM_TOTAL
 
 ############### HECHO ###############
 
@@ -62,3 +66,11 @@
 + Se modifico usuarios
 
 + Se agrego un log en todos los archivos bdXXXX.php
+
++ Revisar la permision de nulls en la base de datos y validaciones JS
+
++ Revisar los permisos de accesos segun correspondan
+
++ Revisar los select, insert, delete y updates, tira warnings por campos que no se graban ( usuario ya esta hecho)
+
++ Me falta seguir modificando todos los abm con sus validaciones y ajustarlos.
