@@ -55,11 +55,11 @@
                                                 <td><?php echo ($td['razon']); ?></td>
                                                 <td><?php echo ('$ '.$td['costo_real']); ?></td>
                                                 <td><?php echo $td['tiempo_estimado']; ?></td>
-                                                <td><?php echo $td['combustible_estimado']; ?></td>              
+                                                <td><?php echo ('$ '.$td['combustible_estimado']); ?></td>              
                                                 <td><?php echo $td['km_estimado']; ?></td>
                                                 
                                                 <td class="text-center">
-                                                    <?php if($datos2!=null) { ?>
+                                                    <?php if($datos2) { ?>
                                                     <?php if(in_array($td['idPresupuesto'], $asignar)) { ?>
                                                     <a href="confirmarPresupuesto.php?id=<?php echo $td["idPresupuesto"]?>"> 
                                                         <button class="btn btn-success">Confirmar</button>
@@ -71,8 +71,10 @@
                                                         <button class="btn btn-danger">Eliminar</button>
                                                     </a>
                                                     <?php } else { ?>
-                                                            Aceptado
-                                                    <?php }} ?>
+                                                            <p>Aceptado</p>
+                                                    <?php }} else { ?>
+                                                            <p>Aceptado</p>
+                                                    <?php } ?>
                                                 </td>
                                             </tr>
                                             <?php } ?>
@@ -104,5 +106,7 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
     </body>
 </html>

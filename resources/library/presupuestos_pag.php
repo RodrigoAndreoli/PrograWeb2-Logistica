@@ -16,7 +16,7 @@
 
     $datos2 = $obj -> consultar("SELECT idPresupuesto
         FROM Presupuesto
-        WHERE aceptado = 'no'");
+        WHERE aceptado = 'No'");
 
     if($datos2 != null) {
         $asignar = array(); 

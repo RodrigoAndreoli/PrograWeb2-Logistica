@@ -44,36 +44,35 @@
                                         <table class="table">
 
                                             <?php foreach($usuario as $usr){ ?>
-                                            <input type="hidden" name="fkAdministradorP" id="fkAdministradorP" value="<?php echo $usr['idUsuario']; ?>">
+                                            <input type="hidden" name="fkAdministradorP" id="fkAdministradorP" value="<?php echo $usr['idUsuario']; ?>" readonly>
                                             <?php } ?>
 
                                             <div class="col-xs-6">
                                                 <div class="form-group">
-                                                    <label for="idCliente">Cliente</label>
-                                                    <select class="form-control" id="fkClienteP" name="fkClienteP" onblur="return validar()" >
-                                                        <option value="">n/d</option>
+                                                    <label for="idCliente">Cliente:</label>
+                                                    <select class="form-control" id="fkClienteP" name="fkClienteP">
                                                         <?php foreach($clientes as $cliente){ ?>
                                                             <option value="<?php echo $cliente['fkClienteP']; ?>"><?php echo $cliente['razon']; ?></option>
                                                         <?php } ?>
                                                     </select>
                                                 </div>
 												<div class="form-group">
-                                                    <label for="nombre">Tiempo</label>
-                                                    <input type="text" class="form-control" name="tiempo_estimado" id="tiempo_estimado" onblur="return validar()" placeholder="00:00:00">
+                                                    <label for="nombre">Tiempo Estimado:</label>
+                                                    <input type="text" class="form-control" name="tiempo_estimado" id="tiempo_estimado" placeholder="00:00:00">
                                                 </div>
                                                 
                                             </div>
                                      
                                             <div class="col-xs-6">
                                                 <div class="form-group">
-                                                    <label for="">Costo</label>
-                                                    <input type="text" class="form-control" name="costo_real" id="costo_real" onblur="return validar()" placeholder="Costo...">
+                                                    <label for="">Costo a Presupuestar:</label>
+                                                    <input type="text" class="form-control" name="costo_real" id="costo_real" placeholder="Costo...">
                                                 </div>
                                             </div>
                                             <div class="col-xs-6">
                                                 <div class="form-group">
-                                                    <label for="">Combustible previsto</label>
-                                                    <input type="number" class="form-control" name="combustible_estimado" id="combustible_estimado" onblur="return validar()" placeholder="combustible...">
+                                                    <label for="">Gasto en Combustible Estimado:</label>
+                                                    <input type="number" class="form-control" name="combustible_estimado" id="combustible_estimado" placeholder="combustible...">
                                                 </div>
 												
                                             </div>
@@ -81,23 +80,22 @@
 												<div class="col-xs-3"></div>
 												<div class="col-xs-6">
 													<div class="form-group">
-														<label for="doc">km previstos</label>
+														<label for="doc">Kilometraje Estimado:</label>
 														<input type="number" class="form-control" name="km_estimado" id="km_estimado" onblur="return validar()" placeholder="Km">
 													</div>
 												</div>
 												<div class="col-xs-3"></div>
 											</div>
-
                                             <div class="form-group">
 								                <div id="mensaje" class="alert alert-danger alert-dismissable" style="clear: both; display: none;"></div>
-								            </div>                                            <div class="form-group">
+								            </div>
+                                            <div class="form-group">
                                                 <a href="vista_presupuestos.php" class="btn btn-danger btn-lg">Volver</a>
                                                 <button type="submit" class="btn btn-primary btn-lg">Crear</button>
                                             </div>
                                         </table>
-                                        <input type="hidden" class="form-control" name="aceptado" id="aceptado" value="no" readonly>
-
-                                        <input type="hidden" name="funcion" value="insertar">
+                                        <input type="hidden" class="form-control" name="aceptado" id="aceptado" value="No" readonly>
+                                        <input type="hidden" name="funcion" id="funcion" value="insertar" readonly>
                                     </form>
                                 </div>
                             </div>

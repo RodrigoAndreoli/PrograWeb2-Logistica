@@ -6,11 +6,6 @@ function validar() {
     var combustible_estimado = document.getElementById('combustible_estimado').value;
     var costo_real = document.getElementById('costo_real').value;
 
- 
-
-   
-
-    
     //expresiones regulares
     var regexnum = /([0-9]+(\.|\,?)[0-9]{0,2})/;
     var regextime = /\d\d\:(0\d|1\d|2\d|3\d|4\d|5\d)\:(0\d|1\d|2\d|3\d|4\d|5\d)/;
@@ -74,8 +69,6 @@ function validar() {
         }
     }
 
-    
-    
     if (error > 0) {
         document.getElementById('mensaje').style.display = "block";
         document.getElementById('mensaje').innerHTML = mensaje;
