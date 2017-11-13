@@ -1,13 +1,13 @@
 <?php
     
-	require_once($_SERVER['DOCUMENT_ROOT'].'/resources/config.php');
+	/*require_once($_SERVER['DOCUMENT_ROOT'].'/resources/config.php');
         $miSession = new Sesion();
         $miSession -> iniciarSesion();
         echo $_SESSION['rol'];
 		
 		if($_SESSION['rol']=='Mecanico'){
                 $miSession -> permisos();
-            } 
+            } */
 	
 	
 	require_once($_SERVER['DOCUMENT_ROOT'].'/resources/db/control.php');
