@@ -37,11 +37,11 @@
         $x++;
         $pdf->Cell(10);
         $pdf->Cell(15,8,$x,1,0,'C');
-        $pdf->Cell(30,8,$a['Nombre'],1,0,'C');
+        $pdf->Cell(30,8,utf8_decode($a['Nombre']),1,0,'C');
         $pdf->Cell(40,8,$a['Tiempo'],1,0,'C');
         $pdf->Cell(30,8,'('.substr($a['Longitud'],0,6).' ; '.substr($a['Latitud'],0,6).')',1,0,'C');
-        $pdf->Cell(30,8,$a['Motivo'],1,0,'C');
-        $pdf->Cell(50,8,$a['Descripcion'],1,0,'C');
+        $pdf->Cell(30,8,utf8_decode($a['Motivo']),1,0,'C');
+        $pdf->Cell(50,8,utf8_decode($a['Descripcion']),1,0,'C');
         $pdf->Cell(30,8,$a['Kilometros'],1,0,'C');
 		$pdf->Cell(30,8,'$ '.$a['Combustible'],1,1,'C');
     }
