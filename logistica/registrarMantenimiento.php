@@ -19,8 +19,7 @@
         $mecanicos = $obj -> consultar("SELECT M.fkMecanicoM 
         FROM Mantenimiento M 
         JOIN Usuario U ON U.idUsuario=M.fkMecanicoM 
-        WHERE U.rol = '".$_SESSION['rol']."' 
-            AND U.nombre = '".$_SESSION['usuario']."'");
+        WHERE U.idUsuario = '".$_SESSION['idUsuario']."'");
         
     ?>
     <script type="text/javascript" src="/resources/js/validMantenimiento.js"></script>

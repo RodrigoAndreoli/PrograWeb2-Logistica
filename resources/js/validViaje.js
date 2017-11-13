@@ -2,7 +2,7 @@ function validar() {
     var fecha = document.getElementById('fecha').value;
     var origen = document.getElementById('origen').value;
     var destino = document.getElementById('destino').value;
-    var carga = document.getElementById('carga').value;
+    var tipo_carga = document.getElementById('tipo_carga').value;
 
     //expresiones regulares
     var regexstr = /\b([A-Z]*[a-z]+)+\b/;
@@ -11,7 +11,7 @@ function validar() {
     //variables auxiliares
     var mensaje = "";
     var error = 0;
-
+    
     if (fecha == "") {
         mensaje += "<p>Campo 'Fecha' vac&iacute;o.</p>";
         error++;
@@ -21,7 +21,7 @@ function validar() {
             error++;
         }
     }
-    
+
     if (origen == "") {
         mensaje += "<p>Campo 'Origen' vac&iacute;o.</p>";
         error++;
@@ -32,16 +32,16 @@ function validar() {
         error++;
     }
     
-    if (carga == "") {
+    if (tipo_carga == "") {
         mensaje += "<p>Campo 'Tipo de Carga' vac&iacute;o.</p>";
         error++;
     } else {
-        if (!(regexstr).test(carga)) {
+        if (!(regexstr).test(tipo_carga)) {
             mensaje += "<p>Campo 'Tipo de Carga' inv&aacute;lido.</p>";
             error++;
         }
     }
-    
+
     if (error > 0) {
         document.getElementById('mensaje').style.display = "block";
         document.getElementById('mensaje').innerHTML = mensaje;
@@ -50,5 +50,4 @@ function validar() {
         document.getElementById('mensaje').style.display = "none";
         return true;
     }
-
 }

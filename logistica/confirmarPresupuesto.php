@@ -26,6 +26,8 @@
     $viajes = $obj -> consultar("SELECT idViaje 
         FROM Viaje");*/
 ?>
+<script type="text/javascript" src="/resources/js/validViaje.js"></script>
+
 </head>
 
 <body>
@@ -78,7 +80,6 @@
 
                                     <input type="hidden" class="form-control" name="fkPresupuestoV" id="fkPresupuestoV"  value="<?php echo $idPresupuesto ?>">
                                     
-                            <div id="mensaje" class="alert alert-danger alert-dismissable" style="clear: both; display: none;"></div>
                             <div class="form-group">
 
                                 <a href="vista_presupuestos.php" class="btn btn-danger btn-lg">Volver</a>
@@ -87,6 +88,7 @@
 
                             <input type="hidden" name="funcion" id="funcion" value="insertar" readonly>
                         </form>
+                        <div id="mensaje" class="alert alert-danger alert-dismissable" style="clear: both; display: none;"></div>
                     </div>
                 </div>
             </div>
