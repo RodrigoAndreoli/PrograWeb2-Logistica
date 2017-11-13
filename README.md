@@ -1,5 +1,7 @@
 ## PrograWeb2-TP
 
+## Esta revisado todo lo pertinente al Chofer y al Supervisor, falta chequear Mecanico y Admin
+
 Para branchear:
 
 //CREO (-b) EL BRANCH 'ejemplo', Y ME SITUO (checkout) EN EL.
