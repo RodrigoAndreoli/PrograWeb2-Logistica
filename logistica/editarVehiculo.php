@@ -54,13 +54,13 @@
                                                         <label for="">Tipo de veh&iacute;culo</label>
                                                     </div>
                                                     <div class="col-xs-8 col-sm-9">
-                                                        <select class="form-control" id="tipo_vehiculo" name="tipo_vehiculo">
-                                                            <option value="<?php echo $vehiculos['tipo_vehiculo'];?>"><?php echo $vehiculos['tipo_vehiculo']; ?></option>
-                                                            <?php if ($vehiculos['tipo_vehiculo']=="Camion")
-																		echo '<option value="Acoplado">Acoplado</option>';
-																  else
-																		echo '<option value="Camion">Camion</option>';
-															?>
+                                                        <select class="form-control" id="tipo_vehiculo" name="tipo_vehiculo" onblur="return ocultarMotor()">
+                                                           
+                                                           <option value="Acoplado">Acoplado</option>
+														  <option value="Camion">Camion</option>
+														<script>
+                                                                document.getElementById("tipo_vehiculo").value="<?php echo $vehiculos['tipo_vehiculo']; ?>";
+                                                            </script>
                                                         </select>
                                                     </div>
                                                 </div>

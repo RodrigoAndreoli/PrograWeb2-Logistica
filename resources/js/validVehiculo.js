@@ -1,3 +1,16 @@
+function ocultarMotor()
+{
+    var tipo = document.getElementById("tipo_vehiculo").value;
+    var motor = document.getElementById("nro_motor");
+    if(tipo=="Camion"){
+        motor.disabled = false;
+    } 
+    else{
+        motor.value = "";
+        motor.disabled = true;
+    }
+}
+
 function validar() {
     var marca = document.getElementById('marca').value;
     var modelo = document.getElementById('modelo').value;

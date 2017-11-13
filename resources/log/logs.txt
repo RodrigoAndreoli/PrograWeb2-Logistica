@@ -8456,3 +8456,94 @@
 12 11 2017 04:11:24 UPDATE Presupuesto
             SET aceptado = 'No'
             WHERE idPresupuesto = '10'
+13 11 2017 17:11:59 INSERT INTO Viaje(fkPresupuestoV, fecha, origen, destino, tipo_carga)
+            VALUES('15', '2017-12-24 22:00:00', 'Polo Norte', 'Todo el mundo', 'Regalos navideños')
+13 11 2017 17:11:59 UPDATE Presupuesto
+            SET aceptado = 'Si'
+            WHERE idPresupuesto = '15'
+13 11 2017 17:11:29 INSERT INTO Viaje(fkPresupuestoV, fecha, origen, destino, tipo_carga)
+            VALUES('9', '2017-12-24 22:00:00', 'Polo Norte', 'Todo el mundo', 'Regalos navideños')
+13 11 2017 17:11:29 UPDATE Presupuesto
+            SET aceptado = 'Si'
+            WHERE idPresupuesto = '9'
+13 11 2017 17:11:39 UPDATE Mantenimiento 
+            SET fkVehiculoM = '6',
+                fecha_entrada = '2016-04-15',
+                fecha_salida = '2016-07-15',
+                costo = '1',
+                externo = 'Si',
+                cambio_aceite = 'No',
+                filtro_aire = 'No',
+                direccion = 'No',
+                repuestos = 'Embrague ventilador'
+            WHERE idMantenimiento = '4'
+13 11 2017 17:11:58 UPDATE Mantenimiento 
+            SET fkVehiculoM = '6',
+                fecha_entrada = '2016-04-15',
+                fecha_salida = '2016-07-15',
+                costo = '1.00',
+                externo = 'Si',
+                cambio_aceite = 'Si',
+                filtro_aire = 'Si',
+                direccion = 'Si',
+                repuestos = 'Embrague ventilador'
+            WHERE idMantenimiento = '4'
+13 11 2017 18:11:16 UPDATE Mantenimiento 
+            SET fkVehiculoM = '6',
+                fecha_entrada = '2016-04-15',
+                fecha_salida = '2016-07-15',
+                costo = '1.00',
+                externo = 'No',
+                cambio_aceite = 'No',
+                filtro_aire = 'No',
+                direccion = 'No',
+                repuestos = 'Embrague ventilador'
+            WHERE idMantenimiento = '4'
+13 11 2017 18:11:25 UPDATE Mantenimiento 
+            SET fkVehiculoM = '6',
+                fecha_entrada = '2016-04-15',
+                fecha_salida = '2016-07-15',
+                costo = '1.00',
+                externo = 'Si',
+                cambio_aceite = 'Si',
+                filtro_aire = 'Si',
+                direccion = 'Si',
+                repuestos = 'Embrague ventilador'
+            WHERE idMantenimiento = '4'
+13 11 2017 18:11:51 UPDATE Mantenimiento 
+            SET fkVehiculoM = '6',
+                fecha_entrada = '2016-04-01',
+                fecha_salida = '2016-07-01',
+                costo = '1',
+                externo = 'No',
+                cambio_aceite = 'No',
+                filtro_aire = 'Si',
+                direccion = 'Si',
+                repuestos = 'a'
+            WHERE idMantenimiento = '4'
+13 11 2017 18:11:20 UPDATE Mantenimiento 
+            SET fkVehiculoM = '6',
+                fecha_entrada = '2016-04-01',
+                fecha_salida = '2016-07-01',
+                costo = '1.00',
+                externo = 'Si',
+                cambio_aceite = 'No',
+                filtro_aire = 'Si',
+                direccion = 'Si',
+                repuestos = 'a'
+            WHERE idMantenimiento = '4'
+13 11 2017 18:11:33 INSERT INTO Mantenimiento(fkVehiculoM, fkMecanicoM, fecha_entrada, fecha_salida, costo, externo, cambio_aceite, filtro_aire, direccion, repuestos)
+       VALUES('1', '12', '2000-01-01', '2000-01-01', '1', 'Si', 'No', 'No', 'No', '1')
+13 11 2017 18:11:39 DELETE
+            FROM Mantenimiento 
+            WHERE idMantenimiento = '6'
+13 11 2017 18:11:51 UPDATE Vehiculo
+            SET tipo_vehiculo = 'Camion',
+                patente = 'AB372CD',
+                marca = 'Nortrucks',
+                modelo = '2508',
+                anio = '2017',
+                nro_chasis = '21BRz195Y0808',
+                nro_motor = '123345',
+                km = '6977'
+            WHERE idVehiculo = '4'
