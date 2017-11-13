@@ -13,7 +13,7 @@
         $anio = $_POST['anio'];
         $nro_chasis = $_POST['nro_chasis'];
         $nro_motor = $_POST['nro_motor'];
-        $km = $_POST['km'];
+        $km = $_POST['kilometros'];
         $cod = $_POST['cod']; 
     }
 

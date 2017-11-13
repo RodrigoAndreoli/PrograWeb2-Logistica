@@ -55,9 +55,12 @@
                                                     </div>
                                                     <div class="col-xs-8 col-sm-9">
                                                         <select class="form-control" id="tipo_vehiculo" name="tipo_vehiculo">
-                                                            <option value="<?php echo $vehiculos['tipo_vehiculo'];?>" selected disabled><?php echo $vehiculos['tipo_vehiculo']; ?></option>
-                                                            <option value="Camion">Camion</option>
-                                                            <option value="Acoplado">Acoplado</option>
+                                                            <option value="<?php echo $vehiculos['tipo_vehiculo'];?>"><?php echo $vehiculos['tipo_vehiculo']; ?></option>
+                                                            <?php if ($vehiculos['tipo_vehiculo']=="Camion")
+																		echo '<option value="Acoplado">Acoplado</option>';
+																  else
+																		echo '<option value="Camion">Camion</option>';
+															?>
                                                         </select>
                                                     </div>
                                                 </div>
