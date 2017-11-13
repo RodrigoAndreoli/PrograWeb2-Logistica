@@ -16,9 +16,11 @@
             FROM Vehiculo 
             WHERE idVehiculo = '$cod'");
     ?>
+    <script type="text/javascript" src="/resources/js/validVehiculo.js"></script>
 </head>
 
 <body>
+
     <!-- HEADER -->
     <?php
         require_once($_SERVER['DOCUMENT_ROOT'].'/resources/templates/header.php');
@@ -42,7 +44,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col">
-                                    <form action="bdVehiculo.php" method="post" class="form-horizontal">
+                                    <form action="bdVehiculo.php" method="post" class="form-horizontal" onsubmit="return validar()">
                                         <table class="table table-striped  table-condensed table-hover">
                                             <?php foreach($vehiculo as $vehiculos){ ?>
                                             <input type="hidden" class="form-control"  placeholder="<?php echo $vehiculos['idVehiculo']; ?>" id="idVehiculo" name="idVehiculo" readonly>
@@ -112,10 +114,11 @@
                                                 <div class="col-xs-12 col-lg-6 col-lg-offset-3">
                                                     <label class="control-label col-xs-4 col-sm-3">Kilometraje:</label>
                                                     <div class="col-xs-8 col-sm-9">
-                                                        <input type="text" class="form-control" value="<?php echo $vehiculos['km']; ?>" name="km" id="km">
+                                                        <input type="text" class="form-control" value="<?php echo $vehiculos['km']; ?>" name="kilometros" id="kilometros" onblur="return validar()">
                                                     </div>
                                                 </div>
                                             </div>
+                                <div id="mensaje" class="alert alert-danger alert-dismissable" style="clear: both; display: none;"></div>                                            
                                             <tr>
                                                 <td colspan="3" class="text-center">
                                                     <a href="vista_vehiculos.php" class="btn btn-danger">Volver</a>
@@ -126,6 +129,7 @@
                                         </table>
                                         <input type="hidden" name="funcion" id="funcion" value="modificar" readonly> 
                                         <input type="hidden" name="cod" id="cod" value="<?php echo $cod; ?>" readonly>
+
                                     </form>
                                 </div>
                             </div>

@@ -1,10 +1,10 @@
 function validar() {
     var marca = document.getElementById('marca').value;
     var modelo = document.getElementById('modelo').value;
-    var selVehi = document.getElementById('selVehi').value;
+    var selVehi = document.getElementById('tipo_vehiculo').value;
     var patente = document.getElementById('patente').value;
-    var num_chasis = document.getElementById('num_chasis').value;
-    var num_motor = document.getElementById('num_motor').value;
+    var num_chasis = document.getElementById('nro_chasis').value;
+    var num_motor = document.getElementById('nro_motor').value;
     var anio = document.getElementById('anio').value;
     var kilometros = document.getElementById('kilometros').value;
 
