@@ -144,7 +144,7 @@ INSERT INTO Usuario (num_doc, pass, rol, nombre, fecha_nacimiento, tipo_licencia
 (26094040, 'c4ca4238a0b923820dcc509a6f75849b', 'Mecanico', 'Lucas Silva', '1885-10-01', NULL),
 (123, '202cb962ac59075b964b07152d234b70', 'Administrador', 'Martin Diaz', '1995-10-03', NULL),
 (44139463, '202cb962ac59075b964b07152d234b70', 'Administrador', 'Luis Ruiz', '1994-08-01', NULL),
-(34609195, '81dc9bdb52d04dc20036dbd8313ed055', 'Chofer', 'Alberto López', '2000-07-07', 'E1'),
+(34609195, '81dc9bdb52d04dc20036dbd8313ed055', 'Chofer', 'Alberto López', '2000-07-07', 'D1'),
 (25173964, '81dc9bdb52d04dc20036dbd8313ed055', 'Mecanico', 'Jorge Gómez', '1980-07-07', NULL),
 (36707564, '81dc9bdb52d04dc20036dbd8313ed055', 'Supervisor', 'Marcela Rodríguez ', '1998-02-02', NULL);
 
