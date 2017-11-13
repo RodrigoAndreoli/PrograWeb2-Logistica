@@ -7,7 +7,9 @@
     require_once($_SERVER['DOCUMENT_ROOT'].'/resources/config.php');
     $miSession = new Sesion();
     $miSession -> iniciarSesion();
-        //$miSession -> permisos();
+    if($_SESSION['rol'] == 'Mecanico'){
+        $miSession -> permisos();
+        }
       $obj = new controlDB();
     if($_SESSION['rol'] == 'Administrador' || $_SESSION["rol"] == 'Supervisor'){
         include $LIBRARY_PATH.'/viajes_pag.php';
