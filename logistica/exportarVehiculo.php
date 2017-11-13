@@ -5,7 +5,8 @@
 
     $obj = new controlDB();
     $datos=$obj->consultar("SELECT * 
-        FROM Vehiculo");
+        FROM Vehiculo
+        ORDER BY tipo_vehiculo, anio");
     
     $pdf=new PDF();
     //Alias de pagina para poder usar nb
