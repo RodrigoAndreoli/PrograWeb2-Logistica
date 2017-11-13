@@ -1,10 +1,12 @@
 function validar() {
-    var idCliente = document.getElementById('idCliente').value;
+    var fkClienteP = document.getElementById('fkClienteP').value;
     var tiempo_estimado = document.getElementById('tiempo_estimado').value;
     var km_estimado = document.getElementById('km_estimado').value;
-    var aceptado = document.getElementById('aceptado').value;
-    var combustible_previsto = document.getElementById('combustible_previsto').value;
+    //var aceptado = document.getElementById('aceptado').value;
+    var combustible_estimado = document.getElementById('combustible_estimado').value;
     var costo_real = document.getElementById('costo_real').value;
+
+ 
 
    
 
@@ -17,12 +19,11 @@ function validar() {
     var mensaje = "";
     var error = 0;
     
-    
-    if (idCliente == "") {
+        if (fkClienteP == "") {
         mensaje += "<p>Campo 'Cliente' vac&iacute;o.</p>";
         error++;
     } else {
-        if (!(regexnum).test(idCliente)) {
+        if (!(regexnum).test(fkClienteP)) {
             mensaje += "<p>Campo 'Cliente' inv&aacute;lido.</p>";
             error++;
         }
@@ -47,17 +48,17 @@ function validar() {
             error++;
         }
     }
-    
+    /*
     if (aceptado == "") {
         mensaje += "<p>Campo 'Aceptado' vac&iacute;o.</p>";
         error++;
     }
-    
-    if (combustible_previsto == "") {
+    */
+    if (combustible_estimado == "") {
         mensaje += "<p>Campo 'Combustible Previsto' vac&iacute;o.</p>";
         error++;
     } else {
-        if (!(regexnum).test(combustible_previsto)) {
+        if (!(regexnum).test(combustible_estimado)) {
             mensaje += "<p>Campo 'Combustible Previsto' inv&aacute;lido.</p>";
             error++;
         }
@@ -72,7 +73,7 @@ function validar() {
             error++;
         }
     }
-    
+
     
     
     if (error > 0) {

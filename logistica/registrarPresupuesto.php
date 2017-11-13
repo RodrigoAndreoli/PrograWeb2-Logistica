@@ -16,7 +16,7 @@
         
         $usuario = $obj -> consultar("SELECT idUsuario,nombre FROM usuario WHERE idUsuario = '".$_SESSION['idUsuario']."' ");
     ?>
-    <script type="text/javascript" src="/resources/js/valida.js"></script>
+    <script type="text/javascript" src="/resources/js/validPresupuesto.js"></script>
 </head>
 
 <body>
@@ -88,8 +88,9 @@
 												<div class="col-xs-3"></div>
 											</div>
 
-                                            <div id="mensaje" class="alert alert-danger alert-dismissable" style="clear: both; display: none;"></div>
                                             <div class="form-group">
+								                <div id="mensaje" class="alert alert-danger alert-dismissable" style="clear: both; display: none;"></div>
+								            </div>                                            <div class="form-group">
                                                 <a href="vista_presupuestos.php" class="btn btn-danger btn-lg">Volver</a>
                                                 <button type="submit" class="btn btn-primary btn-lg">Crear</button>
                                             </div>
