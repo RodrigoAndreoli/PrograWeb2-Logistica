@@ -18,7 +18,7 @@ CREATE TABLE Cliente(
 
 CREATE TABLE Usuario(
 	idUsuario int(11) NOT NULL AUTO_INCREMENT,
-    num_doc int(11) NOT NULL,
+    num_doc int(11) NOT NULL UNIQUE,
     pass varchar(45) COLLATE utf8_spanish_ci NOT NULL,
     rol enum('Supervisor', 'Administrador', 'Chofer', 'Mecanico') NOT NULL DEFAULT 'Supervisor',
     nombre varchar(45) COLLATE utf8_spanish_ci NOT NULL,
@@ -30,7 +30,7 @@ CREATE TABLE Usuario(
 CREATE TABLE Vehiculo(
 	idVehiculo int(11) NOT NULL AUTO_INCREMENT,
     tipo_vehiculo enum('Camion', 'Acoplado') NOT NULL DEFAULT 'Camion',
-    patente varchar(45) COLLATE utf8_spanish_ci NOT NULL,
+    patente varchar(45) COLLATE utf8_spanish_ci NOT NULL UNIQUE,
 	marca varchar(45) COLLATE utf8_spanish_ci NOT NULL,
     modelo varchar(45) COLLATE utf8_spanish_ci NOT NULL,
     anio year(4) NOT NULL,
@@ -58,6 +58,22 @@ CREATE TABLE Mantenimiento(
 	CONSTRAINT fk_mecm FOREIGN KEY (fkMecanicoM)
 		REFERENCES Usuario (idUsuario)
 );
+
+
+CREATE TABLE service (
+    idService int(11) NOT NULL,
+    fkVehiculoS int(11) NOT NULL,
+    fkMecanicoS int(11) NOT NULL,
+    fecha date NOT NULL,
+    service enum('filtro aire','cambio aceite','direccion') NOT NULL DEFAULT 'filtro aire',
+    km_service int(11) NOT NULL,
+    PRIMARY KEY (idService),
+    CONSTRAINT fk_vehm FOREIGN KEY (fkVehiculoS)
+		REFERENCES Vehiculo (idVehiculo),
+	CONSTRAINT fk_mecm FOREIGN KEY (fkMecanicoS)
+		REFERENCES Usuario (idUsuario)
+);
+
 
 CREATE TABLE Presupuesto(
 	idPresupuesto int(11) NOT NULL AUTO_INCREMENT,
@@ -154,7 +170,8 @@ INSERT INTO Vehiculo (tipo_vehiculo, patente, marca, modelo, anio, nro_chasis, n
 ('Camion', 'LAB372', 'Mercedes-Benz', '1710', 2000, '1HD1BRY195Y0808', 268268, 98788),
 ('Acoplado', 'AB372CD', 'Nortrucks', '2508', 2017, '21BRz195Y0808', NULL, 6977),
 ('Camion', 'BA273DC', 'Iveco', 'Daily', 2017, '8AD3CN6AP4G0032', 378478, 900),
-('Camion', 'AR747AK', 'Iveco', 'Daily', 2016, '8AD3CN6AP4G0032', 578596, 7892);
+('Camion', 'AR747AK', 'Iveco', 'Daily', 2016, '8AD3CN6AP4G0032', 578596, 7892),
+('Camion', 'ZXX456', 'Scania', '1634', 2014, '71dc9bdb52d04mc', 681163, 8500);
 
 INSERT INTO Mantenimiento (fkVehiculoM, fkMecanicoM, fecha_entrada, fecha_salida, costo, externo, cambio_aceite, filtro_aire, direccion, repuestos) VALUES
 (1, 3, '2017-01-15', '2017-06-15', '80000.00', 'No', 'Si', 'Si', 'Si', 'Faro de Giro, paragolpes, amortiguador'),
@@ -162,6 +179,15 @@ INSERT INTO Mantenimiento (fkVehiculoM, fkMecanicoM, fecha_entrada, fecha_salida
 (4, 8, '2017-07-10', '2017-07-15', '8000.00', 'Si', 'No', 'No', 'No', 'Juego de Espejos, burro de arranque.'),
 (6, 8, '2016-04-15', '2016-07-15', '16000.00', 'Si', 'Si', 'No', 'No', 'Embrague ventilador'),
 (2, 12, '2016-04-15', '2016-07-16', '80000.00', 'No', 'No', 'No', 'No', 'Eje Acople, corona');
+
+INSERT INTO service (idService, fkVehiculoS, fkMecanicoS, fecha, service, km_service) VALUES
+(1, 1, 3, '2014-01-01', 'cambio aceite', 8000),
+(2, 1, 3, '2016-05-04', 'filtro aire', 35000),
+(3, 5, 6, '2017-02-02', 'cambio aceite', 7000),
+(4, 3, 3, '2003-11-17', 'cambio aceite', 9000),
+(5, 3, 3, '2006-04-17', 'cambio aceite', 18000),
+(6, 3, 3, '2007-07-17', 'filtro aire', 36000),
+(7, 7, 3, '2015-11-08', 'cambio aceite', 8100);
 
 INSERT INTO Presupuesto (fkClienteP, tiempo_estimado, km_estimado, combustible_estimado, costo_real, aceptado) VALUES
 (1, '02:00:00', 135, 230.00, '1300.00', 'Si'),

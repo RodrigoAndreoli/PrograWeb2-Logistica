@@ -24,6 +24,10 @@
     color: #16A085;
 }
 
+.navbar-default .navbar-nav>li>a:hover {
+    color: #16A085 !important;
+}
+
 .navbar{
     margin-bottom: 0px; 
 }

@@ -10,13 +10,14 @@
         //Consulta, variable el objeto y la funcion de la clase
         $datos = $obj -> consultar("SELECT *
             FROM Usuario
+            WHERE idUsuario <> 2
             ORDER BY nombre
             LIMIT $empezar_desde, $tamagno_paginas");
         //print_r($datos);
 
         /*-------------Paginacion-------------------*/
         $num_filas = count($obj->consultar("SELECT *
-            FROM Usuario"));
+            FROM Usuario WHERE idUsuario <> 2"));
         $total_paginas = ceil($num_filas/$tamagno_paginas); //CEIL: Redondea paginas
         $sql_limite = $obj -> consultar("SELECT *
             FROM Usuario"); 

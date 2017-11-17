@@ -26,7 +26,8 @@
                 <div class="row">
                     <div class="col-lg-12 text-center">
                         <!-- El contenido -->
-                        <h3 class="">Bienvenido al sitio.</h3>
+                        <h3 class="">Bienvenido <?php echo $_SESSION['usuario'] ?></h3>
+
                     </div>
                 </div>
             </div>
