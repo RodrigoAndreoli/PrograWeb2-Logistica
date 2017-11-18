@@ -133,6 +133,13 @@
                                 </div>
                             <?php } ?>
                         </div>
+                        <div class="row text-center">
+                            <div class="col-xs-12">
+                                <?php if($_SESSION["rol"]=='Mecanico'){?>  
+                                <a href="registrarService.php" class="btn btn-primary">Nuevo Service</a>
+                                <?php } ?>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

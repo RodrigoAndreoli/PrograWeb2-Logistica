@@ -48,9 +48,6 @@ CREATE TABLE Mantenimiento(
     fecha_salida date NOT NULL,
     costo decimal(11,2) NOT NULL,
     externo enum('Si', 'No') NOT NULL DEFAULT 'No',
-    cambio_aceite enum('Si', 'No') NOT NULL DEFAULT 'No',
-    filtro_aire enum('Si', 'No') NOT NULL DEFAULT 'No',
-    direccion enum('Si', 'No') NOT NULL DEFAULT 'No',
     repuestos varchar(90) COLLATE utf8_spanish_ci NOT NULL,
     PRIMARY KEY (idMantenimiento),
     CONSTRAINT fk_vehm FOREIGN KEY (fkVehiculoM)
@@ -61,7 +58,7 @@ CREATE TABLE Mantenimiento(
 
 
 CREATE TABLE service (
-    idService int(11) NOT NULL,
+    idService int(11) NOT NULL AUTO_INCREMENT,
     fkVehiculoS int(11) NOT NULL,
     fkMecanicoS int(11) NOT NULL,
     fecha date NOT NULL,
@@ -173,12 +170,12 @@ INSERT INTO Vehiculo (tipo_vehiculo, patente, marca, modelo, anio, nro_chasis, n
 ('Camion', 'AR747AK', 'Iveco', 'Daily', 2016, '8AD3CN6AP4G0032', 578596, 7892),
 ('Camion', 'ZXX456', 'Scania', '1634', 2014, '71dc9bdb52d04mc', 681163, 8500);
 
-INSERT INTO Mantenimiento (fkVehiculoM, fkMecanicoM, fecha_entrada, fecha_salida, costo, externo, cambio_aceite, filtro_aire, direccion, repuestos) VALUES
-(1, 3, '2017-01-15', '2017-06-15', '80000.00', 'No', 'Si', 'Si', 'Si', 'Faro de Giro, paragolpes, amortiguador'),
-(1, 3, '2017-08-11', '2017-08-15', '1000.00', 'No', 'Si', 'Si', 'Si', 'Cubiertas, electroinyector'),
-(4, 8, '2017-07-10', '2017-07-15', '8000.00', 'Si', 'No', 'No', 'No', 'Juego de Espejos, burro de arranque.'),
-(6, 8, '2016-04-15', '2016-07-15', '16000.00', 'Si', 'Si', 'No', 'No', 'Embrague ventilador'),
-(2, 12, '2016-04-15', '2016-07-16', '80000.00', 'No', 'No', 'No', 'No', 'Eje Acople, corona');
+INSERT INTO Mantenimiento (fkVehiculoM, fkMecanicoM, fecha_entrada, fecha_salida, costo, externo, repuestos) VALUES
+(1, 3, '2017-01-15', '2017-06-15', '80000.00', 'Si', 'Faro de Giro, paragolpes, amortiguador'),
+(1, 3, '2017-08-11', '2017-08-15', '1000.00', 'Si', 'Cubiertas, electroinyector'),
+(4, 8, '2017-07-10', '2017-07-15', '8000.00', 'No', 'Juego de Espejos, burro de arranque.'),
+(6, 8, '2016-04-15', '2016-07-15', '16000.00', 'No', 'Embrague ventilador'),
+(2, 12, '2016-04-15', '2016-07-16', '80000.00', 'No', 'Eje Acople, corona');
 
 INSERT INTO service (idService, fkVehiculoS, fkMecanicoS, fecha, service, km_service) VALUES
 (1, 1, 3, '2014-01-01', 'cambio aceite', 8000),

@@ -88,48 +88,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="form-group">
-                                                <div class="col-xs-12 col-lg-6 col-lg-offset-3">
-                                                    <label class="control-label col-xs-4 col-sm-3">Cambio de Aceite:</label>
-                                                    <div class="col-xs-8 col-sm-9">
-                                                        <select class="form-control" id="cambio_aceite" name="cambio_aceite">
-                                                            <option value="No">No</option>
-                                                            <option value="Si">Si</option>
-                                                            <script>
-                                                                document.getElementById("cambio_aceite").value="<?php echo $mant['cambio_aceite']; ?>";
-                                                            </script>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-xs-12 col-lg-6 col-lg-offset-3">
-                                                    <label class="control-label col-xs-4 col-sm-3">Filtro de Aire:</label>
-                                                    <div class="col-xs-8 col-sm-9">
-                                                        <select class="form-control" id="filtro_aire" name="filtro_aire">
-                                                            <option value="No">No</option>
-                                                            <option value="Si">Si</option>
-                                                            <script>
-                                                                document.getElementById("filtro_aire").value="<?php echo $mant['filtro_aire']; ?>";
-                                                            </script>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-xs-12 col-lg-6 col-lg-offset-3">
-                                                    <label class="control-label col-xs-4 col-sm-3">Direccion:</label>
-                                                    <div class="col-xs-8 col-sm-9">
-                                                        <select class="form-control" id="direccion" name="direccion">
-                                                            <option value="No">No</option>
-                                                            <option value="Si">Si</option>
-                                                            <script>
-                                                                document.getElementById("direccion").value="<?php echo $mant['direccion']; ?>";
-                                                            </script>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
+
                                             <div class="form-group">
                                                 <div class="col-xs-12 col-lg-6 col-lg-offset-3">
                                                     <label class="control-label col-xs-4 col-sm-3">Repuestos:</label>

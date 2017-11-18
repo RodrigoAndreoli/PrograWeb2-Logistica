@@ -70,6 +70,8 @@
                                 <br>
                                 <?php if(!empty($buscar)) { ?>
                                 <div class="row">
+                                <div class="col-xs-12">
+                                    <div id="reportes">  
                                     <div class="table-responsive">
                                         <table class="table table-striped table-bordered table-condensed table-hover">
                                             <thead>
@@ -168,9 +170,11 @@
                                             <?php }} ?>
                                         </table>
                                     </div>
+                                    </div> 
+                                </div>
                                 </div>
                                 <div class="row">
-                                    <div id="map" style="height: 400px;" class="col-md-6 col-md-offset-3"></div>
+                                    <div id="map" style="height: 400px;" class="col-xs-12 col-md-6 col-md-offset-3"></div>
                                     <script>
                                         var locations = [
                                             <?php
@@ -211,7 +215,7 @@
                             <br>
                             <div class="row">
                                 <a href="exportarReporte.php?id=<?php echo $buscar; ?>" target="_blank">
-                                    <button class="btn btn-primary" target="_blank">Exportar a PDF</button>
+                                    <button class="btn btn-primary">Exportar a PDF</button>
                                 </a>
                             </div>
                         <?php } ?>

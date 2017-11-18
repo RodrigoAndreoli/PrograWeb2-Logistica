@@ -6,9 +6,7 @@ function validar() {
     var costo = document.getElementById('costo').value;
     var repuestos = document.getElementById('repuestos').value;
     var externo = document.getElementById('externo').value;
-    var direccion = document.getElementById('direccion').value;
-    var filtro_aire = document.getElementById('filtro_aire').value;
-    var cambio_aceite = document.getElementById('cambio_aceite').value;
+
     //expresiones regulares
     var regexnum = /([0-9]+(\.|\,?)[0-9]{0,2})/;
     var regexstr = /\b([A-Z]*[a-z]+)+\b/;
@@ -62,20 +60,6 @@ function validar() {
         error++;
     }
     
-    if (direccion == "") {
-        mensaje += "<p>Campo 'Direccion' vac&iacute;o.</p>";
-        error++;
-    }
-    
-    if (cambio_aceite == "") {
-        mensaje += "<p>Campo 'Cambio aceite' vac&iacute;o.</p>";
-        error++;
-    }
-    
-    if (filtro_aire == "") {
-        mensaje += "<p>Campo 'Filtro aire' vac&iacute;o.</p>";
-        error++;
-    }
 
     if (error > 0) {
         document.getElementById('mensaje').style.display = "block";
