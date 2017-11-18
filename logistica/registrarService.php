@@ -14,7 +14,7 @@
         $obj = new controlDB();
         
         $vehiculos = $obj -> consultar("SELECT idVehiculo, patente , tipo_vehiculo , marca , km 
-            FROM Vehiculo");
+            FROM Vehiculo WHERE tipo_vehiculo LIKE '%Camion%'");
         
         $mecanicos = $obj -> consultar("SELECT U.idUsuario FROM Usuario U WHERE U.idUsuario = '".$_SESSION['idUsuario']."'");
         
