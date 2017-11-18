@@ -59,6 +59,11 @@
                                     <hr/>
                                 </div>
                             </div>
+                        </div>
+                        <div class="row text-center">
+                                <div class="col">
+                                    <p class="text-muted">Selecionar modelo a buscar, para ver los datos</p>
+                                </div>
                         </div>           
                         <div class="col-lg-8 col-lg-offset-2">
                             <!--BUSCADOR-->
