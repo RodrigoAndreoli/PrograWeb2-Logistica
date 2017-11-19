@@ -5,9 +5,8 @@
     //Capturas los input hidden, request captura tanto get como post
     $funcion = $_REQUEST['funcion'];
     $id = $_REQUEST['id'];
-    
-	
-    if($funcion!="eliminar"){
+
+    if($funcion != "eliminar"){
         $fkPresupuestoV = $_POST['fkPresupuestoV'];
         $fecha = $_POST['fecha'];
         $origen = $_POST['origen'];
@@ -27,13 +26,14 @@
             SET aceptado = 'No'
             WHERE idPresupuesto = '$idPresupuesto'";
     } else {
-        $sql = "INSERT INTO Viaje(fkPresupuestoV, fecha, origen, destino, tipo_carga)
-            VALUES('$fkPresupuestoV', '$fecha', '$origen', '$destino', '$tipo_carga')"; 
+        $sql = "INSERT INTO Viaje(fkPresupuestoV, fecha, origen, destino, tipo_carga, tiempo_total, combustible_total, km_total)
+            VALUES('$fkPresupuestoV', '$fecha', '$origen', '$destino', '$tipo_carga', '00:00:00', 0.00, 0)"; 
         $sql2 = "UPDATE Presupuesto
             SET aceptado = 'Si'
             WHERE idPresupuesto = '$fkPresupuestoV'";
                  
     }
+    
 	
 	// escribe en el log
 	$log = new creaLog();

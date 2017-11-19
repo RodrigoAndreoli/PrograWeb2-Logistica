@@ -12,7 +12,7 @@
     $motivo = $_POST['motivo'];
     $km = $_POST['km'];
     $combustible = $_POST['combustible'];
-    $descripcion = $_POST['descripcion']; 
+    $descripcion = $_POST['descripcion'];
 
     $obj = new controlDB();
 

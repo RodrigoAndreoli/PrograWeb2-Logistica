@@ -5,19 +5,19 @@ USE logistica;
 
 -- Tablas
 CREATE TABLE Cliente(
-	idCliente int(11) NOT NULL AUTO_INCREMENT,
+    idCliente int(11) NOT NULL AUTO_INCREMENT,
     cuit bigint(11) NOT NULL,
     razon varchar(45) COLLATE utf8_spanish_ci NOT NULL,
     telefono varchar(45) COLLATE utf8_spanish_ci NOT NULL,
     dom_cp int(11) NOT NULL,
-    dom_calle varchar(45) COLLATE utf8_spanish_ci NOT NULL, 
+    dom_calle varchar(45) COLLATE utf8_spanish_ci NOT NULL,
     dom_numero int(11) NOT NULL,
     dom_piso int(11) NOT NULL,
     PRIMARY KEY (idCliente)
 );
 
 CREATE TABLE Usuario(
-	idUsuario int(11) NOT NULL AUTO_INCREMENT,
+    idUsuario int(11) NOT NULL AUTO_INCREMENT,
     num_doc int(11) NOT NULL UNIQUE,
     pass varchar(45) COLLATE utf8_spanish_ci NOT NULL,
     rol enum('Supervisor', 'Administrador', 'Chofer', 'Mecanico') NOT NULL DEFAULT 'Supervisor',
@@ -28,10 +28,10 @@ CREATE TABLE Usuario(
 );
 
 CREATE TABLE Vehiculo(
-	idVehiculo int(11) NOT NULL AUTO_INCREMENT,
+    idVehiculo int(11) NOT NULL AUTO_INCREMENT,
     tipo_vehiculo enum('Camion', 'Acoplado') NOT NULL DEFAULT 'Camion',
     patente varchar(45) COLLATE utf8_spanish_ci NOT NULL UNIQUE,
-	marca varchar(45) COLLATE utf8_spanish_ci NOT NULL,
+    marca varchar(45) COLLATE utf8_spanish_ci NOT NULL,
     modelo varchar(45) COLLATE utf8_spanish_ci NOT NULL,
     anio year(4) NOT NULL,
     nro_chasis varchar(45) COLLATE utf8_spanish_ci NOT NULL,
@@ -41,7 +41,7 @@ CREATE TABLE Vehiculo(
 );
 
 CREATE TABLE Mantenimiento(
-	idMantenimiento int(11) NOT NULL AUTO_INCREMENT,
+    idMantenimiento int(11) NOT NULL AUTO_INCREMENT,
     fkVehiculoM int(11) NOT NULL,
     fkMecanicoM int(11) NOT NULL,
     fecha_entrada date NOT NULL,
@@ -52,17 +52,17 @@ CREATE TABLE Mantenimiento(
     PRIMARY KEY (idMantenimiento),
     CONSTRAINT fk_vehm FOREIGN KEY (fkVehiculoM)
 		REFERENCES Vehiculo (idVehiculo),
-	CONSTRAINT fk_mecm FOREIGN KEY (fkMecanicoM)
+    CONSTRAINT fk_mecm FOREIGN KEY (fkMecanicoM)
 		REFERENCES Usuario (idUsuario)
 );
 
 
-CREATE TABLE service (
+CREATE TABLE Service (
     idService int(11) NOT NULL AUTO_INCREMENT,
     fkVehiculoS int(11) NOT NULL,
     fkMecanicoS int(11) NOT NULL,
     fecha date NOT NULL,
-    service enum('filtro aire','cambio aceite','direccion') NOT NULL DEFAULT 'filtro aire',
+    service enum('Filtro aire','Cambio aceite','Direccion') NOT NULL DEFAULT 'Filtro aire',
     km_service int(11) NOT NULL,
     PRIMARY KEY (idService),
     CONSTRAINT fk_vehs FOREIGN KEY (fkVehiculoS)
@@ -73,7 +73,7 @@ CREATE TABLE service (
 
 
 CREATE TABLE Presupuesto(
-	idPresupuesto int(11) NOT NULL AUTO_INCREMENT,
+    idPresupuesto int(11) NOT NULL AUTO_INCREMENT,
     fkClienteP int(11) NOT NULL,
     tiempo_estimado time NOT NULL,
     km_estimado int(11) NOT NULL,
@@ -86,22 +86,23 @@ CREATE TABLE Presupuesto(
 );
 
 CREATE TABLE Viaje(
-	idViaje int(11) NOT NULL AUTO_INCREMENT,
+    idViaje int(11) NOT NULL AUTO_INCREMENT,
     fkPresupuestoV int(11) NOT NULL,
     fecha datetime NOT NULL,
     origen varchar(45) COLLATE utf8_spanish_ci NOT NULL,
     destino varchar(45) COLLATE utf8_spanish_ci NOT NULL,
     tipo_carga varchar(45) COLLATE utf8_spanish_ci NOT NULL,
-    tiempo_total time,
-    combustible_total decimal(11,2),
-    km_total int(11),
+    tiempo_total time NOT NULL,
+    combustible_total decimal(11,2) NOT NULL,
+    km_total int(11) NOT NULL,
+    cerrado enum('Si', 'No') NOT NULL DEFAULT 'No',
     PRIMARY KEY (idViaje),
     CONSTRAINT fk_prev FOREIGN KEY (fkPresupuestoV)
 		REFERENCES Presupuesto (idPresupuesto)
 );
 
 CREATE TABLE Vehiculo_chofer_viaje(
-	fkViajeT int(11) NOT NULL,
+    fkViajeT int(11) NOT NULL,
     fkChoferT int(11) NOT NULL,
     fkAcompanianteT int(11),
     fkCamionT int(11) NOT NULL,
@@ -120,7 +121,7 @@ CREATE TABLE Vehiculo_chofer_viaje(
 ); 
 
 CREATE TABLE Reporte(
-	idReporte int(11) NOT NULL AUTO_INCREMENT,
+    idReporte int(11) NOT NULL AUTO_INCREMENT,
     fkViajeR int(11) NOT NULL,
     fkChoferR int(11) NOT NULL,
     tiempo datetime NOT NULL,
@@ -133,7 +134,7 @@ CREATE TABLE Reporte(
     PRIMARY KEY (idReporte),
     CONSTRAINT fk_viar FOREIGN KEY (fkViajeR)
 		REFERENCES Viaje (idViaje),
-	CONSTRAINT fk_chor FOREIGN KEY (fkChoferR)
+    CONSTRAINT fk_chor FOREIGN KEY (fkChoferR)
 		REFERENCES Usuario (idUsuario)
 );
 
@@ -177,14 +178,14 @@ INSERT INTO Mantenimiento (fkVehiculoM, fkMecanicoM, fecha_entrada, fecha_salida
 (6, 8, '2016-04-15', '2016-07-15', '16000.00', 'No', 'Embrague ventilador'),
 (2, 12, '2016-04-15', '2016-07-16', '80000.00', 'No', 'Eje Acople, corona');
 
-INSERT INTO service (idService, fkVehiculoS, fkMecanicoS, fecha, service, km_service) VALUES
-(1, 1, 3, '2014-01-01', 'cambio aceite', 8000),
-(2, 1, 3, '2016-05-04', 'filtro aire', 35000),
-(3, 5, 6, '2017-02-02', 'cambio aceite', 7000),
-(4, 3, 3, '2003-11-17', 'cambio aceite', 9000),
-(5, 3, 3, '2006-04-17', 'cambio aceite', 18000),
-(6, 3, 3, '2007-07-17', 'filtro aire', 36000),
-(7, 7, 3, '2015-11-08', 'cambio aceite', 8100);
+INSERT INTO Service (idService, fkVehiculoS, fkMecanicoS, fecha, service, km_service) VALUES
+(1, 1, 3, '2014-01-01', 'Cambio aceite', 8000),
+(2, 1, 3, '2016-05-04', 'Filtro aire', 35000),
+(3, 5, 6, '2017-02-02', 'Cambio aceite', 7000),
+(4, 3, 3, '2003-11-17', 'Cambio aceite', 9000),
+(5, 3, 3, '2006-04-17', 'Cambio aceite', 18000),
+(6, 3, 3, '2007-07-17', 'Filtro aire', 36000),
+(7, 7, 3, '2015-11-08', 'Cambio aceite', 8100);
 
 INSERT INTO Presupuesto (fkClienteP, tiempo_estimado, km_estimado, combustible_estimado, costo_real, aceptado) VALUES
 (1, '02:00:00', 135, 230.00, '1300.00', 'Si'),
@@ -198,15 +199,15 @@ INSERT INTO Presupuesto (fkClienteP, tiempo_estimado, km_estimado, combustible_e
 (5, '01:30:00', 150, 100.00, '550.00', 'No'),
 (2, '44:00:00', 2900, 5000.00, '6900.00', 'Si');
 
-INSERT INTO Viaje (fkPresupuestoV, fecha, origen, destino, tipo_carga, tiempo_total, combustible_total, km_total) VALUES
-(1, '2017-11-22 10:00:00', 'Logistica S.A.', 'Lujan Bs As', 'Sustancias y objetos peligrosos varios', '02:45:30', 230.00, 135),
-(2, '2017-10-24 09:00:00', 'Logistica S.A.', 'Cordoba', 'Mudanza', '05:35:00', 900.00, 900),
-(3, '2017-10-07 05:00:00', 'Logistica S.A.', 'Bariloche', 'Chocolates', '25:00:00', 2700.00, 1600),
-(4, '2017-11-07 05:00:00', 'Logistica S.A.', 'Bariloche', 'Chocolates', '23:55:00', 2700.00, 1600),
-(5, '2017-12-09 05:00:00', 'Logistica S.A.', 'Bariloche', 'Chocolates', '29:50:50', 2900.00, 1600),
-(6, '2017-11-10 08:00:00', 'Cordoba', 'Logistica S.A.', 'Refrigerados y congelados', '05:55:50', 400.00, 560),
-(7, '2018-01-08 14:00:00', 'Cordoba', 'Logistica S.A.', 'Refrigerados y congelados', '07:45:30', 460.00, 560),
-(10, '2017-12-20 21:00:00', 'Logistica S.A.', 'Rio Grande', 'Material radiactivo', '47:00:00', 5300.00, 5100);
+INSERT INTO Viaje (fkPresupuestoV, fecha, origen, destino, tipo_carga, tiempo_total, combustible_total, km_total, cerrado) VALUES
+(1, '2017-11-22 10:00:00', 'Logistica S.A.', 'Lujan Bs As', 'Sustancias y objetos peligrosos varios', '00:00:00', 0.00, 0, 'No'),
+(2, '2017-10-24 09:00:00', 'Logistica S.A.', 'Cordoba', 'Mudanza', '05:35:00', 900.00, 900, 'Si'),
+(3, '2017-10-07 05:00:00', 'Logistica S.A.', 'Bariloche', 'Chocolates', '00:00:00', 0.00, 0, 'No'),
+(4, '2017-11-07 05:00:00', 'Logistica S.A.', 'Bariloche', 'Chocolates', '00:00:00', 0.00, 0, 'No'),
+(5, '2017-12-09 05:00:00', 'Logistica S.A.', 'Bariloche', 'Chocolates', '29:50:50', 2900.00, 1600, 'Si'),
+(6, '2017-11-10 08:00:00', 'Cordoba', 'Logistica S.A.', 'Refrigerados y congelados', '05:55:50', 400.00, 560, 'Si'),
+(7, '2018-01-08 14:00:00', 'Cordoba', 'Logistica S.A.', 'Refrigerados y congelados', '07:45:30', 460.00, 560, 'Si'),
+(10, '2017-12-20 21:00:00', 'Logistica S.A.', 'Rio Grande', 'Material radiactivo', '47:00:00', 5300.00, 5100, 'Si');
 
 INSERT INTO Vehiculo_chofer_viaje (fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT) VALUES
 (1, 11, NULL, 3, 4),
@@ -216,12 +217,12 @@ INSERT INTO Vehiculo_chofer_viaje (fkViajeT, fkChoferT, fkAcompanianteT, fkCamio
 (6, 2, 5, 6, NULL);
 
 INSERT INTO Reporte (fkViajeR, fkChoferR, tiempo, longitud, latitud, motivo, km, combustible, descripcion) VALUES
-(1, 11, '2017-10-24 09:00:00', '-34.670322', '-58.563908', 'Parada Tecnica', 0, 0.00, 'Saliendo de la Central'),
-(1, 11, '2017-10-24 10:27:46', '-34.570730', '-59.111061', 'Parada Tecnica', 435, 0.00, 'Realizando la entrega'),
-(1, 11, '2017-10-24 11:45:30', '-34.670322', '-58.563908', 'Parada Tecnica', 900, 0.00, 'Llegando a la Central'),
+(1, 11, '2017-10-24 09:00:00', '-34.670322', '-58.563908', 'Parada Tecnica', 98460, 0.00, 'Saliendo de la Central'),
+(1, 11, '2017-10-24 10:27:46', '-34.570730', '-59.111061', 'Parada Tecnica', 98530, 0.00, 'Realizando la entrega'),
+(1, 11, '2017-10-24 11:45:30', '-34.670322', '-58.563908', 'Parada Tecnica', 98600, 230.00, 'Llegando a la Central'),
 (3, 1, '2017-10-07 05:00:04', '-34.670322', '-58.563908', 'Parada Tecnica', 79306, 0.00, 'Saliendo de la Central'),
 (3, 5, '2017-10-07 12:45:10', '-36.608621', '-64.287881', 'Parada Tecnica', 79851, 900.00, 'Carga de combustible'),
 (3, 5, '2017-10-07 16:49:25', '-37.772100', '-67.710509', 'Accidente', 80232, 0.00, 'Rueda pinchada'),
 (3, 1, '2017-10-07 23:43:43', '-38.942335', '-68.011294', 'Parada Tecnica', 80654, 900.00, 'Descanso por la noche'),
-(4, 6, '2017-11-07 05:00:10', '-34.670322', '-58.563908', 'Parada Tecnica', 98788, 0.00, 'Saliendo de la Central'),
+(4, 6, '2017-11-07 05:00:10', '-34.670322', '-58.563908', 'Parada Tecnica', 98600, 0.00, 'Saliendo de la Central'),
 (4, 6, '2017-11-07 12:41:00', '-35.842835', '-61.892379', 'Desvio', 98788, 0.00, 'Demorado por Desvio');

@@ -1,4 +1,4 @@
-function habilitarCombustible {
+function habilitarCombustible() {
     var motivo = document.getElementById('motivo').value;
     var combustible = document.getElementById('combustible');
     if(motivo == "Parada Tecnica"){

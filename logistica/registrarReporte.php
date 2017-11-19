@@ -20,12 +20,21 @@
             WHERE fkViajeT = '$idViaje'");
 
         $asignar = array(); 
-        foreach($verificacion as $v){
+        foreach($verificacion as $v) {
             $asignar[] = $v['fkViajeT'];
         }
         if(!in_array($idViaje, $asignar)) {
             header('Location: vista_reportes.php');
+            exit();
         }   
+        
+        $viaje = $obj -> consultar("SELECT cerrado
+            FROM Viaje
+            WHERE idViaje = $'idViaje'");
+        if($viaje[0][0] == 'Si') {
+            header('Location: vista_reportes.php');
+            exit();
+        }
 
         foreach($verificacion as $v) {
             if($idUsuario != $v['fkChoferT'] && $idUsuario != $v['fkAcompanianteT']) {
@@ -148,7 +157,7 @@
                                     </div>
                                 </div>
                                 <input type="hidden" name="funcion" id="funcion" value="insertar" readonly>
-                                </form>   
+                                </form>
                             </div>
                         </div>
                     </div>

@@ -84,14 +84,18 @@
                                                     </a>
                                                     <br>
                                                     <?php } else { ?>  
-                                                    
+                                                        <?php if($td['Tiempo'] == '00:00:00') { ?>
+                                                            <a href="cerrarViaje.php?id=<?php echo $td['VViaje']; ?>">
+                                                                <button class="btn btn-warning">Cerrar Viaje</button>
+                                                            </a>
+                                                        <?php } ?>
                                                     <a href="imprimirViajeQR.php?id=<?php echo $td['VViaje']?>" target="_blank">
                                                         <button class="btn btn-info">Ver PDF</button>
                                                     </a>
-                                                    
+                                                    <?php } ?>
                                                 </td>
                                             </tr>
-                                            <?php }}}else{ ?>
+                                            <?php }}else{ ?>
                                             <?php foreach($datos4 as $td){ ?>
                                             <tr>
                                                 <td><?php echo $td['fecha']; ?></td>
