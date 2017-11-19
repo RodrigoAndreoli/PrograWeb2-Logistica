@@ -8569,3 +8569,7 @@
             WHERE idPresupuesto = '11'
 13 11 2017 20:11:37 INSERT INTO Reporte(fkViajeR, fkChoferR, tiempo, latitud, longitud, motivo, km, combustible, descripcion)
         VALUES ('1', '11', '2017-11-13 20:01:54', '-58.5642313', '-34.6701669', 'Parada Tecnica', '999990', '1523', '')
+18 11 2017 14:11:13 INSERT INTO Service(fkMecanicoS, fkVehiculoS, fecha, service, km_service)
+       VALUES('3', '3', '2017-11-19', 'cambio aceite', '123')
+18 11 2017 18:11:53 INSERT INTO Presupuesto(fkClienteP, tiempo_estimado, km_estimado, combustible_estimado, costo_real, aceptado)
+        VALUES('1',  '12:00:00', '1', '1', '1', 'No')

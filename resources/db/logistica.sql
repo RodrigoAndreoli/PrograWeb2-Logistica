@@ -65,9 +65,9 @@ CREATE TABLE service (
     service enum('filtro aire','cambio aceite','direccion') NOT NULL DEFAULT 'filtro aire',
     km_service int(11) NOT NULL,
     PRIMARY KEY (idService),
-    CONSTRAINT fk_vehm FOREIGN KEY (fkVehiculoS)
+    CONSTRAINT fk_vehs FOREIGN KEY (fkVehiculoS)
 		REFERENCES Vehiculo (idVehiculo),
-	CONSTRAINT fk_mecm FOREIGN KEY (fkMecanicoS)
+	CONSTRAINT fk_mecs FOREIGN KEY (fkMecanicoS)
 		REFERENCES Usuario (idUsuario)
 );
 

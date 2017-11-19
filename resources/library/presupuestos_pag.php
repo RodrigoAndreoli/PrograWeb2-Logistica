@@ -12,7 +12,7 @@
     $datos = $obj -> consultar("SELECT C.razon, P.idPresupuesto, P.aceptado, P.tiempo_estimado, P.km_estimado, P.combustible_estimado, P.costo_real
         FROM Presupuesto P 
         JOIN Cliente C ON P.fkClienteP = C.idCliente
-        ORDER BY C.razon LIMIT $empezar_desde, $tamagno_paginas");
+        ORDER BY P.aceptado, C.razon LIMIT $empezar_desde, $tamagno_paginas");
 
     $datos2 = $obj -> consultar("SELECT idPresupuesto
         FROM Presupuesto

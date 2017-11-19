@@ -52,7 +52,7 @@
                                                 <th  class="text-center">Fecha de salida</th>
                                                 <th  class="text-center">Repuestos</th>
                                                 <th  class="text-center">Costo</th>
-                                                <?php if($_SESSION["rol"]!='Supervisor'){?> 
+                                                <?php if($_SESSION["rol"]!='Supervisor' && $_SESSION["rol"]!='Administrador'){?> 
                                                 <th  class="text-center">Operacion</th>
                                                 <?php } ?>  
                                             </thead>
@@ -65,7 +65,7 @@
                                                 <td><?php echo $td['fecha_salida'];?></td>
                                                 <td><?php echo ucwords($td['repuestos']);?></td>
                                                 <td><?php echo '$'.$td['costo'];?></td>
-                                                <?php if($_SESSION["rol"]!='Supervisor'){?>  
+                                                <?php if($_SESSION["rol"]!='Supervisor' && $_SESSION["rol"]!='Administrador'){?>  
                                                 <td class="text-center">
                                                     <a href="editarMantenimiento.php?id=<?php echo $td["idMantenimiento"]?>">
                                                         <button class="btn btn-info">Editar</button>

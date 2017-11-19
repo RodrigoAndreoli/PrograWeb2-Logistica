@@ -56,7 +56,7 @@
                             <div class="col-xs-6">
                                 <div class="form-group">
                                     <label for="">Fecha:</label>
-                                    <input type="datetime" class="form-control" name="fecha" id="fecha" placeholder="2000-12-31 23:59:59">
+                                    <input type="datetime-local" class="form-control" name="fecha" id="fecha" placeholder="2000-12-31 23:59:59">
                                 </div>
                             </div>
                             <div class="col-xs-6">
