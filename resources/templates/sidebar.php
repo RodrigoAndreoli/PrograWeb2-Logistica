@@ -35,7 +35,11 @@
         </li>
         <ul class='sub-menu collapse' id='viajes'>
             <li>
+                <?php if($_SESSION['rol']=='Supervisor' || $_SESSION['rol']=='Administrador') { ?>
                 <a href='vista_viajes.php'><i>Viajes</i></a>
+                <?php } else { ?>
+                <a href='vista_viajes_chofer.php'><i>Viajes</i></a>
+                <?php } ?>
             </li>
             <li>
                 <a href='vista_reportes.php'><i>Reportes de Viaje</i></a>

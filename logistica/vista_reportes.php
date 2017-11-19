@@ -68,7 +68,8 @@
                                     </form>
                                 </div>
                                 <br>
-                                <?php if(!empty($buscar)) { ?>
+                                <?php if(!empty($buscar)) { 
+                                        if($_SESSION['rol'] == 'Administrador' || $_SESSION["rol"] == 'Supervisor') {?>
                                 <div class="row">
                                 <div class="col-xs-12">
                                     <div id="reportes">  
@@ -173,15 +174,24 @@
                                     </div> 
                                 </div>
                                 </div>
+                                <?php } ?>
                                 <div class="row">
                                     <div id="map" style="height: 400px;" class="col-xs-12 col-md-6 col-md-offset-3"></div>
                                     <script>
                                         var locations = [
                                             <?php
-                                                $y = 0;
-                                                foreach($datos as $td) {
-                                                    $y++;
-                                                    echo('["Nro. '.$y.'", '.$td['Longitud'].', '.$td['Latitud'].', '.$y.'],');
+                                                if($_SESSION['rol'] == 'Chofer') {
+                                                    $y = 0;
+                                                    foreach($datos as $td) {
+                                                        $y++;
+                                                        echo('["Nro. '.$y.'<br>Chofer: '.$td['Nombre'].'<br>Tiempo: '.$td['Tiempo'].'<br>Combustible: $ '.$td['Combustible'].'<br>Kilometraje: '.$td['Kilometros'].'", '.$td['Longitud'].', '.$td['Latitud'].', '.$y.'],');
+                                                    } 
+                                                } else {
+                                                    $y = 0;
+                                                    foreach($datos as $td) {
+                                                        $y++;
+                                                        echo('["Nro. '.$y.'", '.$td['Longitud'].', '.$td['Latitud'].', '.$y.'],');
+                                                    }
                                                 } ?>
                                         ];
                                         var map = new google.maps.Map(document.getElementById('map'), {
