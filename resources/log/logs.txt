@@ -8604,3 +8604,11 @@
             km_total = '140',
             cerrado = 'Si'
         WHERE idViaje='1'
+19 11 2017 14:11:23 UPDATE Usuario 
+            SET num_doc = '3',
+                pass = 'a8f5f167f44f4964e6c998dee827110c',
+                rol = 'Mecanico',
+                nombre = 'Jorge Gómez',
+                fecha_nacimiento = '1980-07-07',
+                tipo_licencia = ''
+            WHERE idUsuario = '12'

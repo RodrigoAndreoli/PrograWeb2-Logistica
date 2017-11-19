@@ -13,8 +13,6 @@
       $obj = new controlDB();
     if($_SESSION['rol'] == 'Administrador' || $_SESSION["rol"] == 'Supervisor'){
         include $LIBRARY_PATH.'/viajes_pag.php';
-    }else{
-        include $LIBRARY_PATH.'/viajesChofer_pag.php';
     }
     $idUsuario = $_SESSION['idUsuario'];
     ?>
@@ -94,17 +92,6 @@
                                                     </a>
                                                     <?php } ?>
                                                 </td>
-                                            </tr>
-                                            <?php }}else{ ?>
-                                            <?php foreach($datos4 as $td){ ?>
-                                            <tr>
-                                                <td><?php echo $td['fecha']; ?></td>
-                                                <td><?php echo $td['origen']; ?></td>
-                                                <td><?php echo $td['destino']; ?></td>
-                                                <td><?php echo $td['carga']; ?></td>
-                                                <td><?php echo ($td['tiempo'].'h'); ?></td>
-                                                <td><?php echo ('$ '.$td['combustible']); ?></td>
-                                                <td><?php echo $td['km']; ?></td>
                                             </tr>
                                             <?php }} ?>
                                         </table>    
