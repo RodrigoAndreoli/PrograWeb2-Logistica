@@ -95,7 +95,7 @@ CREATE TABLE Viaje(
     tiempo_total time NOT NULL,
     combustible_total decimal(11,2) NOT NULL,
     km_total int(11) NOT NULL,
-    cerrado enum('Si', 'No') NOT NULL DEFAULT 'No',
+    estado tinyint default 0 NOT NULL,
     PRIMARY KEY (idViaje),
     CONSTRAINT fk_prev FOREIGN KEY (fkPresupuestoV)
 		REFERENCES Presupuesto (idPresupuesto)
@@ -199,15 +199,15 @@ INSERT INTO Presupuesto (fkClienteP, tiempo_estimado, km_estimado, combustible_e
 (5, '01:30:00', 150, 100.00, '550.00', 'No'),
 (2, '44:00:00', 2900, 5000.00, '6900.00', 'Si');
 
-INSERT INTO Viaje (fkPresupuestoV, fecha, origen, destino, tipo_carga, tiempo_total, combustible_total, km_total, cerrado) VALUES
-(1, '2017-11-22 10:00:00', 'Logistica S.A.', 'Lujan Bs As', 'Sustancias y objetos peligrosos varios', '00:00:00', 0.00, 0, 'No'),
-(2, '2017-10-24 09:00:00', 'Logistica S.A.', 'Cordoba', 'Mudanza', '05:35:00', 900.00, 900, 'Si'),
-(3, '2017-10-07 05:00:00', 'Logistica S.A.', 'Bariloche', 'Chocolates', '00:00:00', 0.00, 0, 'No'),
-(4, '2017-11-07 05:00:00', 'Logistica S.A.', 'Bariloche', 'Chocolates', '00:00:00', 0.00, 0, 'No'),
-(5, '2017-12-09 05:00:00', 'Logistica S.A.', 'Bariloche', 'Chocolates', '29:50:50', 2900.00, 1600, 'Si'),
-(6, '2017-11-10 08:00:00', 'Cordoba', 'Logistica S.A.', 'Refrigerados y congelados', '05:55:50', 400.00, 560, 'Si'),
-(7, '2018-01-08 14:00:00', 'Cordoba', 'Logistica S.A.', 'Refrigerados y congelados', '07:45:30', 460.00, 560, 'Si'),
-(10, '2017-12-20 21:00:00', 'Logistica S.A.', 'Rio Grande', 'Material radiactivo', '47:00:00', 5300.00, 5100, 'Si');
+INSERT INTO Viaje (fkPresupuestoV, fecha, origen, destino, tipo_carga, tiempo_total, combustible_total, km_total, estado) VALUES
+(1, '2017-11-22 10:00:00', 'Logistica S.A.', 'Lujan Bs As', 'Sustancias y objetos peligrosos varios', '00:00:00', 0.00, 0, 1),
+(2, '2017-10-24 09:00:00', 'Logistica S.A.', 'Cordoba', 'Mudanza', '05:35:00', 900.00, 900, 2),
+(3, '2017-10-07 05:00:00', 'Logistica S.A.', 'Bariloche', 'Chocolates', '00:00:00', 0.00, 0, 1),
+(4, '2017-11-07 05:00:00', 'Logistica S.A.', 'Bariloche', 'Chocolates', '00:00:00', 0.00, 0, 1),
+(5, '2017-12-09 05:00:00', 'Logistica S.A.', 'Bariloche', 'Chocolates', '29:50:50', 2900.00, 1600, 0),
+(6, '2017-11-10 08:00:00', 'Cordoba', 'Logistica S.A.', 'Refrigerados y congelados', '05:55:50', 400.00, 560, 2),
+(7, '2018-01-08 14:00:00', 'Cordoba', 'Logistica S.A.', 'Refrigerados y congelados', '07:45:30', 460.00, 560, 0),
+(10, '2017-12-20 21:00:00', 'Logistica S.A.', 'Rio Grande', 'Material radiactivo', '47:00:00', 5300.00, 5100, 0);
 
 INSERT INTO Vehiculo_chofer_viaje (fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT) VALUES
 (1, 11, NULL, 3, 4),

@@ -31,7 +31,7 @@
         SET tiempo_total = '$tiempo_total',
             combustible_total = '$combustible_total',
             km_total = '$km_total',
-            cerrado = 'Si'
+            estado = 2
         WHERE idViaje='$id'";
 
 	// escribe en el log

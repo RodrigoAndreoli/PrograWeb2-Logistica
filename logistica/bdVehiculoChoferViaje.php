@@ -13,7 +13,11 @@
 		$fkAcompanianteT = $_POST['fkAcompanianteT'];
 		$fkCamionT = $_POST['fkCamionT'];
 		$fkAcopladoT = $_POST['fkAcopladoT'];
-        $sql= "INSERT INTO Vehiculo_Chofer_viaje(fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT)
+		//nico: actualizo el estado a 1 (tres estados 0 sin asignar - 1 asignado - 2 cerrado)
+		
+		//$actualizaEstadoViaje = "UPDATE viaje SET estado = 1 WHERE idViaje='$fkViajeT'";
+        // SI NO COMENTO EL UPDATE NO ARMA EL PDF ¿?
+		$sql= "INSERT INTO Vehiculo_Chofer_viaje(fkViajeT, fkChoferT, fkAcompanianteT, fkCamionT, fkAcopladoT)
             VALUES('$fkViajeT', '$fkChoferT', '$fkAcompanianteT', '$fkCamionT', '$fkAcopladoT')";
         if($fkAcompanianteT == '0') {
             $sql= "INSERT INTO Vehiculo_Chofer_viaje(fkViajeT, fkChoferT, fkCamionT, fkAcopladoT)
@@ -32,7 +36,9 @@
 	// escribe en el log
 	$log = new creaLog();
 	$log->escribir($sql);
-
-    $obj -> insertar($sql);
+	//$log->escribir($actualizaEstadoViaje);
+    // TENGO QUE COMENTAR EL UPDATE 
+	//$obj -> insertar($actualizaEstadoViaje);  
+	$obj -> insertar($sql);
     header("Location: vista_viajes.php");  
 ?>

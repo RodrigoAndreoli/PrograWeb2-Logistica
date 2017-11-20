@@ -13,7 +13,13 @@
     * VER LOS DATETIME Y TIME
     * ORGANIZAR LA TABLA VIAJES PARA QUE APAREZCAN LOS "A ASIGNAR" PRIMERO, LOS "A CERRAR" SEGUNDOS Y ULTIMOS LOS "YA CERRADOS".
     * Rodri: Lo de datetime-local tira error por los JS. 
+	  Nico: Trate de usar un datetime de jquery pero es un bolonqui.
+		    Creo que lo tendriamos que hacer en HTML5.
     * Rodri: Trate de hacer que cuando un viaje este cerrado no puedan registrarReportes, pero no funciona.
+	* Nico: agregue en tabla viajes campo estado: 0 sin asignar - 1 asignado - 2 cerrado para ordenar en la consulta
+		    funciona el ordenamiento, por default al insertar 0, al cerrar se updatea el estado a 2, 
+			pero al asignar, al hacer el update a 1 no anda el pdf. Deje la linea comentada en bdVehiculoChoferViaje
+			
 
 ### Hecho
     * VISTA REPORTES CHOFER RESPONSIVE
