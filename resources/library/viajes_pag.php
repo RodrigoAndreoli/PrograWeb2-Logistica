@@ -9,12 +9,11 @@
     }    
     $empezar_desde = ($pag-1) * $tamagno_paginas;
 
-    $datos = $obj -> consultar("SELECT V.idViaje VViaje, V.fkPresupuestoV fkPresupuesto, V.fecha Fecha, V.origen Origen, V.destino Destino, V.tipo_carga Carga, V.tiempo_total Tiempo, V.combustible_total Combustible, V.km_total Km
+    $datos = $obj -> consultar("SELECT V.idViaje VViaje, V.fkPresupuestoV fkPresupuesto, V.fecha Fecha, V.origen Origen, V.destino Destino, V.tipo_carga Carga, V.tiempo_total Tiempo, V.combustible_total Combustible, V.km_total Km, V.estado Estado
         FROM Viaje V
-        ORDER BY V.estado,V.idViaje
+        ORDER BY V.estado, V.idViaje
         LIMIT $empezar_desde, $tamagno_paginas
     ");
-
 
     $cons = $obj -> consultar("SELECT T.fkViajeT TViaje
         FROM Vehiculo_Chofer_viaje T

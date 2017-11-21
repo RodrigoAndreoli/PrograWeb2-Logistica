@@ -8612,3 +8612,63 @@
                 fecha_nacimiento = '1980-07-07',
                 tipo_licencia = ''
             WHERE idUsuario = '12'
+21 11 2017 19:11:36 INSERT INTO Vehiculo_Chofer_viaje(fkViajeT, fkChoferT, fkCamionT)
+                VALUES('5', '1', '1')
+21 11 2017 19:11:38 INSERT INTO Vehiculo_Chofer_viaje(fkViajeT, fkChoferT, fkCamionT)
+                VALUES('7', '1', '1')
+21 11 2017 19:11:02 INSERT INTO Vehiculo_Chofer_viaje(fkViajeT, fkChoferT, fkCamionT)
+                VALUES('5', '1', '1')
+21 11 2017 19:11:02 UPDATE Viaje 
+            SET estado = 1 
+            WHERE idViaje = '5'
+21 11 2017 19:11:21 INSERT INTO Vehiculo_Chofer_viaje(fkViajeT, fkChoferT, fkCamionT)
+                VALUES('7', '1', '1')
+21 11 2017 19:11:21 UPDATE Viaje 
+            SET estado = 1 
+            WHERE idViaje = '7'
+21 11 2017 19:11:08 UPDATE Viaje
+        SET tiempo_total = '18:43:39',
+            combustible_total = '1800.00',
+            km_total = '1348',
+            estado = 2
+        WHERE idViaje='3'
+21 11 2017 19:11:15 UPDATE Viaje
+        SET tiempo_total = '02:45:30',
+            combustible_total = '230.00',
+            km_total = '140',
+            estado = 2
+        WHERE idViaje='1'
+21 11 2017 19:11:23 INSERT INTO Vehiculo_Chofer_viaje(fkViajeT, fkChoferT, fkCamionT)
+                VALUES('5', '1', '1')
+21 11 2017 19:11:23 UPDATE Viaje 
+            SET estado = 1 
+            WHERE idViaje = '5'
+21 11 2017 19:11:23 UPDATE Viaje
+        SET tiempo_total = '18:43:39',
+            combustible_total = '1800.00',
+            km_total = '1348',
+            estado = 2
+        WHERE idViaje='3'
+21 11 2017 19:11:27 INSERT INTO Vehiculo_Chofer_viaje(fkViajeT, fkChoferT, fkCamionT)
+                VALUES('5', '1', '1')
+21 11 2017 19:11:27 UPDATE Viaje 
+            SET estado = 1 
+            WHERE idViaje = '5'
+21 11 2017 19:11:38 UPDATE Viaje
+        SET tiempo_total = '02:45:30',
+            combustible_total = '230.00',
+            km_total = '140',
+            estado = 2
+        WHERE idViaje='1'
+21 11 2017 19:11:40 UPDATE Viaje
+        SET tiempo_total = '',
+            combustible_total = '',
+            km_total = '0',
+            estado = 2
+        WHERE idViaje='2'
+21 11 2017 19:11:49 UPDATE Viaje
+        SET tiempo_total = '',
+            combustible_total = '',
+            km_total = '0',
+            estado = 2
+        WHERE idViaje='2'

@@ -73,7 +73,7 @@
                                                 <td><?php echo $td['Km']; ?></td>
 
                                                 <td class="text-center">
-                                                    <?php if(!in_array($td['VViaje'], $asignar)) { ?>  
+                                                    <?php if($td['Estado'] == 0) { ?>  
                                                     <a href="asignarViaje.php?id=<?php echo $td['VViaje']?>">
                                                         <button class="btn btn-success">Asignar</button>
                                                     </a>
@@ -87,9 +87,9 @@
                                                                 <button class="btn btn-warning">Cerrar Viaje</button>
                                                             </a>
                                                         <?php } ?>
-                                                    <a href="imprimirViajeQR.php?id=<?php echo $td['VViaje']?>" target="_blank">
-                                                        <button class="btn btn-info">Ver PDF</button>
-                                                    </a>
+                                                            <a href="imprimirViajeQR.php?id=<?php echo $td['VViaje']?>" target="_blank">
+                                                                <button class="btn btn-info">Ver PDF</button>
+                                                            </a>
                                                     <?php } ?>
                                                 </td>
                                             </tr>
